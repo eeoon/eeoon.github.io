@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-01-13T17:07:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+</subtitle><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><entry><title type="html">Writing</title><link href="http://localhost:4000/daily/2024-01-13-daily-content/" rel="alternate" type="text/html" title="Writing" /><published>2024-01-13T00:00:00+09:00</published><updated>2024-01-01T20:54:23+09:00</updated><id>http://localhost:4000/daily/daily-content</id><content type="html" xml:base="http://localhost:4000/daily/2024-01-13-daily-content/">&lt;p&gt;Hydejack offers a few additional features to markup your content.
+Don’t worry, these are merely CSS classes added with kramdown’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:...}&lt;/code&gt; syntax,
+so that your content remains compatible with other Jekyll themes.&lt;/p&gt;
+
+&lt;ol id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#a-word-on-building-speeds&quot; id=&quot;markdown-toc-a-word-on-building-speeds&quot;&gt;A word on building speeds&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-a-table-of-contents&quot; id=&quot;markdown-toc-adding-a-table-of-contents&quot;&gt;Adding a table of contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-notes&quot; id=&quot;markdown-toc-adding-notes&quot;&gt;Adding notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-large-text&quot; id=&quot;markdown-toc-adding-large-text&quot;&gt;Adding large text&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-large-images&quot; id=&quot;markdown-toc-adding-large-images&quot;&gt;Adding large images&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-image-captions&quot; id=&quot;markdown-toc-adding-image-captions&quot;&gt;Adding image captions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-large-quotes&quot; id=&quot;markdown-toc-adding-large-quotes&quot;&gt;Adding large quotes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-faded-text&quot; id=&quot;markdown-toc-adding-faded-text&quot;&gt;Adding faded text&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-tables&quot; id=&quot;markdown-toc-adding-tables&quot;&gt;Adding tables&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#scroll-table&quot; id=&quot;markdown-toc-scroll-table&quot;&gt;Scroll table&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#small-tables&quot; id=&quot;markdown-toc-small-tables&quot;&gt;Small tables&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-code-blocks&quot; id=&quot;markdown-toc-adding-code-blocks&quot;&gt;Adding code blocks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-math&quot; id=&quot;markdown-toc-adding-math&quot;&gt;Adding math&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#inline&quot; id=&quot;markdown-toc-inline&quot;&gt;Inline&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#block&quot; id=&quot;markdown-toc-block&quot;&gt;Block&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p class=&quot;note&quot;&gt;For an introduction to markdown in general, see &lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot;&gt;Mastering Markdown&lt;/a&gt; and &lt;a href=&quot;https://kramdown.gettalong.org/syntax.html&quot;&gt;kramdown Syntax&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-word-on-building-speeds&quot;&gt;A word on building speeds&lt;/h2&gt;
+&lt;p&gt;If building speeds are a problem, try using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--incremental&lt;/code&gt; flag, e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve --incremental
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;From the &lt;a href=&quot;https://jekyllrb.com/docs/configuration/#build-command-options&quot;&gt;Jekyll docs&lt;/a&gt; (emphasis mine):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, &lt;em&gt;but may also break site generation in certain cases&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The breakage occurs when you create new files or change filenames.
+Also, changing the title, category, tags, etc. of a page or post will not be reflected in pages
+other then the page or post itself.
+This makes it ideal for writing new posts and previewing changes, but not setting up new content.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-a-table-of-contents&quot;&gt;Adding a table of contents&lt;/h2&gt;
+&lt;p&gt;You can add a generated table of contents to any page by adding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:toc}&lt;/code&gt; below a list.&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; this unordered seed list will be replaced by the toc
+{:toc}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also create your table of contents as an ordered list (note the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;1.&lt;/span&gt; this ordered seed list will be replaced by the toc
+{:toc}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The width of the display has to be larger than 1665px for the ToC to become sticky.
+Otherwise, the ToC will appear where the seed list is placed in the document.
+To show the table of contents only on large displays (&amp;gt; 1665px) use the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; this unordered seed list will be replaced by the toc 
+{:toc .large-only}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;note&quot;&gt;A sticky table of contents will reduce the amount of space freed up by the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;no_break_layout: false&lt;/code&gt; setting.&lt;br /&gt;
+This is necessary to ensure large code blocks or tables don’t overlap with the ToC.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-notes&quot;&gt;Adding notes&lt;/h2&gt;
+&lt;p&gt;You can add a note by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;note&lt;/code&gt; class to a paragraph.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p class=&quot;note&quot;&gt;You can add a note.&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You can add a note.
+{:.note}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;note&lt;/code&gt; key in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/strings.yml&lt;/code&gt; to change the wording of the default label.
+To add a note with a specific label, add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;title&lt;/code&gt; attribute:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A custom label.
+{:.note title=&quot;Attention&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;note&quot; title=&quot;Attention&quot;&gt;A custom label.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-large-text&quot;&gt;Adding large text&lt;/h2&gt;
+&lt;p&gt;You can add large text by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lead&lt;/code&gt; class to the paragraph.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p class=&quot;lead&quot;&gt;You can add large text.&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You can add large text.
+{:.lead}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;adding-large-images&quot;&gt;Adding large images&lt;/h2&gt;
+&lt;p&gt;You can make an image span the full width by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lead&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/800x100&quot; alt=&quot;Full-width image&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;![&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Full-width image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;https://via.placeholder.com/800x100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{:.lead width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It is recommended to provide the dimension of the image via the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;width&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;height&lt;/code&gt; attributes, 
+so that browsers can calculate the layout before the images are loaded. Combining this with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;loading=&quot;lazy&quot;&lt;/code&gt; attribute
+allows modern browsers to load the images just-in-time as the users scrolls.&lt;/p&gt;
+
+&lt;p class=&quot;note&quot;&gt;Previous versions of Hydejack shipped with a custom JavaScript-based lazy loading solution,
+but it has been removed in v9 in favor of this more standards-based approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-image-captions&quot;&gt;Adding image captions&lt;/h2&gt;
+&lt;p&gt;You can add captions to large images by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; class to the paragraph after the image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/800x100&quot; alt=&quot;Full-width image&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;An optional caption for an image.&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;![&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Full-width image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;https://via.placeholder.com/800x100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{:.lead width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot;}
+
+A caption for an image.
+{:.figcaption}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;adding-large-quotes&quot;&gt;Adding large quotes&lt;/h2&gt;
+&lt;p&gt;You can make a quote “pop out” by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lead&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;blockquote class=&quot;lead&quot;&gt;
+  &lt;p&gt;You can make a quote “pop out”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; You can make a quote &quot;pop out&quot;.
+{:.lead}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;adding-faded-text&quot;&gt;Adding faded text&lt;/h2&gt;
+&lt;p&gt;You can gray out text by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;faded&lt;/code&gt; class. Use this sparingly and for information that is not essential, as it is more difficult to read.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p class=&quot;faded&quot;&gt;I’m faded, faded, faded.&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I&apos;m faded, faded, faded.
+{:.faded}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;adding-tables&quot;&gt;Adding tables&lt;/h2&gt;
+&lt;p&gt;Adding tables is straightforward and works just as described in the &lt;a href=&quot;https://kramdown.gettalong.org/syntax.html#tables&quot;&gt;kramdown docs&lt;/a&gt;, e.g.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However, it gets tricker when adding large tables.
+In this case, Hydejack will break the layout and grant the table the entire available screen width to the right:&lt;/p&gt;
+
+&lt;table class=&quot;smaller&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;note&quot;&gt;Tables adopts to the font size! You can decrease the size of the table by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smaller&lt;/code&gt; CSS class. Put &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:.smaller}&lt;/code&gt; below the Markdown table, or add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class=&quot;smaller&quot;&lt;/code&gt; to a HTML table.&lt;/p&gt;
+
+&lt;h3 id=&quot;scroll-table&quot;&gt;Scroll table&lt;/h3&gt;
+&lt;p&gt;If the extra space still isn’t enough, the table will receive a scrollbar.
+It is browser default behavior to break the lines inside table cells to fit the content on the screen.
+By adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scroll-table&lt;/code&gt; class on a table, the behavior is changed to never break lines inside cells, e.g:&lt;/p&gt;
+
+&lt;table class=&quot;smaller scroll-table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+      &lt;td&gt;Second line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;foo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;baz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+      &lt;td&gt;Third line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;quux&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baz&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Second body&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;2 line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Footer row&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scroll-table&lt;/code&gt; class to a markdown table by putting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:.scroll-table}&lt;/code&gt; in line directly below the table.
+To add the class to a HTML table, add the it to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; attribute of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;table&lt;/code&gt; tag, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;table class=&quot;scroll-table&quot;&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;small-tables&quot;&gt;Small tables&lt;/h3&gt;
+&lt;p&gt;If a table is small enough to fit the screen even on small screens, you can add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stretch-table&lt;/code&gt; class
+to force a table to use the entire available content width. Note that stretched tables can no longer be scrolled.&lt;/p&gt;
+
+&lt;table class=&quot;stretch-table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Default aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First body part&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Second cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Third cell&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;fourth cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;An optional caption for a table&lt;/p&gt;
+
+&lt;p&gt;You can add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stretch-table&lt;/code&gt; class to a markdown table by putting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:.stretch-table}&lt;/code&gt; in line directly below the table.
+To add the class to a HTML table, add the it to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; attribute of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;table&lt;/code&gt; tag, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;table class=&quot;stretch-table&quot;&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just like images, you can add captions to tables by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; class to the paragraph after the table.&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;An optional caption for a table
+{:.figcaption}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;adding-code-blocks&quot;&gt;Adding code blocks&lt;/h2&gt;
+&lt;p&gt;To add a code block without syntax highlighting, simply indent 4 spaces (regular markdown).
+For code blocks with code highlighting, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~~~&amp;lt;language&amp;gt;&lt;/code&gt;. This syntax is also supported by GitHub.
+For more information and a list of supported languages, see &lt;a href=&quot;http://rouge.jneen.net/&quot;&gt;Rouge&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can give each code block a filename, by making the first line in the block a comment of the form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;File: &quot;dir/filename.ext&quot;&lt;/code&gt;. Use either single quotes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;&lt;/code&gt;, double quotes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, or backticks &lt;code&gt;`&lt;/code&gt; to surround the filename.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// file: &quot;code-block.js&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;An optional caption for a code block&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~~~js
+// file: &quot;code-block.js&quot;
+// Example can be run directly in your JavaScript console
+
+// Create a function that takes two arguments and returns the sum of those
+// arguments
+var adder = new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a + b&quot;);
+
+// Call the function
+adder(2, 6);
+// &amp;gt; 8
+~~~
+
+An optional caption for a code block
+{:.figcaption}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;note&quot;&gt;DO NOT use Jekyll’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ % highlight % } ... { % endhighlight % }&lt;/code&gt; syntax, especially together with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linenos&lt;/code&gt; option.
+The generated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;table&lt;/code&gt; to render the line numbers does not have a CSS class or any other way of differentiating it from regular tables,
+so that the styles above apply, resulting in a broken page.
+What’s more, the output from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;highlight&lt;/code&gt; tags isn’t even valid HTML, nesting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pre&lt;/code&gt; tags inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pre&lt;/code&gt; tags,
+which will in break the site during minification.
+You can read more about it &lt;a href=&quot;https://github.com/penibelst/jekyll-compress-html/issues/71&quot;&gt;here&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/4432&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-math&quot;&gt;Adding math&lt;/h2&gt;
+&lt;p&gt;Before adding math blocks, make sure you’ve &lt;a href=&quot;./config.md#enabling-math-blocks&quot;&gt;set up math support&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;inline&quot;&gt;Inline&lt;/h3&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum \(f(x) = x^2\).&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Lorem ipsum $$ f(x) = x^2 $$.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;block&quot;&gt;Block&lt;/h3&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+
+\[\begin{aligned}
+  \phi(x,y) &amp;amp;= \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) \\[2em]
+            &amp;amp;= \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j)            \\[2em]
+            &amp;amp;= (x_1, \ldots, x_n)
+               \left(\begin{array}{ccc}
+                 \phi(e_1, e_1)  &amp;amp; \cdots &amp;amp; \phi(e_1, e_n) \\
+                 \vdots          &amp;amp; \ddots &amp;amp; \vdots         \\
+                 \phi(e_n, e_1)  &amp;amp; \cdots &amp;amp; \phi(e_n, e_n)
+               \end{array}\right)
+               \left(\begin{array}{c}
+                 y_1    \\
+                 \vdots \\
+                 y_n
+               \end{array}\right)
+\end{aligned}\]
+
+&lt;p class=&quot;figcaption&quot;&gt;An optional caption for a math block&lt;/p&gt;
+
+&lt;p&gt;Markdown:&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;aligned&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%!!15&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;x,y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}^&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;i, &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}^&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;je&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;j &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}^&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}^&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;i y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;j &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;i, e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;            &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\ldots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;, x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;, e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\cdots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;, e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\vdots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\ddots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\vdots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;         &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n, e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\cdots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\phi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n, e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\vdots&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+                 y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;n
+               &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;aligned&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$$&lt;/span&gt;
+
+An optional caption for a math block
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;:.figcaption&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;note&quot;&gt;KaTeX does not support the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align*&lt;/code&gt; environments.
+Instead, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aligned&lt;/code&gt; should be used, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\begin{aligned} ... \end{aligned}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;read-more&quot;&gt;Continue with &lt;a href=&quot;scripts.md&quot; class=&quot;heading flip-title&quot;&gt;Scripts&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="daily" /><summary type="html">Hydejack offers a few additional features to markup your content. Don’t worry, these are merely CSS classes added with kramdown’s {:...} syntax, so that your content remains compatible with other Jekyll themes.</summary></entry><entry><title type="html">Robotics Content</title><link href="http://localhost:4000/robotics/2023-12-28-robotics-content/" rel="alternate" type="text/html" title="Robotics Content" /><published>2023-12-28T00:00:00+09:00</published><updated>2023-12-29T00:20:59+09:00</updated><id>http://localhost:4000/robotics/robotics-content</id><content type="html" xml:base="http://localhost:4000/robotics/2023-12-28-robotics-content/">&lt;p&gt;안녕하세요. Robotics,&lt;/p&gt;
+
+&lt;h1 id=&quot;robotics&quot;&gt;ROBOTICS&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;robotics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2023년&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;start&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;who-am-i&quot;&gt;Who am I&lt;/h2&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; elements&lt;/h2&gt;
+
+&lt;p&gt;&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element&quot;&gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;To bold text&lt;/strong&gt;, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**To bold text**&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;To italicize text&lt;/em&gt;, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*To italicize text*&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Abbreviations, like &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; should be defined like this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*[HTML]: HyperText Markup Language&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Citations, like &lt;cite&gt;— Mark otto&lt;/cite&gt;, should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Deleted&lt;/del&gt; text should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~~deleted~~&lt;/code&gt; and &lt;ins&gt;inserted&lt;/ins&gt; text should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ins&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Superscript &lt;sup&gt;text&lt;/sup&gt; uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sup&amp;gt;&lt;/code&gt; and subscript &lt;sub&gt;text&lt;/sub&gt; uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Most of these elements are styled by browsers with few modifications on our part.&lt;/p&gt;
+
+&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+
+&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor.&lt;/p&gt;
+
+&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor.&lt;/p&gt;
+
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor.&lt;/p&gt;
+
+&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-1&quot;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;Cum sociis natoque penatibus et magnis dis &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code element&lt;/code&gt; montes, nascetur ridiculus mus.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
+
+&lt;p&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et.&lt;/li&gt;
+  &lt;li&gt;Donec id elit non mi porta gravida at eget metus.&lt;/li&gt;
+  &lt;li&gt;Nulla vitae elit libero, a pharetra augue.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Vestibulum id ligula porta felis euismod semper.&lt;/li&gt;
+  &lt;li&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/li&gt;
+  &lt;li&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HyperText Markup Language (&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;)&lt;/dt&gt;
+  &lt;dd&gt;The language used to describe and define the content of a Web page&lt;/dd&gt;
+  &lt;dt&gt;Cascading Style Sheets (&lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt;)&lt;/dt&gt;
+  &lt;dd&gt;Used to describe the appearance of Web content&lt;/dd&gt;
+  &lt;dt&gt;JavaScript (&lt;abbr title=&quot;JavaScript&quot;&gt;JS&lt;/abbr&gt;)&lt;/dt&gt;
+  &lt;dd&gt;The programming language used to build advanced Web sites and applications&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
+
+&lt;h2 id=&quot;images&quot;&gt;Images&lt;/h2&gt;
+
+&lt;p&gt;Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/800x400&quot; alt=&quot;800x400&quot; title=&quot;Large example image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/400x200&quot; alt=&quot;400x200&quot; title=&quot;Medium example image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x200&quot; alt=&quot;200x200&quot; title=&quot;Small example image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
+
+&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Upvotes&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Downvotes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Alice&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Bob&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Charlie&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Totals&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;21&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;23&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="robotics" /><summary type="html">안녕하세요. Robotics,</summary></entry><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/2022-12-29-programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2023-12-29T12:37:47+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/2022-12-29-programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
+
+&lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Programming&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2023년&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;start&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;c--python&quot;&gt;C++ / Python&lt;/h2&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="programming" /><summary type="html">안녕하세요. Programming,</summary></entry><entry><title type="html">nvidia_graphic_card 인식 해결</title><link href="http://localhost:4000/robotics/2022-11-28-robotics-content/" rel="alternate" type="text/html" title="nvidia_graphic_card 인식 해결" /><published>2022-11-28T00:00:00+09:00</published><updated>2024-01-02T00:07:42+09:00</updated><id>http://localhost:4000/robotics/robotics-content</id><content type="html" xml:base="http://localhost:4000/robotics/2022-11-28-robotics-content/">&lt;h2 id=&quot;ubuntu-2204-설치-후-nvidia_drivegraphic-card-설치&quot;&gt;ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;먼저 ubuntu22.04를 설치하고 실행하였는데 그래픽 카드 인식 오류가 발생한다면 PC 뒤에서 Display Port (or HDMI) 를 그래픽카드가 아닌 마더보드에 연결할 수 있도록 하고 재부팅한다. 그리고 terminal 창을 열어서 그래픽 카드에 적합한 드라이버를 검색한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo ubuntu-drivers devices&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/Untitled1.png&quot; alt=&quot;Untitled1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;드라이버 중 추천해주는 모델을 설치를 진행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt install nvidia-driver-{number}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;nvidia 드라이버 모델 설치가 완료된 것을 확인한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvidia-smi&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/Untitled2.png&quot; alt=&quot;Untitled2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;정상적으로 진행이 되었다면 nvidia 드라이버가 설치가 되었으니 그래픽카드로 부터 HDMI를 연결해 디스플레이를 확인할 수 있다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="robotics" /><summary type="html">ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치</summary></entry><entry><title type="html">로봇 공학 (1)</title><link href="http://localhost:4000/robotics/2022-06-12-robotics-content/" rel="alternate" type="text/html" title="로봇 공학 (1)" /><published>2022-06-12T00:00:00+09:00</published><updated>2024-01-07T22:23:33+09:00</updated><id>http://localhost:4000/robotics/robotics-content</id><content type="html" xml:base="http://localhost:4000/robotics/2022-06-12-robotics-content/">&lt;p&gt;6자유도 협동로봇의 Matlab 시뮬레이션&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ⅰ-d-h-파라미터&quot;&gt;Ⅰ. D-H 파라미터&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;D-H 파라미터는 기계 공학의 로봇팔과 같이 연결된 링크 간의 관계를 수학적으로 표현할 수 있는 기구학적인 모델링 방법을 활용한 매개변수이다. 총 4개의 매개변수가 있으며 각각의 매개변수는 링크의 좌표계 설정하여 두 개의 링크 간의 좌표계를 나타낸다. D-H 파라미터를 구하기 전에 좌표계를 설정한다. 조인트에서의 좌표의 원점을 Oi점으로 정한 후 각 조인트에서 움직이는 축을 중심으로 Z축을 설정한다. 로봇의 회전 축을 중심으로 Z축을 선정하는데 이 때 엄지손가락이 가리키는 방향이 Z축이며 오른손 법칙을 이용한다. Z축을 오른손법칙으로 선정하였을 때 검지 손가락이 가리키는 방향이 X축이며 이 X축은 Zi-1 축과 Zi 축에 수직인 평면으로 Zi-1에서 밖으로 나가는 방향으로 Oi를 지나 Zi 축에 수직하다. 이후 Y축은 Z축과 X축에 의해 오른손법칙으로 정해진다. D-H파라미터를 설정할 때 간편히 하기 위해 회전축이 없는 End_effector는 가능하면 이전 축을 기준으로 같은 방향으로 설정하는 것이 좋다. 좌표계가 설정되고 난 후 D-H파라미터를 구하기 위해서는 각 좌표축간의 관계를 파악해야한다. D-H파라미터는 d, θ, a, α 가 있으며 각각의 의미는 다음과 같다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;d-h-파라미터&quot;&gt;D-H 파라미터&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;d : Zi 축을 기준으로 Xi 축 Xi+1 축 사이의 최단 거리&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;θ : Zi 축을 기준으로 Xi 축 Xi+1 축 사이의 각도&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;a : Xi 축을 기준으로 Zi 축과 Zi+1 축 사이의 최단 거리&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;α : Xi 축을 기준으로 Zi 축과 Zi+1 축 사이의 각도&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;6 axis D-H parameters&lt;/p&gt;
+
+\[A_{i-1}^{i} = \left[\begin{array}{}
+    cos(\theta_i) &amp;amp; cos(\alpha_i)sin(\theta_1) &amp;amp; sin(\alpha_i)sin(\theta_i) &amp;amp; a_icos(\theta) \\
+    sin(\theta_i) &amp;amp; cos(\alpha_i)cos(\theta_i) &amp;amp; -sin(\alpha_i)cos(\theta_i) &amp;amp; a_isin(\theta_i) \\
+    0 &amp;amp; sin(\alpha_i) &amp;amp; cos(\alpha_i) &amp;amp; d_i \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+    \end{array}\right]\]
+
+&lt;p class=&quot;figcaption&quot;&gt;translation matrix&lt;/p&gt;
+
+&lt;h2 id=&quot;ⅱ베이스좌표계x_0y_0z_0로부터end-effector까지의천이행렬&quot;&gt;Ⅱ. 베이스좌표계$(x_{0},y_{0},z_{0})$로부터 End-effector까지의 천이행렬&lt;/h2&gt;
+
+&lt;p&gt;좌표계를 설정하고 D-H 파라미터를 구한 후 Translation 행렬에 대입하여 T행렬을 계산한다. T행렬은 Rotation matrix와 Position matrix로 구성되어 있으며 Rotation matrix는 Roll, Pitch, Yaw의 방향으로 회전한 행렬을 모두 연산하여 3 x 3 행렬로 구성되고 Position matrix는 X, Y, Z로 3 x 1 행렬로 구성되어 있으며 차원을 맞춰주기 위하여 전체 행렬은 4 x 4 행렬로 구성한다. T행렬은 각 D-H파라미터를 대입하여 0번 조인트에서 1번 조인트까지의 관계, 1번 조인트에서 2번 조인트까지의 관계를 계속해서 나타내고 최종적으로 나타내고자하는 n-1번 조인트에서 n번 조인트까지의 관계까지 모두 계산한 다음 이런 T행렬을 T_0_1부터 T_n-1_n 까지의 곱으로 초기 좌표계에서 구하고자하는 End-effector까지의 관계(회전과 위치)를 구할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;전체 변환 행렬 (은 n좌표에서 오리엔테이션 행렬, 은 n좌표에서 위치 벡터)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_2.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ⅲ-순기구학을-이용하여-각-링크의-관절각을-표현할-수-있는-matlab-시뮬레이션-프로그램을-구현&quot;&gt;Ⅲ. 순기구학을 이용하여 각 링크의 관절각을 표현할 수 있는 Matlab 시뮬레이션 프로그램을 구현&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Matlab 시뮬레이션은 2개의 함수.m 파일과 3개의 실행.m 파일로 구성했다. 먼저 함수 파일의 theta.m 파일은 T행렬을 계산하기 위해 D-H파라미터를 대입할 수 있는 행렬을 함수로 나타내었고 ficture.m 파일은 D-H파라미터를 직접 입력해주고 theta.m 파일의 함수를 활용하여 plot을 띄우면서 각 링크, 조인트의 위치를 나타내고 End-effector의 위치 또한 추가적으로 좌표를 표시했다. DOF_6.m 파일은 ficture.m 파일의 기본적인 위치를 표시하기 위한 파일로 D-H 파라미터 중 변수인 θ1 부터 θ6 까지의 default 값을 0으로 지정하여 초기의 협동로봇의 위치를 나타내었다. DOF_6_exe.m 파일은 사용자가 직접 변수를 입력할 수 있도록 하였다. 먼저 사용자의 입력이 Y 또는 y이면 각 θn 에 동일한 값을 입력받고 반복횟수를 입력받아 전체적인 협동로봇의 형상이 초기상태부터 차례대로 진행되며 겹쳐보일 수 있도록 하였다. 사용자가 입력을 N 또는 n으로 입력하면 하나의 협동로봇의 형상만 표시하는 것으로 각각의 θn 값을 입력받아 θn 값에 의해 변하는 plot을 살펴볼 수 있도록 하였다. Fun_Link.m 파일은 line 5에 loop 값에 따라 달라지는 협동로봇의 형상을 표현한다. 링크와 조인트의 통일된 색상으로 DOF_6_exe.m 파일보다 조금 더 전체적인 로봇의 큰 틀의 형상을 살펴볼 수 있다. matlab에서 plot의 비율을 조정하기 위해 축의 범주를 한정해두면 협동로봇의 형태가 축의 범주를 넘어서면 표현되지 않는다. 각 매트랩파일에서 axis에 대한 설명부분을 주석처리하면 비율은 맞지 않으나 End_effector이 표현되지 않는 경우는 없다. (매트랩 결과로 출력된 좌표 중 –7.164e-15의 값은 실제 값은 0이다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_3.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_4.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;Matlab Simulation result&lt;/p&gt;
+
+&lt;p&gt;Matlab으로 구현한 시뮬레이션이 실제 계산결과와 동일한 결과를 출력하는지 검산할 필요가 있다. 따라서 시뮬레이션에서 대입한 θn = 60 로 설정하여 D-H파라미터 값으로 전이행렬을 옳게 출력하고 위치벡터(X,Y,Z)의 결과로 End-effector의 위치와 동일한 결과인지 판단한다. 예를 들어 θ2 = 60, θ5 = 60로 설정하여 검산과정을 진행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_5.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Link의 행렬들을 모두 연산하면&lt;/p&gt;
+
+\[A = 10^3  \begin{bmatrix}0&amp;amp;-0.001&amp;amp;0&amp;amp;0.117 \\ 0.001 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1.1704 \\ 0 &amp;amp; 0  &amp;amp; 0.001 &amp;amp; 1.1272 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0.001 \end{bmatrix}\]
+
+&lt;p&gt;위치벡터의 값이 117,1170,1127이므로 End_effector의 좌표 (X,Y,Z) = (117, 1170, 1127)이다. 시뮬레이션 결과와 동일한 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_6.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ⅴ-경로계획-방법을-이용하여-로봇팔의-end-effector의-경로를-cubic-spline-이용해서-작성&quot;&gt;Ⅴ. 경로계획 방법을 이용하여 로봇팔의 End-effector의 경로를 Cubic Spline 이용해서 작성&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;path planning을 진행하기 위해서는 현재 위치와 도착 위치를 설정한 후 두 점을 잇는 경로를 계획한다. 두 점을 잇는 경로는 다양하며 로봇이 일반적으로 움직이는 경로를 설정할 때 도달시간이 빠르며 안정적으로 이동경로를 설정하여 도착 위치에 도달하는 것이다. 출발 위치와 도착 위치를 바로 잇는 직선이 가장 빠른 경로는 맞지만 실제 로봇의 이동경로를 두점을 잇는 경로가 항상 안정적으로 동작하는 것은 아니다. 실제 로봇의 이동경로를 PD제어를 통해 추종하는 프로그램을 진행할 때 이동 포인트를 정확히 통과하고 다음 이동 포인트로 방향각을 설정하기 위해 선회하는 것으로 나타난다. 마찬가지로 로봇팔에서도 포인트 이동에서 직선으로 바로 도달하는 것이 안정적이지는 않다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_7.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;추가적으로 로봇이 이동할 때 정지, 등속, 정지의 과정으로 로봇이 작동하지 못한다. 따라서 실제로 로봇의 정지, 가속, 등속, 감속, 정지의 과정을 거치며 이동경로를 설정하고 부드러운 모션으로 진행할 수 있도록 하기 위해 Cubic Spline을 이용한다. Cubic Spline의 조건으로 로봇의 출발 위치에서 각도는 0이고 각속도 또한 0이다. 도착지점에서의 위치는 설정한 값이 존재하지만 마찬가지로 각속도는 0으로 설정된다. 아래의 왼쪽 그림과 마찬가지로 함수가 어느 한 점에서 불연속으로 진행할 수 없다. 이러한 조건을 만족 시키면서 가속, 감속 과정을 진행하기 위해서는 실제로 아래의 오른쪽 그림과 같이 X 축(시간축)에 대한 Y 축(각도)의 변화로 나타낼 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_8.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실제 시뮬레이션 결과 6자유도 협동로봇의 전체 형상 및 움직이는 각도는 θ3 값에 입력 값으로 진행하였다. Cubic Spline의 위치, 속도, 가속도를 그래프로 시간에 대한 변화를 나타내고 마지막 그래프에서는 End-effector의 위치를 나타냈다. Cubic Spline 함수는 아래와 같이 설정하였다.&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\theta(t) = A(1-cos(\frac{n\pi}{T})t)\]
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_9.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ⅵ-설정된-경로를-추종하는-관절각을-계산하는-역기구학-시뮬레이션-코드를-작성&quot;&gt;Ⅵ. 설정된 경로를 추종하는 관절각을 계산하는 역기구학 시뮬레이션 코드를 작성&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;역기구학은 로봇의 위치가 정의되어 있을 때 현재 로봇의 End-effector에서 θ의 값을 구하기 위해 End-effector의 위치에서 atan2의 함수를 이용해서 기울어진 각도를 반대로 계산해 나가는 과정이다. 이때 atan2를 활용하는 이유는 atan은 θ의 값이 0 ~ 2π으로 지정되어 있어 π의 값에서 tanθ의 값이 발산하는 결과가 발생하기 때문에 atan2는 θ의 값이 -π ~ π 으로 설정되어 tanθ의 값이 불연속인 구간이 없다.&lt;/li&gt;
+&lt;/ul&gt;
+
+\[A^i_i-1 = \begin{bmatrix}cos( \theta_i) &amp;amp; -cos(\alpha_i)sin(\theta_i) &amp;amp; sin(\alpha_i)sin(\theta_{i}) &amp;amp; a _{i}cos(\theta) \\ sin(\theta_{i}) &amp;amp; cos(\alpha_{i})cos(\theta_{i}) &amp;amp; -sin(\alpha_{i})cos(\theta_{i}) &amp;amp; a_{i}sin(\theta_{i}) \\ 0 &amp;amp; sin(\alpha_{i}) &amp;amp; cos(\alpha_{i} ) &amp;amp; d_{i} \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix}\]
+
+&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/project/2021-12-12-project-content/" rel="alternate" type="text/html" title="Computer Vision" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-01-13T17:07:20+09:00</updated><id>http://localhost:4000/project/project-content</id><content type="html" xml:base="http://localhost:4000/project/2021-12-12-project-content/">&lt;p&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/strong&gt;&lt;/p&gt;
+
+&lt;!-- *2023년* 
+
+- start
+--&gt;
+&lt;h2 id=&quot;vanishing-point--perspective-transform&quot;&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/h2&gt;
+
+&lt;h3 id=&quot;영상처리를-통한-자율주행&quot;&gt;영상처리를 통한 자율주행&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;project propose : Vanishing point를 활용하여 주행 방향을 결정할 때 발생되는 오차를 Lane detection을 통해 보안&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;영상 처리 과정에서 라인을 검출하여 만나는 지점의 소실점(Vanishing Point)를 활용하여 주행방향(조향)을 결정한다.&lt;/li&gt;
+  &lt;li&gt;소실점이 생성되는 과정에서 발생되는 오차는 박스를 설정하여 소실점이 박스를 벗어났는지 판단하는 과정을 진행한다.&lt;/li&gt;
+  &lt;li&gt;카메라가 인식하는 2차원을 Perspective Transform의 과정을 거쳐 라인을 검출하였다.&lt;/li&gt;
+  &lt;li&gt;카메라를 통해 검출된 소실점과 라인 검출을 통해 새로운 해석을 도입한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vanishing-point&quot;&gt;Vanishing Point&lt;/h2&gt;
+
+&lt;p&gt;3D 공간에서 평행한 직선은 2D 영상에서 FOV(Field of View)로 인하여 평행하게 보이지 않는다. 간단한 예시로 도로위의 차선은 bird of view로 바라보면 평행하나 운전자의 입장(카메라)에서 바라보면 평행하지 않게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;basic of concept&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_2.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;figcaption&quot;&gt;실제 이미지에 적용한 Vanishing point로 lane을 검출하여 lane의 접점을 red dot으로 표시하였다.&lt;/p&gt;
+
+&lt;h2 id=&quot;perspective-transform&quot;&gt;Perspective Transform&lt;/h2&gt;
+
+&lt;p&gt;관심영역과 평행이 아닐 때 수집한 영상을 대상체와 평행인 것 처럼 보정처리하는 방법이다. 4개의 POINT를 설정하여 해당영역의 비율을 조정하여 이미지의 좌표를 변환처리할 수 있다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/image_1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/image_2.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Perspective Transform을 임의의 영상에서 진행하면 다음과 같이 Fied of View를 변경하여 region of interest(ROI)를 lane으로 변경한 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_4.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;camera filed of view를 45 degree / 90 degree 로 진행하였을 때 어떤 방향이 더 효율적인가를 처음에 프로젝트 시작할때 고민하여 테스트를 진행&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_5.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;algorithm of project (flow chart)&lt;/p&gt;
+
+&lt;h2 id=&quot;결과&quot;&gt;결과&lt;/h2&gt;
+
+&lt;h3 id=&quot;vanshing-point&quot;&gt;Vanshing Point&lt;/h3&gt;
+
+&lt;p&gt;Box 크기를 조절하여 영상 내부에 소실점의 범위를 규정&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gaussian Distribution 공식 적용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bounding box의 타당성을 검증하기 위해 red dot 이 존재하는 영역의 좌표를 확인 후 Gaussian Distribution을 진행한 결과&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hough Transform Line Detection을 통해 Vanishing point 검출&lt;/p&gt;
+
+&lt;p&gt;(Hough Transform Line Detection 추가 설명)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_6.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_7.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;result of Gauissian Distribution for red dot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_8.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;perspective-transform-1&quot;&gt;Perspective Transform&lt;/h3&gt;
+
+&lt;p&gt;변환 전 4개의 좌표를 직선 구간에서 선정&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;차량이 차선의 중앙이 아닐 경우 판단 가능.
+범위를 벗어날 경우 Text 출력으로 현재 주행상태 시각화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_9.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;두 라인이 검출되면 parallel 하다고 판단한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_10.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vanishing-point--perspective-transform-결합&quot;&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform 결합&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;두-기법의-상호-보완-판단-지표&quot;&gt;두 기법의 상호 보완 판단 지표&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Confusion matrix 참고하여 발상&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;오류성 주행의 판단 지표&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_11.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;영상에서 각각 [In/Out], [Parallel/Bias] 출력&lt;/li&gt;
+  &lt;li&gt;Console에서 위 내용을 결합하여 [직진구간 중앙주행 / 직진구간 치우침, 회전구간 중앙주행 / 회전구간 치우침] 출력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_12.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_13.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bounding Box를 통해 Vanishing point의 직진/회전 구간을 판단.&lt;/li&gt;
+  &lt;li&gt;Perspective transform  Lane detection을 적용하여 차량의 치우침을 판단.&lt;/li&gt;
+  &lt;li&gt;위 두 조합의 상호보완을 통해 주행 안정성을 향상하는 기법을 제안.&lt;/li&gt;
+  &lt;li&gt;오픈된 주행 영상 데이터셋을 이용하여 제안된 방법을 검증.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;적용 가능성&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_14.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;faded&quot;&gt;참고 Refrence Paper&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/vanishing paper.pd.pdf&quot;&gt;vanishing paper.pd.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/TIP2012.pdf&quot;&gt;TIP2012.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf&quot;&gt;Vanishing_Point_Detection_WACV2017.pdf&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="project" /><summary type="html">Vanishing Point &amp;amp; Perspective Transform</summary></entry><entry><title type="html">Daily Content</title><link href="http://localhost:4000/daily/2020-12-29-daily-content/" rel="alternate" type="text/html" title="Daily Content" /><published>2020-12-29T00:00:00+09:00</published><updated>2023-12-29T12:37:47+09:00</updated><id>http://localhost:4000/daily/daily-content</id><content type="html" xml:base="http://localhost:4000/daily/2020-12-29-daily-content/">&lt;p&gt;안녕하세요. Daily,&lt;/p&gt;
+
+&lt;h1 id=&quot;daily&quot;&gt;DAILY&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;daily&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2023년&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;start&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;daily-1&quot;&gt;Daily&lt;/h2&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// arguments&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Youngeon</name><email>kyu8456@naver.com</email></author><category term="daily" /><summary type="html">안녕하세요. Daily,</summary></entry></feed>
