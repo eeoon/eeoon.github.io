@@ -96,6 +96,8 @@ paginate_path:         '/my-blog/:num/'
 
 remote_theme: hydecorp/hydejack@v9
 
+asset_url: /assets
+
 
 
 # Customizaton
