@@ -49,7 +49,7 @@ author:
   email:               kye8456@naver.com
   # # Used by `jekyll-seo-tag`:
   instagram:           eeooon_
-  github: github.com/eeoon
+  github: https://github.com/eeoon
 
 # Add links to the sidebar.
 menu:
@@ -236,7 +236,7 @@ hydejack:
 
   # Set to `true` if you do not want parts of the css inlined in <head/>
   # This will increase site build speed dramatically!
-  no_inline_css:       false
+  no_inline_css:       true
 
   # Set to `true` if you don't intend on changing the accent color on a per-page basis. 
   # This will increase site build speed!
@@ -255,7 +255,7 @@ hydejack:
   no_third_column:     false
 
   # Set to `true` if you don't like oversized headlines on large screens.
-  no_large_headings:   false
+  no_large_headings:   true
 
   # Set to `true` if you do not want to expose your resume and projects
   # in machine-readable formats.
