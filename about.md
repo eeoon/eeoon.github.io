@@ -1,6 +1,6 @@
 ---
 layout: about
-image: /assets/img/blog/hydejack-9.jpg
+image: /assets/img/background.png
 description: >
   Robotics, Computer vision, Mobile Robot, Control
 hide_description: false

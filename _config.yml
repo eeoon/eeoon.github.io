@@ -20,6 +20,8 @@ baseurl:               "/"
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  en
 
+timezone: Asia/Seoul
+
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Youngman
 
@@ -47,7 +49,7 @@ author:
   email:               kye8456@naver.com
   # # Used by `jekyll-seo-tag`:
   instagram:           eeooon_
-  github: eeoon
+  github: github.com/eeoon
 
 # Add links to the sidebar.
 menu:
@@ -57,8 +59,8 @@ menu:
     url:               /programming/
   - title:             Project
     url:               /project/        
-  - title:             Daily
-    url:               /daily/
+#  - title:             Daily
+#    url:               /daily/
   - title:             About Me
     url:               /about/    
 ##After design finished, the url have to delete.
@@ -81,7 +83,7 @@ legal:
 copyright:             © 2024. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
+permalink:             /:categories/:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
