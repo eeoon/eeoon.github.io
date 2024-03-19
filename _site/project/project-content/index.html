@@ -47,7 +47,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Computer Vision" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-14T20:51:29+09:00","datePublished":"2021-12-12T00:00:00+09:00","description":"Computer Vision, Autonomous Driving, Image processing","headline":"Computer Vision","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/project/project-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/background.png"},"name":"Youngeon"},"url":"http://localhost:4000/project/project-content/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-14T20:51:29+09:00","datePublished":"2021-12-12T00:00:00+09:00","description":"Computer Vision, Autonomous Driving, Image processing","headline":"Computer Vision","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/project/project-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/project/project-content/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -90,6 +90,8 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
 
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
 
 <link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
 
@@ -112,7 +114,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2024-03-18T00:50:16+09:00',
+    INDEX_KEY: 'index--2024-03-20T00:08:35+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -130,7 +132,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 
 <link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
 <link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans+KR:400,400i,700,700i&display=swap" id="_fontsPreload">
 
 
 
@@ -144,29 +146,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 <!--<![endif]-->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        TeX: {
-        equationNumbers: {
-            autoNumber: "AMS"
-        }
-        },
-        tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-        alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-        alert("Math Processing Error: "+message[1]);
-        });
-</script>
-<script type="text/javascript" async
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
 
 
 </head>
@@ -284,7 +264,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p><strong>project propose : Vanishing point를 활용하여 주행 방향을 결정할 때 발생되는 오차를 Lane detection을 통해 보안</strong></p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled.png" alt="Untitled" /></p>
 
 <ul>
   <li>영상 처리 과정에서 라인을 검출하여 만나는 지점의 소실점(Vanishing Point)를 활용하여 주행방향(조향)을 결정한다.</li>
@@ -297,13 +277,13 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>3D 공간에서 평행한 직선은 2D 영상에서 FOV(Field of View)로 인하여 평행하게 보이지 않는다. 간단한 예시로 도로위의 차선은 bird of view로 바라보면 평행하나 운전자의 입장(카메라)에서 바라보면 평행하지 않게 된다.</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled.png" alt="Untitled" /></p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_1.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_1.png" alt="Untitled" /></p>
 
 <p class="figcaption">basic of concept</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_2.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_2.png" alt="Untitled" /></p>
 
 <p class="figcaption">실제 이미지에 적용한 Vanishing point로 lane을 검출하여 lane의 접점을 red dot으로 표시하였다.</p>
 
@@ -314,19 +294,19 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 <table>
   <tbody>
     <tr>
-      <td><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/image_1.png" alt="Untitled" /></td>
-      <td><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/image_2.png" alt="Untitled" /></td>
+      <td><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/image_1.png" alt="Untitled" /></td>
+      <td><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/image_2.png" alt="Untitled" /></td>
     </tr>
   </tbody>
 </table>
 
 <p>Perspective Transform을 임의의 영상에서 진행하면 다음과 같이 Fied of View를 변경하여 region of interest(ROI)를 lane으로 변경한 것이다.</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_4.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_4.png" alt="Untitled" /></p>
 
 <p>camera filed of view를 45 degree / 90 degree 로 진행하였을 때 어떤 방향이 더 효율적인가를 처음에 프로젝트 시작할때 고민하여 테스트를 진행</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_5.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_5.png" alt="Untitled" /></p>
 
 <p>algorithm of project (flow chart)</p>
 
@@ -351,15 +331,15 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 <table>
   <tbody>
     <tr>
-      <td><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_6.png" alt="Untitled" /></td>
-      <td><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_7.png" alt="Untitled" /></td>
+      <td><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_6.png" alt="Untitled" /></td>
+      <td><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_7.png" alt="Untitled" /></td>
     </tr>
   </tbody>
 </table>
 
 <p>result of Gauissian Distribution for red dot.</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_8.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_8.png" alt="Untitled" /></p>
 
 <h3 id="perspective-transform-1">Perspective Transform</h3>
 
@@ -370,11 +350,11 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 범위를 벗어날 경우 Text 출력으로 현재 주행상태 시각화</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_9.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_9.png" alt="Untitled" /></p>
 
 <p>두 라인이 검출되면 parallel 하다고 판단한다.</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_10.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_10.png" alt="Untitled" /></p>
 
 <h2 id="vanishing-point--perspective-transform-결합"><strong>Vanishing Point &amp; Perspective Transform 결합</strong></h2>
 
@@ -389,16 +369,16 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   </li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_11.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_11.png" alt="Untitled" /></p>
 
 <ul>
   <li>영상에서 각각 [In/Out], [Parallel/Bias] 출력</li>
   <li>Console에서 위 내용을 결합하여 [직진구간 중앙주행 / 직진구간 치우침, 회전구간 중앙주행 / 회전구간 치우침] 출력</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_12.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_12.png" alt="Untitled" /></p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_13.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_13.png" alt="Untitled" /></p>
 <h2 id="결론">결론</h2>
 
 <ul>
@@ -410,15 +390,15 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>적용 가능성</p>
 
-<p><img src="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Untitled_14.png" alt="Untitled" /></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Untitled_14.png" alt="Untitled" /></p>
 
 <p class="faded">참고 Refrence Paper</p>
 
-<p><a href="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/vanishing paper.pd.pdf">vanishing paper.pd.pdf</a></p>
+<p><a href="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/vanishing paper.pd.pdf">vanishing paper.pd.pdf</a></p>
 
-<p><a href="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/TIP2012.pdf">TIP2012.pdf</a></p>
+<p><a href="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/TIP2012.pdf">TIP2012.pdf</a></p>
 
-<p><a href="https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf">Vanishing_Point_Detection_WACV2017.pdf</a></p>
+<p><a href="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf">Vanishing_Point_Detection_WACV2017.pdf</a></p>
 
 
   
@@ -488,7 +468,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   <div class="sidebar-about">
     
       <a class="no-hover" href="/" tabindex="-1">
-        <img src="/assets/img/background.png" class="avatar" alt="Youngman" width="120" height="120" loading="lazy" />
+        <img src="/assets/img/avatar.JPG" class="avatar" alt="Youngman" width="120" height="120" loading="lazy" />
       </a>
     
     <a class="sidebar-title" href="/"><h2 class="h1">Youngman</h2></a>
@@ -522,11 +502,11 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
       <li>
         <a
           
-          href="/programming/"
+          href="/devops/"
           class="sidebar-nav-item "
           
         >
-          Programming
+          DevOps
         </a>
       </li>
     
@@ -605,7 +585,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   
 
   <li>
-    <a href="https://github.com/kyu8456" title="GitHub" class="no-mark-external">
+    <a href="https://github.com/eeoon" title="GitHub" class="no-mark-external">
       <span class="icon-github"></span>
       <span class="sr-only">GitHub</span>
     </a>
@@ -657,74 +637,36 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   
 
   
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'UA-XXXXXXXX-X', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
 
 <!--<![endif]-->
-  <!-- <script>
-  document.querySelector('hy-push-state').setAttribute('prefetch', '');
-
-  document.querySelectorAll('.sidebar a[href^="/"]').forEach(function (el) { 
-    el.addEventListener('click', function (e) {
-      if (el.pathname === window.location.pathname) {
-        e.preventDefault();
-        e.stopPropagation();
-        document.querySelector('hy-drawer').close();
-      }
-    });
-  });
-</script> -->
-
-<!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
--->
-<script>
-  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
-    function e(e){
-      (console.error?console.error:console.log).call(console,e)
-    }
-
-    function t(e){
-      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
-    }
-
-    function r(e,t){
-      var r=e.substr(t,2);return parseInt(r,16)
-    }
-
-    function n(e,n){
-      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
-        var l=r(e,a)^c;
-        o+=String.fromCharCode(l)
-      }
-      return t(o)
-    }
-
-    var o="/cdn-cgi/l/email-protection#",
-        c=".__cf_email__",
-        a="data-cfemail",
-        l=document.createElement("div");
-
-    !function(){
-      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
-        try{
-          var c=t[r],a=c.href.indexOf(o);
-          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
-        }catch(t){
-          e(t)
-        }
-    }(),
-    function(){
-      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
-        try{
-          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
-          o.parentNode.replaceChild(i,o)
-        }catch(t){
-          e(t)
-        }
-    }()
-  });
-</script>
-
-
+  
 
 
 

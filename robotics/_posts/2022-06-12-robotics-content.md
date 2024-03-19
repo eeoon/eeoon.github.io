@@ -1,8 +1,8 @@
-# 로봇 공학 (1)
+# Manipulator
 
 6자유도 협동로봇의 Matlab 시뮬레이션
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled.png)
 
 ## Ⅰ. D-H 파라미터
 
@@ -18,7 +18,7 @@
 
 - α : Xi 축을 기준으로 Zi 축과 Zi+1 축 사이의 각도
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_1.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_1.png)
 
 6 axis D-H parameters
 {:.figcaption}
@@ -42,7 +42,7 @@ translation matrix
 
 전체 변환 행렬 (은 n좌표에서 오리엔테이션 행렬, 은 n좌표에서 위치 벡터)
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_2.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_2.png)
 
 
 ## Ⅲ. 순기구학을 이용하여 각 링크의 관절각을 표현할 수 있는 Matlab 시뮬레이션 프로그램을 구현
@@ -50,16 +50,16 @@ translation matrix
 - Matlab 시뮬레이션은 2개의 함수.m 파일과 3개의 실행.m 파일로 구성했다. 먼저 함수 파일의 theta.m 파일은 T행렬을 계산하기 위해 D-H파라미터를 대입할 수 있는 행렬을 함수로 나타내었고 ficture.m 파일은 D-H파라미터를 직접 입력해주고 theta.m 파일의 함수를 활용하여 plot을 띄우면서 각 링크, 조인트의 위치를 나타내고 End-effector의 위치 또한 추가적으로 좌표를 표시했다. DOF_6.m 파일은 ficture.m 파일의 기본적인 위치를 표시하기 위한 파일로 D-H 파라미터 중 변수인 θ1 부터 θ6 까지의 default 값을 0으로 지정하여 초기의 협동로봇의 위치를 나타내었다. DOF_6_exe.m 파일은 사용자가 직접 변수를 입력할 수 있도록 하였다. 먼저 사용자의 입력이 Y 또는 y이면 각 θn 에 동일한 값을 입력받고 반복횟수를 입력받아 전체적인 협동로봇의 형상이 초기상태부터 차례대로 진행되며 겹쳐보일 수 있도록 하였다. 사용자가 입력을 N 또는 n으로 입력하면 하나의 협동로봇의 형상만 표시하는 것으로 각각의 θn 값을 입력받아 θn 값에 의해 변하는 plot을 살펴볼 수 있도록 하였다. Fun_Link.m 파일은 line 5에 loop 값에 따라 달라지는 협동로봇의 형상을 표현한다. 링크와 조인트의 통일된 색상으로 DOF_6_exe.m 파일보다 조금 더 전체적인 로봇의 큰 틀의 형상을 살펴볼 수 있다. matlab에서 plot의 비율을 조정하기 위해 축의 범주를 한정해두면 협동로봇의 형태가 축의 범주를 넘어서면 표현되지 않는다. 각 매트랩파일에서 axis에 대한 설명부분을 주석처리하면 비율은 맞지 않으나 End_effector이 표현되지 않는 경우는 없다. (매트랩 결과로 출력된 좌표 중 –7.164e-15의 값은 실제 값은 0이다.)
 
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_3.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_3.png)
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_4.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_4.png)
 
 Matlab Simulation result
 {:.figcaption}
 
 Matlab으로 구현한 시뮬레이션이 실제 계산결과와 동일한 결과를 출력하는지 검산할 필요가 있다. 따라서 시뮬레이션에서 대입한 θn = 60 로 설정하여 D-H파라미터 값으로 전이행렬을 옳게 출력하고 위치벡터(X,Y,Z)의 결과로 End-effector의 위치와 동일한 결과인지 판단한다. 예를 들어 θ2 = 60, θ5 = 60로 설정하여 검산과정을 진행한다.
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_5.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_5.png)
 
 Link의 행렬들을 모두 연산하면
 
@@ -69,17 +69,17 @@ $$
 
 위치벡터의 값이 117,1170,1127이므로 End_effector의 좌표 (X,Y,Z) = (117, 1170, 1127)이다. 시뮬레이션 결과와 동일한 것을 확인할 수 있다.
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_6.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_6.png)
 
 ## Ⅴ. 경로계획 방법을 이용하여 로봇팔의 End-effector의 경로를 Cubic Spline 이용해서 작성
 
 - path planning을 진행하기 위해서는 현재 위치와 도착 위치를 설정한 후 두 점을 잇는 경로를 계획한다. 두 점을 잇는 경로는 다양하며 로봇이 일반적으로 움직이는 경로를 설정할 때 도달시간이 빠르며 안정적으로 이동경로를 설정하여 도착 위치에 도달하는 것이다. 출발 위치와 도착 위치를 바로 잇는 직선이 가장 빠른 경로는 맞지만 실제 로봇의 이동경로를 두점을 잇는 경로가 항상 안정적으로 동작하는 것은 아니다. 실제 로봇의 이동경로를 PD제어를 통해 추종하는 프로그램을 진행할 때 이동 포인트를 정확히 통과하고 다음 이동 포인트로 방향각을 설정하기 위해 선회하는 것으로 나타난다. 마찬가지로 로봇팔에서도 포인트 이동에서 직선으로 바로 도달하는 것이 안정적이지는 않다.
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_7.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_7.png)
 
 - 추가적으로 로봇이 이동할 때 정지, 등속, 정지의 과정으로 로봇이 작동하지 못한다. 따라서 실제로 로봇의 정지, 가속, 등속, 감속, 정지의 과정을 거치며 이동경로를 설정하고 부드러운 모션으로 진행할 수 있도록 하기 위해 Cubic Spline을 이용한다. Cubic Spline의 조건으로 로봇의 출발 위치에서 각도는 0이고 각속도 또한 0이다. 도착지점에서의 위치는 설정한 값이 존재하지만 마찬가지로 각속도는 0으로 설정된다. 아래의 왼쪽 그림과 마찬가지로 함수가 어느 한 점에서 불연속으로 진행할 수 없다. 이러한 조건을 만족 시키면서 가속, 감속 과정을 진행하기 위해서는 실제로 아래의 오른쪽 그림과 같이 X 축(시간축)에 대한 Y 축(각도)의 변화로 나타낼 수 있다.
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_8.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_8.png)
 
 - 실제 시뮬레이션 결과 6자유도 협동로봇의 전체 형상 및 움직이는 각도는 θ3 값에 입력 값으로 진행하였다. Cubic Spline의 위치, 속도, 가속도를 그래프로 시간에 대한 변화를 나타내고 마지막 그래프에서는 End-effector의 위치를 나타냈다. Cubic Spline 함수는 아래와 같이 설정하였다.
 
@@ -87,7 +87,7 @@ $$
 \theta(t) = A(1-cos(\frac{n\pi}{T})t)
 $$
 
-![Untitled](https://raw.githubusercontent.com/kyu8456/kyu8456.github.io/main/robotics/images/robotics_2/Untitled_9.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/robotics_2/Untitled_9.png)
 
 ## Ⅵ. 설정된 경로를 추종하는 관절각을 계산하는 역기구학 시뮬레이션 코드를 작성
 

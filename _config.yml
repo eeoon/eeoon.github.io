@@ -40,7 +40,7 @@ keywords:              [Robotics]
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/background.png
+logo:                  /assets/img/avatar.JPG
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
@@ -49,14 +49,14 @@ author:
   email:               kye8456@naver.com
   # # Used by `jekyll-seo-tag`:
   instagram:           eeooon_
-  github: https://github.com/eeoon
+  github:              https://github.com/eeoon
 
 # Add links to the sidebar.
 menu:
   - title:             Robotics
     url:               /robotics/
-  - title:             Programming
-    url:               /programming/
+  - title:             DevOps
+    url:               /devops/
   - title:             Project
     url:               /project/        
 #  - title:             Daily
@@ -117,7 +117,7 @@ theme_color:           rgb(25,55,71)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
-google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
+google_fonts:          Roboto+Slab:700|Noto+Sans+KR:400,400i,700,700i
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
@@ -136,7 +136,7 @@ defaults:
   - scope:
       path:            hyde/
     values:
-#      accent_image:    /assets/img/background.png
+      accent_image:    /assets/img/background.png
       accent_color:    rgb(38,139,210)
       theme_color:     rgb(32,32,32)
       accent_image:
@@ -191,7 +191,7 @@ kramdown:
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-# google_analytics:      UA-XXXXXXXX-X
+google_analytics:      UA-XXXXXXXX-X
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
