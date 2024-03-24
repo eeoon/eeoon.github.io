@@ -1,3 +1,12 @@
+---
+layout: post
+title: Nvidia_graphic_card
+description: >
+  Nvidia_graphic_card
+sitemap: false
+hide_last_modified: true
+---
+
 # nvidia_graphic_card 인식 해결
 
 ## ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치
