@@ -6,7 +6,7 @@
 
 `sudo ubuntu-drivers devices`
 
-![Untitled1](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/Untitled1.png)
+![Untitled1](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/nvidia/image.png)
 
 드라이버 중 추천해주는 모델을 설치를 진행한다.
 
@@ -16,6 +16,6 @@ nvidia 드라이버 모델 설치가 완료된 것을 확인한다.
 
 `nvidia-smi`
 
-![Untitled2](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/Untitled2.png)
+![Untitled2](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/nvidia/image1.png)
 
 정상적으로 진행이 되었다면 nvidia 드라이버가 설치가 되었으니 그래픽카드로 부터 HDMI를 연결해 디스플레이를 확인할 수 있다.

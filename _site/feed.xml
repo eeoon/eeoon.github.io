@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-20T00:43:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-25T00:27:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
@@ -32,7 +32,7 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo ubuntu-drivers devices&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/Untitled1.png&quot; alt=&quot;Untitled1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/nvidia/image.png&quot; alt=&quot;Untitled1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;드라이버 중 추천해주는 모델을 설치를 진행한다.&lt;/p&gt;
 
@@ -42,7 +42,7 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvidia-smi&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/Untitled2.png&quot; alt=&quot;Untitled2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/nvidia/image1.png&quot; alt=&quot;Untitled2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;정상적으로 진행이 되었다면 nvidia 드라이버가 설치가 되었으니 그래픽카드로 부터 HDMI를 연결해 디스플레이를 확인할 수 있다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치</summary></entry><entry><title type="html">Manipulator</title><link href="http://localhost:4000/robotics/robotics-content/" rel="alternate" type="text/html" title="Manipulator" /><published>2022-06-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/robotics/robotics-content</id><content type="html" xml:base="http://localhost:4000/robotics/robotics-content/">&lt;p&gt;6자유도 협동로봇의 Matlab 시뮬레이션&lt;/p&gt;
 
@@ -145,7 +145,7 @@
 
 \[A^i_i-1 = \begin{bmatrix}cos( \theta_i) &amp;amp; -cos(\alpha_i)sin(\theta_i) &amp;amp; sin(\alpha_i)sin(\theta_{i}) &amp;amp; a _{i}cos(\theta) \\ sin(\theta_{i}) &amp;amp; cos(\alpha_{i})cos(\theta_{i}) &amp;amp; -sin(\alpha_{i})cos(\theta_{i}) &amp;amp; a_{i}sin(\theta_{i}) \\ 0 &amp;amp; sin(\alpha_{i}) &amp;amp; cos(\alpha_{i} ) &amp;amp; d_{i} \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix}\]
 
-&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">NVIDIA-Docker (GPU)</title><link href="http://localhost:4000/devops/nvidia-docker-content/" rel="alternate" type="text/html" title="NVIDIA-Docker (GPU)" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/nvidia-docker-content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia-docker-content/">&lt;p&gt;&lt;strong&gt;NVIDIA Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">NVIDIA Docker 환경 설정</summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/devops/docker-content/" rel="alternate" type="text/html" title="Docker" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/docker-content</id><content type="html" xml:base="http://localhost:4000/devops/docker-content/">&lt;p&gt;&lt;strong&gt;Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">Docker 환경 설정</summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/project/project-content/" rel="alternate" type="text/html" title="Computer Vision" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/project/project-content</id><content type="html" xml:base="http://localhost:4000/project/project-content/">&lt;p&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">NVIDIA-Docker (GPU)</title><link href="http://localhost:4000/devops/nvidia-docker-content/" rel="alternate" type="text/html" title="NVIDIA-Docker (GPU)" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/nvidia-docker-content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia-docker-content/">&lt;p&gt;&lt;strong&gt;NVIDIA Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">NVIDIA Docker 환경 설정</summary></entry><entry><title type="html">Mathmatics</title><link href="http://localhost:4000/mathematics/mathematics-content/" rel="alternate" type="text/html" title="Mathmatics" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-22T13:30:16+09:00</updated><id>http://localhost:4000/mathematics/mathematics-content</id><content type="html" xml:base="http://localhost:4000/mathematics/mathematics-content/"></content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/devops/docker-content/" rel="alternate" type="text/html" title="Docker" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/docker-content</id><content type="html" xml:base="http://localhost:4000/devops/docker-content/">&lt;p&gt;&lt;strong&gt;Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">Docker 환경 설정</summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/project/project-content/" rel="alternate" type="text/html" title="Computer Vision" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/project/project-content</id><content type="html" xml:base="http://localhost:4000/project/project-content/">&lt;p&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/strong&gt;&lt;/p&gt;
 
 &lt;!-- *2023년* 
 
@@ -291,4 +291,52 @@
 
 &lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/TIP2012.pdf&quot;&gt;TIP2012.pdf&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf&quot;&gt;Vanishing_Point_Detection_WACV2017.pdf&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="project" /><summary type="html">Vanishing Point &amp;amp; Perspective Transform</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf&quot;&gt;Vanishing_Point_Detection_WACV2017.pdf&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="project" /><summary type="html">Vanishing Point &amp;amp; Perspective Transform</summary></entry><entry><title type="html">ROS1 / ROS2</title><link href="http://localhost:4000/devops/ros-content/" rel="alternate" type="text/html" title="ROS1 / ROS2" /><published>2021-12-01T00:00:00+09:00</published><updated>2024-03-25T00:27:32+09:00</updated><id>http://localhost:4000/devops/ros-content</id><content type="html" xml:base="http://localhost:4000/devops/ros-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rosrobot-operating-system&quot;&gt;ROS(Robot Operating System)&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;로봇 운영체제&lt;/strong&gt;(ROS,Robot Operating System)는 로봇 응용 프로그램을 개발할 때 필요한 하드웨어 추상화, 하위 디바이스 제어, 일반적으로 사용되는 기능의 구현, 프로세스간의 메시지 패싱, 패키지 관리, 개발환경에 필요한 라이브러리와 다양한 개발 및 디버깅 도구를 제공한다. ROS는 로봇 응용 프로그램 개발을 위한 운영체제와 같은 로봇 플랫폼이다. 하드웨어 플랫폼을 하드웨어 추상화로 포함하고 있으며, 로봇 응용 소프트웨어 개발을 지원을 위한 소프트웨어 플랫폼이면서 이기종의 하드웨어에서 사용 가능한 운영체제와 같은 기능을 갖추고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#808080&quot;&gt;출처 : &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%B4%87_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C&quot;&gt;로봇_운영체제_ROS&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;참고,
+&lt;span style=&quot;color:#808080&quot;&gt;&lt;a href=&quot;https://www.ros.org/&quot;&gt;ROS: Home&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ros1-과-ros2의-차이&quot;&gt;ROS1 과 ROS2의 차이&lt;/h2&gt;
+
+&lt;h3 id=&quot;ros1&quot;&gt;ROS1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Linux 환경 - &lt;em&gt;Ubuntu 20.04 지원 (noetic)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;단일 로봇&lt;/li&gt;
+  &lt;li&gt;실시간 제어 미지원&lt;/li&gt;
+  &lt;li&gt;안정된 네트워크 환경 요구&lt;/li&gt;
+  &lt;li&gt;대학, 연구소의 연구 용도&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ros2&quot;&gt;ROS2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다중 노드 통신&lt;/li&gt;
+  &lt;li&gt;임베디드 시스템에서 ROS사용&lt;/li&gt;
+  &lt;li&gt;실시간 제어&lt;/li&gt;
+  &lt;li&gt;불안정한 네트워크 환경 커버 가능&lt;/li&gt;
+  &lt;li&gt;멀티 플랫폼 (Windows, Linux, MacOS) 지원&lt;/li&gt;
+  &lt;li&gt;최신 기술 지원 (Protocol Buffers, DDS, Websockets 등)&lt;/li&gt;
+  &lt;li&gt;상업용 제품 지원&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#808080&quot;&gt;출처 : &lt;a href=&quot;https://www.lips-hci.com/ros&quot;&gt;https://www.lips-hci.com/ros&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ROS1은 2020년 이후로 공식 릴리즈버전이 없으며 ROS2는 Foxy, Humble, Rolling 등 공식 릴리즈 버전이 제공되고 있다.&lt;/li&gt;
+  &lt;li&gt;ROS2 는 ROS1 에서의 큰 단점인 실시간 제어가 가능하다는 장점이 있다.&lt;/li&gt;
+  &lt;li&gt;커뮤니티에서도 현재 ROS2에 대한 관심을 갖고 있으며 RosCon에서도 ROS2를 기준으로 언급함.&lt;/li&gt;
+  &lt;li&gt;ROS1에서는 Catkin_make를 이용해 소스코드를 build 하지만 ROS2에서는 colcon 을 활용해 build한다.&lt;/li&gt;
+  &lt;li&gt;ROS2에서는 다양한 네트워크 환경(DDS/RTPS) 등을 활용하여 유기적인 통신이 가능하다.&lt;/li&gt;
+  &lt;li&gt;ROS1에서는 Master-Slave 구조로 연결되어 있다면 ROS2에서는 Master Node가 없기 때문에 PTP(peer to peer) 형태로 다양한 데이터 타입을 효과적으로 교환할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry></feed>

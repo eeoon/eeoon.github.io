@@ -55,6 +55,8 @@ author:
 menu:
   - title:             Robotics
     url:               /robotics/
+  - title:             Mathematics
+    url:               /mathematics/
   - title:             DevOps
     url:               /devops/
   - title:             Project

@@ -52,6 +52,22 @@
     </url>
     
     <url>
+        <loc>http://localhost:4000/mathematics/mathematics-content/</loc>
+        
+        <lastmod>2022-04-12T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/devops/nvidia-docker-content/</loc>
         
         <lastmod>2022-04-12T00:00:00+09:00</lastmod>
@@ -87,6 +103,22 @@
         <loc>http://localhost:4000/devops/docker-content/</loc>
         
         <lastmod>2021-12-12T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/devops/ros-content/</loc>
+        
+        <lastmod>2021-12-01T00:00:00+09:00</lastmod>
         
 
         
