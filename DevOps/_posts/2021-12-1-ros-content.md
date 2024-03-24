@@ -9,7 +9,7 @@ hide_last_modified: true
 
 # ROS1 / ROS2
 
-![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/ros/image.png)
 
 ## ROS(Robot Operating System)
 
@@ -43,7 +43,7 @@ hide_last_modified: true
 - 최신 기술 지원 (Protocol Buffers, DDS, Websockets 등)
 - 상업용 제품 지원
 
-![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image1.png)
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/ros/image1.png)
 
 <span style="color:#808080">출처 : [https://www.lips-hci.com/ros](https://www.lips-hci.com/ros)</span>
 
