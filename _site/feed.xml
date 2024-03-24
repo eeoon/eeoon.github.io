@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-25T01:20:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-25T01:22:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
@@ -167,8 +167,9 @@
 &lt;h2 id=&quot;github에서-clone하기&quot;&gt;github에서 clone하기&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png)
 &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone 클론하고자 하는 래퍼지토리&lt;/code&gt;&lt;/p&gt;
 

@@ -29,8 +29,11 @@ Ubuntu에 git을 설치하는 CLI는 다음과 같다.
 ## github에서 clone하기
 
 <p align="center">
-![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png)
 </p>
+
+![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png)
+
+
 
 
 `git clone 클론하고자 하는 래퍼지토리`
