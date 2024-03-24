@@ -2,7 +2,7 @@
 layout: post
 title: Docker
 description: >
-  Docker
+  Git, Github
 sitemap: false
 hide_last_modified: true
 ---
@@ -28,7 +28,7 @@ Ubuntu에 git을 설치하는 CLI는 다음과 같다.
 
 ## github에서 clone하기
 
-![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image1.png)
+<center>![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image1.png)</center>
 
 ![Untitled](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png)
 
