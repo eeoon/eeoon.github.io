@@ -3,7 +3,9 @@ layout: post
 title: Git, Github
 description: >
   Git, Github
-sitemap: false
+sitemap: true
+changefreq : daily
+priority : 1.0
 hide_last_modified: true
 ---
 

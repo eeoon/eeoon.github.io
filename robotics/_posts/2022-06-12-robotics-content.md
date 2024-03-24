@@ -1,3 +1,14 @@
+---
+layout: post
+title: Manipulator
+description: >
+  Manipulator Simulations
+sitemap: true
+changefreq : daily
+priority : 1.0
+hide_last_modified: true
+---
+
 # Manipulator
 
 6자유도 협동로봇의 Matlab 시뮬레이션

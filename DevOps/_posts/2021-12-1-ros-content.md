@@ -3,7 +3,9 @@ layout: post
 title: ROS
 description: >
   ROS1 vs ROS2
-sitemap: false
+sitemap: true
+changefreq : daily
+priority : 1.0
 hide_last_modified: true
 ---
 

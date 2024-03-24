@@ -3,7 +3,9 @@ layout: post
 title: Nvidia_graphic_card
 description: >
   Nvidia_graphic_card
-sitemap: false
+sitemap: true
+changefreq : daily
+priority : 1.0
 hide_last_modified: true
 ---
 
