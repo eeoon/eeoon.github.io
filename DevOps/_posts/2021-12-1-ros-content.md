@@ -25,9 +25,10 @@ hide_last_modified: true
 
 ## ROS1 과 ROS2의 차이
 
+
 ### ROS1
 
-- Linux 환경 - *Ubuntu 20.04 지원 (noetic)*
+- 주로 Linux 환경 - *Ubuntu 20.04까지 지원 (noetic)*
 - 단일 로봇
 - 실시간 제어 미지원
 - 안정된 네트워크 환경 요구

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-25T00:27:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-25T00:41:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
@@ -24,7 +24,7 @@
 &lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="programming" /><summary type="html">안녕하세요. Programming,</summary></entry><entry><title type="html">nvidia_graphic_card 인식 해결</title><link href="http://localhost:4000/devops/nvidia_graphic_card_content/" rel="alternate" type="text/html" title="nvidia_graphic_card 인식 해결" /><published>2022-11-28T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/nvidia_graphic_card_content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia_graphic_card_content/">&lt;h2 id=&quot;ubuntu-2204-설치-후-nvidia_drivegraphic-card-설치&quot;&gt;ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="programming" /><summary type="html">안녕하세요. Programming,</summary></entry><entry><title type="html">nvidia_graphic_card 인식 해결</title><link href="http://localhost:4000/devops/nvidia_graphic_card_content/" rel="alternate" type="text/html" title="nvidia_graphic_card 인식 해결" /><published>2022-11-28T00:00:00+09:00</published><updated>2024-03-25T00:28:28+09:00</updated><id>http://localhost:4000/devops/nvidia_graphic_card_content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia_graphic_card_content/">&lt;h2 id=&quot;ubuntu-2204-설치-후-nvidia_drivegraphic-card-설치&quot;&gt;ubuntu 22.04 설치 후 nvidia_drive(graphic card) 설치&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;먼저 ubuntu22.04를 설치하고 실행하였는데 그래픽 카드 인식 오류가 발생한다면 PC 뒤에서 Display Port (or HDMI) 를 그래픽카드가 아닌 마더보드에 연결할 수 있도록 하고 재부팅한다. 그리고 terminal 창을 열어서 그래픽 카드에 적합한 드라이버를 검색한다.&lt;/li&gt;
@@ -145,7 +145,249 @@
 
 \[A^i_i-1 = \begin{bmatrix}cos( \theta_i) &amp;amp; -cos(\alpha_i)sin(\theta_i) &amp;amp; sin(\alpha_i)sin(\theta_{i}) &amp;amp; a _{i}cos(\theta) \\ sin(\theta_{i}) &amp;amp; cos(\alpha_{i})cos(\theta_{i}) &amp;amp; -sin(\alpha_{i})cos(\theta_{i}) &amp;amp; a_{i}sin(\theta_{i}) \\ 0 &amp;amp; sin(\alpha_{i}) &amp;amp; cos(\alpha_{i} ) &amp;amp; d_{i} \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix}\]
 
-&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">NVIDIA-Docker (GPU)</title><link href="http://localhost:4000/devops/nvidia-docker-content/" rel="alternate" type="text/html" title="NVIDIA-Docker (GPU)" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/nvidia-docker-content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia-docker-content/">&lt;p&gt;&lt;strong&gt;NVIDIA Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">NVIDIA Docker 환경 설정</summary></entry><entry><title type="html">Mathmatics</title><link href="http://localhost:4000/mathematics/mathematics-content/" rel="alternate" type="text/html" title="Mathmatics" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-22T13:30:16+09:00</updated><id>http://localhost:4000/mathematics/mathematics-content</id><content type="html" xml:base="http://localhost:4000/mathematics/mathematics-content/"></content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/devops/docker-content/" rel="alternate" type="text/html" title="Docker" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/docker-content</id><content type="html" xml:base="http://localhost:4000/devops/docker-content/">&lt;p&gt;&lt;strong&gt;Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">Docker 환경 설정</summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/project/project-content/" rel="alternate" type="text/html" title="Computer Vision" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/project/project-content</id><content type="html" xml:base="http://localhost:4000/project/project-content/">&lt;p&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">NVIDIA-Docker (GPU)</title><link href="http://localhost:4000/devops/nvidia-docker-content/" rel="alternate" type="text/html" title="NVIDIA-Docker (GPU)" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/nvidia-docker-content</id><content type="html" xml:base="http://localhost:4000/devops/nvidia-docker-content/">&lt;p&gt;&lt;strong&gt;NVIDIA Docker 환경 설정&lt;/strong&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html">NVIDIA Docker 환경 설정</summary></entry><entry><title type="html">Mathmatics</title><link href="http://localhost:4000/mathematics/mathematics-content/" rel="alternate" type="text/html" title="Mathmatics" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-25T00:28:28+09:00</updated><id>http://localhost:4000/mathematics/mathematics-content</id><content type="html" xml:base="http://localhost:4000/mathematics/mathematics-content/"></content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry><entry><title type="html">Git</title><link href="http://localhost:4000/devops/git-content/" rel="alternate" type="text/html" title="Git" /><published>2022-01-10T00:00:00+09:00</published><updated>2024-03-25T00:41:33+09:00</updated><id>http://localhost:4000/devops/git-content</id><content type="html" xml:base="http://localhost:4000/devops/git-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Git은 분산 버전 관리 시스템(Distributed Version Control System, DVCS) 중 하나로, 소스 코드와 같은 파일의 변경 사항을  추적하고 관리하는 도구&lt;/li&gt;
+  &lt;li&gt;파일의 변경사항을 추적하여 이전 상태로 롤백하거나 변경 내용을 비교할 수 있다. 또한 여러 개발자 간의 협업을 용이하게 하며 변경사항의 충돌을 관리&lt;/li&gt;
+  &lt;li&gt;브랜치를 통해서 여러 작업을 병렬로 처리할 수 있다. 각 브랜치는 개별적으로 관리되며 변강사항을 통합할 수 있다.&lt;/li&gt;
+  &lt;li&gt;원격 저장소를 통해 다른 개발자와 협업하고 코드를 공유할 수 있다. 원격저장소로는 Github, GitLab, Bitbucket 등이 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ubuntu-에-git-설치&quot;&gt;Ubuntu 에 git 설치&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt install git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubuntu에 git을 설치하는 CLI는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git --version&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 완료되었다면 설치된 Git 버전을 다음 CLI를 통해서 확인 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;github에서-clone하기&quot;&gt;github에서 clone하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image2.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone 클론하고자 하는 래퍼지토리&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ex, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone [https://github.com/eeoon/eeoon.git](https://github.com/eeoon/eeoon.git)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;옵션을 통해서 원하는 branch를 clone할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone https://github.com/eeoon/eeoon.git -b humble&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;github에-push하기&quot;&gt;github에 push하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;GitHub: Let’s build from here&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;내 github에 push하기 위해서는 사전작업으로 Github에 가입하여 내 repository를 생성하고 해당 repository로 내가 작업중이던 코드, 프로젝트 등을 push 할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github에 가입하였다면&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global user.name &quot;Your Name&quot;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global user.email &quot;your.email@example.com&quot;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;명령을 진행한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자의 이름, 이메일 주소를 설정한다. option으로 global로 설정되어 있기 때문에 전역적으로 설정되었고 local설정으로 변경할 때에는 해당 옵션 없이 진행하면 된다. 현재 전역으로 설정되었기에 추가적으로 반복해서 진행할 필요는 없다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;github-repositry-생성&quot;&gt;Github Repositry 생성&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image3.png&quot; alt=&quot;Screenshot1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;회원가입이 완료되었다면 your Repositories에 클릭하여 우측 상단의 New를 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;다음과 같은 화면이 나타나면 Repository name을 작성하고 옵션으로 Description, Properties 등을 설정한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image4.png&quot; alt=&quot;Screenshot2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만들어진 repository를 확인한 후 우측 상단의 Code를 누른 후 url를 Copy 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image5.png&quot; alt=&quot;Screenshot3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;내 Desktop에서 Github에 올릴 repository에 접속하여 다음의 명령을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;로컬에서 Github에 올릴 프로젝트 디렉토리에서 Git을 초기화&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;프로젝트 파일을 Git으로 관리하기 위해 파일 추가 및 커밋&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -m “커밋 메시지”&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;커밋할 메시지를 추가하여 커밋을 진행한다.&lt;/p&gt;
+
+&lt;p&gt;이때 커밋할 메시지는 git push 되었을때 변경사항에 대한 간략한 설명을 뜻한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin https://github.com/사용자이름/저장소이름.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Github에 생성한 원격저장소를 로컬 Git에 추가한다.&lt;/p&gt;
+
+&lt;p&gt;여기서 위 사진에서 복사한 url을 입력한다.&lt;/p&gt;
+
+&lt;p&gt;ex,&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin https://github.com/eeoon/example.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -m master main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git fetch origin&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -u origin/main main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;만약 branch가 다른곳(master)이라면 이름을 변경해줘야한다.&lt;/p&gt;
+
+&lt;p&gt;혹시나 위의 방법이 안된다면 아래의 방법을 진행&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge origin/main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;로컬의 변경 사항을 원격 저장소(Github)에 푸쉬한다.&lt;/p&gt;
+
+&lt;p&gt;만약 마지막 단계를 진행했을때도 실패한 경우에는&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin +main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;입력하여 강제로 git push 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;git push가 정상적으로 진행되었다면 다음과 같은 결과를 볼 수 있다. (commit message를 picture로 설정)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image6.png&quot; alt=&quot;Screenshot4&quot; /&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/devops/docker-content/" rel="alternate" type="text/html" title="Docker" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/devops/docker-content</id><content type="html" xml:base="http://localhost:4000/devops/docker-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/docker/image.png&quot; alt=&quot;docker-logo-blue.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;도커(Docker)는 리눅스 응용 프로그램을 프로세스 격리 기술들을 사용해 컨테이너로 실행하고 관리하는 컨테이너 기반 가상화 플랫폼 소프트웨어를 환경에서 격리된 단위로 패키징하고 배포할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;도커 컨테이너의 장점으로 소프트웨어 실행에 필요한 모든 것을 포함하는 완전한 파일 시스템 안에 wrapping 되어 있기 때문에 실행중인 환경에 관계 없이 언제나 동일하게 실행되는 결과가 나타난다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커 이미지
+    &lt;ul&gt;
+      &lt;li&gt;도커 이미지는 애플리케이션을 실행하는데 필요한 모든 것을 포함하고 있는 파일 시스템&lt;/li&gt;
+      &lt;li&gt;Dockerfile을 사용하여 이미지를 정의하고 도커 CLI를 사용하여 빌드할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커 컨테이너
+    &lt;ul&gt;
+      &lt;li&gt;도커 이미지의 인스턴스로, 파일 시스템과 애플리케이션 실행환경을 가지고 있다.&lt;/li&gt;
+      &lt;li&gt;컨테이너는 독립적이지만 호스트 시스템의 리소스를 공유할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커 레지스트리
+    &lt;ul&gt;
+      &lt;li&gt;도커 이미지를 저장하고 공유하는데 사용되는 저장소&lt;/li&gt;
+      &lt;li&gt;Docker Hub는 가장 널리 사용되고 있는 플랫폼&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커 컴포즈
+    &lt;ul&gt;
+      &lt;li&gt;도커 애플리케이션을 정의하고 실행하기 위한 도구&lt;/li&gt;
+      &lt;li&gt;YAML 파일을 사용하여 여러 컨테이너를 정의하고 단일 명령어로 애플리케이션을 시작할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커 스윔
+    &lt;ul&gt;
+      &lt;li&gt;도커 클러스터링과 오케스트레이션 도구, 여러 호스트에서 도커 컨테이너를 관리하고 배포할 수 있다.&lt;/li&gt;
+      &lt;li&gt;swarm을 사용하여 서비스를 확장하고 높은 가용성을 확보&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/docker/image1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-command&quot;&gt;docker command&lt;/h2&gt;
+
+&lt;p&gt;자주 사용하는 docker command 에 대한 설명&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker pull image_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker Hub 또는 다른 Docker 레지스트리에서 이미지를 가져온다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker commit container image_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;실행중인 컨테이너를 이미지로 커밋한다. (컨테이너를 이미지화)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run --options&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;docker image에서 container를 생성하고 실행하는데 사용된다. 여러 옵션들이 있다.&lt;/p&gt;
+
+&lt;p&gt;-d : container를 백그라운드에서 실행하도록 지정&lt;/p&gt;
+
+&lt;p&gt;-v : host와 container의 디렉토리를 공유&lt;/p&gt;
+
+&lt;p&gt;-e : container 내부의 환경변수를 설정&lt;/p&gt;
+
+&lt;p&gt;–name : 실행할 container의 이름을 지정&lt;/p&gt;
+
+&lt;p&gt;-it : container를 인터랙티브하게 실행&lt;/p&gt;
+
+&lt;p&gt;etc..&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker ps&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;docker 환경에서 실행중인 container list를 나타낸다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker ps -a&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;docker 환경의 전체 container list를 나타낸다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker image list&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker image list를 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker rm container_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker container 를 삭제할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker rm image_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker image를 삭제할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker exec -it container_name /bin/bash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker에서 실행중인 container 내부에 인터랙티브한 bash 셸이 실행되어 접속할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker attach container_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;실행중인 container에 연결하여 터미널을 제어한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker start container_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker stop container_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;container를 시작하거나 중지할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;local에서-display-공유&quot;&gt;local에서 DISPLAY 공유&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xhost +local:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도커의 장점으로 개발 환경, 테스트 환경, 프로덕션 환경 등을 일관되게 유지할 수 있다.&lt;/li&gt;
+  &lt;li&gt;가상화된 컨테이너는 가볍고 빠르게 시작되므로 자원을 효율적으로 사용할 수 있다.&lt;/li&gt;
+  &lt;li&gt;컨테이너는 어디서든 동일하게 실행될 수 있어 이식성이 뛰어나다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/project/project-content/" rel="alternate" type="text/html" title="Computer Vision" /><published>2021-12-12T00:00:00+09:00</published><updated>2024-03-20T00:08:52+09:00</updated><id>http://localhost:4000/project/project-content</id><content type="html" xml:base="http://localhost:4000/project/project-content/">&lt;p&gt;&lt;strong&gt;Vanishing Point &amp;amp; Perspective Transform&lt;/strong&gt;&lt;/p&gt;
 
 &lt;!-- *2023년* 
 
@@ -291,7 +533,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/TIP2012.pdf&quot;&gt;TIP2012.pdf&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf&quot;&gt;Vanishing_Point_Detection_WACV2017.pdf&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="project" /><summary type="html">Vanishing Point &amp;amp; Perspective Transform</summary></entry><entry><title type="html">ROS1 / ROS2</title><link href="http://localhost:4000/devops/ros-content/" rel="alternate" type="text/html" title="ROS1 / ROS2" /><published>2021-12-01T00:00:00+09:00</published><updated>2024-03-25T00:27:32+09:00</updated><id>http://localhost:4000/devops/ros-content</id><content type="html" xml:base="http://localhost:4000/devops/ros-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/project/images/computer_vision/Vanishing_Point_Detection_WACV2017.pdf&quot;&gt;Vanishing_Point_Detection_WACV2017.pdf&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="project" /><summary type="html">Vanishing Point &amp;amp; Perspective Transform</summary></entry><entry><title type="html">ROS1 / ROS2</title><link href="http://localhost:4000/devops/ros-content/" rel="alternate" type="text/html" title="ROS1 / ROS2" /><published>2021-12-01T00:00:00+09:00</published><updated>2024-03-25T00:32:33+09:00</updated><id>http://localhost:4000/devops/ros-content</id><content type="html" xml:base="http://localhost:4000/devops/ros-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/ros/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;rosrobot-operating-system&quot;&gt;ROS(Robot Operating System)&lt;/h2&gt;
 
@@ -307,7 +549,7 @@
 &lt;h3 id=&quot;ros1&quot;&gt;ROS1&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Linux 환경 - &lt;em&gt;Ubuntu 20.04 지원 (noetic)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;주로 Linux 환경 - &lt;em&gt;Ubuntu 20.04까지 지원 (noetic)&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;단일 로봇&lt;/li&gt;
   &lt;li&gt;실시간 제어 미지원&lt;/li&gt;
   &lt;li&gt;안정된 네트워크 환경 요구&lt;/li&gt;
@@ -326,7 +568,7 @@
   &lt;li&gt;상업용 제품 지원&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/image1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/ros/image1.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:#808080&quot;&gt;출처 : &lt;a href=&quot;https://www.lips-hci.com/ros&quot;&gt;https://www.lips-hci.com/ros&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
