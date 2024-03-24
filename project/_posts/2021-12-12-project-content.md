@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Project Content
+title: Computer_Vision
 description: >
   Computer Vision, Autonomous Driving, Image processing
-sitemap: false
+sitemap: true
+changefreq : daily
+priority : 1.0
 hide_last_modified: true
 ---
 
