@@ -2,7 +2,7 @@
 
 ## Welcome to my Blog
 
-I start blog for record Robotics research, and share what i learned.
+I'm starting this blog to record what I've been studying, learning, and digging into.
 
 ### Research Interest
 * SLAM
