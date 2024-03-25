@@ -15,7 +15,9 @@ redirect_from:
 
 ## Young-eon
 
-KETI(Korea Eletronics Technology Institute)
+Researching Multi Robotics, Field Robotics, SLAM
+{:.lead}
+Working at KETI(Korea Eletronics Technology Institute)
 {:.lead}
 
 1. this list will be replaced by the toc
