@@ -178,6 +178,3 @@ world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 
 
 [Gazebo  : Tutorials](https://classic.gazebosim.org/tutorials)
 
-[A Review of the ROS2 URDF Gazebo Sensor](https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7)
-
-[[ROS2 Q&A] 240 - How to use Gazebo plugins in ROS 2](https://www.youtube.com/watch?v=JJDebiniDBw)
