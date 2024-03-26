@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.1.6 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gazebo | Youngman</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Gazebo" />
+<meta name="author" content="Youngeon" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Gazebo Simulator" />
+<meta property="og:description" content="Gazebo Simulator" />
+<link rel="canonical" href="http://localhost:4000/robotics/Gazebo-content/" />
+<meta property="og:url" content="http://localhost:4000/robotics/Gazebo-content/" />
+<meta property="og:site_name" content="Youngman" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-25T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gazebo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-27T01:36:40+09:00","datePublished":"2021-03-25T00:00:00+09:00","description":"Gazebo Simulator","headline":"Gazebo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/robotics/Gazebo-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/robotics/Gazebo-content/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="Robotics">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Youngman">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Youngman">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/robotics/Gazebo-content/" hreflang="en">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Youngman" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+
+
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = true;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2024-03-27T01:37:20+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans+KR:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71)}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="dark-mode no-break-layout no-large-headings">
+  
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/robotics/">robotics</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>Gazebo-content</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-robotics-Gazebo-content" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Gazebo
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        Posted in <a href="/robotics/" class="flip-title">Robotics</a> 
+      </span>
+      
+    </div>
+
+    
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      Gazebo Simulator
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image.png" alt="Gazebo_BlockDiagram" /></p>
+
+<p>Gazebo_BlockDiagram</p>
+
+<p>출처 : <a href="https://classic.gazebosim.org/tutorials">https://classic.gazebosim.org/tutorials</a></p>
+
+<p><strong>위조금 더 간략하게 그림을 그리자면 아래와 같다.</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image2.png" alt="Architecture-of-ROS-Gazebo-interaction-Mittal-2018.png" /></p>
+
+<p>출처 : <a href="https://www.researchgate.net/figure/Architecture-of-ROS-Gazebo-interaction-Mittal-2018_fig2_352871117">https://www.researchgate.net/figure/Architecture-of-ROS-Gazebo-interaction-Mittal-2018_fig2_352871117</a></p>
+
+<h1 id="what-is-gazebo">What is Gazebo?</h1>
+
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image3.png" alt="gazebo_horz_pos.png" /></p>
+
+<ul>
+  <li>Gazebo는 <strong>Robotics Simulator</strong>의 한 종류로 오픈소스 3D Simulator.</li>
+  <li>Robot의 motion을 <strong>simulation</strong>하고 <strong>visualize</strong> 하는데 사용된다.</li>
+  <li>Gazebo는 <strong>ROS</strong>와 통합되어 있어 ROS를 사용하는 대다수, 대부분의 프로젝트에서 사용되며 하나의 시뮬레이터 소프트웨어 프레임워크로 발전해 왔다.</li>
+  <li>Gazebo의 장점으로 다양한 유형의 <strong>Robot</strong>, <strong>Sensor</strong>, <strong>Environment</strong>를 지원하며 사용자는 자신만의 로봇을 만들수도, 환경을 설정할 수도 있다. 또한 시뮬레이션 중 Robot을 Control하고 Sensing 할 수 있어 많은 데이터를 얻을 수 있다.</li>
+  <li>다양한 환경 구성 중 조명, 햇빛, 그림자, 텍스처, 수중환경, 등 현실적인 환경 렌더링을 제공한다.</li>
+  <li>2017년 Gazebo Classic과 함께 <strong>Ignition</strong>이 등장하였다. (자주 사용해보지는 않았으나 프레임워크가 조금 더 가볍다는 장점이 있는 것 같다.)</li>
+  <li>Gazebo Classic 에서는 ODE 물리 엔진, OpenGL 렌더링, 그리고 Sensor Simulation, Actuator Control을 위한 지원 코드를 통합하며 고성능 물리 엔진을 사용할 수 있도록 함</li>
+</ul>
+
+<p><img src="Gazebo%20f4ef9568b2fc44fbb02e6278ee9c4066/small-warehouse.png" alt="참고 사진 : aws_warehouse ([https://github.com/aws-robotics/aws-robomaker-small-warehouse-world](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.png))" /></p>
+
+<p>참고 사진 : aws_warehouse (<a href="https://github.com/aws-robotics/aws-robomaker-small-warehouse-world">https://github.com/aws-robotics/aws-robomaker-small-warehouse-world</a>)</p>
+
+<h2 id="gazebo환경을-구성하는-것을-파악해보자">Gazebo환경을 구성하는 것을 파악해보자</h2>
+
+<p>Gazebo 환경을 구성하는 것은 크게 환경(<strong>World</strong>)와 그 안에 존재하는 로봇, 센서 등 <strong>Model(sdf,urdf,xacro)</strong> 가 존재한다.</p>
+
+<p><a href="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image5.png">출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)</a></p>
+
+<p>출처 : <a href="https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271">https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271</a></p>
+
+<h2 id="world">World</h2>
+
+<p>world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 다양한 객체의 위치, 모양, 센서, 광원, 물리적 특성 등을 포함하여 시뮬레이션 환경을 설명한다.</p>
+
+<ul>
+  <li><strong>Model</strong> : 환경에 있는 로봇, 센서 등을 설명하는데 사용 각 모델 위치, 회전, 링크 조인트 등으로 정의</li>
+  <li><strong>Physics Properties</strong> : 시뮬레이션에서 물리적 특성으로 중력, 마찰, 충돌 등 포함할 수 있다.</li>
+  <li><strong>Lights</strong> : 시각적으로 현실적인 환경을 만들기 위해 다양한 종류의 조명이 있으며 위치, 유형, 강도 등 설정할 수 있다.</li>
+  <li><strong>Ground</strong> : 시뮬레이션에서 floor를 설명한다. 지형, 텍스처, 색상 등 정의 할 수 있다.</li>
+  <li>
+    <p><strong>Fluids</strong> : 시뮬레이션 환경에서 수중환경이 필요하다면 설정할 수 있다.</p>
+  </li>
+  <li>.world 파일의 예시를 보자 (주석으로 해당부분 간략히 설명)</li>
+  <li>
+    <p>example.world</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="err">?</span><span class="na">xml</span> <span class="na">version</span><span class="p">=</span><span class="s">"1.0"</span><span class="err">?</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">sdf</span> <span class="na">version</span><span class="p">=</span><span class="s">"1.6"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">world</span> <span class="na">name</span><span class="p">=</span><span class="s">"default"</span><span class="p">&gt;</span>
+      
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="na">ground</span><span class="err">를</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">include</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://ground_plane<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>  
+      <span class="p">&lt;/</span><span class="nt">include</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="err">조명으로</span> <span class="na">sun</span><span class="err">을</span> <span class="err">이용</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">include</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://sun<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">include</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="err">그림자</span> <span class="err">사용</span> <span class="err">여부</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">scene</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">shadows</span><span class="p">&gt;</span>false<span class="p">&lt;/</span><span class="nt">shadows</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">scene</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="err">전체화면</span> <span class="err">설정</span> <span class="err">및</span> <span class="err">실행하였을</span> <span class="err">때</span> <span class="err">사용자가</span> <span class="err">바라보는</span> <span class="err">시점</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">gui</span> <span class="na">fullscreen</span><span class="p">=</span><span class="s">'0'</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">camera</span> <span class="na">name</span><span class="p">=</span><span class="s">'user_camera'</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">pose</span> <span class="na">frame</span><span class="p">=</span><span class="s">''</span><span class="p">&gt;</span>0.319654 -0.235002 9.29441 0 1.5138 0.009599<span class="p">&lt;/</span><span class="nt">pose</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">view_controller</span><span class="p">&gt;</span>orbit<span class="p">&lt;/</span><span class="nt">view_controller</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">projection_type</span><span class="p">&gt;</span>perspective<span class="p">&lt;/</span><span class="nt">projection_type</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">camera</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">gui</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="na">ODE</span> <span class="err">물리</span> <span class="err">엔진에</span> <span class="err">대한</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">physics</span> <span class="na">type</span><span class="p">=</span><span class="s">"ode"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">real_time_update_rate</span><span class="p">&gt;</span>1000.0<span class="p">&lt;/</span><span class="nt">real_time_update_rate</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">max_step_size</span><span class="p">&gt;</span>0.001<span class="p">&lt;/</span><span class="nt">max_step_size</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">real_time_factor</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">real_time_factor</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ode</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">solver</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">type</span><span class="p">&gt;</span>quick<span class="p">&lt;/</span><span class="nt">type</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">iters</span><span class="p">&gt;</span>150<span class="p">&lt;/</span><span class="nt">iters</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">precon_iters</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">precon_iters</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">sor</span><span class="p">&gt;</span>1.400000<span class="p">&lt;/</span><span class="nt">sor</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">use_dynamic_moi_rescaling</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">use_dynamic_moi_rescaling</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">solver</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">constraints</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">cfm</span><span class="p">&gt;</span>0.00001<span class="p">&lt;/</span><span class="nt">cfm</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">erp</span><span class="p">&gt;</span>0.2<span class="p">&lt;/</span><span class="nt">erp</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">contact_max_correcting_vel</span><span class="p">&gt;</span>2000.000000<span class="p">&lt;/</span><span class="nt">contact_max_correcting_vel</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">contact_surface_layer</span><span class="p">&gt;</span>0.01000<span class="p">&lt;/</span><span class="nt">contact_surface_layer</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">constraints</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ode</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">physics</span><span class="p">&gt;</span>
+        
+      <span class="p">&lt;</span><span class="err">!--</span> <span class="err">추가적인</span> <span class="err">구조물</span> <span class="na">or</span> <span class="err">로봇</span> <span class="err">등</span> <span class="err">언급</span> <span class="err">가능</span> <span class="err">(</span><span class="na">option</span><span class="err">)</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="err">!--</span> <span class="na">link</span> <span class="err">구조에</span> <span class="na">visual</span><span class="err">(시각화),</span> <span class="na">Collision</span><span class="err">(충돌)에</span> <span class="err">대한</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">name</span><span class="p">=</span><span class="s">"wall"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">visual</span> <span class="na">name</span><span class="p">=</span><span class="s">"wall"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">geometry</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">mesh</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://<span class="si">{</span><span class="nx">world_repository</span><span class="si">}</span>/meshes/wall.obj<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">mesh</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">geometry</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">transparency</span><span class="p">&gt;</span>0.0<span class="p">&lt;/</span><span class="nt">transparency</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">material</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">diffuse</span><span class="p">&gt;</span>1.0 1.0 1.0<span class="p">&lt;/</span><span class="nt">diffuse</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">specular</span><span class="p">&gt;</span>0.1 0.1 0.1<span class="p">&lt;/</span><span class="nt">specular</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">pbr</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">metal</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">metalness</span><span class="p">&gt;</span>0.0<span class="p">&lt;/</span><span class="nt">metalness</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">albedo_map</span><span class="p">&gt;</span>model://<span class="si">{</span><span class="nx">world_repository</span><span class="si">}</span>/meshes/white_brick.png<span class="p">&lt;/</span><span class="nt">albedo_map</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nt">metal</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">pbr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://<span class="si">{</span><span class="nx">world_repository</span><span class="si">}</span>/meshes/<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">name</span><span class="p">&gt;</span>wall_Diffuse<span class="p">&lt;/</span><span class="nt">name</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">material</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">visual</span><span class="p">&gt;</span>
+          
+        <span class="p">&lt;</span><span class="nt">collision</span> <span class="na">name</span><span class="p">=</span><span class="s">"collision"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">geometry</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">mesh</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://<span class="si">{</span><span class="nx">world_repository</span><span class="si">}</span>/meshes/wall.obj<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">mesh</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">geometry</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">surface</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">contact</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">collide_bitmask</span><span class="p">&gt;</span>0x01<span class="p">&lt;/</span><span class="nt">collide_bitmask</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">contact</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">surface</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">collision</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">pose</span><span class="p">&gt;</span>-9.817441860465117 -12.710465116279071 0 0 0 0<span class="p">&lt;/</span><span class="nt">pose</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">link</span><span class="p">&gt;</span>
+        
+        
+    <span class="p">&lt;/</span><span class="nt">world</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">sdf</span><span class="p">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="model">Model</h2>
+
+<p>로봇, 센서 들을 정의하는 파일 형식은 SDF(Simulation Description Format), URDF(Unified Robot Description Format), Xacro 이 있다. 각각의 특징과 차이점을 파악해보자</p>
+
+<ol>
+  <li><strong>SDF</strong> :
+    <ul>
+      <li>Gazebo Simulator를 위한 파일 형식으로 로봇, 센서, 환경 등 시뮬레이션 요소를 정의한다.</li>
+      <li>XML 형식으로 작성, 모델의 물리적 특성, 센서의 속성, 환경의 텍스처 등 정의한다.</li>
+    </ul>
+  </li>
+  <li><strong>URDF</strong> :
+    <ul>
+      <li>URDF는 로봇의 기하학적 및 시각적 특성을 설명한다.</li>
+      <li>XML 형식으로 작성, 로봇의 기하학적 형상인 로봇의 링크, 조인트를 정의하여 로봇의 구조를 설명한다.</li>
+      <li>로봇 모델링 및 시각화 도구에 사용, 주로 ROS를 위한 파일 형식이다.</li>
+    </ul>
+  </li>
+  <li><strong>Xacro</strong> :
+    <ul>
+      <li>URDF의 확장으로 XML 기반으로 작성된 URDF 파일을 더 효율적으로 작성할 수 있다. 마찬가지로 ROS를 위한 파일 형식이다.</li>
+      <li>매개변수화와 매크로 기능을 제공하여 조금 더 쉽게 코드를 재사용하고 가독성을 향상시킨다.</li>
+      <li>URDF 파일보다 조금 더 간결하고 유지 관리가 쉽다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>전체적인 차이는 SDF는 Gazebo Simulation을 위한 것, URDF는 로봇의 기하학적 구조를 정의하므로 로봇의 모델링과 시각화에서 ROS와 호환, Xacro는 조금 더 쉽게 URDF를 작성하는 URDF의 확장 구조이다.</p>
+
+<p>다음 포스트에서 Model 파일의 구조와 Gazebo Plug-in에 대해서 알아보자.</p>
+
+<p>참고 :</p>
+
+<p><a href="https://classic.gazebosim.org/tutorials">Gazebo  : Tutorials</a></p>
+
+<p><a href="https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7">A Review of the ROS2 URDF Gazebo Sensor</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=JJDebiniDBw">[ROS2 Q&amp;A] 240 - How to use Gazebo plugins in ROS 2</a></p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2024. All rights reserved.
+</small></p>
+  
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/background.png)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/avatar.JPG" class="avatar" alt="Youngman" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Youngman</h2></a>
+    
+    
+      <p class="">
+        Hello.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/robotics/"
+          class="sidebar-nav-item "
+          
+        >
+          Robotics
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/mathematics/"
+          class="sidebar-nav-item "
+          
+        >
+          Mathematics
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/devops/"
+          class="sidebar-nav-item "
+          
+        >
+          DevOps
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/project/"
+          class="sidebar-nav-item "
+          
+        >
+          Project
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item "
+          
+        >
+          About Me
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://instagram.com/eeooon_" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/eeoon" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:kyu8456@naver.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'UA-XXXXXXXX-X', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+</div>
+
+
+</body>
+</html>
