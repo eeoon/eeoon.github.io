@@ -57,26 +57,28 @@ world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 
 - **Ground** : 시뮬레이션에서 floor를 설명한다. 지형, 텍스처, 색상 등 정의 할 수 있다.
 - **Fluids** : 시뮬레이션 환경에서 수중환경이 필요하다면 설정할 수 있다.
 
-- .world 파일의 예시를 보자 (주석으로 해당부분 간략히 설명)
-- example.world
+- .world 파일의 예시를 보자 (example.world,주석으로 해당부분 간략히 설명)
     
     ```jsx
     <?xml version="1.0"?>
     <sdf version="1.6">
-      <world name="default">
+      <world name="example">
       
     <!-- ground를 설정 -->
         <include>
           <uri>model://ground_plane</uri>  
         </include>
+        
     <!-- 조명으로 sun을 이용 -->
         <include>
           <uri>model://sun</uri>
         </include>
+        
     <!-- 그림자 사용 여부 -->
         <scene>
           <shadows>false</shadows>
         </scene>
+        
     <!-- 전체화면 설정 및 실행하였을 때 사용자가 바라보는 시점 -->
         <gui fullscreen='0'>
           <camera name='user_camera'>
@@ -85,6 +87,7 @@ world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 
             <projection_type>perspective</projection_type>
           </camera>
         </gui>
+        
     <!-- ODE 물리 엔진에 대한 설정 -->
         <physics type="ode">
           <real_time_update_rate>1000.0</real_time_update_rate>
@@ -107,8 +110,9 @@ world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 
           </ode>
         </physics>
         
-        <!-- 추가적인 구조물 or 로봇 등 언급 가능 (option) -->
-        <!-- link 구조에 visual(시각화), Collision(충돌)에 대한 설정 -->
+    <!-- 추가적인 구조물 or 로봇 등 언급 가능 (option) -->
+    <!-- link 구조에 visual(시각화), Collision(충돌)에 대한 설정 -->
+    
         <link name="wall">
           <visual name="wall">
             <geometry>
@@ -174,7 +178,7 @@ world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 
 
 다음 포스트에서 Model 파일의 구조와 Gazebo Plug-in에 대해서 알아보자.
 
-참고 :
 
-[Gazebo  : Tutorials](https://classic.gazebosim.org/tutorials)
+
+참고 : [Gazebo  : Tutorials](https://classic.gazebosim.org/tutorials)
 
