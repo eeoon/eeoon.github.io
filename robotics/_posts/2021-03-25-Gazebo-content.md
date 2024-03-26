@@ -35,7 +35,7 @@ Gazebo_BlockDiagram
 - 2017년 Gazebo Classic과 함께 **Ignition**이 등장하였다. (자주 사용해보지는 않았으나 프레임워크가 조금 더 가볍다는 장점이 있는 것 같다.)
 - Gazebo Classic 에서는 ODE 물리 엔진, OpenGL 렌더링, 그리고 Sensor Simulation, Actuator Control을 위한 지원 코드를 통합하며 고성능 물리 엔진을 사용할 수 있도록 함
 
-![참고 사진 : aws_warehouse ([https://github.com/aws-robotics/aws-robomaker-small-warehouse-world](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.png))](Gazebo%20f4ef9568b2fc44fbb02e6278ee9c4066/small-warehouse.png)
+![참고 사진 : aws_warehouse ([https://github.com/aws-robotics/aws-robomaker-small-warehouse-world](https://github.com/aws-robotics/aws-robomaker-small-warehouse-world))](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.png)
 
 참고 사진 : aws_warehouse ([https://github.com/aws-robotics/aws-robomaker-small-warehouse-world](https://github.com/aws-robotics/aws-robomaker-small-warehouse-world))
 
