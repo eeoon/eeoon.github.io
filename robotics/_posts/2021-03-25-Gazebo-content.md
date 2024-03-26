@@ -43,7 +43,7 @@ Gazebo_BlockDiagram
 
 Gazebo 환경을 구성하는 것은 크게 환경(**World**)와 그 안에 존재하는 로봇, 센서 등 **Model(sdf,urdf,xacro)** 가 존재한다.
 
-[출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.ppm)
+[출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image5.ppm)
 
 출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)
 
