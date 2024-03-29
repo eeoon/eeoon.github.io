@@ -60,8 +60,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 ## 실행결과
 
-- 정상적으로 실행 되었다면 다음과 같은 화면을 볼 수 있다. 오른쪽화면이 Gazebo 환경으로 Turtlebot3_World에서 Turtlebot3_burger가 머리에 velodyne을 장착하고 나타난 것을 확인할 수 있다.
-- 좌측화면은 rviz2 (ros1에서는 rviz) 화면으로 rviz2는 데이터를 시각화 하기 위해 사용되는 ros의 기본적인 툴로 좌측 상단에 fixed_frame을 base_scan으로 변경하면 해당 데이터를 visualize할 수 있다.
+- 정상적으로 실행 되었다면 다음과 같은 화면을 볼 수 있다. 오른쪽화면이 Gazebo 환경으로 Turtlebot3_World에서 Turtlebot3_burger의 머리에 velodyne을 장착하고 나타난 것을 확인할 수 있다.
+- 좌측화면은 rviz2 (ros1에서는 rviz) 화면으로 rviz2는 데이터를 시각화 하기 위해 사용되는 ros의 기본적인 툴로 좌측 상단에 `fixed_frame`을 `base_scan`으로 변경하면 해당 데이터를 visualize할 수 있다.
 
 ![result_picture.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image.png)
 

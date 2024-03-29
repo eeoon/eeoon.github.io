@@ -29,7 +29,7 @@ hide_last_modified: true
 4. **GPS**
 5. **Bumper**
 
-- 먼저 Lidar Sensor를 사용하기 위해 사용되는 plugin은 libgazebo_ros_ray_sensor이다. 파일 확장자를 보면 .so 파일은 Windows 에서 .dll 파일로 Linux에서는 .so파일을 사용하는데 해당 파일은 동적 라이브러리로 프로그램 실행 중에 특정 library를 사용하고 싶을 때 로드한다.
+- 먼저 Lidar Sensor를 사용하기 위해 사용되는 plugin은 `libgazebo_ros_ray_sensor`이다. 파일 확장자를 보면 .so 파일은 Windows 에서 .dll 파일로 Linux에서는 .so파일을 사용하는데 해당 파일은 동적 라이브러리로 프로그램 실행 중에 특정 library를 사용하고 싶을 때 로드한다.
 
 ### Lidar_Sensor
 
@@ -81,25 +81,25 @@ hide_last_modified: true
 ### **Camera(RGB, Depth)**
 
 ```jsx
-       <!-- Camera는 RGB로 사용할 것인지, Depth에 대한 정보도 포함할 것인지 구분할 수 있다.-->
+<!-- Camera는 RGB로 사용할 것인지, Depth에 대한 정보도 포함할 것인지 구분할 수 있다.-->
 
-        <plugin name="example_camera" filename="libgazebo_ros_camera.so">
-            <ros>
-                <namespace>example_camera</namespace>
-                <remapping>~/image_raw:=image_raw</remapping>
-                <remapping>~/camera_info:=camera_info</remapping>
-                <!-- Depth Camera 설정 부분 (Option) ${name}으로 된 부분은 위의 namespace에서 설정한 example_camera가 삽입된다.-->
-                <remapping>${name}/depth/image_raw:=depth/image_rect_raw</remapping>
-                <remapping>${name}/depth/camera_info:=depth/camera_info</remapping>
-                <remapping>${name}/points:=depth/points</remapping>
-            </ros>
-            <camera_name>${name}</camera_name>
-            <frame_name>${name}_link_optical</frame_name>
-            <hack_baseline>0.2</hack_baseline>
-            <!-- Depth Camera 설정 부분 (Option) -->
-            <min_depth>0.05</min_depth>
-            <max_depth>8.0</max_depth>            
-        </plugin>        
+<plugin name="example_camera" filename="libgazebo_ros_camera.so">
+    <ros>
+        <namespace>example_camera</namespace>
+        <remapping>~/image_raw:=image_raw</remapping>
+        <remapping>~/camera_info:=camera_info</remapping>
+        <!-- Depth Camera 설정 부분 (Option) ${name}으로 된 부분은 위의 namespace에서 설정한 example_camera가 삽입된다.-->
+        <remapping>${name}/depth/image_raw:=depth/image_rect_raw</remapping>
+        <remapping>${name}/depth/camera_info:=depth/camera_info</remapping>
+        <remapping>${name}/points:=depth/points</remapping>
+    </ros>
+    <camera_name>${name}</camera_name>
+    <frame_name>${name}_link_optical</frame_name>
+    <hack_baseline>0.2</hack_baseline>
+    <!-- Depth Camera 설정 부분 (Option) -->
+    <min_depth>0.05</min_depth>
+    <max_depth>8.0</max_depth>            
+</plugin>        
 ```
 
 ### **GPS**
@@ -198,6 +198,9 @@ hide_last_modified: true
 
 참고 : 
 
+[Gazebo  : Tutorial : Gazebo plugins in ROS](https://classic.gazebosim.org/tutorials?tut=ros_gzplugins)
+
 [A Review of the ROS2 URDF Gazebo Sensor](https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7)
 
 [[ROS2 Q&A] 240 - How to use Gazebo plugins in ROS 2](https://www.youtube.com/watch?v=JJDebiniDBw)
+
