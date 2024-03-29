@@ -65,8 +65,13 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 ![result_picture.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image.png)
 
+
 - TF_tree를 살펴봤을 때 다음과 같이 나타난다.
-- 간단하게 로봇의 링크 구조를 나타내며 전체적인 구조를 나타냅니다.
-- TF에 대해서는 추후 Transform(TF)에서 포스터 구성하려 합니다.
+- 간단하게 로봇의 링크 구조를 나타내며 전체적인 구조를 나타낸다.
+- TF에 대해서는 추후 Transform(TF)에서 포스터 작성 예정
 
 ![rqt_tf_tree.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image2.png)
+
+참고 :
+
+[turtlebot3_velodyne_gazebo github](https://github.com/eeoon/turtlebot3_velodyne_Gazebo)
