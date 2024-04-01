@@ -52,22 +52,6 @@
     </url>
     
     <url>
-        <loc>http://localhost:4000/mathematics/mathematics-content/</loc>
-        
-        <lastmod>2022-04-12T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>daily</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
         <loc>http://localhost:4000/devops/git-content/</loc>
         
         <lastmod>2022-01-10T00:00:00+09:00</lastmod>
@@ -119,6 +103,54 @@
         <loc>http://localhost:4000/devops/ros-content/</loc>
         
         <lastmod>2021-12-01T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>daily</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/robotics/Training_Gazebo-content/</loc>
+        
+        <lastmod>2021-04-12T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>daily</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/robotics/Gazebo_Plugin-content/</loc>
+        
+        <lastmod>2021-04-02T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>daily</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/mathematics/coordinates-content/</loc>
+        
+        <lastmod>2021-03-26T00:00:00+09:00</lastmod>
         
 
         

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-27T01:44:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-01T09:48:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
@@ -145,7 +145,7 @@
 
 \[A^i_i-1 = \begin{bmatrix}cos( \theta_i) &amp;amp; -cos(\alpha_i)sin(\theta_i) &amp;amp; sin(\alpha_i)sin(\theta_{i}) &amp;amp; a _{i}cos(\theta) \\ sin(\theta_{i}) &amp;amp; cos(\alpha_{i})cos(\theta_{i}) &amp;amp; -sin(\alpha_{i})cos(\theta_{i}) &amp;amp; a_{i}sin(\theta_{i}) \\ 0 &amp;amp; sin(\alpha_{i}) &amp;amp; cos(\alpha_{i} ) &amp;amp; d_{i} \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix}\]
 
-&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">Mathmatics</title><link href="http://localhost:4000/mathematics/mathematics-content/" rel="alternate" type="text/html" title="Mathmatics" /><published>2022-04-12T00:00:00+09:00</published><updated>2024-03-25T00:28:28+09:00</updated><id>http://localhost:4000/mathematics/mathematics-content</id><content type="html" xml:base="http://localhost:4000/mathematics/mathematics-content/"></content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry><entry><title type="html">Git</title><link href="http://localhost:4000/devops/git-content/" rel="alternate" type="text/html" title="Git" /><published>2022-01-10T00:00:00+09:00</published><updated>2024-03-25T01:49:47+09:00</updated><id>http://localhost:4000/devops/git-content</id><content type="html" xml:base="http://localhost:4000/devops/git-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;변환행렬에서 a의 값이 0이기 때문에 위치 벡터에서의  에서 tanθ의 값이  이기 때문에 값이 없어서 역기구학을 계산할 수 없다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">6자유도 협동로봇의 Matlab 시뮬레이션</summary></entry><entry><title type="html">Git</title><link href="http://localhost:4000/devops/git-content/" rel="alternate" type="text/html" title="Git" /><published>2022-01-10T00:00:00+09:00</published><updated>2024-03-25T01:49:47+09:00</updated><id>http://localhost:4000/devops/git-content</id><content type="html" xml:base="http://localhost:4000/devops/git-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Git은 분산 버전 관리 시스템(Distributed Version Control System, DVCS) 중 하나로, 소스 코드와 같은 파일의 변경 사항을  추적하고 관리하는 도구&lt;/li&gt;
@@ -582,189 +582,399 @@
   &lt;li&gt;ROS1에서는 Catkin_make를 이용해 소스코드를 build 하지만 ROS2에서는 colcon 을 활용해 build한다.&lt;/li&gt;
   &lt;li&gt;ROS2에서는 다양한 네트워크 환경(DDS/RTPS) 등을 활용하여 유기적인 통신이 가능하다.&lt;/li&gt;
   &lt;li&gt;ROS1에서는 Master-Slave 구조로 연결되어 있다면 ROS2에서는 Master Node가 없기 때문에 PTP(peer to peer) 형태로 다양한 데이터 타입을 효과적으로 교환할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Gazebo</title><link href="http://localhost:4000/robotics/Gazebo-content/" rel="alternate" type="text/html" title="Gazebo" /><published>2021-03-25T00:00:00+09:00</published><updated>2024-03-27T01:42:31+09:00</updated><id>http://localhost:4000/robotics/Gazebo-content</id><content type="html" xml:base="http://localhost:4000/robotics/Gazebo-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image.png&quot; alt=&quot;Gazebo_BlockDiagram&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Gazebo_BlockDiagram&lt;/p&gt;
-
-&lt;p&gt;출처 : &lt;a href=&quot;https://classic.gazebosim.org/tutorials&quot;&gt;https://classic.gazebosim.org/tutorials&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;위조금 더 간략하게 그림을 그리자면 아래와 같다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image2.png&quot; alt=&quot;Architecture-of-ROS-Gazebo-interaction-Mittal-2018.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;출처 : &lt;a href=&quot;https://www.researchgate.net/figure/Architecture-of-ROS-Gazebo-interaction-Mittal-2018_fig2_352871117&quot;&gt;https://www.researchgate.net/figure/Architecture-of-ROS-Gazebo-interaction-Mittal-2018_fig2_352871117&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-gazebo&quot;&gt;What is Gazebo?&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image3.png&quot; alt=&quot;gazebo_horz_pos.png&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Training Gazebo</title><link href="http://localhost:4000/robotics/Training_Gazebo-content/" rel="alternate" type="text/html" title="Training Gazebo" /><published>2021-04-12T00:00:00+09:00</published><updated>2024-03-29T20:12:59+09:00</updated><id>http://localhost:4000/robotics/Training_Gazebo-content</id><content type="html" xml:base="http://localhost:4000/robotics/Training_Gazebo-content/">&lt;h2 id=&quot;gazebo-실습&quot;&gt;Gazebo 실습&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Gazebo는 &lt;strong&gt;Robotics Simulator&lt;/strong&gt;의 한 종류로 오픈소스 3D Simulator.&lt;/li&gt;
-  &lt;li&gt;Robot의 motion을 &lt;strong&gt;simulation&lt;/strong&gt;하고 &lt;strong&gt;visualize&lt;/strong&gt; 하는데 사용된다.&lt;/li&gt;
-  &lt;li&gt;Gazebo는 &lt;strong&gt;ROS&lt;/strong&gt;와 통합되어 있어 ROS를 사용하는 대다수, 대부분의 프로젝트에서 사용되며 하나의 시뮬레이터 소프트웨어 프레임워크로 발전해 왔다.&lt;/li&gt;
-  &lt;li&gt;Gazebo의 장점으로 다양한 유형의 &lt;strong&gt;Robot&lt;/strong&gt;, &lt;strong&gt;Sensor&lt;/strong&gt;, &lt;strong&gt;Environment&lt;/strong&gt;를 지원하며 사용자는 자신만의 로봇을 만들수도, 환경을 설정할 수도 있다. 또한 시뮬레이션 중 Robot을 Control하고 Sensing 할 수 있어 많은 데이터를 얻을 수 있다.&lt;/li&gt;
-  &lt;li&gt;다양한 환경 구성 중 조명, 햇빛, 그림자, 텍스처, 수중환경, 등 현실적인 환경 렌더링을 제공한다.&lt;/li&gt;
-  &lt;li&gt;2017년 Gazebo Classic과 함께 &lt;strong&gt;Ignition&lt;/strong&gt;이 등장하였다. (자주 사용해보지는 않았으나 프레임워크가 조금 더 가볍다는 장점이 있는 것 같다.)&lt;/li&gt;
-  &lt;li&gt;Gazebo Classic 에서는 ODE 물리 엔진, OpenGL 렌더링, 그리고 Sensor Simulation, Actuator Control을 위한 지원 코드를 통합하며 고성능 물리 엔진을 사용할 수 있도록 함&lt;/li&gt;
+  &lt;li&gt;turtlebot3_burger와 3D_Lidar(velodyne)으로 구성된 로봇을 Gazebo 환경에서 불러와 Lidar 데이터를 확인하고 간단한 조작을 진행한다.&lt;/li&gt;
+  &lt;li&gt;Gazebo 실습과 함께 rviz에 대한 간략한 실행 그리고 tf_tree에 대한 것도 함께 구성하였다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.png&quot; alt=&quot;참고 사진 : aws_warehouse ([https://github.com/aws-robotics/aws-robomaker-small-warehouse-world](https://github.com/aws-robotics/aws-robomaker-small-warehouse-world))&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;참고 사진 : aws_warehouse (&lt;a href=&quot;https://github.com/aws-robotics/aws-robomaker-small-warehouse-world&quot;&gt;https://github.com/aws-robotics/aws-robomaker-small-warehouse-world&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h2 id=&quot;gazebo환경을-구성하는-것을-파악해보자&quot;&gt;Gazebo환경을 구성하는 것을 파악해보자&lt;/h2&gt;
-
-&lt;p&gt;Gazebo 환경을 구성하는 것은 크게 환경(&lt;strong&gt;World&lt;/strong&gt;)와 그 안에 존재하는 로봇, 센서 등 &lt;strong&gt;Model(sdf,urdf,xacro)&lt;/strong&gt; 가 존재한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.ppm&quot;&gt;출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;출처 : &lt;a href=&quot;https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271&quot;&gt;https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;world&quot;&gt;World&lt;/h2&gt;
-
-&lt;p&gt;world 파일을 보면 기본적으로 XML 형식으로 작성되며 로봇 및 다양한 객체의 위치, 모양, 센서, 광원, 물리적 특성 등을 포함하여 시뮬레이션 환경을 설명한다.&lt;/p&gt;
+&lt;h3 id=&quot;gazebo-실습-환경&quot;&gt;Gazebo 실습 환경&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt; : 환경에 있는 로봇, 센서 등을 설명하는데 사용 각 모델 위치, 회전, 링크 조인트 등으로 정의&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Physics Properties&lt;/strong&gt; : 시뮬레이션에서 물리적 특성으로 중력, 마찰, 충돌 등 포함할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lights&lt;/strong&gt; : 시각적으로 현실적인 환경을 만들기 위해 다양한 종류의 조명이 있으며 위치, 유형, 강도 등 설정할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ground&lt;/strong&gt; : 시뮬레이션에서 floor를 설명한다. 지형, 텍스처, 색상 등 정의 할 수 있다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Fluids&lt;/strong&gt; : 시뮬레이션 환경에서 수중환경이 필요하다면 설정할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;.world 파일의 예시를 보자 (주석으로 해당부분 간략히 설명)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;example.world&lt;/p&gt;
-
-    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sdf&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.6&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ground&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://ground_plane&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;  
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조명으로&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sun&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이용&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://sun&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그림자&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;여부&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;shadows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;false&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;shadows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;전체화면&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;및&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;실행하였을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;때&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용자가&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;바라보는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시점&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gui&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fullscreen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;0&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;camera&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;user_camera&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pose&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.319654 -0.235002 9.29441 0 1.5138 0.009599&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;view_controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;orbit&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;view_controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;projection_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;perspective&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;projection_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;camera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gui&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ODE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;물리&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;엔진에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;physics&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;real_time_update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1000.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;real_time_update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_step_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.001&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_step_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;real_time_factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;real_time_factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;solver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;quick&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;150&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;precon_iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;precon_iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1.400000&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;use_dynamic_moi_rescaling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;use_dynamic_moi_rescaling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;solver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;cfm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.00001&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;cfm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;erp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.2&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;erp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact_max_correcting_vel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;2000.000000&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact_max_correcting_vel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact_surface_layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.01000&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact_surface_layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;physics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;추가적인&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구조물&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;로봇&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;등&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;언급&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;가능&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;option&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구조에&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;visual&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(시각화),&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Collision&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(충돌)에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wall&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;visual&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wall&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;world_repository&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/meshes/wall.obj&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;transparency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;transparency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;material&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;diffuse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1.0 1.0 1.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;diffuse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;specular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.1 0.1 0.1&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;specular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pbr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;metal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;metalness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;metalness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;albedo_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;world_repository&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/meshes/white_brick.png&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;albedo_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;metal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pbr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;world_repository&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/meshes/&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;wall_Diffuse&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;material&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;visual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;collision&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;collision&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;model://&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;world_repository&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/meshes/wall.obj&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;collide_bitmask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0x01&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;collide_bitmask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;collision&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;-9.817441860465117 -12.710465116279071 0 0 0 0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        
-        
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
+  &lt;li&gt;ROS2 (humble)&lt;/li&gt;
+  &lt;li&gt;Gazebo 11&lt;/li&gt;
+  &lt;li&gt;Turtlebot3_world&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
+&lt;h3 id=&quot;gazebo-package를-설치&quot;&gt;Gazebo Package를 설치&lt;/h3&gt;
 
-&lt;p&gt;로봇, 센서 들을 정의하는 파일 형식은 SDF(Simulation Description Format), URDF(Unified Robot Description Format), Xacro 이 있다. 각각의 특징과 차이점을 파악해보자&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get update
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;SDF&lt;/strong&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;Gazebo Simulator를 위한 파일 형식으로 로봇, 센서, 환경 등 시뮬레이션 요소를 정의한다.&lt;/li&gt;
-      &lt;li&gt;XML 형식으로 작성, 모델의 물리적 특성, 센서의 속성, 환경의 텍스처 등 정의한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;URDF&lt;/strong&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;URDF는 로봇의 기하학적 및 시각적 특성을 설명한다.&lt;/li&gt;
-      &lt;li&gt;XML 형식으로 작성, 로봇의 기하학적 형상인 로봇의 링크, 조인트를 정의하여 로봇의 구조를 설명한다.&lt;/li&gt;
-      &lt;li&gt;로봇 모델링 및 시각화 도구에 사용, 주로 ROS를 위한 파일 형식이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Xacro&lt;/strong&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;URDF의 확장으로 XML 기반으로 작성된 URDF 파일을 더 효율적으로 작성할 수 있다. 마찬가지로 ROS를 위한 파일 형식이다.&lt;/li&gt;
-      &lt;li&gt;매개변수화와 매크로 기능을 제공하여 조금 더 쉽게 코드를 재사용하고 가독성을 향상시킨다.&lt;/li&gt;
-      &lt;li&gt;URDF 파일보다 조금 더 간결하고 유지 관리가 쉽다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+sudo apt install -y ros-humble-gazebo-ros
 
-&lt;p&gt;전체적인 차이는 SDF는 Gazebo Simulation을 위한 것, URDF는 로봇의 기하학적 구조를 정의하므로 로봇의 모델링과 시각화에서 ROS와 호환, Xacro는 조금 더 쉽게 URDF를 작성하는 URDF의 확장 구조이다.&lt;/p&gt;
+sudo apt install -y ros-humble-gazebo-ros-pkgs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;다음 포스트에서 Model 파일의 구조와 Gazebo Plug-in에 대해서 알아보자.&lt;/p&gt;
+&lt;h3 id=&quot;turtlebot3_world-package-설치&quot;&gt;Turtlebot3_world package 설치&lt;/h3&gt;
+
+&lt;p&gt;turtlebot3_burger with velodyne으로 환경 구성된 turtlebot3_world로 테스트 환경&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/eeoon/turtlebot3_velodyne_Gazebo&quot;&gt;https://github.com/eeoon/turtlebot3_velodyne_Gazebo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;humble&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eon_ws&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eon_ws&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eeoon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;turtlebot3_velodyne_Gazebo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;..&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colcon&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TURTLEBOT3_MODEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gazebo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ros2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;launch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;turtlebot3_gazebo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;turtlebot3_world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;launch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ros2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;teleop_twist_keyboard&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;teleop_twist_keyboard&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;실행결과&quot;&gt;실행결과&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정상적으로 실행 되었다면 다음과 같은 화면을 볼 수 있다. 오른쪽화면이 Gazebo 환경으로 Turtlebot3_World에서 Turtlebot3_burger의 머리에 velodyne을 장착하고 나타난 것을 확인할 수 있다.&lt;/li&gt;
+  &lt;li&gt;좌측화면은 rviz2 (ros1에서는 rviz) 화면으로 rviz2는 데이터를 시각화 하기 위해 사용되는 ros의 기본적인 툴로 좌측 상단에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fixed_frame&lt;/code&gt;을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;base_scan&lt;/code&gt;으로 변경하면 해당 데이터를 visualize할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image.png&quot; alt=&quot;result_picture.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TF_tree를 살펴봤을 때 다음과 같이 나타난다.&lt;/li&gt;
+  &lt;li&gt;간단하게 로봇의 링크 구조를 나타내며 전체적인 구조를 나타낸다.&lt;/li&gt;
+  &lt;li&gt;TF에 대해서는 추후 Transform(TF)에서 포스터 작성 예정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image2.png&quot; alt=&quot;rqt_tf_tree.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;참고 :&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://classic.gazebosim.org/tutorials&quot;&gt;Gazebo  : Tutorials&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/eeoon/turtlebot3_velodyne_Gazebo&quot;&gt;turtlebot3_velodyne_gazebo github&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">Gazebo 실습</summary></entry><entry><title type="html">Gazebo-Plugin</title><link href="http://localhost:4000/robotics/Gazebo_Plugin-content/" rel="alternate" type="text/html" title="Gazebo-Plugin" /><published>2021-04-02T00:00:00+09:00</published><updated>2024-03-29T20:05:55+09:00</updated><id>http://localhost:4000/robotics/Gazebo_Plugin-content</id><content type="html" xml:base="http://localhost:4000/robotics/Gazebo_Plugin-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_plugin/image.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gazebo post에 이어서 Gazebo-Plugin에 대해서 알아보자.&lt;/li&gt;
+  &lt;li&gt;Gazebo 패키지가 ros1을 기반으로 ros2로 release되면서 추가되거나 변경 사항이 생겨 ros1과 ros2에 대해 각각 xml의 형태가 다를 수 있다. 여기서는 ros2(humble)을 기준으로 작성하였다.&lt;/li&gt;
+  &lt;li&gt;Gazebo-plugin은 simulation 환경에서 여러 기능을 제공한다. 예를 들어 센서 계측, 액츄에이터 제어 등 이를 통해 외부 프로그램을 통해 Gazebo 환경에서 데이터를 주고받으며 실제 환경처럼 모사할 수 있게된다.&lt;/li&gt;
+  &lt;li&gt;그 중에서 Sensor, Actuator Plugin에 대해서 깊게 분석해보자. (자주 사용되는 plugin)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sensor-plugin&quot;&gt;Sensor-Plugin&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sensor의 종류가 다양하기 때문에 각각의 Sensor로 부터 Sensing되는 데이터를 계측하고 이를 사용자 또는 다른 프로그램과 연동하여 진행할 수 있다.&lt;/li&gt;
+  &lt;li&gt;따라서 먼저 Gazebo에서 Sensor를 종류별로 분리하면 다음과 같다.(각 센서의 특징은 검색해보길 바란다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Lidar(2D, 3D)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IMU&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Camera(RGB, Depth)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;GPS&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bumper&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;먼저 Lidar Sensor를 사용하기 위해 사용되는 plugin은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libgazebo_ros_ray_sensor&lt;/code&gt;이다. 파일 확장자를 보면 .so 파일은 Windows 에서 .dll 파일로 Linux에서는 .so파일을 사용하는데 해당 파일은 동적 라이브러리로 프로그램 실행 중에 특정 library를 사용하고 싶을 때 로드한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lidar_sensor&quot;&gt;Lidar_Sensor&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;2D&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Lidar&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_laserscan&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_ray_sensor.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;와&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;연동하기&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;위해서&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용되는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;부분으로&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scan&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;출력한다.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;또한&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;필수가&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;아니기&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;때문에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;주석처리할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;수&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;있다.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_lidar&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/out:=scan&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;출력&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;형태(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)는&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sensor_msgs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LaserScan&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구조로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구성되며&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Lidar&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Sensor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;의&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정한다.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;output_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;sensor_msgs/LaserScan&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;output_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_lidar_link&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;3D&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Lidar&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Velodyne&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;gazebo_ros_laser_controller&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_velodyne_laser.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;/example_3dlidar&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/out:=example_points_cloud&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;topicName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;velodyne_points&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;topicName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frameName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;base_scan&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frameName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;organize_cloud&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;organize_cloud&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min_range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.9&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min_range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;130&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gaussian_noise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.008&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gaussian_noise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;imu&quot;&gt;&lt;strong&gt;IMU&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;IMU&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_imu&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_imu_sensor.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;와&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;연동하기&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;위해서&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용되는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;부분으로&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;IMU&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;출력한다&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;      
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;imu&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/out:=data&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;initial_orientation_as_reference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;false&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;initial_orientation_as_reference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;camerargb-depth&quot;&gt;&lt;strong&gt;Camera(RGB, Depth)&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Camera&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;RGB&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;것인지,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Depth&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;정보도&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;포함할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;것인지&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구분할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;수&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;있다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_camera&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_camera.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_camera&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/image_raw:=image_raw&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/camera_info:=camera_info&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Depth&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Camera&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;부분&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Option&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;으로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;된&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;부분은&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;위의&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에서&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정한&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;example_camera&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;가&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;삽입된다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/depth/image_raw:=depth/image_rect_raw&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/depth/camera_info:=depth/camera_info&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;/points:=depth/points&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;camera_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;camera_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;_link_optical&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;hack_baseline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.2&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;hack_baseline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Depth&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Camera&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;설정&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;부분&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Option&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min_depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;0.05&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min_depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;8.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;            
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;        
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;gps&quot;&gt;&lt;strong&gt;GPS&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;GPS&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_gps&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_gps_sensor.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;/example_gps&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/out:=gps&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_gps_link&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;bumper&quot;&gt;&lt;strong&gt;Bumper&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Bumper_sensor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;exmaple_bumper&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_bumper.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_bumper&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;bumper_states:=bumper_demo&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;example_bumper_link&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;frame_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;actuator-plugin&quot;&gt;Actuator-Plugin&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Actuator에 대한 Plugin은 구동부와 Joint에 대한 제어를 담당한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;joint_state_publisher&quot;&gt;Joint_State_Publisher&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Joint_State_Publisher&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_joint_state&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_joint_state_publisher.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;/example&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;~/out:=joint_states&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;remapping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;30&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;joint_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;left_wheel_joint&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;joint_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;joint_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;right_wheel_joint&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;joint_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;differential_drive_controller&quot;&gt;Differential_Drive_Controller&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Differential&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Drive&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Controller&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;다음과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;같다.--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example_diff_drive&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;libgazebo_ros_diff_drive.so&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;/example&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;30&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;update_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;wheels&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;left_joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;left_wheel_joint&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;left_joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;right_joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;right_wheel_joint&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;right_joint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;kinematics&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;wheel_separation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wheel_base_separation&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;wheel_separation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;wheel_diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;$&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wheel_radius&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;wheel_diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;limits&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_wheel_torque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;20&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_wheel_torque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_wheel_acceleration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;1.0&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max_wheel_acceleration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;command_topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;cmd_vel&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;command_topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_odom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_odom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_odom_tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_odom_tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_wheel_tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;false&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;publish_wheel_tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;odometry_topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;odom&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;odometry_topic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;odometry_frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;odom&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;odometry_frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;robot_base_frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;base_link&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;robot_base_frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;결론&quot;&gt;결론&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 대표적인 센서, 구동부를 Gazebo 시뮬레이션에서 어떻게 plugin하는지 살펴봤다.&lt;/li&gt;
+  &lt;li&gt;plugin에 link, joint 구조가 존재하여야하고 센서에서는 noise 처리, visualization, range, distortion 등 설정할 부분이 많다. 이 부분은 gazebo_plugin_tutorial을 참고하길 바란다.&lt;/li&gt;
+  &lt;li&gt;각 센서, 구동부를 정의하면 ros2에서 사용하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ros2 topic list&lt;/code&gt; 에서 관측되는 Data를 확인할 수 있다.&lt;/li&gt;
+  &lt;li&gt;다음과정에서 실제 Gazebo 환경에서 구동되는 센서, 모터를 확인한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;참고 :&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://classic.gazebosim.org/tutorials?tut=ros_gzplugins&quot;&gt;Gazebo  : Tutorial : Gazebo plugins in ROS&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7&quot;&gt;A Review of the ROS2 URDF Gazebo Sensor&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry><entry><title type="html">Coordinates</title><link href="http://localhost:4000/mathematics/coordinates-content/" rel="alternate" type="text/html" title="Coordinates" /><published>2021-03-26T00:00:00+09:00</published><updated>2024-04-01T09:47:52+09:00</updated><id>http://localhost:4000/mathematics/coordinates-content</id><content type="html" xml:base="http://localhost:4000/mathematics/coordinates-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg&quot; alt=&quot;Coord_planes_color.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;좌표계는 로봇에서 움직이는 공간상의 위치를 나타내기 때문에 중요한 개념 중 하나이다.&lt;/li&gt;
+  &lt;li&gt;로봇의 운동 제어, 위치, 임무 수행, 등의 다양한 작업 수행을 하기 위해서는 로봇의 현재 위치와 목표 위치를 정확히 인지하고 있어야한다.&lt;/li&gt;
+  &lt;li&gt;이에 대한 정보의 부족으로 모바일 로봇의 충돌, 산업용 로봇의 안전 등 다양한 문제가 발생할 수 있다.&lt;/li&gt;
+  &lt;li&gt;로봇에서 사용되는 좌표계는 다양한 좌표계를 사용하고 있다 좌표계의 종류, 차이점, 특성을 이해해보자.&lt;/li&gt;
+  &lt;li&gt;또한 좌표계의 종류는 아니지만 Euler 각도에 대해서도 이해한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;직교좌표계orthogonal-coordinates&quot;&gt;직교좌표계(Orthogonal coordinates)&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;데카르트 좌표계&lt;/strong&gt; (cartesian coordinate)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg&quot; alt=&quot;Cartesian-coordinate-system.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;데카르트 좌표 = 카테시안 좌표는 기하학에서 공간 상의 점을 좌표로 나타내는데 가장 일반적으로 사용되고 있는 좌표로 지금까지 우리가 흔히 알던 기본적인 좌표계이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2차원 좌표계
+    &lt;ul&gt;
+      &lt;li&gt;평면 상의 한 점을 나타낸다. 좌표계는 수평으로 x축, 수직으로 y축으로 이루어져 있다.&lt;/li&gt;
+      &lt;li&gt;점의 위치는 (x,y)로 나타낸다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;3차원 좌표계
+    &lt;ul&gt;
+      &lt;li&gt;공간 상의 한 점을 나타낸다. 좌표계는 수평으로 x축, 수직으로 y축, 그리고 x,y 축이 이루는 평면에 수직인 z축으로 이루어져 있다.&lt;/li&gt;
+      &lt;li&gt;점의 위치는 (x,y,z)로 나타낸다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;극좌표계&lt;/strong&gt; (polar coordinate system)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg&quot; alt=&quot;Polar_graph_paper.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;극좌표계는 평면상의 한 점을 극, 방위각으로 점의 위치를 나타내고 데카르트 좌표계에서는 삼각함수를 사용해서 변환할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;극(r) : 원점에서부터의 해당 점 사이 거리를 나타낸다.&lt;/li&gt;
+  &lt;li&gt;방위각(θ) : x축의 양의 방향으로부터 시계 방향을 측정된 각도를 나타내며 단위로 (radian, degree)가 있다. (일반적으로 radian 단위를 사용함)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 점의 위치가 (r,θ)로 나타나며 데카르트 좌표계로 변환하면 (r * cos(θ) , r * sin(θ)) 로 구성될 수 있다. 특징으로는 극좌표계는 원형 대칭 문제를 다루는데 효과적이며 중력, 전자기학 등 공학에서 자주 사용된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;극좌표계에서 데카르트 좌표계로 변환시 :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[x = rcos(\theta) \\
+y = rsin(\theta)\]
+
+&lt;p&gt;&lt;strong&gt;원통좌표계&lt;/strong&gt; (cylindrical coordinate system)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif&quot; alt=&quot;Cylindrical_coordinate.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;원통좌표계는 점의 위치를 원점과의 거리, 방위각, 그리고 높이로 표현하는 좌표계다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;극(r) : 원점으로부터 수평 거리를 나타낸다. 원점과 점 사이의 직선 거리&lt;/li&gt;
+  &lt;li&gt;방위각(θ) : x축의 양의 방향으로부터 시계 방향을 측정된 각도를 나타내며 단위로 (radian, degree)가 있다.&lt;/li&gt;
+  &lt;li&gt;높이(z) : 원점으로부터 수직 높이에 대한 거리를 나타낸다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 점의 위치는 (r,θ,z)로 나타낼 수 있다. 실린더나 원통형태의 구조물을 설명하거나 물리학, 공학, 컴퓨터 그래픽스에서 종종 사용된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데카르트 좌표계에서 원통좌표계로 변환시 :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[r = \sqrt{x^2 + y^2} \\
+\theta = tan^{-1}\frac{y}{x} \\
+z = z\]
+
+&lt;ul&gt;
+  &lt;li&gt;원통좌표계에서 데카르트 좌표계로 변환시 :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[x = rcos(\theta) \\
+y = rsin(\theta) \\
+z = z\]
+
+&lt;p&gt;&lt;strong&gt;구면좌표계&lt;/strong&gt;(spherical coordinate system)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif&quot; alt=&quot;Spherical_coordinate.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;구면좌표계는 점의 위치를 구의 중심으로부터 거리, 방위각, 경도각으로 정의하는 좌표시스템이다. 3차원 공간에서 정의되며 구 형태로 점을 배치하는데 사용한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;반지름(r) : 구의 중심에서부터 점의 위치까지 거리를 나타낸다.&lt;/li&gt;
+  &lt;li&gt;방위각(θ) : x축 양의 방향으로 부터 시계 방향으로 측정된 각을 나타낸다. 마찬가지로 일반적으로 radian 단위를 이용한다.&lt;/li&gt;
+  &lt;li&gt;경도각(φ) : x-y 평면으로부터 시계방향으로 측정된 방위각을 나타낸다. 이 또한 일반적으로 radian 단위로 표현된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 점의 위치는 (r,θ,φ)로 나타내며 구면좌표계는 구 형태의 한점을 나타내므로 지구나 태양같은 천체를 분석하기에 유용하다. 천문학 분야에서 자주 사용됨.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데카르트 좌표계에서 구면좌표계로 변환시:&lt;/li&gt;
+&lt;/ul&gt;
+
+\[r = \sqrt{x^2 + y^2 + z^2} \\
+\theta = arccos\frac{z}{r} \\
+\phi = arctan\frac{y}{x} \\\]
+
+&lt;ul&gt;
+  &lt;li&gt;구면좌표계에서 데카르트 좌표계로 변환시:&lt;/li&gt;
+&lt;/ul&gt;
+
+\[x = rsin(\theta)cos(\phi) \\
+y = rsin(\theta)sin(\phi) \\
+z = rcos(\theta)\]
+
+&lt;h1 id=&quot;euler-angle&quot;&gt;Euler Angle&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png&quot; alt=&quot;3_dimesion_coordinates&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image7.svg&quot; alt=&quot;Eulerangles.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 로봇에서 언급되는 Euler Angle은 무엇일까?, Euler Angle은 강체의 방향을 3차원 공간 좌표계의 회전으로 이해한다. 데카르트 좌표계와 같이 사용되며 오른쪽 사진과 같이 현재 위치를 대문자(X,Y,Z)로 표현되면  &lt;strong&gt;ψ&lt;/strong&gt;(프사이), &lt;strong&gt;θ&lt;/strong&gt;(세타), &lt;strong&gt;φ&lt;/strong&gt;(로)로 표현할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ψ&lt;/strong&gt;(프사이) : z축을 회전축으로하여 x-y 축이 이루는 평면이 회전된 각&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;θ&lt;/strong&gt;(세타) : 회전된 x축(N축)을 회전축으로 하여  z-y축이 이루는 평면이 회전된 각&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;φ&lt;/strong&gt;(로) : 회전된 z축(Z축)을 회전축으로 하여 x-y축이 이루는 평면이 회전된 각&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;또한 다른 방법으로 해당 축에서의 회전만 고려한 방법으로  X축으로의 회전은 &lt;strong&gt;roll&lt;/strong&gt;, Y축으로의 회전은 &lt;strong&gt;pitch&lt;/strong&gt;, Z축으로의 회전은 &lt;strong&gt;yaw&lt;/strong&gt;라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;추가로 Euler와  Quaternion 의 차이는 다음 포스트에 작성할 예정이다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry></feed>

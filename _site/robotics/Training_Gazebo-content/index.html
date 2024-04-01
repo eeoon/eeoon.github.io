@@ -30,22 +30,22 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   
     
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Mathmatics | Youngman</title>
+<title>Training Gazebo | Youngman</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Mathmatics" />
+<meta property="og:title" content="Training Gazebo" />
 <meta name="author" content="Youngeon" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress." />
-<meta property="og:description" content="Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress." />
-<link rel="canonical" href="http://localhost:4000/mathematics/mathematics-content/" />
-<meta property="og:url" content="http://localhost:4000/mathematics/mathematics-content/" />
+<meta name="description" content="Training_Gazebo" />
+<meta property="og:description" content="Training_Gazebo" />
+<link rel="canonical" href="http://localhost:4000/robotics/Training_Gazebo-content/" />
+<meta property="og:url" content="http://localhost:4000/robotics/Training_Gazebo-content/" />
 <meta property="og:site_name" content="Youngman" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-04-12T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-04-12T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Mathmatics" />
+<meta property="twitter:title" content="Training Gazebo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-25T00:28:28+09:00","datePublished":"2022-04-12T00:00:00+09:00","description":"Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.","headline":"Mathmatics","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mathematics/mathematics-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/mathematics/mathematics-content/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-29T20:12:59+09:00","datePublished":"2021-04-12T00:00:00+09:00","description":"Training_Gazebo","headline":"Training Gazebo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/robotics/Training_Gazebo-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/robotics/Training_Gazebo-content/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -75,7 +75,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="generator" content="Hydejack v9.1.6" />
 
 
-<link rel="alternate" href="http://localhost:4000/mathematics/mathematics-content/" hreflang="en">
+<link rel="alternate" href="http://localhost:4000/robotics/Training_Gazebo-content/" hreflang="en">
 
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Youngman" />
 
@@ -112,7 +112,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2024-03-27T01:44:34+09:00',
+    INDEX_KEY: 'index--2024-04-01T09:48:25+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -192,14 +192,14 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
           <span>/</span>
           
           
-          <a href="/mathematics/">mathematics</a>
+          <a href="/robotics/">robotics</a>
         
       </li>
     
       <li>
         
           <span>/</span>
-          <span>mathematics-content</span>
+          <span>Training_Gazebo-content</span>
         
       </li>
     
@@ -216,18 +216,18 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 
 
-<article id="post-mathematics-mathematics-content" class="page post mb6" role="article">
+<article id="post-robotics-Training_Gazebo-content" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
       
-        Mathmatics
+        Training Gazebo
       
     </h1>
 
     <div class="post-date">
       
       <span class="ellipsis mr1">
-        Posted in <a href="/mathematics/" class="flip-title">Mathematics</a> 
+        Posted in <a href="/robotics/" class="flip-title">Robotics</a> 
       </span>
       
     </div>
@@ -239,13 +239,88 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 
 
-  <div class="hr pb0"></div>
+  
+    <p class="note-sm" >
+      Training_Gazebo
+
+    </p>
+  
 
 
   </header>
 
   
-    
+    <h2 id="gazebo-실습">Gazebo 실습</h2>
+
+<ul>
+  <li>turtlebot3_burger와 3D_Lidar(velodyne)으로 구성된 로봇을 Gazebo 환경에서 불러와 Lidar 데이터를 확인하고 간단한 조작을 진행한다.</li>
+  <li>Gazebo 실습과 함께 rviz에 대한 간략한 실행 그리고 tf_tree에 대한 것도 함께 구성하였다.</li>
+</ul>
+
+<h3 id="gazebo-실습-환경">Gazebo 실습 환경</h3>
+
+<ul>
+  <li>ROS2 (humble)</li>
+  <li>Gazebo 11</li>
+  <li>Turtlebot3_world</li>
+</ul>
+
+<h3 id="gazebo-package를-설치">Gazebo Package를 설치</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+
+sudo apt install -y ros-humble-gazebo-ros
+
+sudo apt install -y ros-humble-gazebo-ros-pkgs
+</code></pre></div></div>
+
+<h3 id="turtlebot3_world-package-설치">Turtlebot3_world package 설치</h3>
+
+<p>turtlebot3_burger with velodyne으로 환경 구성된 turtlebot3_world로 테스트 환경</p>
+
+<p><a href="https://github.com/eeoon/turtlebot3_velodyne_Gazebo">https://github.com/eeoon/turtlebot3_velodyne_Gazebo</a></p>
+
+<p><strong>Installation</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">humble</span><span class="o">/</span><span class="n">setup</span><span class="p">.</span><span class="n">bash</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">eon_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">eon_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">eeoon</span><span class="o">/</span><span class="n">turtlebot3_velodyne_Gazebo</span><span class="p">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="p">..</span>
+<span class="n">colcon</span> <span class="n">build</span>
+<span class="n">source</span> <span class="n">install</span><span class="o">/</span><span class="n">setup</span><span class="p">.</span><span class="n">bash</span>
+<span class="n">export</span> <span class="n">TURTLEBOT3_MODEL</span><span class="o">=</span><span class="n">burger</span>
+<span class="p">.</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">gazebo</span><span class="o">/</span><span class="n">setup</span><span class="p">.</span><span class="n">sh</span>
+</code></pre></div></div>
+
+<p><strong>Run</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ros2</span> <span class="n">launch</span> <span class="n">turtlebot3_gazebo</span> <span class="n">turtlebot3_world</span><span class="p">.</span><span class="n">launch</span><span class="p">.</span><span class="n">py</span>
+
+<span class="n">ros2</span> <span class="n">run</span> <span class="n">teleop_twist_keyboard</span> <span class="n">teleop_twist_keyboard</span> 
+</code></pre></div></div>
+
+<h2 id="실행결과">실행결과</h2>
+
+<ul>
+  <li>정상적으로 실행 되었다면 다음과 같은 화면을 볼 수 있다. 오른쪽화면이 Gazebo 환경으로 Turtlebot3_World에서 Turtlebot3_burger의 머리에 velodyne을 장착하고 나타난 것을 확인할 수 있다.</li>
+  <li>좌측화면은 rviz2 (ros1에서는 rviz) 화면으로 rviz2는 데이터를 시각화 하기 위해 사용되는 ros의 기본적인 툴로 좌측 상단에 <code class="language-plaintext highlighter-rouge">fixed_frame</code>을 <code class="language-plaintext highlighter-rouge">base_scan</code>으로 변경하면 해당 데이터를 visualize할 수 있다.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image.png" alt="result_picture.png" /></p>
+
+<ul>
+  <li>TF_tree를 살펴봤을 때 다음과 같이 나타난다.</li>
+  <li>간단하게 로봇의 링크 구조를 나타내며 전체적인 구조를 나타낸다.</li>
+  <li>TF에 대해서는 추후 Transform(TF)에서 포스터 작성 예정</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/training_gazebo/image2.png" alt="rqt_tf_tree.png" /></p>
+
+<p>참고 :</p>
+
+<p><a href="https://github.com/eeoon/turtlebot3_velodyne_Gazebo">turtlebot3_velodyne_gazebo github</a></p>
 
   
 </article>

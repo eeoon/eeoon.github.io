@@ -13,6 +13,7 @@ hide_last_modified: true
 
 ## Gazebo 실습
 
+- turtlebot3_burger와 3D_Lidar(velodyne)으로 구성된 로봇을 Gazebo 환경에서 불러와 Lidar 데이터를 확인하고 간단한 조작을 진행한다.
 - Gazebo 실습과 함께 rviz에 대한 간략한 실행 그리고 tf_tree에 대한 것도 함께 구성하였다.
 
 ### Gazebo 실습 환경
@@ -56,6 +57,8 @@ export TURTLEBOT3_MODEL=burger
 
 ```python
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
 
 ## 실행결과

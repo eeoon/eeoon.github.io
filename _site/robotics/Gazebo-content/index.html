@@ -45,7 +45,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Gazebo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-27T01:42:31+09:00","datePublished":"2021-03-25T00:00:00+09:00","description":"Gazebo Simulator","headline":"Gazebo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/robotics/Gazebo-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/robotics/Gazebo-content/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-03-27T01:54:51+09:00","datePublished":"2021-03-25T00:00:00+09:00","description":"Gazebo Simulator","headline":"Gazebo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/robotics/Gazebo-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/robotics/Gazebo-content/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -112,7 +112,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2024-03-27T01:44:34+09:00',
+    INDEX_KEY: 'index--2024-04-01T09:48:25+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -284,7 +284,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 <p>Gazebo 환경을 구성하는 것은 크게 환경(<strong>World</strong>)와 그 안에 존재하는 로봇, 센서 등 <strong>Model(sdf,urdf,xacro)</strong> 가 존재한다.</p>
 
-<p><a href="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image4.ppm">출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)</a></p>
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo/image5.ppm" alt="출처 : [https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271](https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271)" /></p>
 
 <p>출처 : <a href="https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271">https://www.researchgate.net/figure/Gazebo-Robotic-Operating-System-ROS-interface-block-diagram-28_fig4_350175271</a></p>
 
@@ -300,26 +300,28 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
   <li>
     <p><strong>Fluids</strong> : 시뮬레이션 환경에서 수중환경이 필요하다면 설정할 수 있다.</p>
   </li>
-  <li>.world 파일의 예시를 보자 (주석으로 해당부분 간략히 설명)</li>
   <li>
-    <p>example.world</p>
+    <p>.world 파일의 예시를 보자 (example.world,주석으로 해당부분 간략히 설명)</p>
 
     <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="err">?</span><span class="na">xml</span> <span class="na">version</span><span class="p">=</span><span class="s">"1.0"</span><span class="err">?</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">sdf</span> <span class="na">version</span><span class="p">=</span><span class="s">"1.6"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">world</span> <span class="na">name</span><span class="p">=</span><span class="s">"default"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">world</span> <span class="na">name</span><span class="p">=</span><span class="s">"example"</span><span class="p">&gt;</span>
       
   <span class="p">&lt;</span><span class="err">!--</span> <span class="na">ground</span><span class="err">를</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">include</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://ground_plane<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>  
       <span class="p">&lt;/</span><span class="nt">include</span><span class="p">&gt;</span>
+        
   <span class="p">&lt;</span><span class="err">!--</span> <span class="err">조명으로</span> <span class="na">sun</span><span class="err">을</span> <span class="err">이용</span> <span class="err">--</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">include</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">uri</span><span class="p">&gt;</span>model://sun<span class="p">&lt;/</span><span class="nt">uri</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">include</span><span class="p">&gt;</span>
+        
   <span class="p">&lt;</span><span class="err">!--</span> <span class="err">그림자</span> <span class="err">사용</span> <span class="err">여부</span> <span class="err">--</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">scene</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">shadows</span><span class="p">&gt;</span>false<span class="p">&lt;/</span><span class="nt">shadows</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">scene</span><span class="p">&gt;</span>
+        
   <span class="p">&lt;</span><span class="err">!--</span> <span class="err">전체화면</span> <span class="err">설정</span> <span class="err">및</span> <span class="err">실행하였을</span> <span class="err">때</span> <span class="err">사용자가</span> <span class="err">바라보는</span> <span class="err">시점</span> <span class="err">--</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">gui</span> <span class="na">fullscreen</span><span class="p">=</span><span class="s">'0'</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">camera</span> <span class="na">name</span><span class="p">=</span><span class="s">'user_camera'</span><span class="p">&gt;</span>
@@ -328,6 +330,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
           <span class="p">&lt;</span><span class="nt">projection_type</span><span class="p">&gt;</span>perspective<span class="p">&lt;/</span><span class="nt">projection_type</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">camera</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">gui</span><span class="p">&gt;</span>
+        
   <span class="p">&lt;</span><span class="err">!--</span> <span class="na">ODE</span> <span class="err">물리</span> <span class="err">엔진에</span> <span class="err">대한</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">physics</span> <span class="na">type</span><span class="p">=</span><span class="s">"ode"</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">real_time_update_rate</span><span class="p">&gt;</span>1000.0<span class="p">&lt;/</span><span class="nt">real_time_update_rate</span><span class="p">&gt;</span>
@@ -350,8 +353,9 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
         <span class="p">&lt;/</span><span class="nt">ode</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">physics</span><span class="p">&gt;</span>
         
-      <span class="p">&lt;</span><span class="err">!--</span> <span class="err">추가적인</span> <span class="err">구조물</span> <span class="na">or</span> <span class="err">로봇</span> <span class="err">등</span> <span class="err">언급</span> <span class="err">가능</span> <span class="err">(</span><span class="na">option</span><span class="err">)</span> <span class="err">--</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="err">!--</span> <span class="na">link</span> <span class="err">구조에</span> <span class="na">visual</span><span class="err">(시각화),</span> <span class="na">Collision</span><span class="err">(충돌)에</span> <span class="err">대한</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="err">추가적인</span> <span class="err">구조물</span> <span class="na">or</span> <span class="err">로봇</span> <span class="err">등</span> <span class="err">언급</span> <span class="err">가능</span> <span class="err">(</span><span class="na">option</span><span class="err">)</span> <span class="err">--</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">!--</span> <span class="na">link</span> <span class="err">구조에</span> <span class="na">visual</span><span class="err">(시각화),</span> <span class="na">Collision</span><span class="err">(충돌)에</span> <span class="err">대한</span> <span class="err">설정</span> <span class="err">--</span><span class="p">&gt;</span>
+    
       <span class="p">&lt;</span><span class="nt">link</span> <span class="na">name</span><span class="p">=</span><span class="s">"wall"</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">visual</span> <span class="na">name</span><span class="p">=</span><span class="s">"wall"</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">geometry</span><span class="p">&gt;</span>
@@ -429,13 +433,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 
 <p>다음 포스트에서 Model 파일의 구조와 Gazebo Plug-in에 대해서 알아보자.</p>
 
-<p>참고 :</p>
-
-<p><a href="https://classic.gazebosim.org/tutorials">Gazebo  : Tutorials</a></p>
-
-<p><a href="https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7">A Review of the ROS2 URDF Gazebo Sensor</a></p>
-
-<p><a href="https://www.youtube.com/watch?v=JJDebiniDBw">[ROS2 Q&amp;A] 240 - How to use Gazebo plugins in ROS 2</a></p>
+<p>참고 : <a href="https://classic.gazebosim.org/tutorials">Gazebo  : Tutorials</a></p>
 
   
 </article>
