@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-01T09:48:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-01T10:03:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
@@ -582,7 +582,7 @@
   &lt;li&gt;ROS1에서는 Catkin_make를 이용해 소스코드를 build 하지만 ROS2에서는 colcon 을 활용해 build한다.&lt;/li&gt;
   &lt;li&gt;ROS2에서는 다양한 네트워크 환경(DDS/RTPS) 등을 활용하여 유기적인 통신이 가능하다.&lt;/li&gt;
   &lt;li&gt;ROS1에서는 Master-Slave 구조로 연결되어 있다면 ROS2에서는 Master Node가 없기 때문에 PTP(peer to peer) 형태로 다양한 데이터 타입을 효과적으로 교환할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Training Gazebo</title><link href="http://localhost:4000/robotics/Training_Gazebo-content/" rel="alternate" type="text/html" title="Training Gazebo" /><published>2021-04-12T00:00:00+09:00</published><updated>2024-03-29T20:12:59+09:00</updated><id>http://localhost:4000/robotics/Training_Gazebo-content</id><content type="html" xml:base="http://localhost:4000/robotics/Training_Gazebo-content/">&lt;h2 id=&quot;gazebo-실습&quot;&gt;Gazebo 실습&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="DevOps" /><summary type="html"></summary></entry><entry><title type="html">Training Gazebo</title><link href="http://localhost:4000/robotics/Training_Gazebo-content/" rel="alternate" type="text/html" title="Training Gazebo" /><published>2021-04-12T00:00:00+09:00</published><updated>2024-04-01T09:49:00+09:00</updated><id>http://localhost:4000/robotics/Training_Gazebo-content</id><content type="html" xml:base="http://localhost:4000/robotics/Training_Gazebo-content/">&lt;h2 id=&quot;gazebo-실습&quot;&gt;Gazebo 실습&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;turtlebot3_burger와 3D_Lidar(velodyne)으로 구성된 로봇을 Gazebo 환경에서 불러와 Lidar 데이터를 확인하고 간단한 조작을 진행한다.&lt;/li&gt;
@@ -848,7 +848,7 @@ sudo apt install -y ros-humble-gazebo-ros-pkgs
 
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7&quot;&gt;A Review of the ROS2 URDF Gazebo Sensor&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry><entry><title type="html">Coordinates</title><link href="http://localhost:4000/mathematics/coordinates-content/" rel="alternate" type="text/html" title="Coordinates" /><published>2021-03-26T00:00:00+09:00</published><updated>2024-04-01T09:47:52+09:00</updated><id>http://localhost:4000/mathematics/coordinates-content</id><content type="html" xml:base="http://localhost:4000/mathematics/coordinates-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg&quot; alt=&quot;Coord_planes_color.svg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry><entry><title type="html">Coordinates</title><link href="http://localhost:4000/mathematics/coordinates-content/" rel="alternate" type="text/html" title="Coordinates" /><published>2021-03-26T00:00:00+09:00</published><updated>2024-04-01T09:49:00+09:00</updated><id>http://localhost:4000/mathematics/coordinates-content</id><content type="html" xml:base="http://localhost:4000/mathematics/coordinates-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg&quot; alt=&quot;Coord_planes_color.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;좌표계는 로봇에서 움직이는 공간상의 위치를 나타내기 때문에 중요한 개념 중 하나이다.&lt;/li&gt;
@@ -862,7 +862,7 @@ sudo apt install -y ros-humble-gazebo-ros-pkgs
 
 &lt;p&gt;&lt;strong&gt;데카르트 좌표계&lt;/strong&gt; (cartesian coordinate)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg&quot; alt=&quot;Cartesian-coordinate-system.svg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg&quot; alt=&quot;Cartesian-coordinate-system.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;데카르트 좌표 = 카테시안 좌표는 기하학에서 공간 상의 점을 좌표로 나타내는데 가장 일반적으로 사용되고 있는 좌표로 지금까지 우리가 흔히 알던 기본적인 좌표계이다.&lt;/p&gt;
 
@@ -883,7 +883,7 @@ sudo apt install -y ros-humble-gazebo-ros-pkgs
 
 &lt;p&gt;&lt;strong&gt;극좌표계&lt;/strong&gt; (polar coordinate system)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg&quot; alt=&quot;Polar_graph_paper.svg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg&quot; alt=&quot;Polar_graph_paper.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;극좌표계는 평면상의 한 점을 극, 방위각으로 점의 위치를 나타내고 데카르트 좌표계에서는 삼각함수를 사용해서 변환할 수 있다.&lt;/p&gt;
 
@@ -903,7 +903,7 @@ y = rsin(\theta)\]
 
 &lt;p&gt;&lt;strong&gt;원통좌표계&lt;/strong&gt; (cylindrical coordinate system)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif&quot; alt=&quot;Cylindrical_coordinate.gif&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif&quot; alt=&quot;Cylindrical_coordinate.gif&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;원통좌표계는 점의 위치를 원점과의 거리, 방위각, 그리고 높이로 표현하는 좌표계다.&lt;/p&gt;
 
@@ -933,7 +933,7 @@ z = z\]
 
 &lt;p&gt;&lt;strong&gt;구면좌표계&lt;/strong&gt;(spherical coordinate system)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif&quot; alt=&quot;Spherical_coordinate.gif&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif&quot; alt=&quot;Spherical_coordinate.gif&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;구면좌표계는 점의 위치를 구의 중심으로부터 거리, 방위각, 경도각으로 정의하는 좌표시스템이다. 3차원 공간에서 정의되며 구 형태로 점을 배치하는데 사용한다.&lt;/p&gt;
 
@@ -963,8 +963,9 @@ z = rcos(\theta)\]
 
 &lt;h1 id=&quot;euler-angle&quot;&gt;Euler Angle&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png&quot; alt=&quot;3_dimesion_coordinates&quot; /&gt;&lt;/p&gt;
-
+&lt;!--
+![3_dimesion_coordinates](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png){:.lead width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot;}|
+--&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image7.svg&quot; alt=&quot;Eulerangles.svg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그렇다면 로봇에서 언급되는 Euler Angle은 무엇일까?, Euler Angle은 강체의 방향을 3차원 공간 좌표계의 회전으로 이해한다. 데카르트 좌표계와 같이 사용되며 오른쪽 사진과 같이 현재 위치를 대문자(X,Y,Z)로 표현되면  &lt;strong&gt;ψ&lt;/strong&gt;(프사이), &lt;strong&gt;θ&lt;/strong&gt;(세타), &lt;strong&gt;φ&lt;/strong&gt;(로)로 표현할 수 있다.&lt;/p&gt;

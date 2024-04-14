@@ -12,7 +12,7 @@ hide_last_modified: true
 
 # Coordinates
 
-![Coord_planes_color.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg)
+![Coord_planes_color.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg){:.lead width="800" height="100" loading="lazy"}
 
 - 좌표계는 로봇에서 움직이는 공간상의 위치를 나타내기 때문에 중요한 개념 중 하나이다.
 - 로봇의 운동 제어, 위치, 임무 수행, 등의 다양한 작업 수행을 하기 위해서는 로봇의 현재 위치와 목표 위치를 정확히 인지하고 있어야한다.
@@ -24,7 +24,7 @@ hide_last_modified: true
 
 **데카르트 좌표계** (cartesian coordinate)
 
-![Cartesian-coordinate-system.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg)
+![Cartesian-coordinate-system.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg){:.lead width="800" height="100" loading="lazy"}
 
 데카르트 좌표 = 카테시안 좌표는 기하학에서 공간 상의 점을 좌표로 나타내는데 가장 일반적으로 사용되고 있는 좌표로 지금까지 우리가 흔히 알던 기본적인 좌표계이다.
 
@@ -37,7 +37,7 @@ hide_last_modified: true
 
 **극좌표계** (polar coordinate system)
 
-![Polar_graph_paper.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg)
+![Polar_graph_paper.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg){:.lead width="800" height="100" loading="lazy"}
 
 극좌표계는 평면상의 한 점을 극, 방위각으로 점의 위치를 나타내고 데카르트 좌표계에서는 삼각함수를 사용해서 변환할 수 있다.
 
@@ -55,7 +55,7 @@ $$
 
 **원통좌표계** (cylindrical coordinate system)
 
-![Cylindrical_coordinate.gif](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif)
+![Cylindrical_coordinate.gif](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif){:.lead width="800" height="100" loading="lazy"}
 
 원통좌표계는 점의 위치를 원점과의 거리, 방위각, 그리고 높이로 표현하는 좌표계다.
 
@@ -83,7 +83,7 @@ $$
 
 **구면좌표계**(spherical coordinate system)
 
-![Spherical_coordinate.gif](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif)
+![Spherical_coordinate.gif](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif){:.lead width="800" height="100" loading="lazy"}
 
 구면좌표계는 점의 위치를 구의 중심으로부터 거리, 방위각, 경도각으로 정의하는 좌표시스템이다. 3차원 공간에서 정의되며 구 형태로 점을 배치하는데 사용한다.
 
@@ -111,9 +111,11 @@ $$
 
 # Euler Angle
 
-![3_dimesion_coordinates](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png)
-
+<!--
+![3_dimesion_coordinates](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png){:.lead width="800" height="100" loading="lazy"}|
+-->
 ![Eulerangles.svg](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image7.svg)
+
 
 그렇다면 로봇에서 언급되는 Euler Angle은 무엇일까?, Euler Angle은 강체의 방향을 3차원 공간 좌표계의 회전으로 이해한다. 데카르트 좌표계와 같이 사용되며 오른쪽 사진과 같이 현재 위치를 대문자(X,Y,Z)로 표현되면  **ψ**(프사이), **θ**(세타), **φ**(로)로 표현할 수 있다.
 
