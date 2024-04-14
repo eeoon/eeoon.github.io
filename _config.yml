@@ -138,7 +138,6 @@ defaults:
   - scope:
       path:            hyde/
     values:
-      accent_image:    /assets/img/background.png
       accent_color:    rgb(38,139,210)
       theme_color:     rgb(32,32,32)
       accent_image:
@@ -162,10 +161,10 @@ defaults:
 #      sitemap:         false
 
   # # You can use the following to enable comments on all posts.
-   - scope:
-       type:            posts
-     values:
-       comments:        true
+#   - scope:
+#       type:            posts
+#     values:
+#       comments:        true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:

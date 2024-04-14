@@ -1,5 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-01T10:03:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
-</subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-15T00:41:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Youngman</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+</subtitle><author><name>Youngeon</name><email>kye8456@naver.com</email></author><entry><title type="html">TF(Transform)</title><link href="http://localhost:4000/robotics/TF-content/" rel="alternate" type="text/html" title="TF(Transform)" /><published>2023-07-14T00:00:00+09:00</published><updated>2024-04-15T00:32:20+09:00</updated><id>http://localhost:4000/robotics/TF-content</id><content type="html" xml:base="http://localhost:4000/robotics/TF-content/">&lt;p&gt;TF에 대해서 언급하기 전에 Frame에 대한 개념이 선행되어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/tf/ros2_tf2_frames.png&quot; alt=&quot;ros2_tf2_frames.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;frame이란&quot;&gt;Frame이란?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Frame&lt;/strong&gt;은 “그 로봇의 상태가 어디에 포함되어 있는데?” 라는 것에 해답으로 로봇을 설계하고 구현하는 단계에서 로봇에서 구성된 좌표계다. 로봇의 상태, 위치를 상대적인 좌표로 표현한 것으로 이때 좌표계는 유클리드 좌표계로 구성되고 각각의 좌표계는 독립적으로 구성되어 있다.&lt;/li&gt;
+  &lt;li&gt;Frame을 예를들어 설명하면 내 오른손 검지 손톱은 어디에 있는데? 라고 하면 내 오른손 검지에 속해 있다고 볼 수 있다. 그럼 내 오른손 검지 손톱은 오른손 검지라는 Frame에 속해있고 그 위치는 대략적으로 손가락 끝이라고 볼 수 있다. 그럼 여기서 하나의 문제가 발생한다. 내 오른손 검지 손가락의 위치는 어디가 기준에서 시작되어서 오른손의 위치를 설명할 것이며 그 오른손 위치에서 또 오른손 검지 손가락의 위치, 그 다음 오른손 검지 손톱의 위치를 설명할 것이다.&lt;/li&gt;
+  &lt;li&gt;따라서 각각의 좌표계는 분리되어 각 좌표계간의 관계를 정립해줄 필요가 있다. 절대적인 좌표계로 설명한다면 가장 기본적으로 위도와 경도에 따라서 위치를 설명할 수 있겠지만 실제로 로봇이나 좌표계에서 거리의 단위가 위도, 경도에서 설명하기에는 미시적인 개념으로 상대적인 좌표계가 필요하고 따라서 TF에 대한 개념이 필수적으로 이 문제를 해결할 수 있는 키포인트가 된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tf는-그래서-뭐야&quot;&gt;TF는 그래서 뭐야?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;TF&lt;/strong&gt;에서 좌표계에서 그럼 시작하는 좌표, 즉 기준을 삼을 좌표는 사람을 기준하면 기본적으로 &lt;strong&gt;World&lt;/strong&gt; - &lt;strong&gt;Base_Link&lt;/strong&gt; 로 설정할 수 있다. 로봇을 기준으로 하면 &lt;strong&gt;Map&lt;/strong&gt; - &lt;strong&gt;Base_Link&lt;/strong&gt;를 기준으로 설정할 수 있다. 사실 로봇은 &lt;strong&gt;World&lt;/strong&gt; - &lt;strong&gt;Map - Odom&lt;/strong&gt; - &lt;strong&gt;Base_Link&lt;/strong&gt; 이지만 로봇의 움직임, 이동경로를 Map으로 한정하고 진행하는 경우가 대부분이였다. 실외 로봇, 탐사 로봇에서는 기준되는 좌표계가 World로 시작할 수 있다고 생각한다.&lt;/li&gt;
+  &lt;li&gt;예시를 들어 map - base_link 기준으로 형성되는 TF(transform)을 간략히 설명하자면 map의 원점을 기준으로 로봇의 위치가 (2, -3, 1)만큼 떨어져 있다면 base_link 는 (0, 0, 0) 이지만 map에서의 좌표는 (2, -3, 1) 이다. 그렇다면 로봇의 양쪽에 휠이 부착되어 있고 각 휠은 base_link 기준으로 2만큼 떨어진 곳에 위치해 있다고 가정한다면 왼쪽 휠은 base_link 기준으로 (0,-2,0) 오른쪽 휠은 base_link 기준으로 (0, 2, 0)으로 이를 설명하고 표현할 수 있을것이다.&lt;/li&gt;
+  &lt;li&gt;방금 예시에서 설명한 것처럼 map - base_link - left_wheel_link / right_wheel_link 구조로 형성되었는데 만약 로봇이 움직이면 어떻게 될까? x축방향으로 1 만큼 움직였다면 base_link의 좌표는 (1, 0, 0) 이고 map에서 해당 로봇의 좌표값은 (3, -3, 1)로 변했을 것이다.(조금 더 자세한 표현을 하자면 odom_frame이 있어야하지만 여기서는 생략하도록 하겠다.) 하지만 왼쪽 휠, 오른쪽 휠의 위치는 여전히 (0, -2, 0)이고 (0, 2, 0)이다. 왜냐하면 base_link를 기준으로 left_wheel_link 와 right_wheel_link의 좌표는 변함이 없기 때문이다. 이처럼 모든 Frame은 독립적이기 때문에 로봇이 움직임에 따라서 정적으로 변하지 않는 Frame이 있고 동적으로 변하는 Frame이 있다. 이를 &lt;strong&gt;TF_static&lt;/strong&gt; 과 &lt;strong&gt;TF_broadcaster&lt;/strong&gt;라고 명칭한다. 물론 listener라는 개념도 있지만 TF 에 대해서 전반적으로 이해한다면 listener에 대한 개념은 충분히 이해했다고 생각한다.&lt;/li&gt;
+  &lt;li&gt;아래 사진은 TF_tree 개념으로 tree의 형태를 구성하고 있기때문에 사진과 같이 구성되어 있다. 여기서 나타나는 점은 frame의 parent 개념과 child개념으로 예를들면 odom_Frame 은 parent_frame으로 map을, child_frame 으로 odom_frame이 된다. 또한 여기서보면  화살표 따라서 생성된 Text에서 살펴보면 Average rate, Buffer length등 이 있는데 실시간으로 값이 변한다면 TF_broadcaster로 설계되었고 값이 변하지 않는다면 TF_static으로 설계되어 있다는 것을 확인할 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/tf/tf_tree.png&quot; alt=&quot;tf_tree.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tf-에-사용되는-매개변수는-다음과-같다&quot;&gt;TF 에 사용되는 매개변수는 다음과 같다.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;translation&lt;/strong&gt; : (x,y,z) 좌표계 간의 병진운동&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;rotation&lt;/strong&gt; : (x,y,z,w) 좌표계 간의 회전운동&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;time&lt;/strong&gt; : transform을 가지는 시점&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;parent_frame&lt;/strong&gt; : 부모 Frame의 이름 (like, map)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;child_frame&lt;/strong&gt; : 자식 Frame의 이름 (like, base_link)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;ros&lt;/strong&gt; 에서 사용하는 &lt;strong&gt;tf2_msgs/msg&lt;/strong&gt; 의 형태를 먼저 찾아보면 위에서 사용된 매개변수와 동일하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;tf-static과-tf-broadcaster-에-대해서-코드를-보며-살펴보자&quot;&gt;TF static과 TF broadcaster 에 대해서 코드를 보며 살펴보자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;코드는 C++ 과 Python으로 작성된 예시를 아래의 참고페이지를 통해서 확인할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tf_staticc&quot;&gt;TF_static(C++)&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;memory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;geometry_msgs/msg/transform_stamped.hpp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rclcpp/rclcpp.hpp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;tf2/LinearMath/Quaternion.h&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;tf2_ros/static_transform_broadcaster.h&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StaticFramePublisher&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;explicit&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StaticFramePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;static_turtle_tf2_broadcaster&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;tf_static_broadcaster_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tf2_ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;StaticTransformBroadcaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Publish static transforms once at startup&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_transforms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nl&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;make_transforms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;geometry_msgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TransformStamped&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stamp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;frame_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child_frame_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;tf2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Quaternion&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setRPY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;atof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transformation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;tf_static_broadcaster_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sendTransform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nl&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shared_ptr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tf2_ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;StaticTransformBroadcaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tf_static_broadcaster_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Obtain parameters from command line arguments&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;RCLCPP_INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Invalid number of parameters&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;usage: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$ ros2 run learning_tf2_cpp static_turtle_tf2_broadcaster &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;child_frame_name x y z roll pitch yaw&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// As the parent frame of the transform is `world`, it is&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// necessary to check that the frame name passed is different&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;strcmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;RCLCPP_INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Your static turtle name cannot be &apos;world&apos;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Pass parameters and initialize node&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;StaticFramePublisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shutdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;코드에서 간략하게 살펴보면 time / header / translation / rotation 을 각각 input 해주고 있고 rotation 에서는 quaternion 에 대한 값으로 정의하고 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다음으로 TF_broadcaster에 대한 코드를 살펴보자&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tf_broadcasterc&quot;&gt;TF_broadcaster(C++)&lt;/h3&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;functional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;memory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sstream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;geometry_msgs/msg/transform_stamped.hpp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rclcpp/rclcpp.hpp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;tf2/LinearMath/Quaternion.h&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;tf2_ros/transform_broadcaster.h&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;turtlesim/msg/pose.hpp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FramePublisher&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;FramePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;turtle_tf2_frame_publisher&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Declare and acquire `turtlename` parameter&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;turtlename_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;declare_parameter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;turtlename&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;turtle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Initialize the transform broadcaster&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;tf_broadcaster_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_unique&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tf2_ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TransformBroadcaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Subscribe to a turtle{1}{2}/pose topic and call handle_turtle_pose&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// callback function on each message&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ostringstream&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;turtlename_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/pose&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;topic_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;subscription_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create_subscription&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;turtlesim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Pose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;topic_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FramePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handle_turtle_pose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;placeholders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nl&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handle_turtle_pose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shared_ptr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;turtlesim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Pose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;geometry_msgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TransformStamped&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Read message content and assign it to&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// corresponding tf variables&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stamp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;frame_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child_frame_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;turtlename_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Turtle only exists in 2D, thus we get x and y translation&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// coordinates from the message and set the z coordinate to 0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// For the same reason, turtle can only rotate around one axis&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// and this why we set rotation in x and y to 0 and obtain&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// rotation in z axis from the message&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;tf2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Quaternion&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setRPY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Send the transformation&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;tf_broadcaster_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sendTransform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Subscription&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;turtlesim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Pose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SharedPtr&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subscription_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unique_ptr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tf2_ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TransformBroadcaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tf_broadcaster_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;turtlename_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FramePublisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;rclcpp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shutdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;결론&quot;&gt;결론&lt;/h3&gt;
+
+&lt;p&gt;전반적으로 frame의 개념을 이해한 것을 바탕으로 TF에 대해서 이해하고 이를 실제 로봇에 적용시킬 수 있어야한다. 따라서 TF_tree 를 살펴보는 법, 코드에서 의미하는 바 등을 간략하게 살펴보았다.&lt;/p&gt;
+
+&lt;p&gt;간단하게 정리하자면 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Static 과 Broadcaster에 대한 차이는 Static으로 tf를 정의하면 고정된 좌표에서 상대적인 좌표를 정의하기 때문에 정적인 움직임에 대해서 실시간으로 변하는 동적 움직임을 정의할 수 없다. 따라서 Broadcaster의 방법으로 tf를 정의하면 실시간으로 움직이는 프레임에 대해서 상대적인 좌표를 정의하기 때문에 움직이는 로봇에서 상대적인 좌표(Map) 을 정의하기에 유용하다. 따라서 Odometry를 계산할 때 로봇의 위치가 map 기준으로 실시간으로 변하는데 이를 Broadcaster 방식으로 Odometry를 정의하기 때문에 그렇다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;물론 로봇의 모든 frame을 broadcaster 하지 말아야한다. 왜냐하면 로봇의 Base_link로 부터 로봇의 wheel_link 는 정적(Static)인 좌표로 절대 변하지 않기 때문에 이런 부분은 Static으로 tf를 정의할 수 있다. 따라서 모든 부분이 정적으로, 동적으로 상대 좌표를 정의하는 것이 아닌 상황에 맞도록 동적인 것은 Broadcaster로, 정적인 것은 Static으로 정의할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;참고&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html&quot;&gt;Writing a broadcaster (C++) — ROS 2 Documentation: Humble  documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/tf&quot;&gt;tf - ROS Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiki.ros.org/tf/Tutorials&quot;&gt;tf/Tutorials - ROS Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/tf2/Tutorials/Quaternions&quot;&gt;tf2/Tutorials/Quaternions - ROS Wiki&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html">TF에 대해서 언급하기 전에 Frame에 대한 개념이 선행되어야 한다.</summary></entry><entry><title type="html">Programming Content</title><link href="http://localhost:4000/programming/programming-content/" rel="alternate" type="text/html" title="Programming Content" /><published>2022-12-29T00:00:00+09:00</published><updated>2024-03-14T20:51:29+09:00</updated><id>http://localhost:4000/programming/programming-content</id><content type="html" xml:base="http://localhost:4000/programming/programming-content/">&lt;p&gt;안녕하세요. Programming,&lt;/p&gt;
 
 &lt;h1 id=&quot;programming&quot;&gt;PROGRAMMING&lt;/h1&gt;
 
@@ -848,134 +1081,4 @@ sudo apt install -y ros-humble-gazebo-ros-pkgs
 
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7&quot;&gt;A Review of the ROS2 URDF Gazebo Sensor&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry><entry><title type="html">Coordinates</title><link href="http://localhost:4000/mathematics/coordinates-content/" rel="alternate" type="text/html" title="Coordinates" /><published>2021-03-26T00:00:00+09:00</published><updated>2024-04-01T09:49:00+09:00</updated><id>http://localhost:4000/mathematics/coordinates-content</id><content type="html" xml:base="http://localhost:4000/mathematics/coordinates-content/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image1.svg&quot; alt=&quot;Coord_planes_color.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;좌표계는 로봇에서 움직이는 공간상의 위치를 나타내기 때문에 중요한 개념 중 하나이다.&lt;/li&gt;
-  &lt;li&gt;로봇의 운동 제어, 위치, 임무 수행, 등의 다양한 작업 수행을 하기 위해서는 로봇의 현재 위치와 목표 위치를 정확히 인지하고 있어야한다.&lt;/li&gt;
-  &lt;li&gt;이에 대한 정보의 부족으로 모바일 로봇의 충돌, 산업용 로봇의 안전 등 다양한 문제가 발생할 수 있다.&lt;/li&gt;
-  &lt;li&gt;로봇에서 사용되는 좌표계는 다양한 좌표계를 사용하고 있다 좌표계의 종류, 차이점, 특성을 이해해보자.&lt;/li&gt;
-  &lt;li&gt;또한 좌표계의 종류는 아니지만 Euler 각도에 대해서도 이해한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;직교좌표계orthogonal-coordinates&quot;&gt;직교좌표계(Orthogonal coordinates)&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;데카르트 좌표계&lt;/strong&gt; (cartesian coordinate)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image2.svg&quot; alt=&quot;Cartesian-coordinate-system.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;데카르트 좌표 = 카테시안 좌표는 기하학에서 공간 상의 점을 좌표로 나타내는데 가장 일반적으로 사용되고 있는 좌표로 지금까지 우리가 흔히 알던 기본적인 좌표계이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2차원 좌표계
-    &lt;ul&gt;
-      &lt;li&gt;평면 상의 한 점을 나타낸다. 좌표계는 수평으로 x축, 수직으로 y축으로 이루어져 있다.&lt;/li&gt;
-      &lt;li&gt;점의 위치는 (x,y)로 나타낸다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;3차원 좌표계
-    &lt;ul&gt;
-      &lt;li&gt;공간 상의 한 점을 나타낸다. 좌표계는 수평으로 x축, 수직으로 y축, 그리고 x,y 축이 이루는 평면에 수직인 z축으로 이루어져 있다.&lt;/li&gt;
-      &lt;li&gt;점의 위치는 (x,y,z)로 나타낸다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;극좌표계&lt;/strong&gt; (polar coordinate system)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image3.svg&quot; alt=&quot;Polar_graph_paper.svg&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;극좌표계는 평면상의 한 점을 극, 방위각으로 점의 위치를 나타내고 데카르트 좌표계에서는 삼각함수를 사용해서 변환할 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;극(r) : 원점에서부터의 해당 점 사이 거리를 나타낸다.&lt;/li&gt;
-  &lt;li&gt;방위각(θ) : x축의 양의 방향으로부터 시계 방향을 측정된 각도를 나타내며 단위로 (radian, degree)가 있다. (일반적으로 radian 단위를 사용함)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;따라서 점의 위치가 (r,θ)로 나타나며 데카르트 좌표계로 변환하면 (r * cos(θ) , r * sin(θ)) 로 구성될 수 있다. 특징으로는 극좌표계는 원형 대칭 문제를 다루는데 효과적이며 중력, 전자기학 등 공학에서 자주 사용된다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;극좌표계에서 데카르트 좌표계로 변환시 :&lt;/li&gt;
-&lt;/ul&gt;
-
-\[x = rcos(\theta) \\
-y = rsin(\theta)\]
-
-&lt;p&gt;&lt;strong&gt;원통좌표계&lt;/strong&gt; (cylindrical coordinate system)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image4.gif&quot; alt=&quot;Cylindrical_coordinate.gif&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;원통좌표계는 점의 위치를 원점과의 거리, 방위각, 그리고 높이로 표현하는 좌표계다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;극(r) : 원점으로부터 수평 거리를 나타낸다. 원점과 점 사이의 직선 거리&lt;/li&gt;
-  &lt;li&gt;방위각(θ) : x축의 양의 방향으로부터 시계 방향을 측정된 각도를 나타내며 단위로 (radian, degree)가 있다.&lt;/li&gt;
-  &lt;li&gt;높이(z) : 원점으로부터 수직 높이에 대한 거리를 나타낸다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;따라서 점의 위치는 (r,θ,z)로 나타낼 수 있다. 실린더나 원통형태의 구조물을 설명하거나 물리학, 공학, 컴퓨터 그래픽스에서 종종 사용된다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데카르트 좌표계에서 원통좌표계로 변환시 :&lt;/li&gt;
-&lt;/ul&gt;
-
-\[r = \sqrt{x^2 + y^2} \\
-\theta = tan^{-1}\frac{y}{x} \\
-z = z\]
-
-&lt;ul&gt;
-  &lt;li&gt;원통좌표계에서 데카르트 좌표계로 변환시 :&lt;/li&gt;
-&lt;/ul&gt;
-
-\[x = rcos(\theta) \\
-y = rsin(\theta) \\
-z = z\]
-
-&lt;p&gt;&lt;strong&gt;구면좌표계&lt;/strong&gt;(spherical coordinate system)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image5.gif&quot; alt=&quot;Spherical_coordinate.gif&quot; class=&quot;lead&quot; width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;구면좌표계는 점의 위치를 구의 중심으로부터 거리, 방위각, 경도각으로 정의하는 좌표시스템이다. 3차원 공간에서 정의되며 구 형태로 점을 배치하는데 사용한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;반지름(r) : 구의 중심에서부터 점의 위치까지 거리를 나타낸다.&lt;/li&gt;
-  &lt;li&gt;방위각(θ) : x축 양의 방향으로 부터 시계 방향으로 측정된 각을 나타낸다. 마찬가지로 일반적으로 radian 단위를 이용한다.&lt;/li&gt;
-  &lt;li&gt;경도각(φ) : x-y 평면으로부터 시계방향으로 측정된 방위각을 나타낸다. 이 또한 일반적으로 radian 단위로 표현된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;따라서 점의 위치는 (r,θ,φ)로 나타내며 구면좌표계는 구 형태의 한점을 나타내므로 지구나 태양같은 천체를 분석하기에 유용하다. 천문학 분야에서 자주 사용됨.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데카르트 좌표계에서 구면좌표계로 변환시:&lt;/li&gt;
-&lt;/ul&gt;
-
-\[r = \sqrt{x^2 + y^2 + z^2} \\
-\theta = arccos\frac{z}{r} \\
-\phi = arctan\frac{y}{x} \\\]
-
-&lt;ul&gt;
-  &lt;li&gt;구면좌표계에서 데카르트 좌표계로 변환시:&lt;/li&gt;
-&lt;/ul&gt;
-
-\[x = rsin(\theta)cos(\phi) \\
-y = rsin(\theta)sin(\phi) \\
-z = rcos(\theta)\]
-
-&lt;h1 id=&quot;euler-angle&quot;&gt;Euler Angle&lt;/h1&gt;
-
-&lt;!--
-![3_dimesion_coordinates](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image6.png){:.lead width=&quot;800&quot; height=&quot;100&quot; loading=&quot;lazy&quot;}|
---&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/mathematics/images/coordinates/image7.svg&quot; alt=&quot;Eulerangles.svg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 로봇에서 언급되는 Euler Angle은 무엇일까?, Euler Angle은 강체의 방향을 3차원 공간 좌표계의 회전으로 이해한다. 데카르트 좌표계와 같이 사용되며 오른쪽 사진과 같이 현재 위치를 대문자(X,Y,Z)로 표현되면  &lt;strong&gt;ψ&lt;/strong&gt;(프사이), &lt;strong&gt;θ&lt;/strong&gt;(세타), &lt;strong&gt;φ&lt;/strong&gt;(로)로 표현할 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ψ&lt;/strong&gt;(프사이) : z축을 회전축으로하여 x-y 축이 이루는 평면이 회전된 각&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;θ&lt;/strong&gt;(세타) : 회전된 x축(N축)을 회전축으로 하여  z-y축이 이루는 평면이 회전된 각&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;φ&lt;/strong&gt;(로) : 회전된 z축(Z축)을 회전축으로 하여 x-y축이 이루는 평면이 회전된 각&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또한 다른 방법으로 해당 축에서의 회전만 고려한 방법으로  X축으로의 회전은 &lt;strong&gt;roll&lt;/strong&gt;, Y축으로의 회전은 &lt;strong&gt;pitch&lt;/strong&gt;, Z축으로의 회전은 &lt;strong&gt;yaw&lt;/strong&gt;라고 부른다.&lt;/p&gt;
-
-&lt;p&gt;추가로 Euler와  Quaternion 의 차이는 다음 포스트에 작성할 예정이다.&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="mathematics" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JJDebiniDBw&quot;&gt;[ROS2 Q&amp;amp;A] 240 - How to use Gazebo plugins in ROS 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Youngeon</name><email>kye8456@naver.com</email></author><category term="robotics" /><summary type="html"></summary></entry></feed>
