@@ -1,3 +1,8 @@
+
+:root {
+  --gh-pages-compat: true; // 기본값을 설정합니다.
+}
+
 .dl-table {
   a {
     @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
