@@ -8,10 +8,9 @@
 
 - 배터리 시스템은 다양하게 구현될 수 있겠지만 기본적으로 대기전력, 소비전력만 고려하여 구현한다. (사실은 BMS(Battery Management System)에서는 비선형으로 전력소모를 고려하겠지만..)
 - 대기전력 시스템을 고려하여 로봇이 움직이지 않더라도 배터리 소모가 어느정도 선형적으로 발생하는 것을 기본으로 로봇이 움직이는 경우에는 모터 드라이버의 전력 소모까지 고려하여 조금 더 큰 폭으로 배터리 소모가 진행될 수 있도록 하였다.
-- 사진 첨부
-    
-    그래프 100 퍼센트에서 경사비탈길 같은 배터리 소모 그래프
-    
+
+![image_2.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_battery_plugin/image_2.png)
+
 
 ### Gazebo Plugin (Custom)
 
@@ -91,7 +90,7 @@
     ```
     
 6. build 폴더를 생성하고 cmake를 진행해서 build 파일에 plugin에 대한 lib를 생성한다
-    
+
     `cd build`
     
     `cmake ..`
