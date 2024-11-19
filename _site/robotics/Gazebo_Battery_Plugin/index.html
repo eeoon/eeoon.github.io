@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.1.6 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gazebo Plugin_Battery | Youngman</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Gazebo Plugin_Battery" />
+<meta name="author" content="Youngeon" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Gazebo Plugin 에 대한 기본적인 개념은 이전 페이지에서 언급했다. 참고 : https://eeoon.github.io/robotics/Gazebo_Plugin-content/" />
+<meta property="og:description" content="Gazebo Plugin 에 대한 기본적인 개념은 이전 페이지에서 언급했다. 참고 : https://eeoon.github.io/robotics/Gazebo_Plugin-content/" />
+<link rel="canonical" href="http://localhost:4000/robotics/Gazebo_Battery_Plugin/" />
+<meta property="og:url" content="http://localhost:4000/robotics/Gazebo_Battery_Plugin/" />
+<meta property="og:site_name" content="Youngman" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-10T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gazebo Plugin_Battery" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Youngeon"},"dateModified":"2024-11-16T10:54:54+09:00","datePublished":"2021-05-10T00:00:00+09:00","description":"Gazebo Plugin 에 대한 기본적인 개념은 이전 페이지에서 언급했다. 참고 : https://eeoon.github.io/robotics/Gazebo_Plugin-content/","headline":"Gazebo Plugin_Battery","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/robotics/Gazebo_Battery_Plugin/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/avatar.JPG"},"name":"Youngeon"},"url":"http://localhost:4000/robotics/Gazebo_Battery_Plugin/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="Robotics">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Youngman">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Youngman">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/robotics/Gazebo_Battery_Plugin/" hreflang="en">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Youngman" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+
+
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = true;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2024-11-20T01:16:56+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans+KR:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71)}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="dark-mode no-break-layout no-large-headings">
+  
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/robotics/">robotics</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>Gazebo_Battery_Plugin</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-robotics-Gazebo_Battery_Plugin" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Gazebo Plugin_Battery
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        Posted in <a href="/robotics/" class="flip-title">Robotics</a> 
+      </span>
+      
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    <ul>
+  <li>
+    <p>Gazebo Plugin 에 대한 기본적인 개념은 이전 페이지에서 언급했다. 참고 : <a href="https://eeoon.github.io/robotics/Gazebo_Plugin-content/">https://eeoon.github.io/robotics/Gazebo_Plugin-content/</a></p>
+  </li>
+  <li>
+    <p>배터리 시스템을 Gazebo Plugin을 통해서 Custom 하는 간단한 예시를 진행하면서 Gazebo Plugin에 대해서 조금 더 깊게 알아보자.</p>
+  </li>
+</ul>
+
+<h3 id="배터리-시스템">배터리 시스템</h3>
+
+<ul>
+  <li>배터리 시스템은 다양하게 구현될 수 있겠지만 기본적으로 대기전력, 소비전력만 고려하여 구현한다. (사실은 BMS(Battery Management System)에서는 비선형으로 전력소모를 고려하겠지만..)</li>
+  <li>대기전력 시스템을 고려하여 로봇이 움직이지 않더라도 배터리 소모가 어느정도 선형적으로 발생하는 것을 기본으로 로봇이 움직이는 경우에는 모터 드라이버의 전력 소모까지 고려하여 조금 더 큰 폭으로 배터리 소모가 진행될 수 있도록 하였다.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_battery_plugin/image_2.png" alt="image_2.png" /></p>
+
+<h3 id="gazebo-plugin-custom">Gazebo Plugin (Custom)</h3>
+
+<ul>
+  <li>Gazebo Plugin을 커스텀하기 위해서는 다음과 같이 진행한다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Workspace에서 source file을 생성하고 Gazebo에 대한 해더파일을 참고할 수 있도록 한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">common</span><span class="o">/</span><span class="nx">Plugin</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">rclcpp</span><span class="o">/</span><span class="nx">rclcpp</span><span class="p">.</span><span class="nx">hpp</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">std_msgs</span><span class="o">/</span><span class="nx">msg</span><span class="o">/</span><span class="nx">float32</span><span class="p">.</span><span class="nx">hpp</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">std_msgs</span><span class="o">/</span><span class="nx">msg</span><span class="o">/</span><span class="nx">string</span><span class="p">.</span><span class="nx">hpp</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo_ros</span><span class="o">/</span><span class="nx">node</span><span class="p">.</span><span class="nx">hpp</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">physics</span><span class="o">/</span><span class="nx">Model</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">physics</span><span class="o">/</span><span class="nx">World</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">physics</span><span class="o">/</span><span class="nx">Link</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">physics</span><span class="o">/</span><span class="nx">Joint</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">geometry_msgs</span><span class="o">/</span><span class="nx">msg</span><span class="o">/</span><span class="nx">twist</span><span class="p">.</span><span class="nx">hpp</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">common</span><span class="o">/</span><span class="nx">common</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">common</span><span class="o">/</span><span class="nx">Exception</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+ <span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">gazebo</span><span class="o">/</span><span class="nx">transport</span><span class="o">/</span><span class="nx">transport</span><span class="p">.</span><span class="nx">hh</span><span class="o">&gt;</span>
+    
+ <span class="c1">// 이외 필요한 해더파일을 추가한다.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>SDF 파일에서 parameter를 설정할 수 있도록 하기 위해서 다음과 같이 설정한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// Read parameters from SDF</span>
+ <span class="k">if</span> <span class="p">(</span><span class="nx">_sdf</span><span class="o">-&gt;</span><span class="nx">HasElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">topic_name</span><span class="dl">"</span><span class="p">))</span>
+   <span class="nx">topic_name_</span> <span class="o">=</span> <span class="nx">_sdf</span><span class="o">-&gt;</span><span class="nx">Get</span><span class="o">&lt;</span><span class="nx">std</span><span class="p">::</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">topic_name</span><span class="dl">"</span><span class="p">);</span>
+ <span class="k">else</span>
+   <span class="nx">topic_name_</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">battery_status</span><span class="dl">"</span><span class="p">;</span>  <span class="c1">// default value</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>배터리 정보의 토픽을 publish 하기 위한 부분 설정한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">battery_pub_</span> <span class="o">=</span> <span class="nx">node_</span><span class="o">-&gt;</span><span class="nx">create_publisher</span><span class="o">&lt;</span><span class="nx">sensor_msgs</span><span class="p">::</span><span class="nx">msg</span><span class="p">::</span><span class="nx">BatteryState</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">topic_name_</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>배터리 상태를 업데이트하는 callback 함수를 생성해서 구현한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">battery_charge_</span> <span class="o">-=</span> <span class="nx">scale_</span> <span class="o">*</span> <span class="nx">power_consumption</span> <span class="o">*</span> <span class="nx">dt</span> <span class="o">/</span> <span class="mf">3600.0</span><span class="p">;</span>  <span class="c1">// Convert power (W) to energy (Ah)</span>
+ <span class="nx">voltage_</span> <span class="o">=</span> <span class="p">(</span><span class="nx">battery_charge_</span> <span class="o">/</span> <span class="nx">capacity_</span><span class="p">)</span> <span class="o">*</span> <span class="nx">constant_voltage_</span><span class="p">;</span>
+ <span class="nx">double</span> <span class="nx">battery_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="nx">battery_charge_</span> <span class="o">/</span> <span class="nx">capacity_</span><span class="p">)</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>CMakeLists.txt 파일에서 Class 를 library에 추가하고 이외의 설정을 진행한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">cmake_minimum_required</span><span class="p">(</span><span class="nx">VERSION</span> <span class="mf">3.5</span><span class="p">)</span>
+ <span class="nx">project</span><span class="p">(</span><span class="nx">gazebo_battery_plugin</span><span class="p">)</span>
+    
+ <span class="nx">find_package</span><span class="p">(</span><span class="nx">gazebo_ros</span> <span class="nx">REQUIRED</span><span class="p">)</span>
+ <span class="err">#</span> <span class="p">...</span> <span class="nx">이외의</span> <span class="nx">find_package</span> <span class="nx">설정</span>
+ <span class="err">#</span> <span class="p">...</span> <span class="nx">ex</span><span class="p">,</span> <span class="nx">find_package</span><span class="p">(</span><span class="nx">rclcpp</span> <span class="nx">REQUIRED</span><span class="p">)</span>
+    
+ <span class="err">#</span> <span class="nx">include</span> <span class="nx">directories</span><span class="p">(</span>
+ <span class="nx">include</span>
+ <span class="nx">$</span><span class="p">{</span><span class="nx">GAZEBO_INCLUDE_DIRS</span><span class="p">}</span>
+ <span class="nx">$</span><span class="p">{</span><span class="nx">rclcpp_INCLUDE_DIRS</span><span class="p">}</span>
+ <span class="err">#</span> <span class="p">...</span> <span class="nx">이외의</span> <span class="nx">include</span> <span class="nx">설정</span>
+    
+ <span class="err">#</span> <span class="nx">Build</span> <span class="nx">the</span> <span class="nx">plugin</span>
+ <span class="nx">add_library</span><span class="p">(</span><span class="nx">BatteryPlugin</span> <span class="nx">SHARED</span> <span class="nx">src</span><span class="o">/</span><span class="nx">BatteryPlugin</span><span class="p">.</span><span class="nx">cc</span><span class="p">)</span>
+ <span class="nx">ament_target_dependencies</span><span class="p">(</span><span class="nx">BatteryPlugin</span> <span class="nx">rclcpp</span> <span class="nx">std_msgs</span> <span class="nx">gazebo_ros</span> <span class="nx">geometry_msgs</span> <span class="nx">gazebo_dev</span> <span class="nx">sensor_msgs</span><span class="p">)</span>
+ <span class="nx">target_link_libraries</span><span class="p">(</span><span class="nx">BatteryPlugin</span> <span class="nx">$</span><span class="p">{</span><span class="nx">GAZEBO_LIBRARIES</span><span class="p">})</span>
+    
+ <span class="err">#</span> <span class="nx">install</span>
+ <span class="nx">install</span><span class="p">(</span><span class="nx">TARGETS</span> <span class="nx">BatteryPlugin</span>
+ <span class="nx">LIBRARY</span> <span class="nx">DESTINATION</span> <span class="nx">lib</span>
+ <span class="p">)</span>
+    
+ <span class="err">#</span><span class="nx">ament_package</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>build 폴더를 생성하고 cmake를 진행해서 build 파일에 plugin에 대한 lib를 생성한다</p>
+
+    <p><code class="language-plaintext highlighter-rouge">cd build</code></p>
+
+    <p><code class="language-plaintext highlighter-rouge">cmake ..</code></p>
+
+    <p><code class="language-plaintext highlighter-rouge">make</code></p>
+  </li>
+  <li>
+    <p>생성된 lib를 Gazebo 에서 plugin 할수 있도록 build 폴더를 참조할 수 있도록 한다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">export GAZEBO_PLUGIN_PATH=$HOME/gazebo_battery_plugin/build:$GAZEBO_PLUGIN_PATH</code></p>
+  </li>
+  <li>
+    <p>해당 plugin을 사용하기 위해서 이전에 다른 센서들의 plugin을 추가한 것 처럼 SDF 파일에서 설정한다.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">&lt;</span><span class="err">!--</span> <span class="err">***********************</span> <span class="na">Battery</span> <span class="na">STATE</span> <span class="err">***************************</span>    <span class="err">--</span><span class="p">&gt;</span>
+    
+     <span class="p">&lt;</span><span class="nt">plugin</span> <span class="na">name</span><span class="p">=</span><span class="s">"BatteryPlugin"</span> <span class="na">filename</span><span class="p">=</span><span class="s">"libBatteryPlugin.so"</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">topic_name</span><span class="p">&gt;</span>battery_state<span class="p">&lt;/</span><span class="nt">topic_name</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">battery_charge</span><span class="p">&gt;</span>2.5<span class="p">&lt;/</span><span class="nt">battery_charge</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">scale</span><span class="p">&gt;</span>100.0<span class="p">&lt;/</span><span class="nt">scale</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">capacity</span><span class="p">&gt;</span>2.5<span class="p">&lt;/</span><span class="nt">capacity</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">voltage</span><span class="p">&gt;</span>39.6<span class="p">&lt;/</span><span class="nt">voltage</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">constant_voltage</span><span class="p">&gt;</span>39.6<span class="p">&lt;/</span><span class="nt">constant_voltage</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">lin_discharge_coeff</span><span class="p">&gt;</span>-1.0<span class="p">&lt;/</span><span class="nt">lin_discharge_coeff</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">design_capacity</span><span class="p">&gt;</span>3.3<span class="p">&lt;/</span><span class="nt">design_capacity</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">plugin</span><span class="p">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>토픽 데이터 확인</p>
+    <ul>
+      <li><strong>topic : battery_state / battery_percentage</strong></li>
+      <li>battery_state 에서는 전압, 전류 등 sensor_msg 에 해당하는 데이터를 , battery_percentage는 battery_state 중, 배터리 잔량 표시를 출력한다.</li>
+    </ul>
+
+    <p><img src="https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_battery_plugin/image.png" alt="image.png" /></p>
+  </li>
+</ol>
+
+<p>참고 링크 : https://classic.gazebosim.org/tutorials?cat=guided_i&amp;tut=guided_i5</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2024. All rights reserved.
+</small></p>
+  
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/background.png)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/avatar.JPG" class="avatar" alt="Youngman" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Youngman</h2></a>
+    
+    
+      <p class="">
+        Hello.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/robotics/"
+          class="sidebar-nav-item "
+          
+        >
+          Robotics
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/mathematics/"
+          class="sidebar-nav-item "
+          
+        >
+          Mathematics
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/devops/"
+          class="sidebar-nav-item "
+          
+        >
+          DevOps
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/project/"
+          class="sidebar-nav-item "
+          
+        >
+          Project
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item "
+          
+        >
+          About Me
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://instagram.com/eeooon_" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/eeoon" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:kyu8456@naver.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'UA-XXXXXXXX-X', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementById('_pushState');
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
+
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+</div>
+
+
+</body>
+</html>

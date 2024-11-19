@@ -10,8 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 3.9.2"
 
-gem "jekyll-theme-hydejack", "~> 9.1"
-#gem "jekyll-theme-hydejack"
+#gem "jekyll-theme-hydejack", "~> 9.1"
 
 gem "github-pages", "~>	228", group: :jekyll_plugins
 
@@ -41,6 +40,7 @@ gem "duktape"
 gem "webrick"
 
 group :jekyll_plugins do
+  gem "jekyll-sass-converter"
   gem "jekyll-default-layout"
   gem "jekyll-feed"
   gem "jekyll-optional-front-matter"
@@ -63,3 +63,5 @@ gem "tzinfo-data" if Gem.win_platform?
 
 
 gem "faraday-retry", "~> 2.2"
+
+gem "jekyll-theme-hydejack", "~> 9.2"

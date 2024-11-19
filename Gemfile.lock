@@ -27,7 +27,8 @@ GEM
     commonmarker (0.23.10)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
-    dnsruby (1.72.2)
+    dnsruby (1.72.3)
+      base64 (~> 0.2.0)
       simpleidn (~> 0.2.1)
     drb (2.2.1)
     duktape (2.7.0.0)
@@ -299,9 +300,10 @@ DEPENDENCIES
   jekyll-readme-index
   jekyll-redirect-from
   jekyll-relative-links
+  jekyll-sass-converter
   jekyll-seo-tag
   jekyll-sitemap
-  jekyll-theme-hydejack (~> 9.1)
+  jekyll-theme-hydejack (~> 9.2)
   jekyll-titles-from-headings
   kramdown-math-katex
   webrick
