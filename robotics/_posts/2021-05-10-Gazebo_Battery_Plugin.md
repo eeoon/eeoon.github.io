@@ -9,7 +9,7 @@
 - 배터리 시스템은 다양하게 구현될 수 있겠지만 기본적으로 대기전력, 소비전력만 고려하여 구현한다. (사실은 BMS(Battery Management System)에서는 비선형으로 전력소모를 고려하겠지만..)
 - 대기전력 시스템을 고려하여 로봇이 움직이지 않더라도 배터리 소모가 어느정도 선형적으로 발생하는 것을 기본으로 로봇이 움직이는 경우에는 모터 드라이버의 전력 소모까지 고려하여 조금 더 큰 폭으로 배터리 소모가 진행될 수 있도록 하였다.
 
-![image_2.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_battery_plugin/image_2.png)
+![image_2.png](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/robotics/images/gazebo_battery_plugin/image_2.jpg)
 
 
 ### Gazebo Plugin (Custom)
