@@ -5,9 +5,9 @@
 I'm starting this blog to record what I've been studying, learning, and digging into.
 
 ### Research Interest
-* SLAM
 * Multi Robotics
 * Field Robotics
+* Open-RMF
 
 ### Contact
 * [Github](https://github.com/eeoon)
