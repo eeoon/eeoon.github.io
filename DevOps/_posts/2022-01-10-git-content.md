@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Git, Github
+title: Git과 GitHub 기초: 설치부터 push까지 완전 정리
 description: >
-  Git, Github
+  Git 분산 버전 관리 시스템의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령어를 정리합니다.
 sitemap: true
 changefreq : daily
 priority : 1.0
@@ -44,7 +44,7 @@ ex, `git clone [https://github.com/eeoon/eeoon.git](https://github.com/eeoon/eeo
 
 옵션을 통해서 원하는 branch를 clone할 수 있다.
 
-`git clone https://github.com/eeoon/eeoon.git -b humble` 
+`git clone https://github.com/eeoon/eeoon.git -b humble`
 
 ## github에 push하기
 
@@ -53,13 +53,13 @@ ex, `git clone [https://github.com/eeoon/eeoon.git](https://github.com/eeoon/eeo
 - 내 github에 push하기 위해서는 사전작업으로 Github에 가입하여 내 repository를 생성하고 해당 repository로 내가 작업중이던 코드, 프로젝트 등을 push 할 수 있다.
 
 - Github에 가입하였다면
-    
+
     `git config --global user.name "Your Name"`
-    
+
     `git config --global user.email "your.email@example.com"`
-    
+
     명령을 진행한다.
-    
+
 
 - 사용자의 이름, 이메일 주소를 설정한다. option으로 global로 설정되어 있기 때문에 전역적으로 설정되었고 local설정으로 변경할 때에는 해당 옵션 없이 진행하면 된다. 현재 전역으로 설정되었기에 추가적으로 반복해서 진행할 필요는 없다.
 
@@ -73,7 +73,7 @@ ex, `git clone [https://github.com/eeoon/eeoon.git](https://github.com/eeoon/eeo
 
 ![Screenshot2](https://raw.githubusercontent.com/eeoon/eeoon.github.io/main/DevOps/images/git/image4.png)
 
- 
+
 
 만들어진 repository를 확인한 후 우측 상단의 Code를 누른 후 url를 Copy 한다.
 
@@ -101,13 +101,13 @@ Github에 생성한 원격저장소를 로컬 Git에 추가한다.
 
 여기서 위 사진에서 복사한 url을 입력한다.
 
-ex, 
+ex,
 
 `git remote add origin https://github.com/eeoon/example.git`
 
 `git checkout -b main`
 
-branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환할 수 있다. 
+branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환할 수 있다.
 
 `git branch -m master main`
 
@@ -131,7 +131,7 @@ branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환
 
 만약 마지막 단계를 진행했을때도 실패한 경우에는
 
-`git push origin +main` 
+`git push origin +main`
 
 입력하여 강제로 git push 할 수 있다.
 
