@@ -1,12 +1,14 @@
 ---
-layout: default
+layout: blog
+title: Home
+description: >
+  Youngman's blog about robotics, DevOps, and more.
 pagination:
   enabled: true
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  {% endfor %}
-</div>
+{%- comment -%}
+Using Hydejack's built-in `blog` layout to render rich post cards
+with dates, categories, and descriptions instead of plain titles.
+{%- endcomment -%}
 
