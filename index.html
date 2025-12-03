@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Home
 description: >
   Youngman's blog about robotics, DevOps, and more.
@@ -7,24 +7,8 @@ pagination:
   enabled: true
 ---
 
-<ul class="post-list">
-  {% assign post_format = site.data.strings.date_formats.post | default:"%d %b %Y" %}
-  {% for post in paginator.posts %}
-    <li class="post-list-item">
-      <h2 class="post-list-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
-      <div class="post-list-meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date:post_format }}
-        </time>
-      </div>
-      {% if post.description %}
-        <p class="post-list-description">
-          {{ post.description }}
-        </p>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+{%- comment -%}
+Using Hydejack's built-in `blog` layout to render rich post cards
+with dates, categories, and descriptions instead of plain titles.
+{%- endcomment -%}
 
