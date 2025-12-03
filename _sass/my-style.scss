@@ -13,8 +13,28 @@
   }
 }
 
-// Home/Blog list: make date smaller than description
-.post .post-date {
-  font-size: 0.85em;
+// Home list (index): simple clean list without images
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list-item {
+  margin-bottom: 2.5rem;
+}
+
+.post-list-title {
+  margin: 0 0 0.25rem;
+}
+
+.post-list-meta {
+  font-size: 0.85em; // smaller than description
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.25rem;
+}
+
+.post-list-description {
+  margin: 0;
 }
 
