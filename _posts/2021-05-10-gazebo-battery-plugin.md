@@ -1,31 +1,31 @@
 ---
 layout: post
-title: "Gazebo 커스텀 Battery Plugin 만들기"
+title: "Building a Custom Gazebo Battery Plugin"
 date: 2021-05-10 09:00:00 +0900
-description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제"
+description: "An example of implementing a custom battery system as a Gazebo plugin that accounts for standby and active power consumption"
 tags: [gazebo, plugin, ros2]
 categories: tech-note
 giscus_comments: false
 related_posts: false
 ---
 
-- Gazebo Plugin 에 대한 기본적인 개념은 이전 페이지에서 언급했다. 참고 : [/blog/2021/gazebo-plugin/](/blog/2021/gazebo-plugin/)
+- The basic concepts of Gazebo plugins were covered in the previous post. Reference : [/blog/2021/gazebo-plugin/](/blog/2021/gazebo-plugin/)
 
-- 배터리 시스템을 Gazebo Plugin을 통해서 Custom 하는 간단한 예시를 진행하면서 Gazebo Plugin에 대해서 조금 더 깊게 알아보자.
+- This post goes a little deeper into Gazebo plugins by walking through a simple example of customizing a battery system as a Gazebo plugin.
 
-### 배터리 시스템
+### Battery system
 
-- 배터리 시스템은 다양하게 구현될 수 있겠지만 기본적으로 대기전력, 소비전력만 고려하여 구현한다. (사실은 BMS(Battery Management System)에서는 비선형으로 전력소모를 고려하겠지만..)
-- 대기전력 시스템을 고려하여 로봇이 움직이지 않더라도 배터리 소모가 어느정도 선형적으로 발생하는 것을 기본으로 로봇이 움직이는 경우에는 모터 드라이버의 전력 소모까지 고려하여 조금 더 큰 폭으로 배터리 소모가 진행될 수 있도록 하였다.
+- A battery system can be implemented in many ways, but here it is implemented considering only standby power and active power consumption. (In reality a BMS (Battery Management System) would model power consumption non-linearly.)
+- Taking standby power into account, the battery drains roughly linearly even when the robot is not moving; when the robot moves, the power consumption of the motor drivers is also included so that the battery drains at a higher rate.
 
 ![image_2.png](/assets/img/blog/robotics/gazebo_battery_plugin/image_2.jpg)
 
 
 ### Gazebo Plugin (Custom)
 
-- Gazebo Plugin을 커스텀하기 위해서는 다음과 같이 진행한다.
+- To customize a Gazebo plugin, proceed as follows.
 
-1. Workspace에서 source file을 생성하고 Gazebo에 대한 해더파일을 참고할 수 있도록 한다.
+1. Create a source file in the workspace and include the Gazebo header files.
     
     ```jsx
     #include <gazebo/common/Plugin.hh>
@@ -42,10 +42,10 @@ related_posts: false
     #include <gazebo/common/Exception.hh>
     #include <gazebo/transport/transport.hh>
     
-    // 이외 필요한 해더파일을 추가한다.
+    // add any other header files you need
     ```
     
-2. SDF 파일에서 parameter를 설정할 수 있도록 하기 위해서 다음과 같이 설정한다.
+2. Set it up as follows so that parameters can be configured from the SDF file.
     
     ```jsx
     // Read parameters from SDF
@@ -55,13 +55,13 @@ related_posts: false
       topic_name_ = "battery_status";  // default value
     ```
     
-3. 배터리 정보의 토픽을 publish 하기 위한 부분 설정한다.
+3. Set up the publisher for the battery information topic.
     
     ```jsx
     battery_pub_ = node_->create_publisher<sensor_msgs::msg::BatteryState>(topic_name_, 10);
     ```
     
-4. 배터리 상태를 업데이트하는 callback 함수를 생성해서 구현한다.
+4. Create and implement a callback function that updates the battery state.
     
     ```jsx
     battery_charge_ -= scale_ * power_consumption * dt / 3600.0;  // Convert power (W) to energy (Ah)
@@ -69,21 +69,21 @@ related_posts: false
     double battery_percentage = (battery_charge_ / capacity_) * 100.0;
     ```
     
-5. CMakeLists.txt 파일에서 Class 를 library에 추가하고 이외의 설정을 진행한다.
+5. In CMakeLists.txt, add the class to a library and complete the remaining settings.
     
     ```jsx
     cmake_minimum_required(VERSION 3.5)
     project(gazebo_battery_plugin)
     
     find_package(gazebo_ros REQUIRED)
-    # ... 이외의 find_package 설정
+    # ... other find_package entries
     # ... ex, find_package(rclcpp REQUIRED)
     
     # include directories(
     include
     ${GAZEBO_INCLUDE_DIRS}
     ${rclcpp_INCLUDE_DIRS}
-    # ... 이외의 include 설정
+    # ... other include settings
     
     # Build the plugin
     add_library(BatteryPlugin SHARED src/BatteryPlugin.cc)
@@ -98,7 +98,7 @@ related_posts: false
     #ament_package()
     ```
     
-6. build 폴더를 생성하고 cmake를 진행해서 build 파일에 plugin에 대한 lib를 생성한다
+6. Create a build folder and run cmake to generate the plugin library in the build folder.
 
     `cd build`
     
@@ -106,11 +106,11 @@ related_posts: false
     
     `make`
     
-7. 생성된 lib를 Gazebo 에서 plugin 할수 있도록 build 폴더를 참조할 수 있도록 한다.
+7. Point Gazebo at the build folder so that the generated library can be loaded as a plugin.
     
     `export GAZEBO_PLUGIN_PATH=$HOME/gazebo_battery_plugin/build:$GAZEBO_PLUGIN_PATH` 
     
-8. 해당 plugin을 사용하기 위해서 이전에 다른 센서들의 plugin을 추가한 것 처럼 SDF 파일에서 설정한다.
+8. To use the plugin, configure it in the SDF file just as the other sensor plugins were added earlier.
     
     ```jsx
      <!-- *********************** Battery STATE ***************************    -->
@@ -128,11 +128,11 @@ related_posts: false
     ```
     
 
-1. 토픽 데이터 확인
+1. Checking the topic data
     - **topic : battery_state / battery_percentage**
-    - battery_state 에서는 전압, 전류 등 sensor_msg 에 해당하는 데이터를 , battery_percentage는 battery_state 중, 배터리 잔량 표시를 출력한다.
+    - battery_state outputs the sensor_msg data such as voltage and current; battery_percentage outputs the remaining battery level from battery_state.
     
     ![image.png](/assets/img/blog/robotics/gazebo_battery_plugin/image.png)
     
 
-참고 링크 : https://classic.gazebosim.org/tutorials?cat=guided_i&tut=guided_i5
+Reference link : https://classic.gazebosim.org/tutorials?cat=guided_i&tut=guided_i5

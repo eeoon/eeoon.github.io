@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: GitHub 프로필과 공개 저장소.
+description: GitHub profile and public repositories.
 nav: true
 nav_order: 6
 ---

@@ -1,53 +1,53 @@
 ---
 layout: page
-title: 3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계
-description: 1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트
+title: "Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System"
+description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID"
 img: assets/img/projects/3axis-7dof-stability/img-4.png
 importance: 3
 category: personal
 ---
 
-**기간** 2021.02 ~ 2021.08 · **소속** 계명대학교 (학부연구생, Robot Dynamics and Intelligent Control Lab) · **역할** 수학 모델링, 상태공간 설계, MATLAB 안정성 시뮬레이션, PID 제어기 설계
+**Period** 2021.02 – 2021.08 · **Affiliation** Keimyung University (undergraduate researcher, Robot Dynamics and Intelligent Control Lab) · **Role** Mathematical modeling, state-space design, MATLAB stability simulation, PID controller design
 
-## 배경과 목표
+## Background and Goals
 
-로봇 몸체가 외력을 받아도 평형 상태로 복귀해 다음 외력에 대비하는 자율 안정화(외란 거부) 시스템이 최종 목표였다. 단순 1축 모델에서 시작해 점진적으로 3축 시스템으로 확장하며, 복잡도가 안정성에 미치는 영향을 정량적으로 확인했다.
+The ultimate goal was a self-stabilizing (disturbance rejection) system in which the robot body returns to equilibrium after an external force and is ready for the next one. Starting from a simple 1-axis model, I extended it progressively to a 3-axis system and quantified how the added complexity affects stability.
 
-## 접근
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/3axis-7dof-stability/img-1.png" title="3자유도 모델링" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-2.png" title="계단 응답" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-</div>
-<div class="caption">1축 3자유도 운동방정식·모델링(왼쪽)과 MATLAB 계단 응답(오른쪽).</div>
-
-1. **1축 3자유도 모델링:** 질량체 m₁, m₂, m₃가 스프링(k)·댐퍼(c)로 직렬 연결된 구조의 운동방정식을 도출했다.
-2. **1차 안정성 검증:** m₁에 455 N 외력을 가했을 때 중심 m₂의 위치 변화를 추종. 제어기 없이도 계단 응답에서 진폭이 감쇠하며 안정성이 유지됨을 확인했다.
-3. **3축 7자유도 확장:** 중심 질량체(m₇)에 6개 질량체(m₁~m₆)가 방사형으로 배치된 구조로 확장했다.
-4. **상태공간 통합:** 각 축의 운동방정식을 $$\dot{x} = Ax + Bu,\; y = Cx + Du$$로 변환하고 두 14×14 시스템을 블록 대각으로 묶어 **28×28 통합 행렬**을 구성, 단일 환경에서 동시 해석했다.
-5. **PID 설계:** 3축 확장 후 무제어로는 안정성이 확보되지 않음을 확인하고, 각 축에 PID를 설계해 게인을 시뮬레이션으로 도출했다.
+## Approach
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-3.png" title="7자유도 구상도" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/3axis-7dof-stability/img-1.png" title="3-DOF modeling" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-4.png" title="7자유도 모델링" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-5.png" title="상태변수 행렬" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-2.png" title="Step response" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">3축 7자유도 구상도(왼쪽), 모델링(가운데), 상태방정식의 상태변수 행렬(오른쪽).</div>
+<div class="caption">Equations of motion and modeling of the 1-axis 3-DOF system (left) and the MATLAB step response (right).</div>
 
-## 결과
+1. **1-axis 3-DOF modeling:** Derived the equations of motion for masses m₁, m₂, and m₃ connected in series by springs (k) and dampers (c).
+2. **First stability check:** Tracked the position change of the central mass m₂ when a 455 N external force was applied to m₁. Confirmed that even without a controller the step response amplitude decayed and stability was maintained.
+3. **Extension to 3 axes and 7 DOF:** Extended the structure so that six masses (m₁–m₆) are arranged radially around a central mass (m₇).
+4. **State-space integration:** Converted the equations of motion of each axis to $$\dot{x} = Ax + Bu,\; y = Cx + Du$$ and combined the two 14×14 systems block-diagonally into a **28×28 combined matrix**, analyzing them simultaneously in a single environment.
+5. **PID design:** Confirmed that after the 3-axis extension stability was no longer guaranteed without control, then designed a PID controller for each axis and derived the gains through simulation.
 
-1축에서는 확보되던 안정성이 3축 7자유도로 확장하면 무제어로는 확보되지 않는다는 사실을 시뮬레이션으로 발견하고, "문제 인식 → 분석 → PID 해결"의 엔지니어링 전 과정을 경험했다. 게인을 시뮬레이션으로 결정하는 체계적 방법론을 확립했다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-3.png" title="7-DOF concept diagram" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-4.png" title="7-DOF modeling" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/3axis-7dof-stability/img-5.png" title="State variable matrix" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">Concept diagram of the 3-axis 7-DOF system (left), modeling (center), and the state variable matrix of the state equation (right).</div>
 
-## 기술 스택
+## Results
 
-MATLAB (Control System Toolbox) · 운동방정식 / 상태공간 표현 · Spring-Damper 진동계 · PID 제어 · 선형대수
+Discovered through simulation that the stability present in the 1-axis case is no longer guaranteed without control once the system is extended to 3 axes and 7 DOF, and worked through the full engineering cycle of "problem identification → analysis → PID solution." Established a systematic methodology for determining gains via simulation.
+
+## Tech Stack
+
+MATLAB (Control System Toolbox) · Equations of motion / state-space representation · Spring-damper vibration systems · PID control · Linear algebra

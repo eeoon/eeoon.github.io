@@ -1,55 +1,55 @@
 ---
 layout: page
-title: Open-RMF 기반 이기종 다중로봇 중앙 관제
-description: 대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지
+title: "Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems"
+description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots"
 img: assets/img/publication_preview/openrmf-cooperative-autonomous.png
 importance: 1
 category: company
 related_publications: true
 ---
 
-**기간** 2023.05 ~ 현재 · **소속** KETI 지능로보틱스연구센터 · **역할** 다중로봇 시뮬레이션·관제 시스템 설계 및 실증
+**Period** 2023.05 – present · **Affiliation** Intelligent Robotics Research Center, Korea Electronics Technology Institute (KETI) · **Role** Design and real-robot validation of the multi-robot simulation and fleet management system
 
-## 배경과 문제
+## Background and Problem
 
-대규모 실내 업무공간에서 서로 다른 제어 체계를 가진 수십 대의 이동로봇이 함께 움직이려면, 중앙에서 임무를 배분하고 충돌 없이 운용할 관제 아키텍처가 필요하다. 다수 로봇을 동시에 가동할 때 전역 경로 간섭과 서버 통신 병목이 핵심 난제였다. 이 프로젝트는 [Open-RMF](https://www.open-rmf.org/)를 기반으로 이기종 로봇을 하나의 관제로 묶고, 시뮬레이션에서 검증한 로직을 실물 로봇에 옮기는 전 과정을 다룬다.
+For dozens of mobile robots with different control systems to operate together in a large indoor workspace, a supervisory architecture is needed that assigns missions centrally and runs the fleet without collisions. When many robots run simultaneously, global path interference and server communication bottlenecks were the core challenges. This project covers the full process of unifying heterogeneous robots under one fleet manager based on [Open-RMF](https://www.open-rmf.org/), and transferring the logic verified in simulation to physical robots.
 
-## 담당 업무
+## Responsibilities
 
-- **다중로봇 시뮬레이션 기반 구축:** Gazebo에서 TurtleBot3 → TETRA_S/TETRA_M 모델로 확장하며 namespace·TF 설계, Nav2 다중로봇 구성, ROS 1 → ROS 2(Foxy/Humble) 마이그레이션, 센서(LiDAR·IMU·RealSense) 드라이버 정리.
-- **Open-RMF 관제·Task 시스템:** traffic_editor nav_graph 제작, fleet_adapter·free_fleet 연동, 사용자 입력 기반 go_to_place dispatch, 무한 반복 임무 자동 부여 노드(RMF Infinity Task), 배터리 플러그인 기반 충전 Task.
-- **협력적 인지·주행:** 개별 로봇이 2D LiDAR·RGB-D(YOLOv8)로 탐지한 장애물을 전역 맵 좌표로 변환해 서버에 공유하고, 장애물이 교차하는 차선을 폐쇄(Lane Closed)해 다른 로봇이 시야 밖 장애물까지 선제 우회하도록 구현.
-- **통신 최적화:** 실물 운용 시 통신 병목·데이터 손실을 CycloneDDS 설정으로 해소하고, 다른 도메인 로봇 연결은 Zenoh 브리지로 확장. WiFi-6E 환경에서 image_transport 기반 관제 실증.
-- **경로계획 분석:** MAPF의 중앙집중(CBS) 및 분산(VO·RVO·ORCA) 알고리즘 구조 분석과 Gazebo 검증.
-- **작업 이양·통합테스트:** 상태 기반 Replan Trigger ROS 2 서비스, ROS 2 긴급정지 토픽, 서버 중심 TF 재구성, 연차별 통합테스트 및 공인시험 성능지표 정의·데이터 수집.
+- **Multi-robot simulation infrastructure:** Extended Gazebo models from TurtleBot3 to TETRA_S/TETRA_M with namespace and TF design, Nav2 multi-robot configuration, ROS 1 to ROS 2 (Foxy/Humble) migration, and sensor driver cleanup (LiDAR, IMU, RealSense).
+- **Open-RMF fleet management and task system:** Built traffic_editor nav_graphs, integrated fleet_adapter and free_fleet, implemented user-input-driven go_to_place dispatch, a node that automatically assigns endlessly repeating missions (RMF Infinity Task), and a battery-plugin-based charging task.
+- **Cooperative perception and navigation:** Each robot converts obstacles detected with a 2D LiDAR and RGB-D camera (YOLOv8) into global map coordinates and shares them with the server; lanes intersecting an obstacle are closed (Lane Closed) so that other robots proactively detour around obstacles outside their own field of view.
+- **Communication optimization:** Resolved communication bottlenecks and data loss in real-robot operation through CycloneDDS configuration, and extended connections to robots on other domains with a Zenoh bridge. Demonstrated image_transport-based fleet management in a WiFi-6E environment.
+- **Path planning analysis:** Analyzed the structure of centralized (CBS) and decentralized (VO, RVO, ORCA) MAPF algorithms and verified them in Gazebo.
+- **Handover and integration testing:** State-based Replan Trigger ROS 2 service, ROS 2 emergency-stop topic, server-centric TF restructuring, yearly integration tests, and definition of performance metrics and data collection for certified testing.
 
-## 결과
+## Results
 
-- **30대 규모** 다중로봇 시뮬레이션(RMF Gazebo World 변환·LiDAR 회피·YOLO 장애물 공유)으로 관제 로직을 검증한 뒤, **실물 4대**에서 교착 없이 임무를 수행하는 Sim-to-Real 실증.
-- 협력적 장애물 정보 공유로 비협력 시스템 대비 충돌 위험·경로 비용 감소를 4대 로봇 실험으로 확인 (ICCAS 2024).
-- 관련 논문: KROC 2024 {% cite kim2024openrmf %}, ICROS 2024 {% cite kim2024crossutilization %}, ICCAS 2024 {% cite kim2024traversability %} — 모두 제1저자.
+- Verified the fleet management logic in a **30-robot** multi-robot simulation (RMF Gazebo World conversion, LiDAR avoidance, YOLO obstacle sharing), then completed a Sim-to-Real demonstration in which **4 physical robots** executed missions without deadlock.
+- Confirmed through 4-robot experiments that cooperative obstacle information sharing reduces collision risk and path cost compared with a non-cooperative system (ICCAS 2024).
+- Related papers: KROC 2024 {% cite kim2024openrmf %}, ICROS 2024 {% cite kim2024crossutilization %}, ICCAS 2024 {% cite kim2024traversability %} — first author on all three.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/publication_preview/openrmf-cooperative-autonomous.png" title="Open-RMF 구조" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/publication_preview/openrmf-cooperative-autonomous.png" title="Open-RMF architecture" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption">
-    Full Control Fleet Adapter ↔ ROS 2 Free Fleet Server ↔ Free Fleet Client(ROS 1/ROS 2 모바일 로봇) 구조 (KROC 2024).
+    Full Control Fleet Adapter ↔ ROS 2 Free Fleet Server ↔ Free Fleet Client (ROS 1/ROS 2 mobile robots) architecture (KROC 2024).
 </div>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/publication_preview/cooperative-path-planning-obstacle-info.png" title="장애물 탐지" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/publication_preview/cooperative-path-planning-obstacle-info.png" title="Obstacle detection" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/publication_preview/traversability-assessment-path-planning.png" title="Multi-robot framework" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption">
-    왼쪽: 2D LiDAR 샘플링 + RGB-D YOLOv8 장애물 탐지 (ICROS 2024). 오른쪽: 로봇(State/Navigation/Object Detection) ↔ RMF(Task/Traffic/Schedule) 프레임워크 (ICCAS 2024).
+    Left: 2D LiDAR sampling + RGB-D YOLOv8 obstacle detection (ICROS 2024). Right: Robot (State/Navigation/Object Detection) ↔ RMF (Task/Traffic/Schedule) framework (ICCAS 2024).
 </div>
 
-## 기술 스택
+## Tech Stack
 
 Open-RMF · ROS 2 (Foxy/Humble) · Nav2 · Cartographer · Gazebo · CycloneDDS / Zenoh · YOLOv8 · TETRA_S / TETRA_M · C++ / Python

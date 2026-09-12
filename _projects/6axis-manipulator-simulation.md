@@ -1,55 +1,55 @@
 ---
 layout: page
-title: 6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)
-description: 6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트
+title: "6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)"
+description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results"
 img: assets/img/projects/6axis-robot-simulation/img-5.png
 importance: 4
 category: personal
 ---
 
-**기간** 2021.09 ~ 2021.11 · **소속** 계명대학교 (개인 프로젝트) · **역할** 기구학 모델링부터 MATLAB 시뮬레이션 구현까지 단독 수행
+**Period** 2021.09 – 2021.11 · **Affiliation** Keimyung University (personal project) · **Role** Carried out everything alone, from kinematic modeling to MATLAB simulation implementation
 
-## 배경과 목표
+## Background and Goals
 
-산업 협동로봇은 링크 간 관계를 정확히 수학적으로 모델링해야 End-effector를 의도한 위치에 보낼 수 있다. D-H 파라미터를 직접 유도·구현하며 기구학 전반을 이해하고, 수계산 값과 시뮬레이션 결과의 일치성을 검증하는 것이 목표였다.
+An industrial collaborative robot can only place its end-effector at the intended position if the relationships between links are modeled mathematically and precisely. The goal was to understand kinematics end to end by deriving and implementing the D-H parameters myself, and to verify that hand-calculated values agreed with the simulation results.
 
-## 접근
+## Approach
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/6axis-robot-simulation/img-1.png" title="D-H 파라미터" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/6axis-robot-simulation/img-1.png" title="D-H parameters" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-2.png" title="천이행렬" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-2.png" title="Transformation matrices" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">좌표계 설정과 D-H 파라미터 정의(왼쪽), 천이행렬 유도(오른쪽).</div>
+<div class="caption">Coordinate frame assignment and D-H parameter definition (left), and derivation of the transformation matrices (right).</div>
 
-1. **좌표계 설정·D-H 도출:** 각 조인트 원점을 지정하고 회전축 기준 Z축, 오른손 법칙으로 X·Y축을 잡아 4개 파라미터(d, θ, a, α)를 정의했다.
-2. **천이행렬 유도:** 조인트 간 변환행렬을 D-H로 일반화하고 $$T_0^n = A_0^1 A_1^2 \cdots A_{n-1}^n$$으로 베이스 → End-effector 관계를 도출했다.
-3. **MATLAB 구현:** 변환행렬 함수, 링크/조인트 플롯, 초기 자세, 사용자 입력 누적 시각화를 함수·실행 파일로 분리한 구조로 구현했다.
-4. **경로계획:** 직선 경로의 불안정성(정지 → 등속 → 정지 불가)을 보완하기 위해 출발·도착 각속도 0 조건의 Cubic Spline $$\theta(t) = A\left(1 - \cos\frac{n\pi}{T}t\right)$$를 적용했다.
-5. **역기구학:** End-effector 위치로부터 각 θ를 역산. atan2로 −π~π 연속성을 확보하고, a = 0 변환행렬에서 분모가 0이 되는 경우를 특이점으로 분류했다.
+1. **Coordinate frame assignment and D-H derivation:** Assigned the origin of each joint, set the Z axis along the rotation axis and the X and Y axes by the right-hand rule, and defined the four parameters (d, θ, a, α).
+2. **Transformation matrix derivation:** Generalized the joint-to-joint transformation matrices with D-H and derived the base-to-end-effector relationship as $$T_0^n = A_0^1 A_1^2 \cdots A_{n-1}^n$$.
+3. **MATLAB implementation:** Implemented the transformation matrix function, link/joint plotting, the initial pose, and cumulative visualization of user input in a structure separated into function files and a run script.
+4. **Path planning:** To compensate for the instability of straight-line paths (stop → constant velocity → stop is not achievable), applied a cubic spline $$\theta(t) = A\left(1 - \cos\frac{n\pi}{T}t\right)$$ with zero angular velocity at departure and arrival.
+5. **Inverse kinematics:** Solved for each θ from the end-effector position. Used atan2 to ensure continuity over −π to π, and classified cases where the denominator becomes zero in the a = 0 transformation matrix as singularities.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-3.png" title="MATLAB 구현" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-3.png" title="MATLAB implementation" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-4.png" title="Cubic Spline" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-5.png" title="검증" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/6axis-robot-simulation/img-5.png" title="Verification" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">MATLAB 시뮬레이션(왼쪽), Cubic Spline 경로계획(가운데), 수계산 vs 시뮬레이션 일치 검증(오른쪽).</div>
+<div class="caption">MATLAB simulation (left), cubic spline path planning (center), and verification that hand calculations match the simulation (right).</div>
 
-## 결과
+## Results
 
-- θ₂ = 60°, θ₅ = 60° 입력 시 수계산 (X, Y, Z) = (117, 1170, 1127)과 시뮬레이션 결과가 완전히 일치해 모델 정확성을 검증했다.
-- 사용자가 θ값을 입력해 자세 변화를 실시간으로 관찰하는 인터랙티브 툴을 완성했다.
-- 남은 과제: 특이점 자동 검출·우회, Jacobian 기반 속도 제어, Simulink 연계.
+- With inputs θ₂ = 60° and θ₅ = 60°, the hand-calculated (X, Y, Z) = (117, 1170, 1127) matched the simulation result exactly, verifying the accuracy of the model.
+- Completed an interactive tool in which the user enters θ values and observes the pose change in real time.
+- Remaining work: automatic singularity detection and avoidance, Jacobian-based velocity control, and Simulink integration.
 
-## 기술 스택
+## Tech Stack
 
-MATLAB · D-H Parameter · Forward / Inverse Kinematics · Cubic Spline · 동차변환행렬
+MATLAB · D-H Parameters · Forward / Inverse Kinematics · Cubic Spline · Homogeneous transformation matrices

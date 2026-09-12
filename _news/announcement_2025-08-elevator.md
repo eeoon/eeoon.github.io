@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).
+Real-robot demonstration completed: TETRA_S calls, boards and exits a real elevator for multi-floor autonomous navigation via an MQTT–ROS 2 bridge.

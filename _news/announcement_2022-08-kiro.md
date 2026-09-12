@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03).
+Started an internship at the Robot Vocational Innovation Center, Korea Institute of Robotics and Technology Convergence (KIRO) — integrated training environment for 8+ heterogeneous industrial and collaborative robots (until Mar. 2023).

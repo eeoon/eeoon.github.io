@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.
+Rebuilt this website on al-folio as a CV and portfolio site with project, publication and paper-review pages.

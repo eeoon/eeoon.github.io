@@ -1,29 +1,29 @@
 ---
 layout: page
-title: AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)
-description: 논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템
+title: "Shared Work Wiki for AI Agents (Obsidian + Claude Code)"
+description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session"
 importance: 7
 category: personal
 ---
 
-**기간** 2026.06 ~ 현재 · **성격** 개인 프로젝트 · **역할** 설계·운영
+**Period** 2026.06 – present · **Type** Personal project · **Role** Design and operation
 
-## 왜 만들었나
+## Why I Built It
 
-로보틱스 R&D는 논문 서칭, 소스코드 분석, 보고서·논문 작성, 프로젝트, 이직 준비 같은 활동이 섞여 있고, AI 에이전트를 쓸수록 **세션 간 맥락이 끊기는 문제**가 커진다. 개인 메모장이 아니라 사람이 읽고 편집하기 쉬우면서 여러 에이전트가 일관되게 실행하는 업무 시스템이 필요했다.
+Robotics R&D mixes activities such as paper searching, source code analysis, report and paper writing, projects, and job-search preparation, and the more AI agents are used, the bigger the **problem of context being lost between sessions** becomes. What was needed was not a personal notepad but a work system that is easy for a person to read and edit while multiple agents execute it consistently.
 
-## 설계
+## Design
 
-- **3계층 분리 (Karpathy LLM Wiki 원칙):** `raw/`(원본, 불변) → `wiki/`(검증된 지식만) ← `conversations/`(임시·인수인계). 경계를 넘는 것이 맥락 오염의 주원인이므로 승격 흐름을 명시했다.
-- **개인/회사 하이브리드:** 공유 지식은 한 트리 + `context: personal | company` 태그, 프로젝트·문서는 폴더 분리.
-- **명령 키워드 고정:** `save`(5필터 게이트 통과 후 저장) · `reference`(맥락 복원) · `ingest`(원본 → 위키 가공) · `lint`(구조·링크·추측·중복·출처·보안 감사). 자연어 트리거("이번 작업 내용 옵시디언에 저장해줘")와 1:1 매핑.
-- **맥락 오염 방지 안전장치:** 출처 원칙, 추측 금지, 중복 금지, 번복은 `superseded` 처리. 위키 저장은 "재사용·인수인계·의사결정 추적·실패 리스크·공통 규칙" 5필터 중 하나 이상을 만족해야 한다.
-- **전담 에이전트:** 연구노트 정리기, 논문 리뷰어 등을 서브에이전트로 두고 산출 양식을 고정했다. 이 사이트의 [논문 리뷰](/blog/category/paper-review/)와 프로젝트 페이지도 이 위키에서 생성했다.
+- **Three-tier separation (Karpathy's LLM Wiki principle):** `raw/` (originals, immutable) → `wiki/` (verified knowledge only) ← `conversations/` (temporary, handover). Because crossing these boundaries is the main cause of context contamination, the promotion flow is made explicit.
+- **Personal/company hybrid:** Shared knowledge lives in one tree with a `context: personal | company` tag; projects and documents are split into separate folders.
+- **Fixed command keywords:** `save` (store after passing a five-filter gate) · `reference` (restore context) · `ingest` (process originals into the wiki) · `lint` (audit structure, links, speculation, duplicates, sources, and security). Each maps 1:1 to a natural-language trigger ("save this session's work to Obsidian").
+- **Safeguards against context contamination:** Source principle, no speculation, no duplicates, and reversals handled as `superseded`. Saving to the wiki requires satisfying at least one of five filters: reuse, handover, decision traceability, failure risk, or shared rules.
+- **Dedicated agents:** A lab notebook organizer, a paper reviewer, and others run as subagents with fixed output formats. The [paper reviews](/blog/category/paper-review/) and project pages on this site were also generated from this wiki.
 
-## 배운 것
+## What I Learned
 
-도메인이 확정되기 전에 예시를 실제 업무로 오해해 특화했다가 되돌린 경험에서 "도메인 확정 전 특화 금지"라는 규칙을 얻었다. 에이전트 시스템도 로봇 시스템처럼 **인터페이스 규약을 먼저 고정**해야 확장이 된다.
+From an experience of mistaking examples for real work and over-specializing before the domain was settled, then having to roll it back, I derived the rule "no specialization before the domain is fixed." Like a robot system, an agent system only scales when the **interface conventions are fixed first**.
 
-## 기술 스택
+## Tech Stack
 
-Obsidian · Claude Code · Markdown / YAML frontmatter · 서브에이전트 · MCP
+Obsidian · Claude Code · Markdown / YAML front matter · Subagents · MCP

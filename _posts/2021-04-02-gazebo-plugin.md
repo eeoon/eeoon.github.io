@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석"
+title: "Gazebo Plugins: Sensor and Actuator Plugin Analysis"
 date: 2021-04-02 09:00:00 +0900
-description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리"
+description: "XML structure and usage of sensor and actuator plugins in Gazebo (ROS2 Humble)"
 tags: [gazebo, simulation, ros2]
 categories: tech-note
 giscus_comments: false
@@ -11,15 +11,15 @@ related_posts: false
 
 ![Untitled](/assets/img/blog/robotics/gazebo_plugin/image.png)
 
-- Gazebo post에 이어서 Gazebo-Plugin에 대해서 알아보자.
-- Gazebo 패키지가 ros1을 기반으로 ros2로 release되면서 추가되거나 변경 사항이 생겨 ros1과 ros2에 대해 각각 xml의 형태가 다를 수 있다. 여기서는 ros2(humble)을 기준으로 작성하였다.
-- Gazebo-plugin은 simulation 환경에서 여러 기능을 제공한다. 예를 들어 센서 계측, 액츄에이터 제어 등 이를 통해 외부 프로그램을 통해 Gazebo 환경에서 데이터를 주고받으며 실제 환경처럼 모사할 수 있게된다.
-- 그 중에서 Sensor, Actuator Plugin에 대해서 깊게 분석해보자. (자주 사용되는 plugin)
+- Following the Gazebo post, this post looks at Gazebo plugins.
+- As the Gazebo packages were released for ROS2 based on the ROS1 versions, additions and changes were made, so the XML form may differ between ROS1 and ROS2. This post is written for ROS2 (Humble).
+- Gazebo plugins provide a range of functionality in the simulation environment, such as sensor measurement and actuator control. Through them, external programs can exchange data with the Gazebo environment and emulate the real environment.
+- Among these, the sensor and actuator plugins (the most frequently used ones) are analyzed in depth here.
 
 ## Sensor-Plugin
 
-- Sensor의 종류가 다양하기 때문에 각각의 Sensor로 부터 Sensing되는 데이터를 계측하고 이를 사용자 또는 다른 프로그램과 연동하여 진행할 수 있다.
-- 따라서 먼저 Gazebo에서 Sensor를 종류별로 분리하면 다음과 같다.(각 센서의 특징은 검색해보길 바란다.)
+- Since there are many kinds of sensors, the data sensed by each sensor can be measured and connected to the user or to other programs.
+- The sensors available in Gazebo can be grouped as follows. (Please look up the characteristics of each sensor separately.)
 
 1. **Lidar(2D, 3D)**
 2. **IMU**
@@ -27,24 +27,24 @@ related_posts: false
 4. **GPS**
 5. **Bumper**
 
-- 먼저 Lidar Sensor를 사용하기 위해 사용되는 plugin은 `libgazebo_ros_ray_sensor`이다. 파일 확장자를 보면 .so 파일은 Windows 에서 .dll 파일로 Linux에서는 .so파일을 사용하는데 해당 파일은 동적 라이브러리로 프로그램 실행 중에 특정 library를 사용하고 싶을 때 로드한다.
+- The plugin used for the Lidar sensor is `libgazebo_ros_ray_sensor`. Regarding the file extension: Linux uses .so files where Windows uses .dll files. These are dynamic libraries that are loaded when a particular library is needed while a program is running.
 
 ### Lidar_Sensor
 
 ```jsx
-<!-- 2D Lidar는 다음과 같다.-->
+<!-- 2D LiDAR is configured as follows -->
 <plugin name="example_laserscan" filename="libgazebo_ros_ray_sensor.so">
-  <!-- ros와 연동하기 위해서 사용되는 부분으로 scan data를 출력한다. 또한 namespace는 필수가 아니기 때문에 주석처리할 수 있다. -->
+  <!-- ROS integration section that publishes the scan data; the namespace is optional and can be commented out -->
   <ros>
     <namespace>example_lidar</namespace>
     <remapping>~/out:=scan</remapping>
   </ros>
-  <!-- 출력 형태(msg)는 sensor_msgs/LaserScan의 구조로 구성되며 Lidar Sensor의 frame을 설정한다. -->
+  <!-- the output message follows sensor_msgs/LaserScan and sets the frame of the LiDAR sensor -->
   <output_type>sensor_msgs/LaserScan</output_type>
   <frame_name>example_lidar_link</frame_name>
 </plugin>
 
-<!-- 3D Lidar(Velodyne)는 다음과 같다. -->
+<!-- 3D LiDAR (Velodyne) is configured as follows -->
 
 <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_laser.so">
   <ros>
@@ -64,10 +64,10 @@ related_posts: false
 ### **IMU**
 
 ```jsx
- <!-- IMU는 다음과 같다.-->
+ <!-- IMU is configured as follows -->
 
 <plugin name="example_imu" filename="libgazebo_ros_imu_sensor.so">
-    <!-- ros와 연동하기 위해서 사용되는 부분으로 IMU data를 출력한다 -->      
+    <!-- ROS integration section that publishes the IMU data -->      
     <ros>
       <namespace>imu</namespace>
       <remapping>~/out:=data</remapping>
@@ -79,14 +79,14 @@ related_posts: false
 ### **Camera(RGB, Depth)**
 
 ```jsx
-<!-- Camera는 RGB로 사용할 것인지, Depth에 대한 정보도 포함할 것인지 구분할 수 있다.-->
+<!-- the camera can be used as RGB only or can also include depth information -->
 
 <plugin name="example_camera" filename="libgazebo_ros_camera.so">
     <ros>
         <namespace>example_camera</namespace>
         <remapping>~/image_raw:=image_raw</remapping>
         <remapping>~/camera_info:=camera_info</remapping>
-        <!-- Depth Camera 설정 부분 (Option) ${name}으로 된 부분은 위의 namespace에서 설정한 example_camera가 삽입된다.-->
+        <!-- depth camera settings (optional); ${name} is replaced by example_camera set in the namespace above -->
         <remapping>${name}/depth/image_raw:=depth/image_rect_raw</remapping>
         <remapping>${name}/depth/camera_info:=depth/camera_info</remapping>
         <remapping>${name}/points:=depth/points</remapping>
@@ -94,7 +94,7 @@ related_posts: false
     <camera_name>${name}</camera_name>
     <frame_name>${name}_link_optical</frame_name>
     <hack_baseline>0.2</hack_baseline>
-    <!-- Depth Camera 설정 부분 (Option) -->
+    <!-- depth camera settings (optional) -->
     <min_depth>0.05</min_depth>
     <max_depth>8.0</max_depth>            
 </plugin>        
@@ -103,7 +103,7 @@ related_posts: false
 ### **GPS**
 
 ```jsx
-<!-- GPS는 다음과 같다.-->
+<!-- GPS is configured as follows -->
 
 <plugin name="example_gps" filename="libgazebo_ros_gps_sensor.so">
     <ros>
@@ -117,7 +117,7 @@ related_posts: false
 ### **Bumper**
 
 ```jsx
-<!-- Bumper_sensor는 다음과 같다.-->
+<!-- the bumper sensor is configured as follows -->
 
 <plugin name="exmaple_bumper" filename="libgazebo_ros_bumper.so">
     <ros>
@@ -130,12 +130,12 @@ related_posts: false
 
 ## Actuator-Plugin
 
-- Actuator에 대한 Plugin은 구동부와 Joint에 대한 제어를 담당한다.
+- Actuator plugins are responsible for controlling the drive units and joints.
 
 ### Joint_State_Publisher
 
 ```jsx
-<!-- Joint_State_Publisher는 다음과 같다.-->
+<!-- Joint_State_Publisher is configured as follows -->
 
 <plugin name="example_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
   <ros>
@@ -151,7 +151,7 @@ related_posts: false
 ### Differential_Drive_Controller
 
 ```jsx
-<!-- Differential Drive Controller는 다음과 같다.-->
+<!-- the differential drive controller is configured as follows -->
 
 <plugin name="example_diff_drive" filename="libgazebo_ros_diff_drive.so">
 
@@ -187,14 +187,14 @@ related_posts: false
 </plugin>
 ```
 
-# 결론
+# Conclusion
 
-- 가장 대표적인 센서, 구동부를 Gazebo 시뮬레이션에서 어떻게 plugin하는지 살펴봤다.
-- plugin에 link, joint 구조가 존재하여야하고 센서에서는 noise 처리, visualization, range, distortion 등 설정할 부분이 많다. 이 부분은 gazebo_plugin_tutorial을 참고하길 바란다.
-- 각 센서, 구동부를 정의하면 ros2에서 사용하는 `ros2 topic list` 에서 관측되는 Data를 확인할 수 있다.
-- 다음과정에서 실제 Gazebo 환경에서 구동되는 센서, 모터를 확인한다.
+- This post looked at how the most representative sensors and drive units are added as plugins in Gazebo simulation.
+- A plugin requires a link and joint structure, and sensors have many settings such as noise handling, visualization, range, and distortion. Refer to the gazebo_plugin_tutorial for these.
+- Once each sensor and drive unit is defined, the resulting data can be observed with `ros2 topic list` in ROS2.
+- The next post verifies the sensors and motors running in an actual Gazebo environment.
 
-참고 : 
+References : 
 
 [Gazebo  : Tutorial : Gazebo plugins in ROS](https://classic.gazebosim.org/tutorials?tut=ros_gzplugins)
 

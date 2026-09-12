@@ -1,26 +1,26 @@
 ---
 layout: post
-title: "Gazebo 실습: TurtleBot3 + 3D LiDAR"
+title: "Gazebo Hands-on: TurtleBot3 + 3D LiDAR"
 date: 2021-04-12 09:00:00 +0900
-description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습"
+description: "Loading turtlebot3_burger with a Velodyne 3D LiDAR in Gazebo, checking the data, teleoperating, and inspecting the tf_tree"
 tags: [gazebo, turtlebot3, ros2]
 categories: tech-note
 giscus_comments: false
 related_posts: false
 ---
 
-## Gazebo 실습
+## Gazebo Hands-on
 
-- turtlebot3_burger와 3D_Lidar(velodyne)으로 구성된 로봇을 Gazebo 환경에서 불러와 Lidar 데이터를 확인하고 간단한 조작을 진행한다.
-- Gazebo 실습과 함께 rviz에 대한 간략한 실행 그리고 tf_tree에 대한 것도 함께 구성하였다.
+- Load a robot consisting of turtlebot3_burger and a 3D LiDAR (Velodyne) into the Gazebo environment, check the LiDAR data, and perform simple teleoperation.
+- Along with the Gazebo exercise, a brief run of rviz and a look at the tf_tree are also included.
 
-### Gazebo 실습 환경
+### Environment
 
 - ROS2 (humble)
 - Gazebo 11
 - Turtlebot3_world
 
-### Gazebo Package를 설치
+### Install the Gazebo packages
 
 ```
 sudo apt-get update
@@ -30,9 +30,9 @@ sudo apt install -y ros-humble-gazebo-ros
 sudo apt install -y ros-humble-gazebo-ros-pkgs
 ```
 
-### Turtlebot3_world package 설치
+### Install the Turtlebot3_world package
 
-turtlebot3_burger with velodyne으로 환경 구성된 turtlebot3_world로 테스트 환경
+The test environment is turtlebot3_world configured with turtlebot3_burger with velodyne.
 
 [https://github.com/eeoon/turtlebot3_velodyne_Gazebo](https://github.com/eeoon/turtlebot3_velodyne_Gazebo)
 
@@ -59,20 +59,20 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
 
-## 실행결과
+## Results
 
-- 정상적으로 실행 되었다면 다음과 같은 화면을 볼 수 있다. 오른쪽화면이 Gazebo 환경으로 Turtlebot3_World에서 Turtlebot3_burger의 머리에 velodyne을 장착하고 나타난 것을 확인할 수 있다.
-- 좌측화면은 rviz2 (ros1에서는 rviz) 화면으로 rviz2는 데이터를 시각화 하기 위해 사용되는 ros의 기본적인 툴로 좌측 상단에 `fixed_frame`을 `base_scan`으로 변경하면 해당 데이터를 visualize할 수 있다.
+- If everything ran correctly, the following screen appears. The right-hand window is the Gazebo environment, showing Turtlebot3_burger in Turtlebot3_World with a Velodyne mounted on top.
+- The left-hand window is rviz2 (rviz in ROS1). rviz2 is the standard ROS tool for visualizing data; changing `fixed_frame` in the upper left to `base_scan` visualizes the LiDAR data.
 
 ![result_picture.png](/assets/img/blog/robotics/training_gazebo/image.png)
 
 
-- TF_tree를 살펴봤을 때 다음과 같이 나타난다.
-- 간단하게 로봇의 링크 구조를 나타내며 전체적인 구조를 나타낸다.
-- TF에 대해서는 추후 Transform(TF)에서 포스터 작성 예정
+- The TF_tree looks as follows.
+- It shows the robot's link structure in a simple form and the overall structure.
+- TF will be covered in a future post on Transform (TF).
 
 ![rqt_tf_tree.png](/assets/img/blog/robotics/training_gazebo/image2.png)
 
-참고 :
+Reference :
 
 [turtlebot3_velodyne_gazebo github](https://github.com/eeoon/turtlebot3_velodyne_Gazebo)

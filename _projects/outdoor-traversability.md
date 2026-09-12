@@ -1,56 +1,56 @@
 ---
 layout: page
-title: 실외 비정형 지형 자율주행 파이프라인
-description: 3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택
+title: "Autonomous Navigation Pipeline for Unstructured Outdoor Terrain"
+description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking"
 img: assets/img/projects/outdoor-traversability-autonomous/img-3.jpg
 importance: 7
 category: company
 ---
 
-**기간** 2025.12 ~ 현재 · **소속** KETI (다중협력주행 4차년도 실외 확장 · SDR) · **역할** Mesh Navigation 분석·시뮬 검증, Open3D 포인트클라우드 보정, FAST-LIVO2 스택 구성, grid_map traversability·코스트맵 구현, 경로 추종 컨트롤러 설계
+**Period** 2025.12 – present · **Affiliation** KETI (multi-robot cooperative navigation project, 4th-year outdoor extension · SDR) · **Role** Mesh Navigation analysis and simulation verification, Open3D point cloud correction, FAST-LIVO2 stack configuration, grid_map traversability and costmap implementation, path tracking controller design
 
-## 배경과 문제
+## Background and Problem
 
-2D Occupancy Grid는 평면 실내에는 효과적이지만 경사·단차·요철을 표현하지 못해 traversability 정보가 사라진다. 실외 비정형 지형에서 안전하게 주행하려면 지형을 3D로 표현하고, 그 위에서 위치추정·경로계획·추종을 이어야 한다.
+A 2D Occupancy Grid is effective for flat indoor spaces, but it cannot represent slopes, steps, or bumps, so traversability information is lost. To navigate safely on unstructured outdoor terrain, the terrain must be represented in 3D, with localization, path planning, and tracking chained on top of it.
 
-## 접근 A — 3D Mesh Navigation (2025.12 ~ 2026.02, 분석·검증 완료)
+## Approach A — 3D Mesh Navigation (2025.12 – 2026.02, analysis and verification completed)
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/outdoor-traversability-autonomous/img-1.jpg" title="Mesh Navigation" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">RViz2 Mesh Map 시각화 / Localization 정합 / Gazebo 시뮬레이션 환경.</div>
+<div class="caption">RViz2 Mesh Map visualization / Localization registration / Gazebo simulation environment.</div>
 
-- **4단 파이프라인 분석:** Mapping(SLAM 점군 → Marching Cubes → Triangle Mesh) → Localization(MICP-L: 스캔↔메시 ICP) → Planning(CVP: 정점 Cost Layer 기반 연속 벡터장) → Controller(Move Base Flex 플러그인). Gazebo + RViz2에서 전 과정 연동 확인.
-- **포인트클라우드 보정:** 수평 장착 3D LiDAR는 바닥면과 평행해 데이터가 부족하고 메시에 구멍이 생긴다. Open3D로 Z 필터링·ROI·SOR 전처리 → 3점 평면 방정식 → 평면 경계 내 격자점 생성(2.5 mm) → 경계 중복 처리 → Voxel Downsampling·법선 추정 → slam_to_mesh로 .ply 메시 출력.
+- **Four-stage pipeline analysis:** Mapping (SLAM point cloud → Marching Cubes → Triangle Mesh) → Localization (MICP-L: scan-to-mesh ICP) → Planning (CVP: continuous vector field based on vertex Cost Layers) → Controller (Move Base Flex plugin). Verified end-to-end integration in Gazebo + RViz2.
+- **Point cloud correction:** A horizontally mounted 3D LiDAR is parallel to the ground plane, so ground data is sparse and holes appear in the mesh. Open3D Z-filtering, ROI, and SOR preprocessing → three-point plane equation → grid point generation within the plane boundary (2.5 mm) → boundary duplicate handling → voxel downsampling and normal estimation → .ply mesh output via slam_to_mesh.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/outdoor-traversability-autonomous/img-2.jpg" title="보정 전" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/outdoor-traversability-autonomous/img-2.jpg" title="Before correction" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/outdoor-traversability-autonomous/img-3.jpg" title="보정 후" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/outdoor-traversability-autonomous/img-3.jpg" title="After correction" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">보정 전(왼쪽) 포인트클라우드 기반 메시와 보정 후(오른쪽) 메시 — 바닥면 밀도가 균일해지고 구멍이 거의 사라졌다.</div>
+<div class="caption">Mesh from the point cloud before correction (left) and after correction (right) — ground density becomes uniform and holes almost disappear.</div>
 
-## 접근 B — 자체 4단 파이프라인 (2026 상반기 ~, 현행 주력)
+## Approach B — In-House Four-Stage Pipeline (first half of 2026 – , current main track)
 
-| 단계 | 내용 |
+| Stage | Details |
 | --- | --- |
-| ① 매핑·측위 | **FAST-LIVO2**(LiDAR-IMU-Visual, sequential ESIKF) 아키텍처 분석 → ROS 2 Humble 스택 구성(포크 계보·2단계 빌드) → 자체 센서 적용으로 컬러 점군 지도 산출, fast_lio_localization으로 측위 |
-| ② 지형 평가 | **grid_map** 기반 slope·roughness·step·traversable 4수식 파이프라인, FilterChain 상호검증, 실시간 TF |
-| ③ 비용장·계획 | self-clearing 가우시안 비용장, 확률적 elevation mapping 경량 재구현(160k 셀 30 Hz, GPU 불필요), 전역맵 저장·로컬 코스트맵 |
-| ④ 추종 | 자체 hybrid_controller — $$\omega = \omega_{pp} + \omega_{los}$$ (Pure Pursuit + LOS) 융합, 6-상태 머신, 손계산 정량 검증(최소 선회반경 0.67 m 등 구조 제약 도출) |
+| (1) Mapping and localization | **FAST-LIVO2** (LiDAR-IMU-Visual, sequential ESIKF) architecture analysis → ROS 2 Humble stack configuration (fork lineage, two-stage build) → colored point cloud map produced with in-house sensors, localization with fast_lio_localization |
+| (2) Terrain assessment | **grid_map**-based four-formula pipeline (slope, roughness, step, traversable), FilterChain cross-validation, real-time TF |
+| (3) Cost field and planning | Self-clearing Gaussian cost field, lightweight reimplementation of probabilistic elevation mapping (160k cells at 30 Hz, no GPU required), global map saving and local costmap |
+| (4) Tracking | In-house hybrid_controller — $$\omega = \omega_{pp} + \omega_{los}$$ (Pure Pursuit + LOS) fusion, 6-state machine, quantitative verification by hand calculation (derived structural constraints such as a minimum turning radius of 0.67 m) |
 
-Mesh(연속 표면·CVP 벡터장)는 표현력이 높지만 스택이 무겁고, 2.5D grid_map은 경량·실시간이라 현재는 접근 B가 주력이다. 플랫폼은 Clearpath Jackal(LiDAR/IMU 마스트·NUC·micro-ROS 주행)이다.
+Mesh (continuous surface, CVP vector field) has high expressiveness but a heavy stack, while 2.5D grid_map is lightweight and real-time, so Approach B is currently the main track. The platform is a Clearpath Jackal (LiDAR/IMU mast, NUC, micro-ROS drive).
 
-## 결과
+## Results
 
-- Mapping → Localization → Planning → Controller 전체 파이프라인의 시뮬레이션 연동과 포인트클라우드 보정을 통한 실환경 데이터 결손 문제 해결.
-- 접근 B 파이프라인 구성과 실내 실증 완료, 실외 테스트 진행 중.
+- Simulation integration of the full Mapping → Localization → Planning → Controller pipeline, and resolution of real-environment data gaps through point cloud correction.
+- Approach B pipeline configured and indoor demonstration completed; outdoor testing in progress.
 
-## 기술 스택
+## Tech Stack
 
 FAST-LIVO2 · fast_lio_localization · grid_map / elevation mapping · Pure Pursuit · LOS Guidance · Mesh Navigation (MICP-L, CVP, MBF) · Open3D · slam_to_mesh · ROS 2 Humble · Gazebo / RViz2 · Livox Mid-360 · Clearpath Jackal · C++ / Python

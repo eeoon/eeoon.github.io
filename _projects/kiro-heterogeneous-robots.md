@@ -1,22 +1,22 @@
 ---
 layout: page
-title: 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)
-description: 현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영
+title: "Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)"
+description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations"
 importance: 1
 category: personal
 ---
 
-**기간** 2022.08 ~ 2023.03 · **소속** 한국로봇융합연구원(KIRO) 로봇직업혁신센터 · **역할** 인턴 — 로봇 제어 체계 분석, 교육 커리큘럼·매뉴얼 설계, 데모 시연 운영·제어
+**Period** 2022.08 – 2023.03 · **Affiliation** Korea Institute of Robotics and Technology Convergence (KIRO), Robot Vocational Innovation Center · **Role** Intern — robot control system analysis, training curriculum and manual design, demonstration operation and control
 
-## 담당 업무
+## Responsibilities
 
-- **이기종 로봇 8종 이상의 특성 분석과 통합 실습 환경 구축:** 현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇까지 각기 다른 제어 체계를 분석해 초·중·고급 단계별 교육 커리큘럼을 설계했다. 매뉴얼 정리에 그치지 않고 로봇 팔마다 서로 다른 **좌표계 설정과 통신 규격을 직접 매칭**하며 현장 실무자가 즉시 투입될 수 있는 실습 매뉴얼을 만들었다.
-- **개소식 데모 시연과 인터페이스 최적화:** 센터 내 수십 대 장비를 동시 구동하는 개소식 시연을 담당해 이기종 로봇이 간섭 없이 안정적으로 동작하도록 운영·제어했다. 협동로봇을 활용한 도장 찍기·서명 이벤트처럼 정밀 제어가 필요한 시연을 위해 로봇별 엔드이펙터 동작을 직접 설계했다.
+- **Characterizing more than 8 heterogeneous robots and building an integrated training environment:** Analyzed the differing control systems of Hyundai, FANUC, ABB, and KUKA industrial robots as well as UR, Doosan, and Neuromeka collaborative robots, and designed a beginner/intermediate/advanced training curriculum. Beyond organizing manuals, I **matched the distinct coordinate frame settings and communication specifications** of each robot arm myself, producing hands-on manuals that let field practitioners get started immediately.
+- **Opening-ceremony demonstrations and interface optimization:** Was responsible for the opening-ceremony demonstration that ran dozens of machines in the center simultaneously, operating and controlling the heterogeneous robots so they ran stably without interference. For demonstrations requiring precise control, such as a stamping and signing event using collaborative robots, I designed the end-effector motions for each robot.
 
-## 배운 것
+## What I Learned
 
-서로 다른 제조사의 로봇을 하나의 실습 환경으로 묶으면서, 좌표계·통신 규격·안전 체계가 제각각인 장비를 통합하는 감각을 얻었다. 이 경험은 이후 KETI에서 이기종 모바일로봇을 [Open-RMF 관제](/projects/multi-robot-openrmf/)로 통합하고, 스태커·MiR 등 [외부 시스템과 통신 규격](/projects/agv-manipulator-tcpip/)을 맞추는 일의 출발점이 되었다.
+Bringing robots from different manufacturers into a single training environment gave me a feel for integrating equipment whose coordinate frames, communication specifications, and safety systems all differ. This experience became the starting point for later work at KETI integrating heterogeneous mobile robots under [Open-RMF fleet management](/projects/multi-robot-openrmf/) and aligning [communication specifications with external systems](/projects/agv-manipulator-tcpip/) such as stackers and MiR robots.
 
-## 기술 스택
+## Tech Stack
 
-산업용 로봇 티칭 펜던트 · 협동로봇 프로그래밍 (UR, 두산, 뉴로메카) · 로봇 좌표계·통신 규격 · 엔드이펙터 동작 설계 · 교육 커리큘럼 설계
+Industrial robot teach pendants · Collaborative robot programming (UR, Doosan, Neuromeka) · Robot coordinate frames and communication specifications · End-effector motion design · Training curriculum design

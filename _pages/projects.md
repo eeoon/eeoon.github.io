@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.
+description: Robotics projects I led or contributed to at KETI, and earlier undergraduate and internship projects. Open a card for background, role, approach and results.
 nav: true
 nav_order: 2
 display_categories: [company, personal]
@@ -15,9 +15,9 @@ horizontal: false
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
   {% if category == "company" %}
-    {% assign category_title = "KETI 담당 프로젝트 (2023.05 ~ 현재)" %}
+    {% assign category_title = "Projects at KETI (2023.05 – present)" %}
   {% elsif category == "personal" %}
-    {% assign category_title = "입사 전 프로젝트 (학부 · KIRO 인턴)" %}
+    {% assign category_title = "Earlier Projects (undergraduate · KIRO internship)" %}
   {% else %}
     {% assign category_title = category %}
   {% endif %}

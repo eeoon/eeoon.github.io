@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트 프레임워크(제2저자). IEEE Xplore 등재.
+Two papers presented at ICCAS 2025, Incheon — multi-robot anomaly detection and visualization framework (first author) and SDR OTA update framework (second author). Both on IEEE Xplore.

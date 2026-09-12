@@ -1,59 +1,59 @@
 ---
 layout: page
-title: 다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지
-description: 30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구
+title: "Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection"
+description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)"
 img: assets/img/publication_preview/anomaly-detection-visualization-rmf.png
 importance: 4
 category: company
 related_publications: true
 ---
 
-**기간** 2025.03 ~ 2026.05 · **소속** KETI (다중협력주행 과제) · **역할** Fault Injection·로깅 시스템 구축, 이상탐지 프레임워크 설계, 모델 학습·평가, 웹 시각화
+**Period** 2025.03 – 2026.05 · **Affiliation** KETI (multi-robot cooperative navigation national R&D project) · **Role** Fault injection and logging system development, anomaly detection framework design, model training and evaluation, web visualization
 
-## 배경과 문제
+## Background and Problem
 
-다중 로봇이 밀집된 환경에서는 개별 로봇의 작은 결함(배터리 급감, 위치추정 실패, 주행 제어 실패)이 fleet 전체의 병목·충돌로 전이될 수 있다. 그러나 기존 RMF는 개별 로봇 상태 시각화에 초점이 맞춰져 로봇 간 의존성이나 협업 실패를 진단할 수단이 부족했고, 임계치 기반 탐지는 실제 이상 데이터의 불규칙성을 잡아내기 어려웠다.
+In environments dense with multiple robots, a small fault in an individual robot (sudden battery drop, localization failure, navigation control failure) can propagate into fleet-wide bottlenecks and collisions. However, existing RMF focuses on visualizing individual robot states and lacked the means to diagnose inter-robot dependencies or cooperation failures, and threshold-based detection struggled to capture the irregularity of real anomaly data.
 
-## 접근
+## Approach
 
-### 1단계 — Fault Injection과 데이터 수집
+### Phase 1 — Fault Injection and Data Collection
 
-- 시뮬레이션 로봇에 하드웨어(배터리·휠), Localization Lost, 장애물, 센서(LiDAR·카메라) 결함을 주입·복구하는 **PySide6 Fault Injection GUI**를 구축했다.
-- 다중 로봇 정보를 ROS 2 통합 CSV로 로깅하는 시스템을 만들고(30대·10 Hz → 1 Hz 다운샘플), 이후 학습 데이터로 사용했다.
+- Built a **PySide6 Fault Injection GUI** that injects and recovers hardware (battery, wheel), Localization Lost, obstacle, and sensor (LiDAR, camera) faults on simulated robots.
+- Built a system that logs multi-robot information into a unified ROS 2 CSV (30 robots, 10 Hz downsampled to 1 Hz), later used as training data.
 
-### 2단계 — 룰 기반 이상탐지와 웹 시각화 (ICCAS 2025) {% cite kim2025anomaly %}
+### Phase 2 — Rule-Based Anomaly Detection and Web Visualization (ICCAS 2025) {% cite kim2025anomaly %}
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/publication_preview/anomaly-detection-visualization-rmf.png" title="Anomaly framework" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">Anomaly Detection Framework — RMF(Task Allocation) → Anomaly State(4 types) → Web Dashboard → Operator.</div>
+<div class="caption">Anomaly Detection Framework — RMF (Task Allocation) → Anomaly State (4 types) → Web Dashboard → Operator.</div>
 
-- 이상을 **개별 로봇 수준**(Battery Depletion, Obstacle Detection)과 **fleet 수준**(Trajectory Conflict, Collision Risk — 다른 로봇 경로 0.2 m 이내 교차)의 4가지로 정의했다.
-- 작업 할당은 RMF가 담당하고 이상 탐지는 센서·로그 기반의 분리 모듈이 담당하는 모듈러 구조로, WebSocket/ROS Bridge 기반 웹 대시보드에서 운영자에게 실시간 알림·시각화했다. Gazebo 30대 환경에서 검증.
+- Defined four anomaly types at the **individual robot level** (Battery Depletion, Obstacle Detection) and the **fleet level** (Trajectory Conflict, Collision Risk — paths crossing within 0.2 m of another robot).
+- In a modular structure where RMF handles task allocation and a separate sensor/log-based module handles anomaly detection, a WebSocket/ROS Bridge-based web dashboard delivered real-time alerts and visualization to the operator. Verified in a 30-robot Gazebo environment.
 
-### 3단계 — 학습 기반 이상탐지 (ICROS 2026) {% cite kim2026learning %}
+### Phase 3 — Learning-Based Anomaly Detection (ICROS 2026) {% cite kim2026learning %}
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/publication_preview/learning-anomaly-detection-framework.png" title="10대 시뮬레이션" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/publication_preview/learning-anomaly-detection-framework.png" title="10-robot simulation" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">Open-RMF 기반 10대 로봇 시뮬레이션 환경 (Gazebo + RMF 시각화).</div>
+<div class="caption">Open-RMF-based 10-robot simulation environment (Gazebo + RMF visualization).</div>
 
-- 각 로봇의 시계열을 4차원 feature $$X_t = [P_t, V_t, B_t, R_t]$$(위치 오차·속도·배터리·임무 진행률)로 정규화했다.
-- LSTM 시계열 예측과 Transformer AutoEncoder 재구성 기반 탐지를 거쳐, Transformer에 RBF 계층을 내장한 자기지도 모델 **RESTAD**를 채택해 라벨 없이 다중 로봇 간 시공간 상관관계를 학습했다.
-- 실시간 ROS 2 스트리밍 파이프라인(Motion Residual 기반)으로 실로봇에 적용했다.
+- Normalized each robot's time series into a 4-dimensional feature $$X_t = [P_t, V_t, B_t, R_t]$$ (position error, velocity, battery, mission progress).
+- After LSTM time-series prediction and Transformer AutoEncoder reconstruction-based detection, adopted **RESTAD**, a self-supervised model that embeds an RBF layer in a Transformer, to learn spatio-temporal correlations among multiple robots without labels.
+- Applied it to real robots through a real-time ROS 2 streaming pipeline (based on Motion Residual).
 
-## 결과
+## Results
 
-| 단계 | 성과 |
+| Phase | Outcome |
 | --- | --- |
-| 룰 기반 (ICCAS 2025) | 4가지 이상 실시간 탐지·시각화, 30대 시뮬레이션 검증, 제1저자·IEEE Xplore |
-| 학습 기반 (ICROS 2026) | Region-level **Aff-F1 0.94** — LSTM·일반 Transformer 능가, 제1저자 |
-| 운영 가시성 | PySide6 통합 관제 GUI + Fault Injection GUI + 웹 대시보드 |
+| Rule-based (ICCAS 2025) | Real-time detection and visualization of four anomaly types, verified in a 30-robot simulation, first author, IEEE Xplore |
+| Learning-based (ICROS 2026) | Region-level **Aff-F1 0.94** — outperforming LSTM and a plain Transformer, first author |
+| Operational visibility | PySide6 integrated fleet management GUI + Fault Injection GUI + web dashboard |
 
-## 기술 스택
+## Tech Stack
 
-Open-RMF · ROS 2 · Gazebo · PySide6 / rclpy · WebSocket / ROS Bridge · PyTorch (LSTM, Transformer AE, RESTAD) · CSV 로깅
+Open-RMF · ROS 2 · Gazebo · PySide6 / rclpy · WebSocket / ROS Bridge · PyTorch (LSTM, Transformer AE, RESTAD) · CSV logging

@@ -1,37 +1,37 @@
 # eeoon.github.io
 
-김영언(Youngeon Kim)의 CV · 포트폴리오 · 논문 리뷰 사이트. [al-folio](https://github.com/alshedivat/al-folio) v1 테마(Jekyll) 기반.
+CV, portfolio and paper-review site of Youngeon Kim, built on the [al-folio](https://github.com/alshedivat/al-folio) v1 theme (Jekyll).
 
-## 구조
+## Layout
 
-| 경로 | 내용 |
+| Path | Contents |
 | --- | --- |
-| `_pages/about.md` | 첫 화면(소개·핵심 역량·최근 소식·선정 논문·최근 글) |
-| `_projects/*.md` | 프로젝트 카드. `category: company`(KETI) / `personal`(입사 전). `importance`가 낮을수록 앞 |
-| `_bibliography/papers.bib` | 논문·특허. `selected={true}`면 첫 화면에 노출, `preview`는 `assets/img/publication_preview/` |
-| `_posts/*.md` | 블로그. `categories: paper-review`(논문 리뷰) / `tech-note`(기술 노트) |
-| `_news/*.md` | 타임라인(첫 화면 news 영역) |
-| `_data/cv.yml` | CV 페이지 데이터 (RenderCV 유사 형식, `Patents`는 generic 섹션) |
-| `_data/socials.yml` | 이메일·GitHub 등 소셜 아이콘 |
-| `_config.yml` | 사이트 설정 (`url`, `lang: ko`, scholar 이름 등) |
+| `_pages/about.md` | Landing page: intro, research interests, experience, ongoing national R&D projects; selected publications are appended automatically |
+| `_projects/*.md` | Project cards. `category: company` (KETI) / `personal` (earlier work). Lower `importance` sorts first |
+| `_bibliography/papers.bib` | Papers and patent. `selected={true}` shows on the landing page; `preview` images live in `assets/img/publication_preview/` |
+| `_posts/*.md` | Blog. `categories: paper-review` (paper reviews) / `tech-note` (technical notes) |
+| `_news/*.md` | Timeline shown at `/news/` |
+| `_data/cv.yml` | CV page data (RenderCV-like format; `Patents` is a generic section) |
+| `_data/socials.yml` | Email, GitHub and other social icons |
+| `_config.yml` | Site settings (`url`, `lang`, scholar name filters, etc.) |
 | `assets/img/` | `prof_pic.jpg`, `projects/<slug>/`, `publication_preview/`, `blog/` |
 
-## 로컬 빌드
+## Local build
 
 ```bash
 bundle install
 bundle exec jekyll serve --livereload   # http://localhost:4000
 ```
 
-Ruby 3.3 이상, ImageMagick(반응형 이미지) 권장. Docker를 쓰려면 `docker compose up`.
+Ruby 3.3+ and ImageMagick (responsive images) recommended. With Docker: `docker compose up`.
 
-## 배포
+## Deployment
 
-`main`에 push하면 `.github/workflows/deploy.yml`이 사이트를 빌드해 `gh-pages` 브랜치에 올린다.
-저장소 **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `gh-pages` / (root)** 로 설정해야 한다.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and pushes it to the `gh-pages` branch.
+Repository **Settings → Pages → Source: Deploy from a branch → `gh-pages` / (root)**.
 
-## 글 추가
+## Adding content
 
-- 논문 리뷰: `_posts/YYYY-MM-DD-slug.md`, `categories: paper-review`, 태그는 소문자 영문.
-- 프로젝트: `_projects/slug.md`, 이미지는 `assets/img/projects/slug/`에 두고 `{% include figure.liquid path="..." %}`로 삽입.
-- 논문: `papers.bib`에 항목 추가 + `assets/img/publication_preview/<name>.png`.
+- Paper review: `_posts/YYYY-MM-DD-slug.md` with `categories: paper-review` and lowercase tags.
+- Project: `_projects/slug.md`; put images in `assets/img/projects/slug/` and embed with `{% include figure.liquid path="..." %}`.
+- Publication: add an entry to `papers.bib` plus `assets/img/publication_preview/<name>.png`.

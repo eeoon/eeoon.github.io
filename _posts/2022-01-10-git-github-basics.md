@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Git과 GitHub 기초: 설치부터 push까지"
+title: "Git and GitHub Basics: From Installation to push"
 date: 2022-01-10 09:00:00 +0900
-description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리"
+description: "Practical commands for the distributed version control system Git, from basic concepts to installing on Ubuntu, cloning, and pushing"
 tags: [git, devops]
 categories: tech-note
 giscus_comments: false
@@ -11,22 +11,22 @@ related_posts: false
 
 ![Untitled](/assets/img/blog/devops/git/image.png)
 
-- Git은 분산 버전 관리 시스템(Distributed Version Control System, DVCS) 중 하나로, 소스 코드와 같은 파일의 변경 사항을  추적하고 관리하는 도구
-- 파일의 변경사항을 추적하여 이전 상태로 롤백하거나 변경 내용을 비교할 수 있다. 또한 여러 개발자 간의 협업을 용이하게 하며 변경사항의 충돌을 관리
-- 브랜치를 통해서 여러 작업을 병렬로 처리할 수 있다. 각 브랜치는 개별적으로 관리되며 변강사항을 통합할 수 있다.
-- 원격 저장소를 통해 다른 개발자와 협업하고 코드를 공유할 수 있다. 원격저장소로는 Github, GitLab, Bitbucket 등이 있다.
+- Git is a Distributed Version Control System (DVCS), a tool for tracking and managing changes to files such as source code.
+- By tracking file changes it can roll back to a previous state or compare changes. It also facilitates collaboration among multiple developers and manages conflicting changes.
+- Branches allow multiple pieces of work to proceed in parallel. Each branch is managed independently and changes can be merged.
+- Remote repositories allow collaboration and code sharing with other developers. Remote hosts include GitHub, GitLab, and Bitbucket.
 
-## Ubuntu 에 git 설치
+## Installing git on Ubuntu
 
 `sudo apt install git`
 
-Ubuntu에 git을 설치하는 CLI는 다음과 같다.
+The command to install git on Ubuntu is shown above.
 
 `git --version`
 
-설치가 완료되었다면 설치된 Git 버전을 다음 CLI를 통해서 확인 할 수 있다.
+Once installation is complete, the installed Git version can be checked with the command above.
 
-## github에서 clone하기
+## Cloning from github
 
 <p align="center">
 </p>
@@ -36,68 +36,68 @@ Ubuntu에 git을 설치하는 CLI는 다음과 같다.
 
 
 
-`git clone 클론하고자 하는 래퍼지토리`
+`git clone <repository to clone>`
 
 ex, `git clone [https://github.com/eeoon/eeoon.git](https://github.com/eeoon/eeoon.git)`
 
-옵션을 통해서 원하는 branch를 clone할 수 있다.
+A specific branch can be cloned with an option.
 
 `git clone https://github.com/eeoon/eeoon.git -b humble`
 
-## github에 push하기
+## Pushing to github
 
 [GitHub: Let’s build from here](https://github.com/)
 
-- 내 github에 push하기 위해서는 사전작업으로 Github에 가입하여 내 repository를 생성하고 해당 repository로 내가 작업중이던 코드, 프로젝트 등을 push 할 수 있다.
+- To push to your own github, you first need to sign up for GitHub and create a repository; then the code or project you are working on can be pushed to that repository.
 
-- Github에 가입하였다면
+- Once you have signed up for GitHub,
 
     `git config --global user.name "Your Name"`
 
     `git config --global user.email "your.email@example.com"`
 
-    명령을 진행한다.
+    run the commands above.
 
 
-- 사용자의 이름, 이메일 주소를 설정한다. option으로 global로 설정되어 있기 때문에 전역적으로 설정되었고 local설정으로 변경할 때에는 해당 옵션 없이 진행하면 된다. 현재 전역으로 설정되었기에 추가적으로 반복해서 진행할 필요는 없다.
+- This sets the user name and email address. Because the global option is used, the setting is global; to set it locally, run the command without the option. Since it is set globally here, there is no need to repeat it.
 
-## Github Repositry 생성
+## Creating a GitHub repository
 
 ![Screenshot1](/assets/img/blog/devops/git/image3.png)
 
-회원가입이 완료되었다면 your Repositories에 클릭하여 우측 상단의 New를 클릭한다.
+After signing up, click Your Repositories and then click New in the upper right.
 
-다음과 같은 화면이 나타나면 Repository name을 작성하고 옵션으로 Description, Properties 등을 설정한다.
+When the following screen appears, enter the repository name and optionally set the description, properties, etc.
 
 ![Screenshot2](/assets/img/blog/devops/git/image4.png)
 
 
 
-만들어진 repository를 확인한 후 우측 상단의 Code를 누른 후 url를 Copy 한다.
+After confirming the created repository, click Code in the upper right and copy the URL.
 
 ![Screenshot3](/assets/img/blog/devops/git/image5.png)
 
-내 Desktop에서 Github에 올릴 repository에 접속하여 다음의 명령을 수행한다.
+On your desktop, go to the repository to be uploaded to GitHub and run the following commands.
 
 `git init`
 
-로컬에서 Github에 올릴 프로젝트 디렉토리에서 Git을 초기화
+Initializes Git in the local project directory to be uploaded to GitHub.
 
 `git add .`
 
-프로젝트 파일을 Git으로 관리하기 위해 파일 추가 및 커밋
+Adds the project files so that they are managed by Git, ahead of the commit.
 
-`git commit -m “커밋 메시지”`
+`git commit -m “commit message”`
 
-커밋할 메시지를 추가하여 커밋을 진행한다.
+Adds a commit message and performs the commit.
 
-이때 커밋할 메시지는 git push 되었을때 변경사항에 대한 간략한 설명을 뜻한다.
+The commit message is a brief description of the changes that will be shown once the push is made.
 
-`git remote add origin https://github.com/사용자이름/저장소이름.git`
+`git remote add origin https://github.com/username/repository.git`
 
-Github에 생성한 원격저장소를 로컬 Git에 추가한다.
+Adds the remote repository created on GitHub to the local Git.
 
-여기서 위 사진에서 복사한 url을 입력한다.
+Enter the URL copied from the screenshot above.
 
 ex,
 
@@ -105,7 +105,7 @@ ex,
 
 `git checkout -b main`
 
-branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환할 수 있다.
+Changes the branch. Creates a new branch and switches to it.
 
 `git branch -m master main`
 
@@ -113,9 +113,9 @@ branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환
 
 `git branch -u origin/main main`
 
-만약 branch가 다른곳(master)이라면 이름을 변경해줘야한다.
+If the branch is elsewhere (master), it needs to be renamed.
 
-혹시나 위의 방법이 안된다면 아래의 방법을 진행
+If the method above does not work, try the following.
 
 `git checkout -b main`
 
@@ -125,14 +125,14 @@ branch를 변경한다. 새로운 branch를 생성하고 해당 branch로 전환
 
 `git push origin main`
 
-로컬의 변경 사항을 원격 저장소(Github)에 푸쉬한다.
+Pushes the local changes to the remote repository (GitHub).
 
-만약 마지막 단계를 진행했을때도 실패한 경우에는
+If the last step still fails, run
 
 `git push origin +main`
 
-입력하여 강제로 git push 할 수 있다.
+to force the git push.
 
-git push가 정상적으로 진행되었다면 다음과 같은 결과를 볼 수 있다. (commit message를 picture로 설정)
+If the git push succeeded, the result looks like the following. (The commit message was set to "picture".)
 
 ![Screenshot4](/assets/img/blog/devops/git/image6.png)

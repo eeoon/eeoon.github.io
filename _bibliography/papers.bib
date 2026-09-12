@@ -5,17 +5,17 @@
   abbr        = {ICROS},
   bibtex_show = {true},
   selected    = {true},
-  title       = {다중 로봇 시스템의 학습 기반 이상 탐지를 위한 프레임워크 개발 (A Learning-based Anomaly Detection Framework for Multi-Robot Systems)},
+  title       = {A Learning-based Anomaly Detection Framework for Multi-Robot Systems (다중 로봇 시스템의 학습 기반 이상 탐지를 위한 프레임워크 개발)},
   author      = {Kim, Youngeon and Jung, Yohan and Kim, Dong Yeop and Kim, Keunhwan},
-  booktitle   = {제어로봇시스템학회 학술대회 (ICROS 2026)},
+  booktitle   = {Conference of the Institute of Control, Robotics and Systems (ICROS 2026)},
   year        = {2026},
   month       = {July},
   address     = {Daegu, Korea},
-  abstract    = {Open-RMF 기반 10대 모바일 로봇 시뮬레이션에서 위치 오차·속도·배터리·임무 진행률을 시계열 feature로 정의하고, Transformer 기반 자기지도학습 모델(RESTAD)을 적용해 라벨 없이 다중 로봇 간 시공간 상관관계를 학습하여 이상을 탐지하는 프레임워크. Region-level 지표(Aff-F1 0.94)에서 LSTM·일반 Transformer를 능가했다. ICCAS 2025 룰 기반 이상탐지의 학습 기반 후속 연구.},
+  abstract    = {In an Open-RMF simulation with ten mobile robots, position error, velocity, battery level and mission progress are defined as time-series features, and a Transformer-based self-supervised model (RESTAD) learns spatio-temporal correlations across robots to detect anomalies without labels. On the region-level metric (Aff-F1 0.94) it outperforms LSTM and a plain Transformer. Learning-based follow-up to the rule-based ICCAS 2025 framework.},
   preview     = {learning-anomaly-detection-framework.png},
-  annotation  = {★ 제1저자 · 발표},
-  award       = {제1저자},
-  award_name  = {제1저자}
+  annotation  = {First author, presenter},
+  award       = {1st author},
+  award_name  = {1st author}
 }
 
 @inproceedings{kim2025anomaly,
@@ -32,9 +32,9 @@
   publisher   = {IEEE},
   abstract    = {Defines four anomaly types in a multi-robot system (battery depletion, unexpected obstacle, trajectory conflict, collision risk within 0.2 m), detects them in a module decoupled from RMF task allocation, and visualizes them in real time on a WebSocket/ROS-bridge web dashboard. Validated in a Gazebo simulation with 30 mobile robots.},
   preview     = {anomaly-detection-visualization-rmf.png},
-  annotation  = {★ 제1저자 · IEEE Xplore},
-  award       = {제1저자},
-  award_name  = {제1저자}
+  annotation  = {First author, IEEE Xplore},
+  award       = {1st author},
+  award_name  = {1st author}
 }
 
 @inproceedings{kim2025ota,
@@ -51,7 +51,7 @@
   publisher   = {IEEE},
   abstract    = {Proposes an over-the-air (OTA) update framework that realizes the Software-Defined Robot (SDR) paradigm with ROS 2 and Docker. A dual public-cloud / on-premise OTA server architecture with State and Usage Loggers is designed, and container-level modular deployment on the robot PC is validated with initial-install and update shell scripts as a proof of concept.},
   preview     = {ota-update-framework-ros2-docker.png},
-  annotation  = {제2저자 · IEEE Xplore}
+  annotation  = {Second author, IEEE Xplore}
 }
 
 @inproceedings{kim2024traversability,
@@ -68,50 +68,53 @@
   publisher   = {IEEE},
   abstract    = {Each robot detects dynamic obstacles (people) with an RGB-D camera and YOLOv8 and shares them with the RMF server. When the number of obstacles adjacent to a graph edge exceeds a predefined threshold, the edge is deactivated and affected robots proactively re-plan. Experiments with four robots show reduced collision risk and path cost compared with a non-cooperative system.},
   preview     = {traversability-assessment-path-planning.png},
-  annotation  = {★ 제1저자},
-  award       = {제1저자},
-  award_name  = {제1저자}
+  annotation  = {First author},
+  award       = {1st author},
+  award_name  = {1st author}
 }
 
 @inproceedings{kim2024crossutilization,
   abbr        = {ICROS},
   bibtex_show = {true},
-  title       = {상호 협력적 경로 계획을 위한 다중 로봇 시스템의 장애물 인식 정보 교차 활용 방법 (Method for Cross-Utilization of Obstacle Recognition Information in a Multi-Robot System for Collaborative Path Planning)},
+  selected    = {true},
+  title       = {Method for Cross-Utilization of Obstacle Recognition Information in a Multi-Robot System for Collaborative Path Planning (상호 협력적 경로 계획을 위한 다중 로봇 시스템의 장애물 인식 정보 교차 활용 방법)},
   author      = {Kim, Youngeon and Kim, Keunhwan and Kim, Dong Yeop},
-  booktitle   = {제어로봇시스템학회 학술대회 (ICROS 2024)},
+  booktitle   = {Conference of the Institute of Control, Robotics and Systems (ICROS 2024)},
   year        = {2024},
   month       = {July},
   address     = {Daejeon, Korea},
-  abstract    = {다중 모바일 로봇이 각자의 2D LiDAR와 RGB-D 카메라(YOLOv8)로 탐지한 장애물 정보를 전역 맵 프레임으로 변환·공유하여, 다른 로봇도 해당 장애물 위치를 활용해 협력적 경로 계획을 수행하는 방법. Open-RMF 관제에서 장애물 기반으로 활성/비활성 경로를 구분해 로봇이 주행 가능한 경로만 따르도록 제어한다. Gazebo 2대 로봇 검증.},
+  abstract    = {Obstacles detected by each mobile robot with a 2D LiDAR and an RGB-D camera (YOLOv8) are transformed into the global map frame and shared so that other robots can use them for collaborative path planning. In the Open-RMF fleet manager, lanes are marked active or inactive from the shared obstacle information so that robots only travel on active lanes. Validated in Gazebo with two robots.},
   preview     = {cooperative-path-planning-obstacle-info.png},
-  annotation  = {★ 제1저자 · 발표},
-  award       = {제1저자},
-  award_name  = {제1저자}
+  annotation  = {First author, presenter},
+  award       = {1st author},
+  award_name  = {1st author}
 }
 
 @inproceedings{kim2024openrmf,
   abbr        = {KROC},
   bibtex_show = {true},
-  title       = {Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템 (Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF)},
+  selected    = {true},
+  title       = {Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF (Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템)},
   author      = {Kim, Youngeon and Kim, Keunhwan and Kim, Dong Yeop},
-  booktitle   = {제19회 한국로봇종합학술대회 (KROC 2024)},
+  booktitle   = {19th Korea Robotics Society Annual Conference (KROC 2024)},
   year        = {2024},
   month       = {February},
   pages       = {455--456},
-  abstract    = {Open-RMF 미들웨어와 ROS Navigation을 통합한 서버-클라이언트 구조의 관제 시스템으로, 다중 이동로봇이 서버에서 작업을 할당받고 RMF Traffic Negotiation으로 충돌 없이 협력 주행하도록 구성하고 실로봇 실험으로 실현 가능성을 검증했다.},
+  abstract    = {A server-client fleet management system that integrates the Open-RMF middleware with ROS Navigation, so that multiple mobile robots receive tasks from the server and drive cooperatively without collisions using RMF traffic negotiation. Feasibility was validated with real-robot experiments.},
   preview     = {openrmf-cooperative-autonomous.png},
-  annotation  = {★ 제1저자},
-  award       = {제1저자},
-  award_name  = {제1저자}
+  annotation  = {First author},
+  award       = {1st author},
+  award_name  = {1st author}
 }
 
 @misc{kim2023patent,
   abbr        = {Patent},
   bibtex_show = {true},
-  title       = {모바일 로봇 서비스 시스템 및 방법 (Mobile Robot Service System and Method)},
+  selected    = {true},
+  title       = {Mobile Robot Service System and Method (모바일 로봇 서비스 시스템 및 방법)},
   author      = {Kim, Youngeon and others},
-  howpublished = {대한민국 특허 출원 (2023.12), 공개 (2025.07), 심사 중},
+  howpublished = {Korean patent application, filed Dec. 2023, published Jul. 2025, under examination},
   year        = {2023},
-  note        = {한국전자기술연구원},
-  annotation  = {특허 · 출원/공개, 심사 중}
+  note        = {Korea Electronics Technology Institute},
+  annotation  = {Patent, filed and published, under examination}
 }

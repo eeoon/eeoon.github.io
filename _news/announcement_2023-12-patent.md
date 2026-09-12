@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).
+Patent application filed: "Mobile Robot Service System and Method" (published Jul. 2025, under examination).

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.
+Precision docking with ±3–5 cm accuracy demonstrated on a real robot using LiDAR trapezoid-marker ICP registration.

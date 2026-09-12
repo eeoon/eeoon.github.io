@@ -2,19 +2,19 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # 비워두면 이름이 사이트 제목으로 사용됨
+title: blank # the website title (if blank, full name will be used instead)
 first_name: Youngeon
 middle_name: ""
 last_name: Kim
 contact_note: >
-  이메일이 가장 확실한 연락 수단입니다.
+  Email is the most reliable way to reach me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  김영언(Youngeon Kim) — Mobile Robotics Engineer @ KETI. 다중로봇 관제·자율주행·시뮬레이션·미들웨어. CV, 프로젝트, 논문, 리뷰.
+  Youngeon Kim — Mobile Robotics Engineer at KETI. Multi-robot fleet management, autonomous navigation, simulation and middleware. CV, projects, publications and paper reviews.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언
-lang: ko # the language of your site
+lang: en # the language of your site
 icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
@@ -136,7 +136,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Blog # blog_name will be displayed in your blog page
-blog_description: 논문 리뷰(paper-review)와 기술 노트(tech-note)
+blog_description: paper reviews and technical notes on robotics
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -162,7 +162,7 @@ giscus:
   dark_theme: dark # name of the dark color scheme (preferred works well with al-folio dark mode)
   light_theme: light # name of the light color scheme (preferred works well with al-folio light mode)
   emit_metadata: 0
-  lang: ko
+  lang: en
 
 # Disqus comments (DEPRECATED)
 disqus_shortname: # put your disqus shortname
@@ -346,7 +346,7 @@ display_categories: ["paper-review", "tech-note"] # these categories will be dis
 
 scholar:
   last_name: [Kim]
-  first_name: [Youngeon, YoungEon, Y., 영언]
+  first_name: [Youngeon, YoungEon, Y.]
 
   style: apa
   locale: en
