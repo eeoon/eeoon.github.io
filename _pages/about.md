@@ -47,11 +47,11 @@ latest_posts:
 | 2021.03 – 2022.01 | Robot Dynamics and Intelligent Control Lab, Keimyung University | Undergraduate researcher — system modeling and stability design of piping robots, MFC-based actuator control |
 | 2017.03 – 2023.02 | Keimyung University, Daegu | B.S. in Robotics Engineering (GPA 4.2/4.5, major 4.4/4.5) |
 
-#### Ongoing Projects
+<!-- #### Ongoing Projects
 
 | Project | Period | My role |
 | --- | --- | --- |
 | [Cooperative mapping, environment recognition and autonomous driving for multiple mobile robots in large-scale indoor workspaces](/projects/multi-robot-openrmf/) | 2023.05 – present | Open-RMF fleet management and task system, multi-robot simulation (30 robots) to real-robot deployment (4 robots), cooperative obstacle sharing, [fault injection and learning-based anomaly detection](/projects/multi-robot-anomaly-detection/), [outdoor traversability pipeline](/projects/outdoor-traversability/) |
-| [Business model development and robot implementation/validation for Software-Defined Robot (SDR) domain services](/projects/sdr-ota-framework/) | 2025.01 – present | Docker/Git OTA framework with robot profiles, [robot–elevator multi-floor navigation](/projects/robot-elevator-interface/), [LiDAR-marker ICP docking](/projects/lidar-marker-docking/), [Go2 multi-floor simulation testbed and VLM mission agent](/projects/go2-multifloor-sim/) |
+| [Business model development and robot implementation/validation for Software-Defined Robot (SDR) domain services](/projects/sdr-ota-framework/) | 2025.01 – present | Docker/Git OTA framework with robot profiles, [robot–elevator multi-floor navigation](/projects/robot-elevator-interface/), [LiDAR-marker ICP docking](/projects/lidar-marker-docking/), [Go2 multi-floor simulation testbed and VLM mission agent](/projects/go2-multifloor-sim/) | -->
 
 Full project write-ups are on the [projects](/projects/) page; the [CV](/cv/) page has the complete record.
