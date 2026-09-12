@@ -4,14 +4,9 @@ title: about
 permalink: /
 subtitle: Mobile Robotics Engineer · <a href="https://www.keti.re.kr" target="_blank">Korea Electronics Technology Institute (KETI)</a> · Seoul, Korea
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Youngeon Kim (김영언)</p>
-    <p>Intelligent Robotics Research Center, KETI</p>
-    <p>"Better today than yesterday."</p>
+# The profile block of the theme is intentionally not used here.
+# The intro and the photo are laid out as two explicit columns below,
+# so the text never wraps under the image.
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,11 +22,21 @@ latest_posts:
   limit: 4
 ---
 
-I am Youngeon Kim, a mobile robotics engineer at the Korea Electronics Technology Institute (KETI), where I have worked since 2023 on getting heterogeneous fleets of mobile robots to operate reliably in real buildings and factories. My work spans the whole path from simulation to deployment: multi-robot fleet management with Open-RMF, robot-to-elevator integration, LiDAR-based precision docking, container-based OTA deployment for software-defined robots, learning-based anomaly detection, and autonomous navigation on unstructured outdoor terrain.
-
-**Research interests.** Multi-robot coordination and fleet-scale sim-to-real validation, LiDAR-inertial-visual localization and mapping, traversability estimation for outdoor and multi-floor environments, legged robots operating inside buildings, and vision-language models as the high-level decision layer for embodied autonomy.
-
-What I enjoy most is taking an open-source method or a published idea and making it work on a real robot in a real environment, then measuring honestly what it does and does not solve. I try to leave every system a little more robust, better documented, and easier to hand over than I found it. If you are working on similar problems, I would be glad to hear from you.
+<div class="row">
+  <div class="col-sm-8 mt-3 mt-md-0">
+    <p>I am Youngeon Kim, a mobile robotics engineer at the Korea Electronics Technology Institute (KETI). Since 2023 I have been building and validating heterogeneous multi-robot systems, from simulation to deployment in real buildings and factories.</p>
+    <p><strong>Research interests:</strong> multi-robot coordination and fleet-scale sim-to-real, LiDAR-inertial-visual localization and mapping, traversability for outdoor and multi-floor environments, legged robots inside buildings, and vision-language models as the decision layer for embodied autonomy.</p>
+    <p>I enjoy turning open research into robust, well-documented systems that actually run on real robots, and I am always glad to talk with people working on similar problems.</p>
+  </div>
+  <div class="col-sm-4 mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/prof_pic.jpg" class="img-fluid rounded z-depth-1" alt="Youngeon Kim" %}
+    <div class="more-info" style="font-family: monospace; font-size: 0.85rem; margin-top: 0.5rem;">
+      <p>Youngeon Kim (김영언)</p>
+      <p>Intelligent Robotics Research Center, KETI</p>
+      <p>"Better today than yesterday."</p>
+    </div>
+  </div>
+</div>
 
 #### Experience
 
