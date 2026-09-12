@@ -1,0 +1,553 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/fsr-vln/"> <meta property="og:description" content="계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)"> <meta name="twitter:description" content="계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Youngeon  Kim"
+        },
+        "url": "https://eeoon.github.io/blog/2026/fsr-vln/",
+        "@type": "BlogPosting",
+        "description": "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        "headline": "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
+        
+        "sameAs": ["https://github.com/eeoon"],
+        
+        "name": "Youngeon  Kim",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/fsr-vln/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/vln"> <i class="fa-solid fa-hashtag fa-sm"></i> vln</a>   <a href="/blog/tag/navigation"> <i class="fa-solid fa-hashtag fa-sm"></i> navigation</a>   <a href="/blog/tag/mapping"> <i class="fa-solid fa-hashtag fa-sm"></i> mapping</a>   <a href="/blog/tag/foundation-model"> <i class="fa-solid fa-hashtag fa-sm"></i> foundation-model</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>Xiaolin Zhou, Tingyang Xiao, Liu Liu, Yucheng Wang, Maiyue Chen, Xinrui Meng, Xinjie Wang, Wei Feng, Wei Sui, Zhizhong Su (Horizon Robotics / D-Robotics)</td> </tr> <tr> <td>발표</td> <td>arXiv 2509.13733 (v3 2025-11-25), cs.RO — 학회 채택 여부 확인되지 않음</td> </tr> <tr> <td>링크</td> <td> <a href="https://arxiv.org/abs/2509.13733" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://github.com/HorizonRobotics/robot_lab" rel="external nofollow noopener" target="_blank">Project</a> (fsr-vln 폴더, 프로젝트 페이지만 있고 실행 코드 미공개)</td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>FSR-VLN은 floor → room → view → object 4계층의 계층적 멀티모달 씬그래프(HMSG)를 먼저 구축하고, 그 위에서 CLIP 기반 빠른 매칭(직관)으로 후보 방·시점·물체를 고른 뒤, 빠른 매칭이 미심쩍을 때만 VLM(GPT-4o) 기반 느린 추론(검증·정제)을 호출하는 “빠른-느린(dual-process)” 객체 탐색 시스템이다. Unitree-G1 휴머노이드가 수집한 실세계 장거리 사무실 환경 87개 지시에서 SR 92%를 평균 응답시간 5.5초에 달성해, 매번 VLM을 돌리는 MobilityVLA류 대비 응답시간을 82% 줄였다고 보고한다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <ul> <li> <strong>기하·시맨틱 맵 기반 ObjNav.</strong> CLIP, OWL-ViT, LSeg 같은 비전 파운데이션 모델의 특징을 voxel/point cloud에 임베딩하는 VLMap, OK-Robot, OVL-MAP 계열. 기하 일관성과 open-vocabulary 질의는 가능하지만 재구성 노이즈·odometry drift에 취약하고 LLM/VLM과 직접 상호작용하기 어렵다.</li> <li> <strong>3D 씬그래프.</strong> ConceptGraphs, HOVSG, DOVSG, OpenIN이 floor/room/object를 노드로 추상화해 LLM 인터페이스를 제공한다. 그러나 “object A in region B on floor C” 같은 경직된 지시 포맷과 CLIP 유사도 검색에 의존해 VLM 추론을 충분히 활용하지 못한다.</li> <li> <strong>이미지 토폴로지 그래프.</strong> MobilityVLA(long-context VLM으로 goal frame 검색), Uni-NaVid, ReMEmbR, MapGPT, Astra, RoboHop, TANGO. 원본 이미지를 보존해 VLM과 잘 맞지만 3D 구조가 없고 video captioning에 의존해 긴 시퀀스에서 비효율적이며 시맨틱-기하 불일치가 생긴다.</li> <li> <strong>이 논문의 전환.</strong> 두 계열(계층적 씬그래프 + 이미지 토폴로지)을 하나로 합친 HMSG를 제안한다. 핵심은 전통적 3계층 사이에 view 노드 층을 추가해 VLM 추론용 이미지 단위 표현을 명시적으로 보유한 것이다. 여기에 Kahneman의 시스템 1/2식 fast(CLIP) → slow(VLM) 조건부 호출을 얹어 정확도와 지연을 동시에 잡으려 한다.</li> <li> <strong>동시대.</strong> osmAG-LLM(HM3D-SEM 비교 대상), JanusVLN, DreamNav 등 VLM 기반 VLN이 쏟아지는 흐름이다. 2025-09 최초 공개라 후속 인용 영향은 아직 확인되지 않는다.</li> </ul> <h2 id="문제와-동기">문제와 동기</h2> <p>기존 VLN은 장거리 공간 추론이 약하고, 특히 긴 복도와 여러 방이 있는 실내에서 성공률이 낮고 추론 지연이 크다. 저자들이 지목하는 근본 병목은 환경 지식을 인코딩·조직·검색하는 지속적 장거리 공간 메모리의 부재다. 기하 맵과 3D 씬그래프는 기하 일관성은 있으나 사전 추출 특징에 의존하고 VLM과의 직접 상호작용이 약하다. 반대로 이미지 토폴로지는 VLM 친화적이지만 3D 구조가 없고 긴 영상 캡셔닝이 비효율적이다. 또한 VLM을 매 질의마다 전체 영상에 돌리면 정확하지만 느리다(MobilityVLA 약 30초). “항상 무거운 추론을 쓰는 것은 낭비”라는 것이 동기다.</p> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <p>세 덩어리로 나뉜다. (A) HMSG 표현, (B) HMSG 구축, (C) Fast-to-Slow 추론.</p> <h3 id="hmsg-hierarchical-multi-modal-scene-graph">HMSG (Hierarchical Multi-modal Scene Graph)</h3> <p>4계층 노드이며 각 노드는 기하·시맨틱·토폴로지 멀티모달 특징을 가진다.</p> <table> <thead> <tr> <th>노드</th> <th>기하</th> <th>시맨틱</th> <th>연결</th> </tr> </thead> <tbody> <tr> <td>Floor</td> <td>min/max 높이, PLY point cloud</td> <td>id/name</td> <td>자식 room 리스트</td> </tr> <tr> <td>Room</td> <td>2D 폴리곤 경계, point cloud</td> <td>name + CLIP 임베딩</td> <td>연결된 view·object</td> </tr> <tr> <td>Object</td> <td>3D bounding box, point cloud</td> <td>CLIP 임베딩</td> <td>부모 room, 보이는 view</td> </tr> <tr> <td>View (신규)</td> <td>camera pose</td> <td>CLIP 임베딩 + VLM(GPT-4o) 생성 텍스트 설명</td> <td>보이는 object(visibility), view 간 무방향 엣지 = 상대 pose</td> </tr> </tbody> </table> <p>전통 씬그래프는 “방에 의자가 있다”까지만 알고 CLIP 매칭에만 의존해 시각·공간 이해가 빈약하다. view 층을 끼우면 “이 시점에서 이 물체가 이렇게 보인다”를 VLM이 직접 읽고 추론할 수 있어, 이미지 단위 내비게이션과 물체 위치 추정을 동시에 강화한다. view 노드 사이 상대 pose 엣지는 전역 경로계획에 쓰인다.</p> <h3 id="hmsg-구축">HMSG 구축</h3> <ul> <li>SLAM은 FAST-LIVO2(LiDAR-관성-비전 odometry)로 RGBD와 pose를 추출하고, HOVSG 방식으로 instance-level open-vocabulary 맵을 만든다. object와 view는 top-down 맵의 기하 겹침으로 방에 귀속된다.</li> <li>floor·room을 순차 추가하며 CLIP 특징을 부여한다. HOVSG와 달리 GPT-4o로 이미지 view에서 room 이름을 추론한다.</li> <li>각 view에 CLIP 임베딩 + VLM 캡션 + camera pose를 저장하고, 보이는 object를 view에 엣지로 연결한다.</li> <li>각 object에 대해 보이는 view들의 평균 depth를 계산해 가장 가까운(min depth) view를 “best view(대표 시점)”로 지정한다. 이것이 뒤의 slow reasoning 검증 기준이 된다.</li> </ul> <h3 id="fast-to-slow-추론">Fast-to-Slow 추론</h3> <ol> <li> <strong>LLM 기반 지시 이해.</strong> 공간 명시적 지시(“사무실의 파란 원통 스툴로 가”)는 LLM이 계층 개념 파서로 floor/region/object로 분해해 씬그래프 노드에 매핑한다. 비공간 지시(“피곤해, 어디서 쉬지?”, “목말라”)는 LLM이 목표 추론 에이전트로 사용자 의도에서 가장 관련 있는 물체·영역을 추론한다.</li> <li> <strong>Fast Matching (CLIP).</strong> 방 이름이 있으면 먼저 방을 매칭하고 그 안에서 view·object를 매칭한다. 질의 텍스트와 view 임베딩의 CLIP 유사도로 goal view를, 질의 텍스트와 object 임베딩의 유사도로 후보 타겟을 고른다. 빠르지만 CLIP 한계로 오답이 가능하다.</li> <li> <strong>Slow Reasoning (GPT-4o, 조건부 호출).</strong> <ul> <li>검증: fast로 고른 object의 best view를 GPT-4o에 보여주고 “이 view에 이 물체가 있는가”를 묻는다. HMSG상 object는 자기 best view에 반드시 나타나므로, GPT-4o가 “없다”고 하면 그 매칭은 신뢰 불가로 판정한다.</li> <li>view 재선택: 잘못이면 LLM이 미매칭 view들의 텍스트 설명으로 가장 의미적으로 일관된 이미지를 view-1로 고르고, fast-matched view와 view-1을 VLM 추론으로 비교해 최종 goal image를 결정한다.</li> <li>object 재매칭: goal image가 정해지면 그 image의 object 리스트를 순회하며 질의-object CLIP 유사도를 재계산해 goal object를 갱신한다.</li> </ul> </li> </ol> <p>비유하면 빠른 직감으로 답을 떠올린 뒤, 그 직감이 미심쩍을 때만 사진을 다시 꼼꼼히 들여다보며 검산하는 사람이다.</p> <h2 id="실험과-결과">실험과 결과</h2> <p><strong>설정.</strong> 하드웨어는 Unitree-G1 휴머노이드 + Intel RealSense D455 RGBD + Livox Mid360 LiDAR. 음성 인식(FunASR + VAD), LLM 타겟 추론, HMSG, 경로계획, 전신 제어까지 통합했으며 추론은 클라우드, 로봇은 데이터 수집·제어를 담당한다. 데이터셋은 휴머노이드가 수집한 실세계 장거리 사무실 4개(긴 복도 + 여러 방)와 HM3D-SEM 8개 장면. 지시는 MobilityVLA 셋업을 따라 크라우드소싱한 87개를 4종으로 나눴다: RF(Reasoning-Free), RR(Reasoning-Required), SO(Small Objects), ST(Spatial Target, 방 타입으로 장거리 메모리 시험). 지표는 SR과 RSR top-n@k(top-n 예측 중 하나가 GT로부터 k m 이내). 베이스라인은 OK-Robot, HOVSG, MobilityVLA(비공개라 GPT-4o로 자체 구현, CLIP top-50 프레임 선별 후 추론), HM3D-SEM에서는 HOVSG·osmAG-LLM.</p> <p><strong>실세계 결과 (87개 지시).</strong></p> <table> <thead> <tr> <th>방법</th> <th>SR</th> <th>응답시간</th> </tr> </thead> <tbody> <tr> <td>OK-Robot</td> <td>0.609</td> <td>0.2s</td> </tr> <tr> <td>HOVSG</td> <td>0.517</td> <td>0.2s</td> </tr> <tr> <td>MobilityVLA (재구현)</td> <td>0.345</td> <td>~30s</td> </tr> <tr> <td>FSR-VLN</td> <td>0.920</td> <td>5.5s (fast만 1.5s)</td> </tr> </tbody> </table> <ol> <li> <strong>SR 92% (80/87).</strong> MobilityVLA·OK-Robot·HOVSG 대비 각각 +167%, +51%, +77% 상대 개선. FSR-VLN은 “정답 방 안에 있어야 성공”이라는 더 엄격한 기준을 적용했다.</li> <li> <strong>응답시간 5.5초.</strong> slow를 fast 실패 시에만 호출하고, 전체 시퀀스가 아닌 후보 view에만 VLM을 적용한 덕분에 MobilityVLA 대비 82% 단축.</li> <li> <strong>장거리 강건성.</strong> RSR@Top1이 4-5m 임계에서 96.6%(84/87)로 전 거리에서 최고. MobilityVLA는 단거리(1-2m)에서는 최저지만 3-5m에서는 FSR-VLN 다음 2위로 시퀀스 추론력을 보인다.</li> </ol> <p><strong>HM3D-SEM (RSR@Top1 1/2/3m).</strong> FSR-VLN 0.87/0.88/0.88 vs HOVSG 0.52/0.64/0.70, osmAG-LLM 0.28/0.50/0.69. osmAG-LLM은 시각 CLIP 특징을 버리고 XML 텍스트만 써서 Top1이 크게 낮다.</p> <p><strong>Ablation (RSR@Top1, 1m).</strong> ST·NR 모두 없음 0.724 → ST 있음 0.816(방 정보로 검색을 해당 방에 한정) → ST + NR 0.920(VLM 검증·정제 추가). 방 단위 가이드와 느린 추론이 둘 다 기여하며, NR은 1.5초 → 5.5초의 비용으로 RSR을 끌어올린다.</p> <p><strong>읽을 때 주의할 점.</strong></p> <ul> <li>MobilityVLA가 비공개라 저자가 GPT-4o로 재구현했다. 원논문 대비 약화되었을 가능성이 있어 167% 우위는 과대평가 위험이 있다. OK-Robot/MobilityVLA는 방 정보가 없어 ST 지시를 해석하지 못하는데, “다른 방의 동종 객체도 성공으로 인정”해 보정했다지만 비교 비대칭이 남는다.</li> <li>실세계 평가는 자체 수집 4개 방, 87개 지시로 규모가 작고 공개 벤치마크가 아니라 외부 검증이 어렵다.</li> <li>지표가 RSR(검색 성공률) 중심이다. 실제 주행 성공이 아니라 “타겟 좌표 검색”이 맞았는지를 주로 재며, 경로계획·제어·실제 도달 성공률(SPL 등)의 정량 보고는 없다. “navigation” 성공이라기보다 “goal retrieval” 성공에 가깝다.</li> <li>view 층 자체 제거, GPT-4o vs 오픈 VLM, slow reasoning 호출 빈도·실패율 통계 같은 ablation이 없다. “82% 단축”의 분모인 slow 호출 비율은 데이터셋 의존적일 수 있다. 정성 예시는 한 방의 성공 사례만 있고 실패 모드 분석이 없다.</li> </ul> <h2 id="결론과-의의">결론과 의의</h2> <p>계층 씬그래프(기하·장거리)와 이미지 토폴로지(VLM 친화)를 view 노드로 봉합한 HMSG는 VLM 시대 VLN 맵 설계의 실용적 청사진이다. “항상 VLM”이 아니라 fast intuition이 실패할 때만 slow VLM을 부르는 조건부 캐스케이드는 실세계 휴머노이드의 지연 예산 문제에 직접적인 해법이며, 비용·지연에 민감한 온디바이스/클라우드 하이브리드 배치에 시사점을 준다. view 층 + 조건부 fast/slow는 실용적이고 합리적인 엔지니어링 통합으로 보이며 지연-정확도 트레이드오프 개선은 설득력이 있다. 다만 “SOTA”와 정량 우위 폭은 자체 벤치마크·재구현 베이스라인이라는 한계 위에서 읽어야 한다.</p> <p>로봇 실무 관점에서 정리하면 다음과 같다.</p> <ul> <li> <strong>어디에 쓸 수 있는가.</strong> 실내 다층 건물 모바일 로봇 자율주행에서 “층 → 방 → 시점 → 물체” 계층 지도는 사무실·병원처럼 방 구조가 명확한 환경에 잘 맞는다. 특히 사용자가 “탕비실 정수기”처럼 방 이름을 말하는 운용 시나리오에서 ST 가이드만으로도 RSR이 0.724 → 0.816으로 오른다는 ablation은 곧바로 적용할 가치가 있다.</li> <li> <strong>지연 예산 설계.</strong> 오픈 VLM이든 API VLM이든 매 질의마다 부르지 않고, 저비용 임베딩 매칭의 신뢰도가 낮을 때만 호출하는 캐스케이드 구조는 어떤 시스템에도 이식 가능한 패턴이다.</li> <li> <strong>한계.</strong> HMSG 구축이 느려 실시간 매핑이 불가하고(저자 인정), 정적 환경을 가정하므로 가구가 옮겨지는 환경은 못 다룬다. slow reasoning이 GPT-4o의 시각 판단에 의존하므로 폐색·유사 객체·조명에서의 오판 분석이 없고, 오픈 VLM으로의 대체 가능성과 성능 격차도 불명이다.</li> <li> <strong>재현 난이도는 상이다.</strong> GitHub의 fsr-vln 폴더는 프로젝트 페이지(index.html + static)만 있고 실행 코드·학습 스크립트가 없으며(2026-06 확인), 리포 전체에 LICENSE 파일이 없어 사용 권리가 불확실하다. 체크포인트·87개 지시·4개 방 데이터셋도 미공개다. 의존 스택(FAST-LIVO2, HOVSG, GPT-4o API, FunASR, Unitree-G1 + D455 + Mid360)도 무겁다. 다만 HOVSG(공개) 위에 view 층과 GPT-4o 검증 로직을 직접 구현하면 알고리즘 자체는 재현 가능하다(Algorithm 1과 추론 흐름이 비교적 명확). 동일 벤치마크가 없어 수치 일치 검증은 불가하다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2509.13733" rel="external nofollow noopener" target="_blank">arXiv 2509.13733</a> </li> <li>프로젝트: <a href="https://github.com/HorizonRobotics/robot_lab" rel="external nofollow noopener" target="_blank">HorizonRobotics/robot_lab</a> (코드 미공개)</li> <li>HOVSG: Hierarchical Open-Vocabulary 3D Scene Graphs for Language-Grounded Robot Navigation (RSS 2024)</li> <li>MobilityVLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs (CoRL 2024)</li> <li>OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics (RSS 2024)</li> <li>FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)</li> <li>ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning (ICRA 2024)</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "GitHub 프로필과 공개 저장소.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
+        },{id: "post-pgtt-phase-guided-terrain-traversal-for-perceptive-legged-locomotion-iros-2026",
+        
+          title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
+        
+        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pgtt/";
+          
+        },
+      },{id: "post-bievr-lio-robust-lidar-inertial-odometry-through-bump-image-enhanced-voxel-maps-arxiv-2026",
+        
+          title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
+        
+        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/bievr-lio/";
+          
+        },
+      },{id: "post-principles-and-guidelines-for-evaluating-social-robot-navigation-algorithms-acm-thri-2025",
+        
+          title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
+        
+        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/social-nav-evaluation-guidelines/";
+          
+        },
+      },{id: "post-fast-livo-fast-and-tightly-coupled-sparse-direct-lidar-inertial-visual-odometry-iros-2022",
+        
+          title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
+        
+        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fast-livo/";
+          
+        },
+      },{id: "post-fast-livo2-fast-direct-lidar-inertial-visual-odometry-t-ro-2025",
+        
+          title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
+        
+        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fast-livo2/";
+          
+        },
+      },{id: "post-vln-r1-vision-language-navigation-via-reinforcement-fine-tuning-arxiv-2025",
+        
+          title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
+        
+        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/vln-r1/";
+          
+        },
+      },{id: "post-these-maps-are-made-for-walking-real-time-terrain-property-estimation-for-mobile-robots-ra-l-2022",
+        
+          title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
+        
+        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/these-maps-are-made-for-walking/";
+          
+        },
+      },{id: "post-putn-a-plane-fitting-based-uneven-terrain-navigation-framework-iros-2022",
+        
+          title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
+        
+        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/putn/";
+          
+        },
+      },{id: "post-π0-a-vision-language-action-flow-model-for-general-robot-control-arxiv-2024",
+        
+          title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
+        
+        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi0/";
+          
+        },
+      },{id: "post-π0-5-a-vision-language-action-model-with-open-world-generalization-corl-2025",
+        
+          title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
+        
+        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi0-5/";
+          
+        },
+      },{id: "post-π-0-6-a-vla-that-learns-from-experience-arxiv-2025",
+        
+          title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
+        
+        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi-star-0-6/";
+          
+        },
+      },{id: "post-navila-legged-robot-vision-language-action-model-for-navigation-rss-2025",
+        
+          title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
+        
+        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/navila/";
+          
+        },
+      },{id: "post-m2mapping-neural-surface-reconstruction-and-rendering-for-lidar-visual-systems-icra-2025",
+        
+          title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
+        
+        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/m2mapping/";
+          
+        },
+      },{id: "post-fsr-vln-fast-and-slow-reasoning-for-vision-language-navigation-arxiv-2025",
+        
+          title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
+        
+        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fsr-vln/";
+          
+        },
+      },{id: "post-elevator-lio-robust-lidar-inertial-odometry-for-multi-floor-navigation-under-elevator-induced-non-inertial-motion-arxiv-2026",
+        
+          title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
+        
+        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/elevator-lio/";
+          
+        },
+      },{id: "post-continual-learning-for-traversability-prediction-with-uncertainty-aware-adaptation-ra-l-2025",
+        
+          title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
+        
+        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/continual-traversability-learning/";
+          
+        },
+      },{id: "post-tf-transform-와-frame-개념-정리",
+        
+          title: "TF(Transform)와 Frame 개념 정리",
+        
+        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/tf-transform/";
+          
+        },
+      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+        
+          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+        
+        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
+          
+        },
+      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+        
+          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+        
+        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/manipulator-dh-simulation/";
+          
+        },
+      },{id: "post-git과-github-기초-설치부터-push까지",
+        
+          title: "Git과 GitHub 기초: 설치부터 push까지",
+        
+        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/git-github-basics/";
+          
+        },
+      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+        
+          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+        
+        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/vanishing-point-lane-detection/";
+          
+        },
+      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+        
+          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+        
+        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/docker/";
+          
+        },
+      },{id: "post-ros1-vs-ros2",
+        
+          title: "ROS1 vs ROS2",
+        
+        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/ros1-vs-ros2/";
+          
+        },
+      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+        
+          title: "Gazebo 커스텀 Battery Plugin 만들기",
+        
+        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-battery-plugin/";
+          
+        },
+      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+        
+          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+        
+        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-training/";
+          
+        },
+      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+        
+          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+        
+        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-plugin/";
+          
+        },
+      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+        
+          title: "로봇 좌표계(Coordinates)와 Euler 각",
+        
+        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/coordinates/";
+          
+        },
+      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+        
+          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+        
+        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo/";
+          
+        },
+      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
+          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+          description: "",
+          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
+          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          description: "",
+          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
+          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          description: "",
+          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
+          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          description: "",
+          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
+          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          description: "",
+          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
+          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          description: "",
+          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
+          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          description: "",
+          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
+          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          description: "",
+          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
+          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          description: "",
+          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
+          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          description: "",
+          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
+          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          description: "",
+          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
+          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          description: "",
+          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
+          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          description: "",
+          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
+          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
+          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3axis-7dof-stability/";
+            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
+          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
+          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6axis-manipulator-simulation/";
+            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
+          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
+          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/agv-manipulator-tcpip/";
+            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
+          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
+          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ai-agent-wiki/";
+            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
+          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
+          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/go2-multifloor-sim/";
+            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
+          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
+          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/kiro-heterogeneous-robots/";
+            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
+          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
+          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lidar-marker-docking/";
+            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
+          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
+          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/logistics-fleet-integration/";
+            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
+          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
+          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mfc-dynamixel-control/";
+            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
+          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
+          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi-robot-anomaly-detection/";
+            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
+          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
+          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi-robot-openrmf/";
+            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
+          title: '실외 비정형 지형 자율주행 파이프라인',
+          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/outdoor-traversability/";
+            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
+          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
+          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robot-elevator-interface/";
+            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
+          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
+          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sdr-ota-framework/";
+            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
+          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
+          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vanishing-point-lane-detection/";
+            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
+          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
+          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wheel-leg-robot/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6B%79%65%38%34%35%36@%6E%61%76%65%72.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eeoon", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

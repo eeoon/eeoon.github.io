@@ -1,0 +1,553 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/elevator-lio/"> <meta property="og:description" content="움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)"> <meta name="twitter:description" content="움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Youngeon  Kim"
+        },
+        "url": "https://eeoon.github.io/blog/2026/elevator-lio/",
+        "@type": "BlogPosting",
+        "description": "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        "headline": "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)",
+        
+        "sameAs": ["https://github.com/eeoon"],
+        
+        "name": "Youngeon  Kim",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/elevator-lio/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/lio"> <i class="fa-solid fa-hashtag fa-sm"></i> lio</a>   <a href="/blog/tag/elevator"> <i class="fa-solid fa-hashtag fa-sm"></i> elevator</a>   <a href="/blog/tag/multi-floor"> <i class="fa-solid fa-hashtag fa-sm"></i> multi-floor</a>   <a href="/blog/tag/navigation"> <i class="fa-solid fa-hashtag fa-sm"></i> navigation</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>Yifan Zhang, Yudong Huang, Yuchong Zhang, Changze Li, Haoran Liu, Ming Yang, Tong Qin (상하이교통대학 SJTU 계열)</td> </tr> <tr> <td>발표</td> <td>arXiv preprint 2026 (arXiv:2605.24495, 2026-05-23; 정식 학회/저널 venue는 확인되지 않음, 더블블라인드 심사 중)</td> </tr> <tr> <td>링크</td> <td> <a href="https://arxiv.org/abs/2605.24495" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://xiaofan4122.github.io/Elevator_LIO_Page/" rel="external nofollow noopener" target="_blank">프로젝트 페이지</a> — 코드/데이터셋/시뮬레이터는 출판 후 공개 예정으로 현재 미공개</td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>로봇이 움직이는 엘리베이터에 타면 IMU 가속도에 엘리베이터의 수송운동이 섞여 들어가고, 이를 자기운동으로 오인한 기존 LIO는 발산하거나 심하게 드리프트한다. Elevator-LIO는 로봇의 상대운동과 엘리베이터의 수송운동을 상태에서 분리(decoupling)하고, 엘리베이터가 정지하는 순간의 물리적 구속을 ZUPT(영속도/영가속도 보정)로 활용해 수직 드리프트를 잡아낸다. FAST-LIO2 골격 위에 최소 침습적으로 얹은 구조라 일반 실내에서는 표준 LIO로 자동 환원된다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <ul> <li>LIO 본류: LIOM에서 LIO-SAM(smoothing/factor-graph)과 FAST-LIO/FAST-LIO2(iterated ESKF + ikd-Tree)로 갈라졌고, Point-LIO, DLIO, Faster-LIO, VoxelMap으로 이어진다. 이 논문은 FAST-LIO2 계열의 IESKF + ikd-Tree 골격을 그대로 계승하고, 그 위에 엘리베이터 비관성 상태를 augment한 형태다.</li> <li>약관측(weak-observability)과 이동 베이스 추정: Ground-Fusion/VIWO(휠·차량 운동학 구속), ZUPT(관성항법의 영속도 검출, Skog 2010), 다리 로봇의 접촉 구속(VILENS, Leg-KILO, LIKO). “간헐적 물리 구속이 약관측 하에서 드리프트를 억제한다”는 이 계열의 아이디어를 엘리베이터 정지 이벤트에 적용했다.</li> <li>멀티플로어·엘리베이터 인지 SLAM: MuNES, NV-LIO 등은 층 전환 관리, 매핑, 내비게이션에 초점을 맞춘다. 저자의 주장은 “로봇이 물리적으로 움직이는 엘리베이터 안에 있는 동안의 연속 위치추정 자체를 정면으로 다룬 연구는 없었다”는 것이고, 이 빈 칸이 본 논문의 포지셔닝이다.</li> <li>장면 스케일 적응: LVIO-Fusion(다중모달), AD-LIO(장면 열화 기반 adaptive voxel). 본 논문의 adaptive downsampling은 이 계열의 경량 변형이다.</li> </ul> <p>참고로 arXiv 공식 제목은 위 표기와 같고, 일부 자료에서는 “A Robust LiDAR-Inertial Odometry in Non-Inertial Frames and Confined Spaces”라는 부제로도 통용된다. 동일 논문이다.</p> <h2 id="문제와-동기">문제와 동기</h2> <p>표준 LIO는 “센서 플랫폼이 관성 좌표계에서 움직인다, 따라서 IMU 가속도는 로봇 자기운동(ego-motion)이다”를 전제한다. 로봇이 움직이는 엘리베이터 캐빈에 들어가면 이 가정이 붕괴한다.</p> <ol> <li>추정 관점: 측정 가속도에 엘리베이터 수송운동과 캐빈 대비 로봇 상대운동이 중첩된다. 분리하지 않으면 적분 오차가 누적된다. 게다가 닫힌 캐빈 안에서 LiDAR는 캐빈 내부 기하 대비 상대운동만 관측하므로, 절대 수직운동 상태가 관측 불가(unobservable)가 되어 공분산이 계속 커진다.</li> <li>프론트엔드 관점: 넓은 층과 협소한 캐빈 사이에서 장면 스케일이 급변한다. 고정 voxel 해상도로는 협소 공간에서 점이 과도하게 깎여 degeneracy나 실패가 나고, 넓은 공간에서는 점이 과잉되어 실시간성이 떨어진다.</li> </ol> <p>결과적으로 기존 LIO는 엘리베이터 운동을 로봇 운동으로 오인해 심한 수직 드리프트, 맵 불일치, 발산을 일으킨다.</p> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <h3 id="비관성-상태-분리">비관성 상태 분리</h3> <p>상태를 엘리베이터 프레임 \(F_E\) 대비 로봇 상태 \(\mathbf{x}_{rel}\)과 월드 대비 엘리베이터 수송 상태 \(\mathbf{x}_{elev}\)로 쪼갠다. 일반화된 상대운동 정리(transport, Coriolis, Euler, 구심 가속도 모두 포함)에서 출발하되, 엘리베이터 단순화 가정으로 줄인다. 캐빈 회전을 무시(\(\boldsymbol{\omega}_E \approx 0\))하고 엘리베이터 프레임을 월드와 평행(\(\mathbf{R}^W_E = \mathbf{I}\))으로 잡으면 수송운동은 순수 수직 병진으로 환원된다.</p> \[\mathbf{a}^W_I = [0,\ 0,\ a^W_{Ez}]^\top + \mathbf{a}^E_I\] <p>최종 상태는 18차원이다. \(\mathbf{x}_{rel} = [\mathbf{p}^E_I, \mathbf{q}^E_I, \mathbf{v}^E_I, \mathbf{b}_a, \mathbf{b}_\omega]\)와 \(\mathbf{x}_{elev} = [p^W_{Ez}, v^W_{Ez}, a^W_{Ez}]\)(엘리베이터의 수직 변위, 속도, 가속도)다.</p> <p>직관적으로는 “로봇이 어떤 방 안에서 어떻게 움직이는가”(상대)와 “그 방 자체가 위아래로 어떻게 실려 가는가”(수송)를 따로 장부에 적는 것이다. 엘리베이터 가속도 \(a^W_{Ez}\)만 명시적 latent 상태로 두는 이유는, 수송 가속도는 비교적 매끄럽게 변해 random walk로 모델링하기 좋은 반면 로봇 상대 가속도는 변동이 커서 LiDAR 업데이트로 간접 보정하는 편이 낫기 때문이다. jerk 같은 고차항은 차원과 노이즈만 키워 제외했다. 중력은 정적 초기화 후 고정한다. 엘리베이터 프레임에서는 중력이 bias, 수송가속도와 강하게 coupling되어 온라인 추정 시 수치가 불안정하다.</p> <h3 id="mode-dependent-ieskf">Mode-dependent IESKF</h3> <p>같은 augmented 상태를 항상 들고 다니되, 모드 매니저가 in/out을 판정한다. 비관성 모드에서는 엘리베이터 coupling 블록과 수송상태 블록을 전이행렬 \(\mathbf{F}_x\)와 노이즈 \(\mathbf{F}_w\)에서 활성화한다. 관성(일반) 모드에서는 그 블록들을 비활성화해 추정기가 자동으로 표준 FAST-LIO2식 LIO로 degenerate한다. 일반 실내에서는 평범한 LIO처럼 동작하고 엘리베이터에서만 추가 항이 켜지는 것이다.</p> <p>LiDAR 업데이트는 엘리베이터-로컬 프레임 \(F_E\)에서 point-to-plane 잔차로 수행한다. 잔차의 야코비안이 수송상태 \(\delta\mathbf{x}_E\)에 대해 0이며, 이것이 “닫힌 캐빈에서 수송 상태가 약관측”이라는 사실의 수학적 근원이다. 수송 상태는 얼지 않고 IMU 프로세스 모델로 계속 propagate되지만 공분산만 자라기 때문에 출구 보정이 필수다. 월드 odometry는 로컬 상대위치를 엘리베이터 높이로 들어올려 합성한다.</p> \[\mathbf{p}^W_I = \mathbf{p}^E_I + p^W_{Ez}\,\mathbf{e}_3\] <h3 id="출구-보정--zero-state-update와-re-anchoring">출구 보정 — Zero-State Update와 Re-anchoring</h3> <p>엘리베이터가 멈춘 순간은 물리적으로 정지 상태이므로 수송 속도와 가속도는 0이어야 한다. 이를 고신뢰 prior 관측으로 만들어 EKF식 1회 업데이트(관측 노이즈 \(\mathbf{R} = \mathrm{diag}(10^{-5}, 10^{-4})\) 수준)로 \(v^W_{Ez}\), \(a^W_{Ez}\)를 0으로 강하게 끌어내린다. 교차공분산 구조를 통해 이 보정이 누적 수직 드리프트를 끌어내리는 것이 핵심이다.</p> <p>이어서 re-anchoring을 한다. 엘리베이터 변위를 상대위치에 흡수하고(\(\mathbf{p}^E_I \leftarrow \mathbf{p}^E_I + p^W_{Ez}\,\mathbf{e}_3\)) 수송상태를 0으로 리셋한다. 글로벌 위치는 보존한 채 표준 LIO 좌표로 복귀하며, 비관성 단계에서 쌓인 불확실성이 이후 항법을 오염시키지 않도록 교차공분산 블록을 0으로, 대각은 작은 prior로 재설정한다.</p> <p>비유하자면, 엘리베이터 안에서는 “내가 몇 층 올라왔는지”가 불확실하게 떠 있다가, 문이 열려 발이 단단한 바닥에 닿는 순간 “여기가 정확히 이 층”이라고 못을 박고 떠다니던 오차를 정리하는 것이다.</p> <h3 id="elevator-mode-manager--이벤트-트리거">Elevator Mode Manager — 이벤트 트리거</h3> <p>진입(Flag_Entry)은 공간 협소화 패턴을 이용한다. 유효 LiDAR 점의 94 퍼센타일 수평거리 \(d_{max}\)가 임계 \(d_{th} = 3.0\)m 미만으로 \(\Delta t_{door} = 2.0\)s 유지되면 “문 닫힘 = 진입”으로 선언한다. 퍼센타일과 지속시간 조건으로 노이즈와 동적 occlusion에 대한 강건성을 확보한다.</p> <p>퇴출(Flag_Exit)은 추정된 수직속도 \(v^W_{Ez}\)의 슬라이딩 윈도우 분산 패턴(가속과 감속 두 피크 사이의 정속 저분산 구간)을 FSM으로 추적해 정지 확정 시 트리거한다. 외부 인프라(건물 IoT)가 필요 없고 온보드 센싱만 쓴다. 인터페이스는 Flag만 노출하는 모듈식이라 비전이나 멀티모달 검출기로 교체할 수 있다.</p> <h3 id="geometry-aware-adaptive-downsampling">Geometry-aware Adaptive Downsampling</h3> <p>현재 프레임 유효점 수 \(N_t\)가 목표 \(N_{target}\)에 가깝도록 voxel 크기를 비례 피드백으로 온라인 조절한다.</p> \[v_{t+1} = v_t \left(\frac{N_t}{N_{target}}\right)^{1/\alpha}, \quad \alpha = 1.2\] <p>\(\alpha\)는 점수와 해상도의 비선형 관계를 반영한 유효 차원이며, voxel 크기는 \([0.05, 0.8]\)m로 클램프한다. 넓은 곳에서는 voxel을 키워 연산을 절약하고, 협소한 캐빈에서는 줄여 기하 디테일을 보존한다.</p> <h3 id="매핑">매핑</h3> <p>ikd-Tree(FAST-LIO2 계열) 글로벌 맵을 쓴다. 로컬 등록은 \(F_E\)에서, 글로벌 삽입은 엘리베이터 높이로 들어올려 \(F_W\)로 투영한다.</p> <h2 id="실험과-결과">실험과 결과</h2> <p>시스템은 Pre-processing(버퍼, 정적 초기화, adaptive downsampling), State estimation + Elevator mode management, Mapping으로 구성된다. C++로 구현되었고 ROS1/ROS2를 모두 지원하며, Livox custom과 표준 ROS 포인트클라우드를 받는다. 센서는 단일 Livox Mid360(통합 IMU)만 쓰고, Jetson Orin Nano와 시각 컨텍스트 기록용 산업용 카메라로 핸드헬드 플랫폼을 구성했다.</p> <p>데이터는 자체 수집 실세계 데이터셋 4개 카테고리(Office/Dormitory/Campus/Mall), 총 20개 시퀀스, 79회 엘리베이터 탑승이다. 거울 반사, 보행자, 장거리 수직이동 등 난조건을 포함한다. 공개 벤치마크는 Hilti 2022/2023이고, 추가로 자체 시뮬레이터를 썼다. 베이스라인은 Point-LIO, FAST-LIO2, VoxelMap, LIO-SAM이며, Mid360 포맷과 6축 IMU를 지원하지 않는 방법은 변환 노드나 커뮤니티판으로 보정해 공정 비교했다. 연산 환경은 데스크톱 i5-14600KF/32GB이고, 실시간성은 Jetson Orin Nano 4GB에서도 검증했다.</p> <p>실세계는 완전한 GT가 없어 종단 수직오차(terminal vertical error, \(e_z = z_{end} - z_{ref}\))와 같은 층 재방문 및 계단-엘리베이터 교차검증을 지표로 쓴다. 표준 환경(Hilti)은 GT 대비 ATE RMSE다.</p> <p>핵심 결과 세 가지는 다음과 같다.</p> <ol> <li>엘리베이터 시나리오 전승(20/20 성공). 베이스라인 4종은 전 시퀀스에서 실패했다. Point-LIO는 20/20 Type-I 드리프트(LiDAR prior 의존이 강해 엘리베이터 수직운동을 흡수하지 못하고 서로 다른 층 점군을 같은 맵에 겹침), VoxelMap과 LIO-SAM은 20/20 Type-II 발산, FAST-LIO2는 11 드리프트/9 발산이다. Elevator-LIO는 전부 성공했다.</li> <li>종단 수직오차 1cm 미만(17/20 시퀀스). Full 시스템에서 대부분 mm~cm급이다. Dormitory4는 누적 수직이동 138.9m 왕복 후에도 시작 높이로 거의 복귀했다.</li> <li>표준 환경 경쟁력 유지(Hilti 2022/2023). 비관성 기능을 넣어도 일반 LIO 성능을 해치지 않는다. 여러 시퀀스에서 best/second-best이며, Hilti2023 Underground1은 0.013m로 최고다. 다만 Stair, Long Corridor 등 일부에서는 1m급으로 열위라 균일 최적은 아니다.</li> </ol> <table> <thead> <tr> <th>방법</th> <th>Type-I 드리프트</th> <th>Type-II 발산</th> <th>성공</th> </tr> </thead> <tbody> <tr> <td>Point-LIO</td> <td>20</td> <td>0</td> <td>0</td> </tr> <tr> <td>FAST-LIO2</td> <td>11</td> <td>9</td> <td>0</td> </tr> <tr> <td>VoxelMap</td> <td>0</td> <td>20</td> <td>0</td> </tr> <tr> <td>LIO-SAM</td> <td>0</td> <td>20</td> <td>0</td> </tr> <tr> <td>Elevator-LIO</td> <td>0</td> <td>0</td> <td>20</td> </tr> </tbody> </table> <p>ablation에서 ZUPT(zero-state update)가 결정적이다. No ZUPT 변형은 수직오차가 미터급까지 치솟는다(Office4 -3.074m, Dormitory2 -2.31m). Full에서는 대부분 mm다. Map Reset 변형(층 도착마다 ikd-Tree를 비우고 재구축)은 과거 맵 재방문 보정을 제거해 “순수한 비관성 추정 능력”을 더 잘 반영하는데, 저자는 Full의 mm급 오차를 “로컬 비관성 추정 + 과거 맵 정렬의 결합 결과”로 정직하게 해석하며 전 구간 sub-cm 절대 높이 정확도는 아니라고 명시한다.</p> <p>시뮬레이션 robustness 실험에서는 초기 중력 정렬오차, 캐빈 경사, 시변 중력 드리프트를 small/medium/large로 주입해도 return-to-origin 높이오차가 유계였다(최악 combined-large 0.312m). 정지 이벤트의 물리 구속이 모델 불일치를 끌어당긴다는 뒷받침이다. 검출기 한계도 실측되었다. Campus4와 Mall1의 거울 캐빈에서 다중경로 의사구조로 거리 임계 진입 검출이 실패해, 해당 시퀀스는 수동 트리거로 코어 추정기와 분리 평가했다.</p> <p>기여 주장을 실제와 대조하면, 엘리베이터 비관성 프레임 분리 운동방정식 유도는 타당하나 캐빈 회전과 횡운동 무시 등 단순화 가정에 의존한다. ZUPT와 경량 검출기로 드리프트를 억제한다는 주장은 ablation으로 강하게 입증되어 핵심 기여다. feedback adaptive downsampling은 합리적이나 그 자체의 정량 ablation은 약하고 AD-LIO 등 선행과의 차별성은 제한적이다. 벤치마크 자원 공개는 약속 단계로 현재 미공개다. 비교 베이스라인이 “엘리베이터 미대응 기성 LIO”라 전승 대 전패는 다소 예견된 대결이지만, Hilti 경쟁력 유지, 시뮬 robustness, 정직한 오차 해석으로 설득력을 확보했다.</p> <h2 id="결론과-의의">결론과 의의</h2> <p>“움직이는 비관성 캐리어 안에서의 연속 LIO”라는 거의 미개척 문제를, FAST-LIO2 골격에 최소 침습적으로(상태 augment + 모드 스위칭 + 이벤트 트리거 ZUPT) 풀어낸 첫 체계적 시도다. 일반 실내에서는 표준 LIO로 자동 환원되는 설계가 실용적이다. 저자도 명시하듯 지하철, 버스, 선박, 항공기 같은 일반 이동 베이스로 일반화할 수 있는 프레임이며, 멀티플로어 서비스 로봇(배달, 청소, 물류)의 실전 실패점인 엘리베이터를 직접 겨냥한다.</p> <p>로봇 실무 관점에서 정리하면 다음과 같다.</p> <ul> <li>어디에 쓸 수 있는가: 실내 다층 건물 모바일 로봇 자율주행에서 엘리베이터 탑승 구간의 localization 연속성 확보에 직접 적용된다. 단일 Livox Mid360과 Jetson Orin Nano 4GB로 실시간 동작이 검증되어 엣지 친화적이며, ikd-Tree/IESKF 기반이라 FAST-LIO2 수준의 가벼운 부하다.</li> <li>재구현 체크포인트: 코드가 미공개(출판 후 공개 예정, 라이선스 미정)이므로 당장은 재구현이 필요하다. 알고리즘 식이 비교적 완결적이어서 FAST-LIO2 베이스에서 재구현 자체는 가능하다. 18차원 augmented 상태와 모드별 \(\mathbf{F}_x\)/\(\mathbf{F}_w\) on/off, \(F_E\) 로컬 point-to-plane 잔차, 출구 ZUPT + re-anchoring + 공분산 리셋, 94 퍼센타일 진입 검출과 속도 분산 FSM 퇴출 검출, adaptive downsampling이 핵심이다. 엘리베이터 데이터와 트리거 임계 튜닝이 필요하므로 재현 난이도는 중상이다.</li> <li>한계 1, 검출기 일반성: 거리 임계 기반 진입 검출이 완전 거울, 투명, 대형 화물 엘리베이터에서 실패한다. 비전 시맨틱, 건물 IoT, 평면도 prior 융합이 필요하다.</li> <li>한계 2, 모델 단순화와 약관측: 엘리베이터 수직 병진만 모델링하고 회전과 횡 외란은 무시하므로 요동치는 배나 버스로 가면 부족하다. 캐빈 안에서 절대 수직위치는 여전히 약관측이며, mm급 종단오차는 과거 맵 정렬 덕이라고 저자 스스로 인정한다.</li> <li>한계 3, 전역 일관성과 검증: 루프클로저와 팩터그래프가 없어 장기 층간 맵 일관성은 향후 과제다. 움직이는 엘리베이터 내 6-DoF 고정밀 GT를 얻지 못해 절대 정확도 검증은 제한적이다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2605.24495" rel="external nofollow noopener" target="_blank">arXiv:2605.24495</a> </li> <li>프로젝트 페이지: <a href="https://xiaofan4122.github.io/Elevator_LIO_Page/" rel="external nofollow noopener" target="_blank">Elevator_LIO_Page</a> (코드 미공개)</li> <li>FAST-LIO2: Fast Direct LiDAR-Inertial Odometry (T-RO 2022) — IESKF + ikd-Tree 골격의 출처</li> <li>Point-LIO (Advanced Intelligent Systems 2023) — 엘리베이터 실험 주 비교군</li> <li>Zero-velocity detection / ZUPT (Skog et al., TBME 2010) — 출구 zero-state update의 이론적 뿌리</li> <li>VoxelMap (RA-L 2022) — 비교군이자 adaptive voxel 선행</li> <li>AD-LIO (IoT-J 2026) — geometry-aware adaptive downsampling의 직접 선행</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "GitHub 프로필과 공개 저장소.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
+        },{id: "post-pgtt-phase-guided-terrain-traversal-for-perceptive-legged-locomotion-iros-2026",
+        
+          title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
+        
+        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pgtt/";
+          
+        },
+      },{id: "post-bievr-lio-robust-lidar-inertial-odometry-through-bump-image-enhanced-voxel-maps-arxiv-2026",
+        
+          title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
+        
+        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/bievr-lio/";
+          
+        },
+      },{id: "post-principles-and-guidelines-for-evaluating-social-robot-navigation-algorithms-acm-thri-2025",
+        
+          title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
+        
+        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/social-nav-evaluation-guidelines/";
+          
+        },
+      },{id: "post-fast-livo-fast-and-tightly-coupled-sparse-direct-lidar-inertial-visual-odometry-iros-2022",
+        
+          title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
+        
+        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fast-livo/";
+          
+        },
+      },{id: "post-fast-livo2-fast-direct-lidar-inertial-visual-odometry-t-ro-2025",
+        
+          title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
+        
+        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fast-livo2/";
+          
+        },
+      },{id: "post-vln-r1-vision-language-navigation-via-reinforcement-fine-tuning-arxiv-2025",
+        
+          title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
+        
+        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/vln-r1/";
+          
+        },
+      },{id: "post-these-maps-are-made-for-walking-real-time-terrain-property-estimation-for-mobile-robots-ra-l-2022",
+        
+          title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
+        
+        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/these-maps-are-made-for-walking/";
+          
+        },
+      },{id: "post-putn-a-plane-fitting-based-uneven-terrain-navigation-framework-iros-2022",
+        
+          title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
+        
+        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/putn/";
+          
+        },
+      },{id: "post-π0-a-vision-language-action-flow-model-for-general-robot-control-arxiv-2024",
+        
+          title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
+        
+        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi0/";
+          
+        },
+      },{id: "post-π0-5-a-vision-language-action-model-with-open-world-generalization-corl-2025",
+        
+          title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
+        
+        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi0-5/";
+          
+        },
+      },{id: "post-π-0-6-a-vla-that-learns-from-experience-arxiv-2025",
+        
+          title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
+        
+        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/pi-star-0-6/";
+          
+        },
+      },{id: "post-navila-legged-robot-vision-language-action-model-for-navigation-rss-2025",
+        
+          title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
+        
+        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/navila/";
+          
+        },
+      },{id: "post-m2mapping-neural-surface-reconstruction-and-rendering-for-lidar-visual-systems-icra-2025",
+        
+          title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
+        
+        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/m2mapping/";
+          
+        },
+      },{id: "post-fsr-vln-fast-and-slow-reasoning-for-vision-language-navigation-arxiv-2025",
+        
+          title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
+        
+        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fsr-vln/";
+          
+        },
+      },{id: "post-elevator-lio-robust-lidar-inertial-odometry-for-multi-floor-navigation-under-elevator-induced-non-inertial-motion-arxiv-2026",
+        
+          title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
+        
+        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/elevator-lio/";
+          
+        },
+      },{id: "post-continual-learning-for-traversability-prediction-with-uncertainty-aware-adaptation-ra-l-2025",
+        
+          title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
+        
+        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/continual-traversability-learning/";
+          
+        },
+      },{id: "post-tf-transform-와-frame-개념-정리",
+        
+          title: "TF(Transform)와 Frame 개념 정리",
+        
+        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/tf-transform/";
+          
+        },
+      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+        
+          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+        
+        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
+          
+        },
+      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+        
+          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+        
+        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/manipulator-dh-simulation/";
+          
+        },
+      },{id: "post-git과-github-기초-설치부터-push까지",
+        
+          title: "Git과 GitHub 기초: 설치부터 push까지",
+        
+        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/git-github-basics/";
+          
+        },
+      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+        
+          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+        
+        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/vanishing-point-lane-detection/";
+          
+        },
+      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+        
+          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+        
+        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/docker/";
+          
+        },
+      },{id: "post-ros1-vs-ros2",
+        
+          title: "ROS1 vs ROS2",
+        
+        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/ros1-vs-ros2/";
+          
+        },
+      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+        
+          title: "Gazebo 커스텀 Battery Plugin 만들기",
+        
+        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-battery-plugin/";
+          
+        },
+      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+        
+          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+        
+        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-training/";
+          
+        },
+      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+        
+          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+        
+        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo-plugin/";
+          
+        },
+      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+        
+          title: "로봇 좌표계(Coordinates)와 Euler 각",
+        
+        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/coordinates/";
+          
+        },
+      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+        
+          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+        
+        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/gazebo/";
+          
+        },
+      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
+          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+          description: "",
+          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
+          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          description: "",
+          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
+          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          description: "",
+          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
+          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          description: "",
+          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
+          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          description: "",
+          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
+          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          description: "",
+          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
+          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          description: "",
+          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
+          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          description: "",
+          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
+          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          description: "",
+          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
+          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          description: "",
+          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
+          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          description: "",
+          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
+          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          description: "",
+          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
+          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          description: "",
+          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
+          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
+          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3axis-7dof-stability/";
+            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
+          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
+          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6axis-manipulator-simulation/";
+            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
+          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
+          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/agv-manipulator-tcpip/";
+            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
+          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
+          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ai-agent-wiki/";
+            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
+          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
+          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/go2-multifloor-sim/";
+            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
+          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
+          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/kiro-heterogeneous-robots/";
+            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
+          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
+          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lidar-marker-docking/";
+            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
+          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
+          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/logistics-fleet-integration/";
+            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
+          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
+          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mfc-dynamixel-control/";
+            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
+          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
+          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi-robot-anomaly-detection/";
+            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
+          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
+          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi-robot-openrmf/";
+            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
+          title: '실외 비정형 지형 자율주행 파이프라인',
+          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/outdoor-traversability/";
+            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
+          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
+          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robot-elevator-interface/";
+            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
+          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
+          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sdr-ota-framework/";
+            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
+          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
+          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vanishing-point-lane-detection/";
+            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
+          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
+          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wheel-leg-robot/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6B%79%65%38%34%35%36@%6E%61%76%65%72.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eeoon", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
