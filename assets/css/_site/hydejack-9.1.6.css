@@ -1,4 +1,0 @@
-$gh-pages-compat: true;
----
----
-{% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}{% include header.txt %}{{ include_to_scssify | scssify }}

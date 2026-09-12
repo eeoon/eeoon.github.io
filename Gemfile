@@ -1,67 +1,64 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
-#
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
-gem "jekyll", "~> 3.9.2"
+gem 'jekyll'
 
-#gem "jekyll-theme-hydejack", "~> 9.1"
-
-gem "github-pages", "~>	228", group: :jekyll_plugins
-
-gem "jekyll-include-cache", group: :jekyll_plugins
-
-gem "jekyll-paginate"
-
-# IMPORTANT: The followign gem is used to compile math formulas to 
-# KaTeX during site building.
-#
-# There are a couple of things to know about this gem:
-# *  It is not supported on GitHub Pages. 
-#    You have to build the site on your machine before uploading to GitHub,
-#    or use a more permissive cloud building tool such as Netlify.
-# *  You need some kind of JavaScript runtime on your machine.
-#    Usually installing NodeJS will suffice. 
-#    For details, see <https://github.com/kramdown/math-katex#documentation>
-#
-# If you're using the MathJax math engine instead, free to remove the line below:
-
-gem "kramdown-math-katex"
-
-# A JavaScript runtime for ruby that helps with running the katex gem above.
-gem "duktape"
-
-# Fixes `jekyll serve` in ruby 3
-gem "webrick"
-
+# Core plugins that directly affect site building
 group :jekyll_plugins do
-  gem "jekyll-sass-converter"
-  gem "jekyll-default-layout"
-  gem "jekyll-feed"
-  gem "jekyll-optional-front-matter"
-  gem "jekyll-paginate"
-  gem "jekyll-readme-index"
-  gem "jekyll-redirect-from"
-  gem "jekyll-relative-links"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-  gem "jekyll-titles-from-headings"
-  gem "jekyll-include-cache"
+    gem 'jekyll-3rd-party-libraries'
+    gem 'jekyll-archives-v2'
+    gem 'jekyll-cache-bust'
+    gem 'jekyll-email-protect'
+    gem 'jekyll-feed'
+    gem 'jekyll-get-json'
+    gem 'jekyll-imagemagick'
+    gem 'jekyll-jupyter-notebook'
+    gem 'jekyll-link-attributes'
+    gem 'jekyll-minifier'
+    gem 'jekyll-paginate-v2'
+    gem 'jekyll-regex-replace'
+    gem 'jekyll-scholar'
+    gem 'jekyll-sitemap'
+    gem 'jekyll-socials'
+    gem 'jekyll-tabs'
+    gem 'jekyll-terser', :git => "https://github.com/RobertoJBeltran/jekyll-terser.git"
+    gem 'jekyll-toc'
+    gem 'jekyll-twitter-plugin'
+    gem 'jemoji'
 
-  # Non-Github Pages plugins:
-  gem "jekyll-last-modified-at"
-  gem "jekyll-compose"
+    gem 'classifier-reborn'  # used for content categorization during the build
 end
 
-gem 'wdm' if Gem.win_platform?
-gem "tzinfo-data" if Gem.win_platform?
+# Gems for development or external data fetching (outside :jekyll_plugins)
+group :other_plugins do
+    gem 'css_parser'
+    gem 'observer'       # used by jekyll-scholar
+    gem 'ostruct'        # used by jekyll-twitter-plugin
+    # gem 'terser'         # used by jekyll-terser
+    # gem 'unicode_utils' -- should be already installed by jekyll
+    # gem 'webrick' -- should be already installed by jekyll
+end
 
+# Gems for al-folio plugins
+group :al_folio_plugins do
+    gem 'al_folio_core', '= 1.0.15'
+    gem 'al_icons', '= 1.0.0'
+    gem 'al_folio_cv', '= 1.0.2'
+    gem 'al_folio_distill', '= 1.0.3'
+    gem 'al_folio_upgrade', '= 1.0.3'
+    gem 'al_folio_bootstrap_compat', '= 1.0.0'
+    gem 'al_cookie', '= 1.0.1'
 
-gem "faraday-retry", "~> 2.2"
+    gem 'al_analytics', '= 1.0.2'
+    gem 'al_citations', '= 1.0.1'
+    gem 'al_ext_posts', '= 1.0.3'
+    gem 'al_img_tools', '= 1.0.3'
+    gem 'al_search', '= 1.0.3'
+    gem 'al_charts', '= 1.0.1'
+    gem 'al_math', '= 1.0.2'
+    gem 'al_comments', '= 1.0.0'
+    gem 'al_newsletter', '= 1.0.0'
 
-gem "jekyll-theme-hydejack", "~> 9.2"
+    gem 'al_email_protect', '= 1.0.1'
+    gem 'al_marimo', '= 1.0.0'
+    gem 'al_rtl', '= 1.0.0'
+end

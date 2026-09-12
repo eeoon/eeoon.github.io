@@ -1,0 +1,153 @@
+cv:
+  name: 김영언 (Youngeon Kim)
+  label: Mobile Robotics Engineer
+  email: kye8456@naver.com
+  location: Seoul, Korea
+  website: https://eeoon.github.io
+  summary: >
+    제조·물류·서비스 로보틱스 **시스템 통합·미들웨어·관제·시뮬레이션 엔지니어**.
+    Open-RMF 기반 이기종 멀티로봇 관제(30대 시뮬레이션 → 실물 4대 Sim-to-Real), 로봇–엘리베이터 MQTT–ROS 2 연동,
+    LiDAR 마커 ICP 정밀 도킹, Docker·Git 기반 OTA 배포, 학습 기반 다중로봇 이상탐지, 실외 비정형 지형 자율주행을
+    시뮬레이션에서 실로봇까지 설계·실증했다. 국제학회 논문 3편(ICCAS), 국내학회 3편(KROC·ICROS), 특허 1건.
+
+  social_networks:
+    - network: GitHub
+      username: eeoon
+
+  sections:
+    Education:
+      - institution: 계명대학교 (Keimyung University)
+        location: Daegu, Korea
+        area: 로봇공학 (Robotics Engineering)
+        studyType: B.S.
+        start_date: 2017-03
+        end_date: 2023-02
+        score: "GPA 4.2 / 4.5 (전공 4.4 / 4.5)"
+        highlights:
+          - 캡스톤 디자인 우수상 — 4족 휠-레그 하이브리드 로봇 제작 (메카톤)
+          - 학부연구생 (Robot Dynamics and Intelligent Control Lab, 2021.03 ~ 2022.01) — 다자유도 제어 시스템 설계, MFC 기반 액츄에이터 제어
+
+    Experience:
+      - company: 한국전자기술연구원 (KETI) 지능로보틱스연구센터
+        position: 연구원 (Researcher) · Mobile Robotics Engineer
+        location: Seoul, Korea
+        start_date: 2023-05
+        end_date: present
+        summary: 다중로봇 관제 · 자율주행 · SDR/OTA · 시뮬레이션 · 이상탐지
+        highlights:
+          - "**다중 로봇 관제·자율주행 통합 시스템 설계:** Open-RMF 기반 이기종 다중로봇 관제 — 임무 할당·충돌 회피·차선 폐쇄·실시간 재계획, ROS 2 Service/Action 기반 작업 이양, 30대 규모 시뮬레이션 검증 후 실물 4대 실증, DDS/Zenoh 통신 최적화"
+          - "**이기종 시스템 연동 미들웨어 구축:** 로봇–엘리베이터 MQTT↔ROS 2 브리지(변환 성공률 100%, 지연 30~60 ms)로 다층 건물 자율주행 완성; AGV–매니퓰레이터 TCP/IP 커스텀 프로토콜로 제조물류 이송·적재 통합"
+          - "**정밀 도킹·운영 효율화:** ArUco → 2D LiDAR 기하 마커 → ICP 정합으로 발전시킨 2단계 도킹, 실환경 ±3~5 cm 정밀 충전 도킹 실증; 시뮬레이션 기반 배터리 충전 로직 검증"
+          - "**SDR OTA 배포 프레임워크:** Docker·Git 기반 컨테이너 모듈 배포, 공통 코드 + Robot Profile(YAML) 파라미터 분리로 Navigation·Patrol·Elevator·Docking 기능을 코드 수정 없이 교체·검증 (ICCAS 2025)"
+          - "**다중로봇 이상탐지·가시성:** PySide6 Fault Injection GUI·통합 CSV 로깅, 룰 기반 4분류 이상탐지 웹 대시보드(ICCAS 2025) → Transformer 자기지도(RESTAD) 학습 기반 이상탐지(ICROS 2026, Aff-F1 0.94)"
+          - "**모바일 로봇 자율주행 파이프라인:** Mapping–Localization–Planning–Control 파이프라인을 오픈소스 기반으로 구성, 시뮬레이션·실로봇(TETRA_S, Jackal) 구현; FAST-LIVO2 매핑 + grid_map traversability + Pure Pursuit-LOS 추종의 실외 주행 스택 구축"
+          - "**사족·이족보행 플랫폼 시뮬레이션:** Unitree Go2 다층 건물(계단·엘리베이터) 테스트베드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo 3트랙으로 구축, 보행 정책 이식·지형 자동 전환, VLM 오케스트레이션 자율 미션 에이전트 실험"
+
+      - company: 한국로봇융합연구원 (KIRO) 로봇직업혁신센터
+        position: 인턴 (Intern)
+        location: Gumi, Korea
+        start_date: 2022-08
+        end_date: 2023-03
+        summary: 이기종 산업용·협동로봇 통합 실습 환경 구축 및 교육
+        highlights:
+          - "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇 등 **8종 이상**의 제어 체계 분석, 로봇별 좌표계·통신 규격 매칭, 초·중·고급 단계별 교육 커리큘럼·실습 매뉴얼 설계"
+          - "로봇직업혁신센터 개소식 데모 — 수십 대 장비 동시 구동 시연의 운영·제어 담당, 협동로봇 도장 찍기·서명 이벤트용 엔드이펙터 동작 설계"
+
+    Publications:
+      - title: 다중 로봇 시스템의 학습 기반 이상 탐지를 위한 프레임워크 개발 (제1저자)
+        authors:
+          - 김영언, 정요한, 김동엽, 김근환
+        publisher: 제어로봇시스템학회 학술대회 (ICROS 2026)
+        releaseDate: 2026-07
+        summary: Transformer 자기지도(RESTAD) 기반 다중로봇 시계열 이상탐지, Region-level Aff-F1 0.94
+      - title: Anomaly Detection and Visualization Framework for Multi-Robot Systems Using RMF (1st author)
+        authors:
+          - Youngeon Kim, Yohan Jung, Dong Yeop Kim, Keunhwan Kim
+        publisher: ICCAS 2025, pp. 808–811 (IEEE Xplore)
+        releaseDate: 2025-11
+        summary: 개별·fleet 수준 이상 4분류 룰 기반 탐지 + 웹 대시보드 실시간 시각화, 30대 시뮬레이션 검증
+      - title: Design and Implementation of an OTA Update Framework for Software-Defined Robots using ROS 2 and Docker (2nd author)
+        authors:
+          - Dong Yeop Kim, Youngeon Kim, Eunsu Kim, Keunhwan Kim, Euntai Kim, Deok Gyoon Chung
+        publisher: ICCAS 2025, pp. 1994–1997 (IEEE Xplore)
+        releaseDate: 2025-11
+        summary: SDR용 ROS 2 + Docker OTA 프레임워크, Public/On-Premise 이중 서버 아키텍처, PoC 검증
+      - title: Traversability Assessment and Path Planning Using Obstacle Recognition Information for Multi-Robot System (1st author)
+        authors:
+          - YoungEon Kim, Dong Yeop Kim, Keunhwan Kim
+        publisher: ICCAS 2024, pp. 1670–1671
+        releaseDate: 2024-10
+        summary: Edge별 허용 장애물 수 임계 기반 사전 경로 재계획, 4대 로봇 협력/비협력 비교
+      - title: 상호 협력적 경로 계획을 위한 다중 로봇 시스템의 장애물 인식 정보 교차 활용 방법 (제1저자·발표)
+        authors:
+          - 김영언, 김근환, 김동엽
+        publisher: 제어로봇시스템학회 학술대회 (ICROS 2024)
+        releaseDate: 2024-07
+        summary: 2D LiDAR + RGB-D(YOLOv8) 장애물을 전역 맵 좌표로 변환·공유하는 협력 경로계획
+      - title: Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템 (제1저자)
+        authors:
+          - 김영언, 김근환, 김동엽
+        publisher: 제19회 한국로봇종합학술대회 (KROC 2024), pp. 455–456
+        releaseDate: 2024-02
+        summary: Open-RMF + ROS Navigation 서버-클라이언트 관제, 실로봇 협력주행 검증
+
+    Patents:
+      - label: 모바일 로봇 서비스 시스템 및 방법
+        details: 대한민국 특허 출원 2023.12 · 공개 2025.07 · 심사 중 (한국전자기술연구원)
+
+    Skills:
+      - name: Robotics Middleware
+        level: Advanced
+        icon: fa-solid fa-robot
+        keywords: "ROS 2 (Foxy/Humble/Jazzy), ROS 1, Open-RMF, Nav2, free_fleet, TF, CycloneDDS, Zenoh, MQTT, TCP/IP"
+      - name: Perception & Localization
+        level: Intermediate
+        icon: fa-solid fa-satellite-dish
+        keywords: "Cartographer, FAST-LIO2 / FAST-LIVO2, ICP, KD-Tree, SOR, grid_map / elevation mapping, Mesh Navigation, YOLOv8, OpenCV"
+      - name: Simulation
+        level: Advanced
+        icon: fa-solid fa-cube
+        keywords: "Gazebo Classic / Harmonic, Isaac Sim 5.0 / IsaacLab, MuJoCo, SDF → USD / MJCF 변환, 30대 fleet 시뮬레이션"
+      - name: DevOps & Deployment
+        level: Advanced
+        icon: fa-solid fa-box
+        keywords: "Docker, Git/GitHub, OTA 배포 스크립트, Robot Profile(YAML), Linux/Ubuntu, Bash"
+      - name: Programming
+        level: Advanced
+        icon: fa-solid fa-code
+        keywords: "C++ / C, Python, MATLAB, PySide6 / Qt, rclpy / rclcpp"
+      - name: ML for Robotics
+        level: Intermediate
+        icon: fa-solid fa-brain
+        keywords: "PyTorch, LSTM / Transformer AutoEncoder / RESTAD 시계열 이상탐지, RL 보행 정책 이식(IsaacLab·MJX), VLM 오케스트레이션"
+
+    Languages:
+      - name: 한국어 (Korean)
+        summary: "모국어"
+      - name: English
+        summary: "기술 문서 읽기·쓰기, 국제학회 발표"
+
+    Projects:
+      - name: Open-RMF 기반 이기종 다중로봇 협력 자율주행 (다중협력주행)
+        summary: 대규모 실내 공간 다중 이동로봇의 협력적 지도작성·환경인식·자율주행. 시뮬레이션 30대, 실물 TETRA_S/M 4대 Sim-to-Real.
+        start_date: 2023-05
+        end_date: present
+        highlights:
+          - Open-RMF 관제·Task 시스템, namespace·TF 설계, 센서 융합 장애물 인식·Lane Closed, MAPF 분석, Fault Injection·이상탐지, 연차별 통합테스트·공인시험
+      - name: SDR (Software-Defined Robot) 도메인 서비스 BM 개발 및 로봇 구현·검증
+        summary: 엘리베이터 탑승 다층 이동, LiDAR 마커 정밀 도킹, GitHub+Docker OTA 무중단 배포, TRON1 이족·Go2 사족보행 확장.
+        start_date: 2025-01
+        end_date: present
+        highlights:
+          - MQTT–ROS 2 브리지·NavigateMultiFloor Action, ICP 도킹 ±3~5 cm, OTA Robot Profile 구조, Go2 다층 시뮬 3트랙, VLM 자율 미션 에이전트
+      - name: 협업지능 기반 로봇플러스 경쟁력 지원 (제조물류 자동화)
+        summary: 이종 물류로봇(TETRA 대차·스태커·MiR) Open-RMF 통합, AGV–매니퓰레이터 TCP/IP 프로토콜, 도킹 제어권 핸드오버, PySide6 GUI.
+        start_date: 2023-05
+        end_date: 2025-05
+        highlights:
+          - free_fleet 개조·좌표 정합, 스태커/ACS 통신 프로토콜 설계, YOLOv8 장애물 인식 실증, Isaac Sim 연동 검토
+
+    Interests:
+      - name: Research Interests
+        icon: fa-solid fa-tag
+        keywords: "Multi-robot coordination, Fleet-scale Sim-to-Real, LiDAR-Inertial-Visual odometry, Traversability, Legged robots in multi-floor buildings, VLM/VLA for embodied autonomy"
