@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/navila/"> <meta property="og:description" content="VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)"> <meta name="twitter:description" content="VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/navila/"> <meta property="og:description" content="A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)"> <meta name="twitter:description" content="A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
     {
         "author":
         {
@@ -7,7 +7,7 @@
         },
         "url": "https://eeoon.github.io/blog/2026/navila/",
         "@type": "BlogPosting",
-        "description": "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        "description": "A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera",
         "headline": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
         
         "sameAs": ["https://github.com/eeoon"],
@@ -21,7 +21,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/navila/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/vln"> <i class="fa-solid fa-hashtag fa-sm"></i> vln</a>   <a href="/blog/tag/vla"> <i class="fa-solid fa-hashtag fa-sm"></i> vla</a>   <a href="/blog/tag/legged"> <i class="fa-solid fa-hashtag fa-sm"></i> legged</a>   <a href="/blog/tag/navigation"> <i class="fa-solid fa-hashtag fa-sm"></i> navigation</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>An-Chieh Cheng, Yandong Ji, Zhaojing Yang (공동 1저자), Zaitian Gongye, Xueyan Zou, Jan Kautz, Erdem Bıyık, Hongxu Yin, Sifei Liu, Xiaolong Wang (UC San Diego, USC, NVIDIA)</td> </tr> <tr> <td>발표</td> <td>arXiv 2412.04453 (2024-12, v2 2025-02), RSS 2025 채택</td> </tr> <tr> <td>링크</td> <td> <a href="https://navila-bot.github.io" rel="external nofollow noopener" target="_blank">Project</a> · <a href="https://github.com/AnjieCheng/NaVILA" rel="external nofollow noopener" target="_blank">Code</a> (Apache-2.0) · <a href="https://github.com/yang-zj1026/NaVILA-Bench" rel="external nofollow noopener" target="_blank">Benchmark</a> (MIT)</td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>NaVILA는 사족·휴머노이드 같은 다리 로봇의 Vision-and-Language Navigation(VLN)을 두 단으로 나누어 푼다. 상단의 VLA(Vision-Language-Action) 모델은 “75cm 전진”, “30도 우회전” 같은 자연어 중간 행동만 출력하고, 하단의 시각 기반 locomotion RL 정책이 그 명령을 실제 관절 제어로 실행한다. 이 구조로 단일 RGB 카메라만 쓰면서도 파노라마·depth·odometry·waypoint predictor를 동원한 기존 SOTA를 능가했고, Unitree Go2·H1·Booster T1 실로봇에서 25개 지시 기준 평균 88% 성공률을 보였다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <p>이 논문이 나오기까지의 흐름은 다섯 갈래로 정리된다.</p> <ol> <li> <strong>이산(discrete) VLN 시대.</strong> R2R(Anderson et al., 2018) 이후 Matterport3D 같은 시뮬레이터에서 내비게이션 그래프의 노드 사이를 텔레포트하며 지시문을 따르는 연구가 주류였다. 고수준 의사결정에는 강했지만 실제 모션 제어는 무시했다.</li> <li> <strong>연속 환경 VLN-CE로 전환.</strong> Krantz et al.(2020)이 텔레포트 대신 전진·회전 같은 저수준 행동을 요구하는 VLN-CE를 제시했다. 이후 ETPNav·BEVBert·Reborn 등이 시뮬레이터에서 사전학습한 waypoint predictor(Hong et al.)로 후보 위치를 예측해 성능을 끌어올렸으나, 시뮬 의존이라 일반화가 취약하고 장애물 회피·저수준 모션은 여전히 미해결로 남았다.</li> <li> <strong>단일 시점 비디오 VLM의 등장.</strong> NaVid(RSS 2024)가 파노라마·depth 없이 RGB 비디오 한 시점만으로 다음 행동을 예측했다. NaVILA의 가장 가까운 직전 연구이자 핵심 baseline이다.</li> <li> <strong>매니퓰레이션 VLA 흐름.</strong> RT-2, OpenVLA, Open X-Embodiment가 VLM을 로봇 데모로 파인튜닝해 저수준 행동을 직접 출력하는 패러다임을 정립했다. 다만 대부분 조작에 집중했고 양자화된 저수준 명령을 썼다.</li> <li> <strong>공간추론 VLM.</strong> SpatialVLM, SpatialRGPT가 VLM에 거리·방향 추론 능력을 부여했다. NaVILA가 “언어로 75cm/30도를 출력한다”는 발상의 토대다.</li> </ol> <p>NaVILA의 전환점은 (4)의 “VLA가 저수준 행동을 직접 낸다”는 통념을 깨고, VLA는 자연어 중간 행동만 내고 저수준 제어는 분리한 것이다. (2)의 waypoint predictor 의존과 (3)의 “고수준만 풀고 제어는 외면”을 동시에 넘어, 고수준 추론과 실제 다리 관절 제어를 한 파이프라인에서 이은 최초의 legged-VLN end-to-end 시연이다. 이후 Uni-NaVid, StreamVLN, NavFoM 등 2025년 내비게이션 파운데이션 모델 논의에서 NaVILA는 비교 기준점으로 인용되고 있으며, “언어=중간 행동” + “VLA/locomotion 분리”가 하나의 설계 패턴으로 자리잡는 중이다.</p> <h2 id="문제와-동기">문제와 동기</h2> <p>사람이 자연어로 명령하고 로봇이 맵 없이 미지 환경을 따라가는 VLN은 인터페이스와 일반화 양면에서 매력적이다. 이를 다리 로봇으로 확장하면 좁고 어질러진 공간, 돌·구멍·계단 같은 비정형 지형까지 갈 수 있어 가치가 크지만, “언어 → 다리 관절 토크” 사이의 간극이 매우 크다.</p> <p>기존 end-to-end VLA처럼 VLM이 양자화된 저수준 행동을 직접 출력하면 두 가지 문제가 생긴다. 첫째, 자연어로 학습된 LLM/VLM의 사전지식을 살리지 못한다. 둘째, 특정 로봇의 행동공간에 과적합되어 플랫폼 이식과 실세계 데이터 활용이 어렵다. 저자들의 출발 질문은 “행동을 저수준 명령 너머로 더 잘 표현할 방법은 없는가”였다.</p> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <p>한 문장으로 요약하면 “VLA는 <code class="language-plaintext highlighter-rouge">turn right 30°, forward 75cm</code> 같은 자연어 중간 행동만 내고, 별도의 시각 locomotion RL 정책이 그것을 관절 제어로 실행한다”이다. 비유하자면 VLA는 지도를 보고 “다음 사거리에서 우회전”이라 말하는 조수석의 내비게이터이고, locomotion 정책은 그 말을 듣고 핸들·페달을 조작하며 눈앞 장애물은 알아서 피하는 운전기사다. 차종(로봇)이 바뀌어도 내비게이터가 운전법을 새로 배울 필요 없이 기사만 갈아끼우면 된다.</p> <h3 id="고수준-vla-vlm-파인튜닝">고수준: VLA (VLM 파인튜닝)</h3> <ul> <li>백본은 NVIDIA의 VILA(이미지 기반 VLM, 멀티이미지 추론에 강함)다. 비디오 인코더 대신 이미지 VLM을 택한 이유는 대규모 이미지-텍스트 데이터에서 오는 일반화 우위 때문이다.</li> <li>입출력을 모두 언어 도메인에 유지하고 특수 토큰을 최소화해 LLM의 추론력을 최대한 활용한다. 입력은 현재 관측 프레임과 과거 프레임(메모리)이며, <code class="language-plaintext highlighter-rouge">current observation:</code>과 <code class="language-plaintext highlighter-rouge">a video of historical observations:</code> 같은 텍스트 큐로 둘을 구분한다. 최신 프레임 t는 항상 현재 관측으로, 나머지는 t-1까지에서 균일 샘플한다(8~64 프레임 실험).</li> <li>출력은 <code class="language-plaintext highlighter-rouge">{forward d cm, turn left/right θ°, stop}</code> 형태의 연속값 중간 행동이다. 추론 시 정규식 파서로 행동과 인자를 추출하며, 실험 전 구간에서 100% 매칭되었다고 보고한다.</li> </ul> <h3 id="데이터-파이프라인-숨은-기여">데이터 파이프라인 (숨은 기여)</h3> <ul> <li>YouTube 1인칭 투어 영상 2K개에서 엔트로피 기반 궤적 샘플링(YouTube-VLN 차용)으로 20K 궤적을 만들고, MASt3R로 메트릭 카메라 포즈를 추정해 스텝별 행동을 추출한 뒤, VLM 캡션과 LLM 리프레이즈로 지시문을 생성한다. 사람 영상으로 연속 환경 내비게이션을 직접 학습한 최초 사례다(기존 연구는 사전학습 보조로만 사용).</li> <li>SFT 데이터 블렌드는 네 갈래다. (1) 실영상 내비 데이터, (2) 시뮬 내비 데이터(R2R-CE·RxR-CE를 Habitat 최단경로 추종으로 변환, 연속 행동 병합, stop 라벨 리밸런싱), (3) 보조 내비 데이터(EnvDrop 증강 지시문, 궤적 요약, ScanQA 3D QA), (4) 일반 VQA(범용 능력 보존).</li> </ul> <h3 id="저수준-시각-locomotion-정책-unitree-go2">저수준: 시각 Locomotion 정책 (Unitree Go2)</h3> <ul> <li>Go2는 L1 LiDAR(15Hz, 360°×90°)와 18 DoF(베이스 6 + 다리 3×4)를 갖고, 정책은 다리 12관절의 목표 위치를 출력한다.</li> <li>LiDAR 포인트클라우드를 2.5D height map으로 변환한다(복셀당 최저값, 최근 5프레임 max filter). LiDAR를 주 센서로 택한 이유는 강한 햇빛과 유리 같은 투명체에서 RGB/depth가 실패하는 곳에서도 안전하게 감지하기 위해서다.</li> <li>단일 스테이지 PPO로 학습한다(teacher-student 2단 증류 없음). Isaac Sim/Isaac Lab의 ray-casting을 활용해 RTX 4090 한 장에서 60K FPS 이상의 처리량을 낸다. critic은 특권정보(지형 height scan)를 관측하고 actor는 실세계에서 얻을 수 있는 관측만 받는다. VLM의 행동어휘는 고정 명령속도 <code class="language-plaintext highlighter-rouge">{0.5 m/s, ±π/6 rad/s, 0}</code>로 매핑되어 지정된 시간만큼 실행된다.</li> </ul> <h3 id="이중-주파수">이중 주파수</h3> <p>무겁고 느린 VLA는 저주파(약 1 FPS)로 고수준 명령을 내고, locomotion 정책은 실시간으로 장애물을 회피한다. 두 시간척도를 분리해 강건성과 실시간성을 동시에 확보한다.</p> <h2 id="실험과-결과">실험과 결과</h2> <p><strong>설정.</strong> 플랫폼은 Unitree Go2(주력)와 Unitree H1·Booster T1 휴머노이드(재학습 없이 같은 VLA 이식). 시뮬레이터는 Habitat(고수준 평가)과 신규 VLN-CE-Isaac(Isaac Sim, 다리 로봇 관절·물리 반영; R2R Val-Unseen 1,839궤적 중 주행 가능한 1,077개 선별). 벤치마크는 R2R-CE·RxR-CE(NE/OS/SR/SPL/nDTW), ScanQA(CIDEr 등), VLN-CE-Isaac, 실세계 25지시×3회다. baseline은 ETPNav·BEVBert·Reborn(waypoint predictor 사용), NaVid(단일 시점 SOTA), ROA(locomotion 증류), GPT-4o(실세계)다.</p> <p><strong>핵심 결과.</strong></p> <table> <thead> <tr> <th>항목</th> <th>수치</th> </tr> </thead> <tbody> <tr> <td>R2R-CE Val-Unseen</td> <td>NE 5.22 / OS 62.5 / SR 54.0 / SPL 49.0 (단일 RGB)</td> </tr> <tr> <td>RxR-CE Val-Unseen (R2R로만 학습, zero-shot)</td> <td>SR 34.3 vs NaVid 23.8 (+10%p)</td> </tr> <tr> <td>ScanQA</td> <td>CIDEr 102.7 (64프레임), NaviLLM 대비 +20점, 3D 입력 LEO와 동급</td> </tr> <tr> <td>VLN-CE-Isaac</td> <td>vision 정책이 blind 대비 Go2 +14%p, H1 +21%p SR; Oracle 저수준 정책 대비 Go2 -15%p, H1 -27%p</td> </tr> <tr> <td>저수준 정책</td> <td>ROA 대비 충돌률 3.09 → 0.81</td> </tr> <tr> <td>실세계 (Go2, 25지시)</td> <td>평균 SR 88% (복합 지시 75%), GPT-4o 압도</td> </tr> </tbody> </table> <ul> <li>단일 시점 RGB만으로 파노라마·odometry·waypoint predictor를 쓰는 모델과 동급 이상을 낸 것은 이 설정에서 최초다. 표에서 waypoint predictor 사용 방법은 별도 표시로 분리되어 있으며, NaVILA의 주장은 “predictor를 안 쓰는 방법 중 최강이며 쓰는 방법과 동급”이라는 절제된 형태다.</li> <li>사람 영상(YouTube) 추가 시 OS·SR·SPL이 약 5%p 향상되고, 실세계에서도 실외 일반화와 전 환경 SR이 상승한다(ablation).</li> <li>메모리 프레임은 R2R-CE에서 8프레임이면 대부분 지시 지평을 커버하며, 실세계에서도 지연 제약으로 8프레임을 쓴다.</li> <li>양자화: AWQ로 W4A16 변환 시 지연 594 → 368ms, 메모리 18.5 → 8.6GB로 줄면서 내비 성능은 거의 유지된다. 온보드 탑재 가능성을 시사한다.</li> </ul> <p><strong>읽을 때 주의할 점.</strong> 논문이 내세우는 “17% 향상”은 waypoint predictor 미사용군 안에서의 수치이므로 헤드라인만 보면 과대해석 위험이 있다. RxR Val-Unseen SR은 절대값으로 34%대라 현실 난도는 여전히 높다. 또 “언어 표현이 양자화 명령보다 낫다”는 주장은 동일 조건 A/B 비교보다 SOTA 비교로 간접 입증된 편이다.</p> <h2 id="결론과-의의">결론과 의의</h2> <p>NaVILA는 “VLA가 저수준 행동을 직접 내야 한다”는 통념을 깨고, VLA는 자연어 중간 행동만 내고 저수준 제어는 분리하는 2단 설계로 단일 RGB만으로 고수준 추론과 실제 다리 관절 제어를 이었다. 분야 기여는 세 가지다. (1) 다리 로봇 VLN을 end-to-end로 실증한 최초 사례, (2) “언어=중간 행동” 인터페이스라는 재사용 가능한 설계 패턴, (3) 다리 로봇 물리를 반영한 VLN-CE-Isaac 벤치마크.</p> <p>로봇 실무 관점에서 정리하면 다음과 같다.</p> <ul> <li> <strong>어디에 쓸 수 있는가.</strong> 실내 다층 건물 모바일 로봇 자율주행이나 실외 비정형 지형 주행에서 “자연어 명령 → 이동”을 붙일 때, 고수준 VLA와 저수준 제어기를 분리하는 아키텍처 자체가 바로 참고할 만하다. 플랫폼이 바뀌어도 VLA를 재학습하지 않고 locomotion 정책만 교체하면 된다는 점은 여러 로봇을 함께 운용하는 현장에 특히 유리하다.</li> <li> <strong>사족보행 시뮬레이션 테스트베드</strong>를 구축한다면 VLN-CE-Isaac 벤치마크(MIT 라이선스)와 단일 스테이지 PPO + LiDAR height map 구성이 출발점이 된다. RTX 4090 한 장에서 60K FPS라는 수치는 소규모 랩에서도 재현 가능한 학습 규모다.</li> <li> <strong>재현 난이도는 중상이다.</strong> 추론·평가는 HuggingFace 체크포인트(<code class="language-plaintext highlighter-rouge">a8cheng/navila-llama3-8b-8f</code> 등)와 코드가 공개되어 바로 가능하다. 반면 학습 코드는 README상 공개 예정(TODO)이고, YouTube 데이터는 저작권상 영상 ID와 어노테이션만 제공되며, SFT는 4노드×8 A100에서 18시간이 든다. 실로봇 배포 코드는 repo에 명확히 없어 locomotion 학습·배포 스택은 자체 구현해야 한다. 이것이 가장 큰 장벽이다.</li> <li> <strong>한계.</strong> 경로 이탈 후 자기교정이 안 되는 오류 복구 부재, 이미지 VLM의 무거운 연산(약 1 FPS), 자연어 행동의 각도·거리 양자화가 좁은 통로·정밀 조작에 주는 영향(H1이 Go2보다 낮은 성능), 장기 지평 복합 지시에서의 8프레임 메모리 한계가 열려 있다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2412.04453" rel="external nofollow noopener" target="_blank">arXiv 2412.04453</a> · <a href="https://navila-bot.github.io" rel="external nofollow noopener" target="_blank">프로젝트 페이지</a> </li> <li>코드: <a href="https://github.com/AnjieCheng/NaVILA" rel="external nofollow noopener" target="_blank">AnjieCheng/NaVILA</a> · <a href="https://github.com/yang-zj1026/NaVILA-Bench" rel="external nofollow noopener" target="_blank">NaVILA-Bench</a> </li> <li>NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation (RSS 2024)</li> <li>VILA: On Pre-training for Visual Language Models (CVPR 2024)</li> <li>Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments (ECCV 2020)</li> <li>MASt3R: Grounding Image Matching in 3D (ECCV 2024)</li> <li>AWQ: Activation-aware Weight Quantization (MLSys 2024)</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/vln"> <i class="fa-solid fa-hashtag fa-sm"></i> vln</a>   <a href="/blog/tag/vla"> <i class="fa-solid fa-hashtag fa-sm"></i> vla</a>   <a href="/blog/tag/legged"> <i class="fa-solid fa-hashtag fa-sm"></i> legged</a>   <a href="/blog/tag/navigation"> <i class="fa-solid fa-hashtag fa-sm"></i> navigation</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>Item</th> <th>Details</th> </tr> </thead> <tbody> <tr> <td>Authors</td> <td>An-Chieh Cheng, Yandong Ji, Zhaojing Yang (co-first authors), Zaitian Gongye, Xueyan Zou, Jan Kautz, Erdem Bıyık, Hongxu Yin, Sifei Liu, Xiaolong Wang (UC San Diego, USC, NVIDIA)</td> </tr> <tr> <td>Venue</td> <td>arXiv 2412.04453 (2024-12, v2 2025-02), accepted at RSS 2025</td> </tr> <tr> <td>Links</td> <td> <a href="https://navila-bot.github.io" rel="external nofollow noopener" target="_blank">Project</a> · <a href="https://github.com/AnjieCheng/NaVILA" rel="external nofollow noopener" target="_blank">Code</a> (Apache-2.0) · <a href="https://github.com/yang-zj1026/NaVILA-Bench" rel="external nofollow noopener" target="_blank">Benchmark</a> (MIT)</td> </tr> </tbody> </table> <h2 id="one-line-summary">One-line Summary</h2> <p>NaVILA solves Vision-and-Language Navigation (VLN) for legged robots such as quadrupeds and humanoids in two levels. The upper-level VLA (Vision-Language-Action) model outputs only natural-language mid-level actions such as “move forward 75 cm” or “turn right 30 degrees,” and the lower-level vision-based locomotion RL policy executes those commands as actual joint control. With this structure it surpassed prior SOTA methods that relied on panoramas, depth, odometry, and waypoint predictors while using only a single RGB camera, and showed an average success rate of 88% over 25 instructions on real Unitree Go2, H1, and Booster T1 robots.</p> <h2 id="lineage-and-trends">Lineage and Trends</h2> <p>The developments leading up to this paper can be organized into five threads.</p> <ol> <li> <strong>The discrete VLN era.</strong> After R2R (Anderson et al., 2018), the mainstream was research that followed instructions by teleporting between nodes of a navigation graph in simulators such as Matterport3D. It was strong at high-level decision making but ignored actual motion control.</li> <li> <strong>Transition to continuous-environment VLN-CE.</strong> Krantz et al. (2020) proposed VLN-CE, which requires low-level actions such as forward and turn instead of teleportation. Subsequently, ETPNav, BEVBert, Reborn, and others improved performance by predicting candidate positions with a waypoint predictor (Hong et al.) pretrained in simulation, but because of the simulation dependence, generalization was fragile and obstacle avoidance and low-level motion remained unsolved.</li> <li> <strong>Emergence of single-view video VLMs.</strong> NaVid (RSS 2024) predicted the next action from a single-viewpoint RGB video without panoramas or depth. It is NaVILA’s closest predecessor and its key baseline.</li> <li> <strong>The manipulation VLA trend.</strong> RT-2, OpenVLA, and Open X-Embodiment established the paradigm of fine-tuning VLMs on robot demonstrations to output low-level actions directly. However, most focused on manipulation and used quantized low-level commands.</li> <li> <strong>Spatial-reasoning VLMs.</strong> SpatialVLM and SpatialRGPT gave VLMs the ability to reason about distance and direction. This is the foundation for NaVILA’s idea of “outputting 75 cm / 30 degrees in language.”</li> </ol> <p>NaVILA’s turning point is breaking the convention from (4) that “the VLA outputs low-level actions directly”: the VLA outputs only natural-language mid-level actions and low-level control is separated. It simultaneously overcomes the waypoint-predictor dependence of (2) and the “solve only the high level and ignore control” stance of (3), and is the first end-to-end legged-VLN demonstration to connect high-level reasoning and actual leg joint control in one pipeline. Since then, NaVILA has been cited as a reference point in the 2025 navigation foundation model discussion, including Uni-NaVid, StreamVLN, and NavFoM, and “language = mid-level action” + “VLA/locomotion separation” is establishing itself as a design pattern.</p> <h2 id="problem-and-motivation">Problem and Motivation</h2> <p>VLN, where a human commands in natural language and the robot follows through an unknown environment without a map, is attractive from both the interface and generalization perspectives. Extending it to legged robots is highly valuable because they can reach narrow, cluttered spaces and unstructured terrain such as rocks, holes, and stairs, but the gap between “language → leg joint torques” is very large.</p> <p>If the VLM directly outputs quantized low-level actions as in existing end-to-end VLAs, two problems arise. First, the prior knowledge of the LLM/VLM trained in natural language is not exploited. Second, the model overfits to the action space of a specific robot, making platform transfer and use of real-world data difficult. The authors’ starting question was “is there a better way to represent actions beyond low-level commands?”</p> <h2 id="key-ideas-and-method">Key Ideas and Method</h2> <p>In one sentence: “the VLA outputs only natural-language mid-level actions such as <code class="language-plaintext highlighter-rouge">turn right 30°, forward 75cm</code>, and a separate visual locomotion RL policy executes them as joint control.” By analogy, the VLA is the navigator in the passenger seat who looks at the map and says “turn right at the next intersection,” and the locomotion policy is the driver who hears that, operates the wheel and pedals, and avoids obstacles ahead on their own. Even if the vehicle (robot) changes, the navigator does not need to relearn how to drive; only the driver is swapped.</p> <h3 id="high-level-vla-vlm-fine-tuning">High level: VLA (VLM fine-tuning)</h3> <ul> <li>The backbone is NVIDIA’s VILA (an image-based VLM strong at multi-image reasoning). An image VLM was chosen over a video encoder because of the generalization advantage that comes from large-scale image-text data.</li> <li>Both input and output are kept in the language domain and special tokens are minimized to make the most of the LLM’s reasoning ability. The input is the current observation frame plus past frames (memory), distinguished by text cues such as <code class="language-plaintext highlighter-rouge">current observation:</code> and <code class="language-plaintext highlighter-rouge">a video of historical observations:</code>. The latest frame t is always the current observation, and the rest are uniformly sampled from up to t-1 (experiments with 8-64 frames).</li> <li>The output is a continuous-valued mid-level action of the form <code class="language-plaintext highlighter-rouge">{forward d cm, turn left/right θ°, stop}</code>. At inference a regex parser extracts the action and its arguments, and the paper reports a 100% match rate across all experiments.</li> </ul> <h3 id="data-pipeline-a-hidden-contribution">Data pipeline (a hidden contribution)</h3> <ul> <li>From 2K first-person YouTube tour videos, 20K trajectories are created by entropy-based trajectory sampling (borrowed from YouTube-VLN), metric camera poses are estimated with MASt3R to extract per-step actions, and instructions are generated with VLM captions and LLM rephrasing. This is the first case of directly training continuous-environment navigation from human videos (prior work used them only as pretraining aids).</li> <li>The SFT data blend has four parts: (1) real-video navigation data, (2) simulated navigation data (R2R-CE and RxR-CE converted via Habitat shortest-path following, with consecutive actions merged and stop labels rebalanced), (3) auxiliary navigation data (EnvDrop augmented instructions, trajectory summarization, ScanQA 3D QA), and (4) general VQA (to preserve general capabilities).</li> </ul> <h3 id="low-level-visual-locomotion-policy-unitree-go2">Low level: visual locomotion policy (Unitree Go2)</h3> <ul> <li>The Go2 has an L1 LiDAR (15 Hz, 360°×90°) and 18 DoF (base 6 + legs 3×4), and the policy outputs target positions for the 12 leg joints.</li> <li>The LiDAR point cloud is converted into a 2.5D height map (minimum value per voxel, max filter over the last 5 frames). LiDAR was chosen as the primary sensor to sense safely even where RGB/depth fail, such as under strong sunlight and with transparent objects like glass.</li> <li>Training is single-stage PPO (no two-stage teacher-student distillation). Using ray-casting in Isaac Sim/Isaac Lab, it achieves a throughput of over 60K FPS on a single RTX 4090. The critic observes privileged information (terrain height scan) while the actor receives only observations obtainable in the real world. The VLM’s action vocabulary is mapped to fixed command velocities <code class="language-plaintext highlighter-rouge">{0.5 m/s, ±π/6 rad/s, 0}</code> and executed for the specified duration.</li> </ul> <h3 id="dual-frequency">Dual frequency</h3> <p>The heavy, slow VLA issues high-level commands at a low frequency (about 1 FPS), while the locomotion policy avoids obstacles in real time. Separating the two timescales secures robustness and real-time performance at the same time.</p> <h2 id="experiments-and-results">Experiments and Results</h2> <p><strong>Setup.</strong> The platforms are the Unitree Go2 (primary) and the Unitree H1 and Booster T1 humanoids (the same VLA transferred without retraining). The simulators are Habitat (high-level evaluation) and the new VLN-CE-Isaac (Isaac Sim, reflecting legged-robot joints and physics; 1,077 navigable trajectories selected from the 1,839 R2R Val-Unseen trajectories). The benchmarks are R2R-CE and RxR-CE (NE/OS/SR/SPL/nDTW), ScanQA (CIDEr etc.), VLN-CE-Isaac, and real-world 25 instructions × 3 trials. The baselines are ETPNav, BEVBert, Reborn (using waypoint predictors), NaVid (single-view SOTA), ROA (locomotion distillation), and GPT-4o (real world).</p> <p><strong>Key results.</strong></p> <table> <thead> <tr> <th>Item</th> <th>Value</th> </tr> </thead> <tbody> <tr> <td>R2R-CE Val-Unseen</td> <td>NE 5.22 / OS 62.5 / SR 54.0 / SPL 49.0 (single RGB)</td> </tr> <tr> <td>RxR-CE Val-Unseen (trained on R2R only, zero-shot)</td> <td>SR 34.3 vs NaVid 23.8 (+10 pp)</td> </tr> <tr> <td>ScanQA</td> <td>CIDEr 102.7 (64 frames), +20 points over NaviLLM, on par with 3D-input LEO</td> </tr> <tr> <td>VLN-CE-Isaac</td> <td>vision policy over blind: Go2 +14 pp, H1 +21 pp SR; versus Oracle low-level policy: Go2 -15 pp, H1 -27 pp</td> </tr> <tr> <td>Low-level policy</td> <td>collision rate 3.09 → 0.81 versus ROA</td> </tr> <tr> <td>Real world (Go2, 25 instructions)</td> <td>average SR 88% (compound instructions 75%), far ahead of GPT-4o</td> </tr> </tbody> </table> <ul> <li>Matching or exceeding models that use panoramas, odometry, and waypoint predictors with single-view RGB alone is a first in this setting. In the table, methods using waypoint predictors are separated with a distinct marker, and NaVILA’s claim takes the restrained form of “strongest among methods without a predictor, and on par with those using one.”</li> <li>Adding human (YouTube) videos improves OS, SR, and SPL by about 5 pp, and in the real world outdoor generalization and SR across all environments also rise (ablation).</li> <li>For memory frames, 8 frames cover most instruction horizons on R2R-CE, and 8 frames are also used in the real world due to latency constraints.</li> <li>Quantization: converting to W4A16 with AWQ reduces latency from 594 to 368 ms and memory from 18.5 to 8.6 GB while navigation performance is almost preserved. This suggests the feasibility of onboard deployment.</li> </ul> <p><strong>Points to keep in mind when reading.</strong> The “17% improvement” the paper highlights is a figure within the group not using waypoint predictors, so there is a risk of overinterpretation if only the headline is read. The RxR Val-Unseen SR is in the 34% range in absolute terms, so real-world difficulty remains high. Also, the claim that “language representation is better than quantized commands” is demonstrated indirectly through SOTA comparison rather than a same-condition A/B comparison.</p> <h2 id="conclusion-and-significance">Conclusion and Significance</h2> <p>NaVILA broke the convention that “the VLA must output low-level actions directly,” and with a two-level design in which the VLA outputs only natural-language mid-level actions and low-level control is separated, it connected high-level reasoning and actual leg joint control using only a single RGB camera. The contributions to the field are threefold: (1) the first end-to-end demonstration of legged-robot VLN, (2) the reusable design pattern of the “language = mid-level action” interface, and (3) the VLN-CE-Isaac benchmark reflecting legged-robot physics.</p> <p>From a robotics practice perspective, the takeaways are as follows.</p> <ul> <li> <strong>Where it can be used.</strong> When attaching “natural-language command → movement” to autonomous mobile-robot navigation in multi-floor indoor buildings or driving on unstructured outdoor terrain, the architecture itself, separating a high-level VLA from a low-level controller, is directly worth referencing. The fact that only the locomotion policy needs to be replaced, without retraining the VLA, when the platform changes is particularly advantageous in settings that operate several robots together.</li> <li>If you are building a <strong>quadruped simulation testbed</strong>, the VLN-CE-Isaac benchmark (MIT license) and the single-stage PPO + LiDAR height map configuration are a starting point. The figure of 60K FPS on a single RTX 4090 is a training scale reproducible even in a small lab.</li> <li> <strong>Reproduction difficulty is moderate to high.</strong> Inference and evaluation are immediately possible with the released HuggingFace checkpoints (<code class="language-plaintext highlighter-rouge">a8cheng/navila-llama3-8b-8f</code> etc.) and code. On the other hand, the training code is listed as to-be-released (TODO) in the README, the YouTube data provides only video IDs and annotations due to copyright, and SFT takes 18 hours on 4 nodes × 8 A100s. Real-robot deployment code is not clearly present in the repo, so the locomotion training and deployment stack must be implemented in-house. This is the biggest barrier.</li> <li> <strong>Limitations.</strong> Open issues include the absence of error recovery (no self-correction after deviating from the path), the heavy compute of the image VLM (about 1 FPS), the effect of angle and distance quantization in natural-language actions on narrow corridors and precise maneuvering (H1 performs lower than Go2), and the 8-frame memory limit on long-horizon compound instructions.</li> </ul> <h2 id="references">References</h2> <ul> <li>Paper: <a href="https://arxiv.org/abs/2412.04453" rel="external nofollow noopener" target="_blank">arXiv 2412.04453</a> · <a href="https://navila-bot.github.io" rel="external nofollow noopener" target="_blank">Project page</a> </li> <li>Code: <a href="https://github.com/AnjieCheng/NaVILA" rel="external nofollow noopener" target="_blank">AnjieCheng/NaVILA</a> · <a href="https://github.com/yang-zj1026/NaVILA-Bench" rel="external nofollow noopener" target="_blank">NaVILA-Bench</a> </li> <li>NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation (RSS 2024)</li> <li>VILA: On Pre-training for Visual Language Models (CVPR 2024)</li> <li>Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments (ECCV 2020)</li> <li>MASt3R: Grounding Image Matching in 3D (ECCV 2024)</li> <li>AWQ: Activation-aware Weight Quantization (MLSys 2024)</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -48,28 +48,28 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          description: "Robotics projects I led or contributed to at KETI, and earlier undergraduate and internship projects. Open a card for background, role, approach and results.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          description: "Conference papers and a patent in reverse chronological order. First-author papers carry a 1st-author badge.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          description: "Education, experience, publications and skills at a glance. See the Projects and Publications pages for details.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "GitHub 프로필과 공개 저장소.",
+          description: "GitHub profile and public repositories.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -78,7 +78,7 @@ ninja.data = [{
         
           title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
         
-        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        description: "Perceptive quadruped locomotion RL that puts the gait phase prior only in the reward, not the action space, and learns in joint space without IK",
         section: "Posts",
         handler: () => {
           
@@ -89,7 +89,7 @@ ninja.data = [{
         
           title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
         
-        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        description: "A geometry-only LIO that survives geometry-poor environments such as tunnels and flat fields by storing a high-resolution bump height image in every voxel",
         section: "Posts",
         handler: () => {
           
@@ -100,7 +100,7 @@ ninja.data = [{
         
           title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
         
-        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        description: "A consensus-style evaluation standard paper in which 31 collaborators propose a definition of social robot navigation, eight principles, guidelines for metrics, scenarios, benchmarks, datasets, and simulators, and a common metrics API",
         section: "Posts",
         handler: () => {
           
@@ -111,7 +111,7 @@ ninja.data = [{
         
           title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
         
-        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        description: "HKU-MARS&#39;s LIVO that attaches image patches to LiDAR map points for reuse in a sparse-direct VIO, coupled with a direct LIO inside a single ESIKF",
         section: "Posts",
         handler: () => {
           
@@ -122,7 +122,7 @@ ninja.data = [{
         
           title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
         
-        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        description: "The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors",
         section: "Posts",
         handler: () => {
           
@@ -133,7 +133,7 @@ ninja.data = [{
         
           title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
         
-        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        description: "An end-to-end framework that feeds only first-person RGB video into Qwen2-VL to predict low-level actions directly, post-trained with GRPO reinforcement fine-tuning and a time-decayed reward to reach SOTA on VLN-CE",
         section: "Posts",
         handler: () => {
           
@@ -144,7 +144,7 @@ ninja.data = [{
         
           title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
         
-        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        description: "A real-time semantic mapping framework that recursively estimates the probability distributions of terrain elevation and friction coefficient from a single RGB-D camera via Bayesian inference",
         section: "Posts",
         handler: () => {
           
@@ -155,7 +155,7 @@ ninja.data = [{
         
           title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
         
-        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        description: "An uneven-terrain navigation framework that fits local planes to point clouds to evaluate traversability and chains PF-RRT*, GPR, and NMPC",
         section: "Posts",
         handler: () => {
           
@@ -166,7 +166,7 @@ ninja.data = [{
         
           title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
         
-        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        description: "Review of π0, a robot foundation model that attaches a flow matching action expert to a pretrained VLM and trains on 10,000 hours of cross-embodiment data",
         section: "Posts",
         handler: () => {
           
@@ -177,7 +177,7 @@ ninja.data = [{
         
           title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
         
-        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        description: "Review of π0.5, which combines heterogeneous-data co-training with hierarchical subtask reasoning to perform long-horizon mobile manipulation in homes never seen during training",
         section: "Posts",
         handler: () => {
           
@@ -188,7 +188,7 @@ ninja.data = [{
         
           title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
         
-        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        description: "Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning",
         section: "Posts",
         handler: () => {
           
@@ -199,7 +199,7 @@ ninja.data = [{
         
           title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
         
-        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        description: "A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera",
         section: "Posts",
         handler: () => {
           
@@ -210,7 +210,7 @@ ninja.data = [{
         
           title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
         
-        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        description: "A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories",
         section: "Posts",
         handler: () => {
           
@@ -221,7 +221,7 @@ ninja.data = [{
         
           title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
         
-        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        description: "A system that adds a view layer to a hierarchical multimodal scene graph and calls slow VLM reasoning only when fast CLIP matching fails, reaching 92% SR in 5.5 s on long-horizon indoor object search with a humanoid",
         section: "Posts",
         handler: () => {
           
@@ -232,7 +232,7 @@ ninja.data = [{
         
           title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
         
-        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        description: "A multi-floor LIO that separates the robot&#39;s relative motion from the cabin&#39;s transport motion in the state inside a moving elevator and suppresses vertical drift with a ZUPT at the stop instant",
         section: "Posts",
         handler: () => {
           
@@ -243,73 +243,73 @@ ninja.data = [{
         
           title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
         
-        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        description: "Continual traversability learning that recalls past experience with a CVAE instead of storing data, filtering recalled samples by uncertainty to reduce catastrophic forgetting",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/continual-traversability-learning/";
           
         },
-      },{id: "post-tf-transform-와-frame-개념-정리",
+      },{id: "post-tf-transform-and-frame-concepts",
         
-          title: "TF(Transform)와 Frame 개념 정리",
+          title: "TF (Transform) and Frame Concepts",
         
-        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        description: "The concept of frames in ROS2 tf2, relationships between coordinate frames, and the tf_tree structure, with examples",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2023/tf-transform/";
           
         },
-      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+      },{id: "post-fixing-nvidia-graphics-card-detection-on-ubuntu-22-04",
         
-          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+          title: "Fixing NVIDIA Graphics Card Detection on Ubuntu 22.04",
         
-        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        description: "Procedure for resolving NVIDIA driver detection errors after installing Ubuntu 22.04",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
           
         },
-      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+      },{id: "post-matlab-simulation-of-a-6-dof-collaborative-robot-d-h-parameters",
         
-          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+          title: "MATLAB Simulation of a 6-DOF Collaborative Robot (D-H Parameters)",
         
-        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        description: "Forward and inverse kinematics based on D-H parameters and cubic-spline path planning implemented in MATLAB",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/manipulator-dh-simulation/";
           
         },
-      },{id: "post-git과-github-기초-설치부터-push까지",
+      },{id: "post-git-and-github-basics-from-installation-to-push",
         
-          title: "Git과 GitHub 기초: 설치부터 push까지",
+          title: "Git and GitHub Basics: From Installation to push",
         
-        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        description: "Practical commands for the distributed version control system Git, from basic concepts to installing on Ubuntu, cloning, and pushing",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/git-github-basics/";
           
         },
-      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+      },{id: "post-vision-based-autonomous-driving-vanishing-point-and-perspective-transform",
         
-          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+          title: "Vision-based Autonomous Driving: Vanishing Point and Perspective Transform",
         
-        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        description: "An image-processing project that combines vanishing point detection with perspective transform to classify the driving state (straight/turning x centered/biased)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/vanishing-point-lane-detection/";
           
         },
-      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+      },{id: "post-docker-basics-images-containers-and-key-commands",
         
-          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+          title: "Docker Basics: Images, Containers, and Key Commands",
         
-        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        description: "The concepts of Docker, a container-based virtualization platform, and its commonly used commands",
         section: "Posts",
         handler: () => {
           
@@ -320,185 +320,185 @@ ninja.data = [{
         
           title: "ROS1 vs ROS2",
         
-        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        description: "The concept of the Robot Operating System (ROS) and the architectural differences between ROS1 and ROS2",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/ros1-vs-ros2/";
           
         },
-      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+      },{id: "post-building-a-custom-gazebo-battery-plugin",
         
-          title: "Gazebo 커스텀 Battery Plugin 만들기",
+          title: "Building a Custom Gazebo Battery Plugin",
         
-        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        description: "An example of implementing a custom battery system as a Gazebo plugin that accounts for standby and active power consumption",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-battery-plugin/";
           
         },
-      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+      },{id: "post-gazebo-hands-on-turtlebot3-3d-lidar",
         
-          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+          title: "Gazebo Hands-on: TurtleBot3 + 3D LiDAR",
         
-        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        description: "Loading turtlebot3_burger with a Velodyne 3D LiDAR in Gazebo, checking the data, teleoperating, and inspecting the tf_tree",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-training/";
           
         },
-      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+      },{id: "post-gazebo-plugins-sensor-and-actuator-plugin-analysis",
         
-          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+          title: "Gazebo Plugins: Sensor and Actuator Plugin Analysis",
         
-        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        description: "XML structure and usage of sensor and actuator plugins in Gazebo (ROS2 Humble)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-plugin/";
           
         },
-      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+      },{id: "post-robot-coordinate-systems-and-euler-angles",
         
-          title: "로봇 좌표계(Coordinates)와 Euler 각",
+          title: "Robot Coordinate Systems and Euler Angles",
         
-        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        description: "Cartesian, cylindrical, and spherical coordinate systems and Euler angles, with their differences and characteristics from a robotics perspective",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/coordinates/";
           
         },
-      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+      },{id: "post-gazebo-simulator-architecture-and-ros-integration",
         
-          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+          title: "Gazebo Simulator Architecture and ROS Integration",
         
-        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        description: "Notes on the Gazebo block diagram, the ROS-Gazebo interaction architecture, and the main components",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo/";
           
         },
-      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
-          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+      },{id: "news-started-an-internship-at-the-robot-vocational-innovation-center-korea-institute-of-robotics-and-technology-convergence-kiro-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-until-mar-2023",
+          title: 'Started an internship at the Robot Vocational Innovation Center, Korea Institute of Robotics...',
           description: "",
-          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
-          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          section: "News",},{id: "news-graduated-from-keimyung-university-with-a-b-s-in-robotics-engineering-gpa-4-2-4-5",
+          title: 'Graduated from Keimyung University with a B.S. in Robotics Engineering (GPA 4.2/4.5).',
           description: "",
-          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
-          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          section: "News",},{id: "news-joined-the-intelligent-robotics-research-center-at-the-korea-electronics-technology-institute-keti-as-a-researcher-started-open-rmf-based-multi-robot-fleet-management-research",
+          title: 'Joined the Intelligent Robotics Research Center at the Korea Electronics Technology Institute (KETI)...',
           description: "",
-          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
-          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          section: "News",},{id: "news-patent-application-filed-quot-mobile-robot-service-system-and-method-quot-published-jul-2025-under-examination",
+          title: 'Patent application filed: &amp;quot;Mobile Robot Service System and Method&amp;quot; (published Jul. 2025, under...',
           description: "",
-          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
-          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          section: "News",},{id: "news-presented-quot-cooperative-autonomous-driving-system-for-multi-mobile-robots-using-open-rmf-quot-at-kroc-2024-first-author",
+          title: 'Presented &amp;quot;Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF&amp;quot; at KROC 2024...',
           description: "",
-          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
-          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          section: "News",},{id: "news-oral-presentation-of-quot-cross-utilization-of-obstacle-recognition-information-for-collaborative-path-planning-quot-at-icros-2024-first-author",
+          title: 'Oral presentation of &amp;quot;Cross-Utilization of Obstacle Recognition Information for Collaborative Path Planning&amp;quot; at...',
           description: "",
-          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
-          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          section: "News",},{id: "news-presented-quot-traversability-assessment-and-path-planning-for-multi-robot-system-quot-at-iccas-2024-jeju-first-author",
+          title: 'Presented &amp;quot;Traversability Assessment and Path Planning for Multi-Robot System&amp;quot; at ICCAS 2024, Jeju...',
           description: "",
-          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
-          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          section: "News",},{id: "news-real-robot-demonstration-completed-tetra-s-calls-boards-and-exits-a-real-elevator-for-multi-floor-autonomous-navigation-via-an-mqtt-ros-2-bridge",
+          title: 'Real-robot demonstration completed: TETRA_S calls, boards and exits a real elevator for multi-floor...',
           description: "",
-          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
-          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          section: "News",},{id: "news-two-papers-presented-at-iccas-2025-incheon-multi-robot-anomaly-detection-and-visualization-framework-first-author-and-sdr-ota-update-framework-second-author-both-on-ieee-xplore",
+          title: 'Two papers presented at ICCAS 2025, Incheon — multi-robot anomaly detection and visualization...',
           description: "",
-          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
-          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          section: "News",},{id: "news-precision-docking-with-3-5-cm-accuracy-demonstrated-on-a-real-robot-using-lidar-trapezoid-marker-icp-registration",
+          title: 'Precision docking with ±3–5 cm accuracy demonstrated on a real robot using LiDAR...',
           description: "",
-          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
-          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          section: "News",},{id: "news-presented-quot-a-learning-based-anomaly-detection-framework-for-multi-robot-systems-quot-at-icros-2026-daegu-first-author-restad-aff-f1-0-94",
+          title: 'Presented &amp;quot;A Learning-based Anomaly Detection Framework for Multi-Robot Systems&amp;quot; at ICROS 2026, Daegu...',
           description: "",
-          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
-          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          section: "News",},{id: "news-a-vlm-orchestrated-autonomous-mission-agent-on-the-go2-multi-floor-mujoco-testbed-found-boarded-and-rode-the-elevator-to-the-second-floor-from-a-natural-language-mission-alone",
+          title: 'A VLM-orchestrated autonomous mission agent on the Go2 multi-floor MuJoCo testbed found, boarded...',
           description: "",
-          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
-          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          section: "News",},{id: "news-rebuilt-this-website-on-al-folio-as-a-cv-and-portfolio-site-with-project-publication-and-paper-review-pages",
+          title: 'Rebuilt this website on al-folio as a CV and portfolio site with project,...',
           description: "",
-          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
-          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
-          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "News",},{id: "projects-stability-assessment-and-pid-design-for-a-3-axis-7-dof-spring-damper-system",
+          title: 'Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System',
+          description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3axis-7dof-stability/";
-            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
-          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
-          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+            },},{id: "projects-6-axis-articulated-robot-kinematics-simulation-d-h-inverse-kinematics-cubic-spline",
+          title: '6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)',
+          description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6axis-manipulator-simulation/";
-            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
-          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
-          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+            },},{id: "projects-agv-manipulator-integrated-tcp-ip-communication-protocol-manufacturing-logistics",
+          title: 'AGV–Manipulator Integrated TCP/IP Communication Protocol (Manufacturing Logistics)',
+          description: "Design of a custom TCP/IP protocol linking the supervisory controller (MasterPC), the ACS server, and stacker robots — STX/CR/LF framing, command ID matching, ACK/NACK with Reason codes, and HeartBeat",
           section: "Projects",handler: () => {
               window.location.href = "/projects/agv-manipulator-tcpip/";
-            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
-          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
-          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+            },},{id: "projects-shared-work-wiki-for-ai-agents-obsidian-claude-code",
+          title: 'Shared Work Wiki for AI Agents (Obsidian + Claude Code)',
+          description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ai-agent-wiki/";
-            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
-          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
-          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+            },},{id: "projects-go2-multi-floor-building-simulation-testbed-and-vlm-autonomous-mission-agent",
+          title: 'Go2 Multi-Floor Building Simulation Testbed and VLM Autonomous Mission Agent',
+          description: "A testbed that ported a three-story building world with stairs, ramps, and a working elevator across Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo to verify quadruped locomotion control, real-spec sensors, and a VLM orchestration agent",
           section: "Projects",handler: () => {
               window.location.href = "/projects/go2-multifloor-sim/";
-            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
-          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
-          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+            },},{id: "projects-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-kiro-internship",
+          title: 'Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)',
+          description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kiro-heterogeneous-robots/";
-            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
-          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
-          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+            },},{id: "projects-precision-charging-docking-based-on-lidar-marker-icp-registration",
+          title: 'Precision Charging Docking Based on LiDAR Marker ICP Registration',
+          description: "A two-stage docking system (Nav2 approach + fine alignment) that evolved through three phases — ArUco vision → 2D LiDAR trapezoidal geometric marker → ICP registration — to achieve ±3–5 cm precision docking in a real environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lidar-marker-docking/";
-            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
-          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
-          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+            },},{id: "projects-open-rmf-integration-of-heterogeneous-logistics-robots-cooperative-intelligence",
+          title: 'Open-RMF Integration of Heterogeneous Logistics Robots (Cooperative Intelligence)',
+          description: "Unified heterogeneous mobile robots (TETRA carts, stacker AMRs, MiR 600) under the Open-RMF multi-robot operating system, building up free_fleet modifications, docking control handover, sensor-based perception, and a PySide6 GUI in stages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/logistics-fleet-integration/";
-            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
-          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
-          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+            },},{id: "projects-mfc-based-three-mode-control-of-dynamixel-actuators",
+          title: 'MFC-Based Three-Mode Control of Dynamixel Actuators',
+          description: "A C++ MFC GUI that operates the position, velocity, and current control modes of the ROBOTIS Dynamixel XM430-W350 in one application and monitors state and torque in real time over TTL communication",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mfc-dynamixel-control/";
-            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
-          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
-          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+            },},{id: "projects-multi-robot-anomaly-detection-from-fault-injection-to-learning-based-detection",
+          title: 'Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection',
+          description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-anomaly-detection/";
-            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
-          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
-          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+            },},{id: "projects-open-rmf-based-centralized-fleet-management-for-heterogeneous-multi-robot-systems",
+          title: 'Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems',
+          description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-openrmf/";
-            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
-          title: '실외 비정형 지형 자율주행 파이프라인',
-          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+            },},{id: "projects-autonomous-navigation-pipeline-for-unstructured-outdoor-terrain",
+          title: 'Autonomous Navigation Pipeline for Unstructured Outdoor Terrain',
+          description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/outdoor-traversability/";
-            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
-          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
-          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+            },},{id: "projects-multi-floor-autonomous-navigation-with-mobile-robot-elevator-integration",
+          title: 'Multi-Floor Autonomous Navigation with Mobile Robot ↔ Elevator Integration',
+          description: "A system in which the robot calls, boards, and exits an elevator on its own via an MQTT–ROS 2 bridge and a custom NavigateMultiFloor Action. LiDAR scattering off metallic elevator surfaces was resolved with an SOR filter",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robot-elevator-interface/";
-            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
-          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
-          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+            },},{id: "projects-sdr-docker-and-git-based-ota-deployment-framework",
+          title: 'SDR — Docker and Git-Based OTA Deployment Framework',
+          description: "An OTA system for Software-Defined Robots that modularizes robot functions into containers and separates shared code from Robot Profiles to deploy and verify across multiple robots without downtime",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sdr-ota-framework/";
-            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
-          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
-          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+            },},{id: "projects-image-processing-based-autonomous-driving-vanishing-point-perspective-transform",
+          title: 'Image-Processing-Based Autonomous Driving — Vanishing Point × Perspective Transform',
+          description: "A low-cost image-processing ADAS project that combines the vanishing point (straight vs. turning) with a perspective transform (centered vs. biased) to classify four driving states",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vanishing-point-lane-detection/";
-            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
-          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
-          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+            },},{id: "projects-quadruped-wheel-leg-hybrid-robot-mechathon-capstone",
+          title: 'Quadruped Wheel-Leg Hybrid Robot (Mechathon · Capstone)',
+          description: "A hybrid robot that normally drives on wheels and, at obstacles the wheels cannot clear, controls its leg joints to switch into walking mode and step over them. Responsible for mechanical design, 3D modeling, and ROS-based integrated control",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wheel-leg-robot/";
             },},{

@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/fast-livo2/"> <meta property="og:description" content="순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)"> <meta name="twitter:description" content="순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/fast-livo2/"> <meta property="og:description" content="The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)"> <meta name="twitter:description" content="The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
     {
         "author":
         {
@@ -7,7 +7,7 @@
         },
         "url": "https://eeoon.github.io/blog/2026/fast-livo2/",
         "@type": "BlogPosting",
-        "description": "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        "description": "The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors",
         "headline": "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
         
         "sameAs": ["https://github.com/eeoon"],
@@ -21,7 +21,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/fast-livo2/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)</h1> <p class="post-meta"> Created on June 16, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/lio"> <i class="fa-solid fa-hashtag fa-sm"></i> lio</a>   <a href="/blog/tag/slam"> <i class="fa-solid fa-hashtag fa-sm"></i> slam</a>   <a href="/blog/tag/lidar-visual"> <i class="fa-solid fa-hashtag fa-sm"></i> lidar-visual</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>Chunran Zheng, Wei Xu, Zuhao Zou, Tong Hua, Chongjian Yuan, Dongjiao He, Bingyang Zhou, Zheng Liu, Jiarong Lin, Fangcheng Zhu, Yunfan Ren, Rong Wang, Fanle Meng, Fu Zhang (HKU MaRS Lab, 홍콩대학교)</td> </tr> <tr> <td>발표</td> <td>IEEE Transactions on Robotics (T-RO), vol. 41, pp. 326-346, 2025 (arXiv:2408.14035, 2024)</td> </tr> <tr> <td>링크</td> <td> <a href="https://arxiv.org/abs/2408.14035" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://ieeexplore.ieee.org/document/10757429/" rel="external nofollow noopener" target="_blank">IEEE Xplore</a> · <a href="https://github.com/hku-mars/FAST-LIVO2" rel="external nofollow noopener" target="_blank">Code</a> </td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>FAST-LIVO2는 LiDAR, IMU, 카메라를 순차 갱신 ESIKF 하나로 묶고, LiDAR와 시각을 모두 직접식(direct)으로 처리하며, 단일 통합 voxel map 위에서 LiDAR가 만든 평면(plane prior)을 시각 정합에 재활용하는 LIVO 시스템이다. 공개 벤치마크 25개 시퀀스에서 평균 RMSE 0.044m(2위 대비 약 3배 정확), 프레임당 30ms(Intel i7)로 SOTA를 갈아치웠다. HKU-MARS의 FAST-LIVO 후속작이며, 직전작의 약점 다섯 가지를 정면으로 고친 버전이다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <p>FAST-LIVO2는 HKU-MARS(Fu Zhang 그룹)의 “직접식 + iterated Kalman filter” 라인의 정점이다.</p> <ul> <li>FAST-LIO2(T-RO 2022): LiDAR와 IMU만 쓰는 direct LIO. 특징 추출 없이 raw point를 ikd-Tree 지도에 직접 정합한다. FAST-LIVO2 LIO 서브시스템의 원형이지만, 본 논문은 ikd-Tree 대신 VoxelMap의 hash+octree adaptive voxel을 채택했다.</li> <li>R2LIVE(RA-L 2021) → R3LIVE(ICRA 2022) → R3LIVE++(2022): 같은 그룹의 LIVO. R3LIVE는 LIO로 기하를, VIO로 텍스처(색)를 입히고 두 서브시스템이 각자 IMU와 융합해 state를 공동 추정한다. 픽셀 단위(per-pixel) dense direct VIO와 frame-to-frame optical flow의 2단계 구조라 초기값 의존이 크고 연산량이 많다. FAST-LIVO2는 이를 패치 단위(patch-level) sparse direct, frame-to-map 1단계로 단순화하고 고도화했다.</li> <li>FAST-LIVO(IROS 2022): 직전작. sparse-direct LIVO를 처음 제시했으나 다섯 가지 약점이 있었다. LiDAR와 시각의 비동기(asynchronous) 갱신, 패치 전체가 같은 depth라는 무리한 가정, 현재 시점에 가까운 패치를 reference로 골라 제약이 약함, 노출시간 미보정, LiDAR 근접 blind zone 미고려.</li> <li>LVI-SAM(ICRA 2021): factor-graph 기반 feature-based LIVO. 본 논문의 비교군이며, 구조와 텍스처가 미약하면 feature가 잡히지 않아 9개 시퀀스에서 실패했다.</li> </ul> <h2 id="문제와-동기">문제와 동기</h2> <p>단일 센서 SLAM은 각자의 한계가 있다. 시각은 depth를 직접 관측하지 못하고 조명과 무텍스처에 취약하며, LiDAR는 색이 없고 터널이나 단일 벽 같은 기하 부족 환경에서 퇴화(degeneration)한다. 융합이 답이지만 LIVO 자체가 어렵다.</p> <ol> <li>초당 수십만 점의 LiDAR 데이터와 고해상 영상을 온보드 자원으로 실시간 처리해야 한다.</li> <li>보통 LIO와 VIO 두 서브시스템이 각자 특징을 추출하므로, 무구조·무텍스처 환경에서 특징이 메마르고 스캐닝 패턴마다 별도 엔지니어링이 필요하다.</li> <li>이종(heterogeneous) 측정을 함께 담는 통합 지도 설계가 까다롭다.</li> <li>색점군이 깨끗하려면 픽셀 단위 정확도의 pose가 필요하며, 이는 하드웨어 동기, 외부파라미터 정밀 보정, 노출시간 복원을 요구한다.</li> </ol> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <h3 id="scan-recombination--박자-맞추기">Scan recombination — 박자 맞추기</h3> <p>100~500kHz로 흘러드는 LiDAR raw point를 카메라 샘플링 시점(예: 10Hz)에 맞춰 잘라 한 scan으로 재조합한다. LiDAR와 카메라가 같은 순간, 같은 주파수로 갱신되게 만드는 것이다. IMU forward propagation으로 예측하고 backward propagation으로 모션 왜곡을 보정한다.</p> <h3 id="순차-갱신-esikf--차원-불일치-해결">순차 갱신 ESIKF — 차원 불일치 해결</h3> <p>LiDAR 잔차(점-평면)와 영상 잔차(photometric)는 차원이 다르고, 영상은 피라미드 레벨마다 갱신된다. 표준 ESIKF처럼 한꺼번에 넣는 대신, IMU prior에 먼저 LiDAR로 갱신해 수렴시키고, 그 사후분포를 prior 삼아 이어서 영상으로 갱신한다. 두 측정 잡음이 독립이라는 가정 아래 한꺼번에 넣는 것과 이론상 동치다.</p> <p>비유하자면, 한 사람에게 두 증언을 동시에 받아 종합하는 대신 정확한 증언(LiDAR)을 먼저 듣고 그 결론을 바탕으로 두 번째 증언(영상)을 듣는 식이다. FAST-LIVO의 불안정한 비동기 갱신을 이것으로 대체했다.</p> <h3 id="단일-통합-voxel-map--한-지도-두-용도">단일 통합 voxel map — 한 지도, 두 용도</h3> <p>VoxelMap의 구조를 채택한다. hash table이 0.5×0.5×0.5m root voxel을 관리하고 각 voxel은 octree로 최대 3층까지 나뉘어, 각 leaf voxel이 하나의 국소 평면(중심, 법선, 불확실도)과 그 위의 raw point를 담는다. LiDAR는 이 지도의 기하를 만들고, 시각 모듈은 그 점들 일부에 이미지 패치(8×8, 3층 피라미드)를 붙여 “시각 지도점(visual map point)”으로 재활용한다. 메모리는 ring-buffer로 현재 위치 주변만 유지해 무한 증가를 막는다.</p> <p>시각 특징을 따로 삼각측량하거나 depth filter를 돌리지 않고 LiDAR 점을 그대로 쓰기 때문에 백엔드 연산이 대폭 줄어든다.</p> <h3 id="직접식-lidar-정합--beam-divergence-잡음-모델">직접식 LiDAR 정합 + beam divergence 잡음 모델</h3> <p>edge/plane feature를 뽑지 않고 raw point를 점-평면(point-to-plane) 잔차로 지도에 직접 등록한다. 여기에 레이저 빔 발산각(beam divergence angle)까지 고려해 점 불확실도를 모델링한다. bearing과 평면 법선의 사잇각이 클수록(바닥이나 벽을 비스듬히 볼수록) ranging 불확실도가 커진다. 이 정밀 잡음 모델 덕에 LIO 단독으로도 FAST-LIO2를 능가한다.</p> <h3 id="sparse-direct-시각-정합--plane-prior">sparse-direct 시각 정합 + plane prior</h3> <p>선택된 visual map point를 현재 영상에 투영하고, reference 패치와의 photometric error(밝기 직접 비교)를 최소화해 pose를 정렬한다. SVO 계열의 sparse direct 방식이다. 패치를 한 시점에서 다른 시점으로 변형(affine warping)할 때, FAST-LIVO처럼 “패치 전체가 같은 depth”라 가정하지 않고 LiDAR가 준 평면 법선을 그대로 써서 정확히 워핑한다.</p> <p>효율을 위해 inverse compositional 정식화를 쓴다. reference 쪽 좌표가 반복마다 바뀌지 않으므로 Jacobian을 한 번만 계산하면 된다. 별도 스레드에서 법선을 photometric error로 더 다듬는 normal refine 옵션도 있지만 기본 OFF다. 이득이 1mm로 작고, 어둡거나 흐린 영상에서는 오히려 역효과가 나기 때문이다.</p> <h3 id="reference-patch-동적-갱신--좋은-기준-고르기">reference patch 동적 갱신 — 좋은 기준 고르기</h3> <p>한 지도점은 여러 패치를 가질 수 있다. NCC(서로 닮은 정도)와 법선-시선의 직교도(정면성)로 점수를 매겨 최고점 패치를 reference로 선택한다. 다른 패치들과 외관이 비슷한(동적 물체와 아웃라이어 회피) 동시에 평면을 정면으로 본(고해상 텍스처 보존) 패치를 고르는 것이다. FAST-LIVO는 단순히 현재 시점에 가까운 패치를 골라 제약이 약했다. ablation에서 이 모듈의 정확도 기여가 44mm로 모듈 중 최대다.</p> <h3 id="on-demand-voxel-raycasting--lidar-빈자리-메우기">on-demand voxel raycasting — LiDAR 빈자리 메우기</h3> <p>보통은 현재 scan이 때린 voxel을 hash로 조회해 시야 내 visual map point를 찾는다. 그런데 LiDAR가 너무 가까운 물체에는 점을 주지 않거나(close-proximity blind zone) 카메라 FoV를 다 덮지 못할 때가 있다. 그러면 영상을 30×30 격자로 나눠 비어 있는 칸만 central pixel을 따라 backward ray를 쏘고(샘플 점 좌표는 미리 계산) depth를 따라가며 지도점을 회수한다. LiDAR가 못 본 화면 구석을 광선으로 더듬어 채우는 셈이다.</p> <h3 id="실시간-노출시간-추정">실시간 노출시간 추정</h3> <p>state에 역노출시간 \(\tau\)(첫 프레임 대비)를 random walk로 포함시켜 photometric 방정식에서 함께 추정한다. \(\tau_0 = 1\)로 고정해 자명해(모두 0)로의 퇴화를 막는다. 실내에서 실외로 나갈 때의 급격한 과노출·저조도 변화에서 image alignment 수렴을 안정화하고 색점군의 과노출을 방지한다.</p> <h3 id="outlier-rejection">outlier rejection</h3> <p>raycast와 voxel로 모은 지도점 중 가려짐(occlusion), depth 불연속, 시야각 과대(80° 초과) 점을 제거한다. 현재 scan으로 depth map을 만들어 9×9 이웃과 비교해 가려진 점을 걸러낸다.</p> <h2 id="실험과-결과">실험과 결과</h2> <p>구현은 C++/ROS이며 Intel과 ARM 양쪽에 최적화되어 있다. spinning multi-line과 solid-state(비정형 스캔) LiDAR, pinhole과 다양한 fisheye 카메라(Pinhole/MEI/ATAN/Scaramuzza/Equidistant 투영모델)를 지원한다. 기본 설정은 노출추정 ON, normal refine OFF, LiDAR 시간 1:3 다운샘플, root voxel 0.5m, octree 3층, 정합 패치 8×8이다.</p> <p>평가 데이터는 공개 25개 시퀀스(NTU-VIRAL, Hilti’22, Hilti’23)와 자체 FAST-LIVO2 private dataset(20개 시퀀스, 66.9분, 단일벽·터널·암명 급변 등 극한 환경), 응용용 MARS-LVIG(고고도 항공)이다. Hilti는 GT가 비공개라 공식 사이트로 채점했다. 비교군은 R3LIVE(dense direct LIVO), FAST-LIO2(direct LIO), SDV-LOAM(semi-direct LV), LVI-SAM(feature LIVO), FAST-LIVO(직전작)이고, 노출·normal·reference patch·raycast·sequential update에 대한 ablation을 수행했다. 연산 플랫폼은 데스크톱 i7-10700K/32GB와 ARM Qualcomm Kryo585/8GB(RB5)다.</p> <p>핵심 결과 세 가지는 다음과 같다.</p> <ol> <li>정확도 SOTA. 25개 공개 시퀀스 평균 APE RMSE 0.044m(normal refine ON 시 0.044, 기본 0.045). 2위 FAST-LIVO 0.137m 대비 약 3배 정확하다. R3LIVE 0.278m, FAST-LIO2 0.151m, LVI-SAM 1.928m(9개 실패), SDV-LOAM 7.416m.</li> <li>압도적 효율. 프레임당 평균 30.03ms(LiDAR 17.13 + 영상 12.90, i7)로 10Hz 실시간이다. R3LIVE 108.36ms, LVI-SAM 108.45ms, FAST-LIVO 41.43ms 대비 월등하다. ARM에서도 78.44ms로 실시간이다. inverse compositional과 plane prior로 피라미드 레벨당 반복을 10회에서 3회로 줄였다.</li> <li>극한 퇴화 강건성. 약 800m 동안 LiDAR가 계속 벽만 보는 “HIT Graffiti Wall”, LiDAR와 카메라가 동시에 퇴화하는 “CBD Building 03”, 어두운 “Mining Tunnel” 등에서 시종점 오차 0.01m 미만으로 시작점에 복귀했다. R3LIVE와 FAST-LIVO는 드리프트가 1m를 넘거나 완전히 실패했다.</li> </ol> <table> <thead> <tr> <th>비교 항목</th> <th>FAST-LIVO2</th> <th>FAST-LIVO</th> <th>R3LIVE</th> <th>FAST-LIO2</th> <th>LVI-SAM</th> </tr> </thead> <tbody> <tr> <td>평균 APE RMSE (m, 25개 공개 시퀀스)</td> <td>0.044</td> <td>0.137</td> <td>0.278</td> <td>0.151</td> <td>1.928 (9개 실패)</td> </tr> <tr> <td>프레임당 처리시간 (ms, i7)</td> <td>30.03</td> <td>41.43</td> <td>108.36</td> <td>-</td> <td>108.45</td> </tr> </tbody> </table> <p>ablation에서는 reference patch 갱신을 빼면 정확도가 44mm 나빠져 최대 기여 모듈이고, 노출 추정을 빼면 6mm 나빠지며, normal refine는 1mm 개선에 그치고 불안정하다. 항공 매핑 APE는 HKairport01 0.64m, HKisland01 0.27m(R3LIVE 2.76, 0.52m)이고 처리시간은 약 25ms, 22ms(R3LIVE 약 110, 100ms)다.</p> <p>응용 세 가지도 보였다. 완전 온보드 자율 UAV 비행(localization 10Hz + Bubble planner + on-manifold MPC를 한 NUC에서 동시 실행, 총 80.4ms), 항공 매핑(MARS-LVIG), 3D 렌더링(VDBFusion+OpenMVS로 mesh/texture, 3D Gaussian Splatting)이다. 3DGS 입력으로 쓰면 COLMAP의 점군·pose 산출 9시간을 21초로 단축했다(학습시간은 dense 점군 탓에 11분에서 15.5분으로 늘었고 PSNR은 약간 더 높았다).</p> <p>기여 주장은 다섯 가지이며 각각 ablation으로 검증되어 주장과 실측이 잘 맞는다. 순차 갱신 ESIKF, LiDAR 평면 prior 사용, reference patch 갱신 전략(최대 기여), 실시간 노출시간 추정, on-demand voxel raycasting이다. normal refine의 미미한 효과를 솔직히 밝히고 기본 OFF로 둔 점은 과장이 없다는 신호다. 다만 정확도 우위 중 일부는 비교군 R3LIVE를 fisheye와 외부 IMU에 맞춰 저자가 직접 적응시킨 결과라는 점은 감안해야 한다.</p> <h2 id="결론과-의의">결론과 의의</h2> <p>FAST-LIVO2는 직접식, 통합 voxel map, 순차 ESIKF로 정확도·강건성·효율을 동시에 끌어올린 LIVO의 사실상 레퍼런스다. “LiDAR 점을 시각 지도점으로 재활용하고 그 평면 법선을 affine warping에 직접 사용한다”는 발상이 핵심이며, 별도 시각 백엔드(삼각측량, sliding window, depth filter)를 통째로 없애 온보드 실시간을 달성했다. 색점군 품질이 좋아 mesh/texture/3DGS 입력으로도 우수하므로 SLAM과 3D 재구성을 잇는 다리 역할을 한다.</p> <p>로봇 실무 관점에서 정리하면 다음과 같다.</p> <ul> <li>어디에 쓸 수 있는가: Intel i7급에서 약 30ms/frame, ARM(Kryo585급)에서도 약 78ms로 실시간이라 임베디드 친화적이다. UAV에서는 planner와 MPC를 같은 NUC에서 돌려도 80ms 안에 들어간다. 터널, 단일벽, 암명 급변 등 극한 환경에서의 강건성이 실증되었으므로 실내 다층 건물 모바일 로봇 자율주행이나 실외 비정형 지형 주행의 odometry 후보로 유력하다. 색점군이 깨끗해 3DGS나 mesh 재구성 파이프라인의 입력으로 쓰기 좋다.</li> <li>재현 조건: 코드, 데이터셋, 파라미터가 공개되어 벤치마크 재현은 용이하다. 다만 자체 데이터 수집에는 하드웨어 동기화(STM32 트리거)와 외부파라미터 정밀 보정이 필요하고, ROS1과 Sophus/Vikit 빌드 의존성 정렬이 진입장벽이다. 재현 난이도는 중간이며, 3DGS·mesh 응용은 별도 파이프라인이 필요하다.</li> <li>한계 1, 장거리 드리프트: loop closure와 sliding window가 없어 순수 odometry다. 저자가 future work로 명시했다.</li> <li>한계 2, 하드웨어 의존: 정확도와 강건성이 하드웨어 동기화, 정밀 외부파라미터, 노출 모델에 크게 의존한다. 동기화나 캘리브레이션이 허술하면 픽셀 단위 이점이 무너진다.</li> <li>한계 3, 모델 가정: normal refine는 어둡고 흐린 영상에서 negative optimization을 일으켜 적응형 on/off가 필요하고, 순차 갱신은 측정 잡음 독립 가정에 기대므로 상관 잡음 환경에서의 최적성은 별도 검토가 필요하다. semantic과 동적 환경 일반화도 미해결이다. 라이선스는 GPLv2로 상용은 저자 문의가 필요하다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2408.14035" rel="external nofollow noopener" target="_blank">arXiv:2408.14035</a>, <a href="https://ieeexplore.ieee.org/document/10757429/" rel="external nofollow noopener" target="_blank">IEEE Xplore (DOI 10.1109/TRO.2024.3502198)</a> </li> <li>코드: <a href="https://github.com/hku-mars/FAST-LIVO2" rel="external nofollow noopener" target="_blank">hku-mars/FAST-LIVO2</a> (GPLv2)</li> <li>FAST-LIO2: Fast Direct LiDAR-Inertial Odometry (T-RO 2022) — LIO 서브시스템의 뿌리</li> <li>VoxelMap (RA-L 2022) — hash+octree adaptive voxel과 확률적 평면 모델, 지도 구조의 토대</li> <li>FAST-LIVO (IROS 2022) — 직전작</li> <li>R3LIVE (ICRA 2022) — dense direct LIVO, 주 비교군</li> <li>SVO (ICRA 2014, T-RO 2016) — 패치 photometric 정합과 inverse compositional의 출처</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)</h1> <p class="post-meta"> Created on June 16, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/lio"> <i class="fa-solid fa-hashtag fa-sm"></i> lio</a>   <a href="/blog/tag/slam"> <i class="fa-solid fa-hashtag fa-sm"></i> slam</a>   <a href="/blog/tag/lidar-visual"> <i class="fa-solid fa-hashtag fa-sm"></i> lidar-visual</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>Item</th> <th>Details</th> </tr> </thead> <tbody> <tr> <td>Authors</td> <td>Chunran Zheng, Wei Xu, Zuhao Zou, Tong Hua, Chongjian Yuan, Dongjiao He, Bingyang Zhou, Zheng Liu, Jiarong Lin, Fangcheng Zhu, Yunfan Ren, Rong Wang, Fanle Meng, Fu Zhang (HKU MaRS Lab, The University of Hong Kong)</td> </tr> <tr> <td>Venue</td> <td>IEEE Transactions on Robotics (T-RO), vol. 41, pp. 326-346, 2025 (arXiv:2408.14035, 2024)</td> </tr> <tr> <td>Links</td> <td> <a href="https://arxiv.org/abs/2408.14035" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://ieeexplore.ieee.org/document/10757429/" rel="external nofollow noopener" target="_blank">IEEE Xplore</a> · <a href="https://github.com/hku-mars/FAST-LIVO2" rel="external nofollow noopener" target="_blank">Code</a> </td> </tr> </tbody> </table> <h2 id="one-line-summary">One-line Summary</h2> <p>FAST-LIVO2 is a LIVO system that couples LiDAR, IMU, and camera in a single sequential-update ESIKF, processes both LiDAR and vision in a direct manner, and reuses the planes built by LiDAR (plane priors) for visual registration on top of a single unified voxel map. On 25 public benchmark sequences it set a new SOTA with an average RMSE of 0.044m (about 3 times more accurate than the runner-up) at 30ms per frame (Intel i7). It is the successor of FAST-LIVO from HKU-MARS, and directly fixes five weaknesses of its predecessor.</p> <h2 id="lineage-and-trends">Lineage and Trends</h2> <p>FAST-LIVO2 is the culmination of the “direct + iterated Kalman filter” line of HKU-MARS (Fu Zhang’s group).</p> <ul> <li>FAST-LIO2 (T-RO 2022): direct LIO using only LiDAR and IMU. Raw points are registered directly to an ikd-Tree map without feature extraction. It is the prototype of the FAST-LIVO2 LIO subsystem, but this paper adopts VoxelMap’s hash+octree adaptive voxels instead of the ikd-Tree.</li> <li>R2LIVE (RA-L 2021) → R3LIVE (ICRA 2022) → R3LIVE++ (2022): LIVO from the same group. R3LIVE builds geometry with LIO and paints texture (color) with VIO, and the two subsystems each fuse with the IMU to jointly estimate the state. Its two-stage structure of per-pixel dense direct VIO and frame-to-frame optical flow depends heavily on the initial value and is computationally expensive. FAST-LIVO2 simplifies and refines this into patch-level sparse direct, single-stage frame-to-map alignment.</li> <li>FAST-LIVO (IROS 2022): the immediate predecessor. It first proposed sparse-direct LIVO but had five weaknesses: asynchronous updates of LiDAR and vision, the unreasonable assumption that a whole patch shares the same depth, weak constraints from choosing the patch closest to the current viewpoint as the reference, no exposure-time compensation, and no consideration of the LiDAR close-range blind zone.</li> <li>LVI-SAM (ICRA 2021): factor-graph based feature-based LIVO. It is a baseline in this paper, and failed on 9 sequences because features cannot be found when structure and texture are weak.</li> </ul> <h2 id="problem-and-motivation">Problem and Motivation</h2> <p>Single-sensor SLAM has its own limits. Vision cannot observe depth directly and is vulnerable to illumination and lack of texture, while LiDAR has no color and degenerates in geometry-poor environments such as tunnels or single walls. Fusion is the answer, but LIVO itself is hard.</p> <ol> <li>Hundreds of thousands of LiDAR points per second and high-resolution images must be processed in real time with onboard resources.</li> <li>LIO and VIO subsystems usually extract features separately, so features run dry in structure-less and texture-less environments and separate engineering is required for each scanning pattern.</li> <li>Designing a unified map that holds heterogeneous measurements together is tricky.</li> <li>A clean colored point cloud requires pixel-level pose accuracy, which demands hardware synchronization, precise extrinsic calibration, and recovery of exposure time.</li> </ol> <h2 id="key-ideas-and-method">Key Ideas and Method</h2> <h3 id="scan-recombination-keeping-the-beat">Scan recombination: keeping the beat</h3> <p>LiDAR raw points streaming in at 100 to 500kHz are cut at the camera sampling instants (e.g. 10Hz) and recombined into one scan. This makes LiDAR and camera update at the same instant and the same frequency. IMU forward propagation predicts the state and backward propagation compensates motion distortion.</p> <h3 id="sequential-update-esikf-resolving-the-dimensional-mismatch">Sequential-update ESIKF: resolving the dimensional mismatch</h3> <p>LiDAR residuals (point-to-plane) and image residuals (photometric) have different dimensions, and the image is updated per pyramid level. Instead of stacking them all at once as in a standard ESIKF, the IMU prior is first updated with LiDAR until convergence, and that posterior is then used as the prior for the subsequent image update. Under the assumption that the two measurement noises are independent, this is theoretically equivalent to a joint update.</p> <p>As an analogy, rather than receiving two testimonies at once and combining them, one first listens to the accurate testimony (LiDAR) and then hears the second testimony (image) based on that conclusion. This replaces the unstable asynchronous update of FAST-LIVO.</p> <h3 id="single-unified-voxel-map-one-map-two-uses">Single unified voxel map: one map, two uses</h3> <p>The structure of VoxelMap is adopted. A hash table manages 0.5×0.5×0.5m root voxels, and each voxel is subdivided by an octree up to three levels, so that each leaf voxel holds one local plane (center, normal, uncertainty) and the raw points on it. LiDAR builds the geometry of this map, and the visual module attaches image patches (8×8, three-level pyramid) to some of those points to reuse them as “visual map points”. Memory is kept bounded with a ring buffer that retains only the vicinity of the current position.</p> <p>Because LiDAR points are used as they are, without separate triangulation of visual features or running a depth filter, backend computation is greatly reduced.</p> <h3 id="direct-lidar-registration--beam-divergence-noise-model">Direct LiDAR registration + beam-divergence noise model</h3> <p>Without extracting edge/plane features, raw points are registered directly to the map via point-to-plane residuals. In addition, point uncertainty is modeled taking the laser beam divergence angle into account. The larger the angle between the bearing and the plane normal (the more obliquely the floor or wall is viewed), the larger the ranging uncertainty. Thanks to this precise noise model, the LIO alone already surpasses FAST-LIO2.</p> <h3 id="sparse-direct-visual-registration--plane-prior">Sparse-direct visual registration + plane prior</h3> <p>The selected visual map points are projected into the current image, and the pose is aligned by minimizing the photometric error (direct brightness comparison) against the reference patches. This is the sparse direct approach of the SVO family. When deforming a patch from one viewpoint to another (affine warping), instead of assuming that “the whole patch has the same depth” as in FAST-LIVO, the plane normal given by LiDAR is used directly for exact warping.</p> <p>For efficiency, the inverse compositional formulation is used. Since the reference-side coordinates do not change between iterations, the Jacobian needs to be computed only once. There is also a normal-refine option that further refines the normals with photometric error in a separate thread, but it is OFF by default, because the gain is as small as 1mm and it can be counterproductive in dark or blurry images.</p> <h3 id="dynamic-reference-patch-update-choosing-a-good-reference">Dynamic reference-patch update: choosing a good reference</h3> <p>One map point can have several patches. They are scored by NCC (degree of mutual similarity) and the orthogonality between the normal and the line of sight (frontality), and the highest-scoring patch is chosen as the reference. This selects a patch that looks similar to the other patches (avoiding dynamic objects and outliers) while viewing the plane head-on (preserving high-resolution texture). FAST-LIVO simply picked the patch closest to the current viewpoint, giving weak constraints. In the ablation, this module’s accuracy contribution of 44mm is the largest among all modules.</p> <h3 id="on-demand-voxel-raycasting-filling-lidar-gaps">On-demand voxel raycasting: filling LiDAR gaps</h3> <p>Normally, the voxels hit by the current scan are looked up by hash to find the visual map points in view. However, LiDAR sometimes returns no points on objects that are too close (close-proximity blind zone) or does not cover the whole camera FoV. In that case the image is divided into a 30×30 grid, and for empty cells only, a backward ray is cast along the central pixel (sample point coordinates are precomputed) and map points are recovered by walking along the depth. In effect, corners of the image that LiDAR could not see are probed and filled with rays.</p> <h3 id="real-time-exposure-time-estimation">Real-time exposure-time estimation</h3> <p>The inverse exposure time \(\tau\) (relative to the first frame) is included in the state as a random walk and estimated jointly in the photometric equation. \(\tau_0 = 1\) is fixed to prevent degeneration to the trivial solution (all zeros). This stabilizes image alignment convergence under abrupt over-exposure and low-light changes such as moving from indoors to outdoors, and prevents over-exposure in the colored point cloud.</p> <h3 id="outlier-rejection">Outlier rejection</h3> <p>Among the map points collected by raycasting and voxel lookup, those with occlusion, depth discontinuity, or an excessive viewing angle (over 80°) are removed. A depth map is built from the current scan and compared within a 9×9 neighborhood to filter occluded points.</p> <h2 id="experiments-and-results">Experiments and Results</h2> <p>The implementation is in C++/ROS and is optimized for both Intel and ARM. It supports spinning multi-line and solid-state (non-repetitive scan) LiDAR, and pinhole and various fisheye cameras (Pinhole/MEI/ATAN/Scaramuzza/Equidistant projection models). The default configuration is exposure estimation ON, normal refine OFF, LiDAR temporal downsampling 1:3, root voxel 0.5m, three octree levels, and 8×8 registration patches.</p> <p>The evaluation data are 25 public sequences (NTU-VIRAL, Hilti’22, Hilti’23), the authors’ own FAST-LIVO2 private dataset (20 sequences, 66.9 minutes, extreme environments such as single walls, tunnels, and abrupt light/dark changes), and MARS-LVIG (high-altitude aerial) for applications. Since Hilti ground truth is not public, scoring was done through the official site. The baselines are R3LIVE (dense direct LIVO), FAST-LIO2 (direct LIO), SDV-LOAM (semi-direct LV), LVI-SAM (feature-based LIVO), and FAST-LIVO (the predecessor), and ablations were run on exposure, normal refine, reference patch, raycasting, and sequential update. The computing platforms are a desktop i7-10700K/32GB and an ARM Qualcomm Kryo585/8GB (RB5).</p> <p>The three key results are as follows.</p> <ol> <li>Accuracy SOTA. Average APE RMSE of 0.044m over the 25 public sequences (0.044 with normal refine ON, 0.045 by default). About 3 times more accurate than the runner-up FAST-LIVO at 0.137m. R3LIVE 0.278m, FAST-LIO2 0.151m, LVI-SAM 1.928m (9 failures), SDV-LOAM 7.416m.</li> <li>Overwhelming efficiency. Average 30.03ms per frame (LiDAR 17.13 + image 12.90, i7), i.e. real time at 10Hz. Far ahead of R3LIVE 108.36ms, LVI-SAM 108.45ms, and FAST-LIVO 41.43ms. Real time on ARM as well at 78.44ms. The inverse compositional formulation and the plane prior reduced the iterations per pyramid level from 10 to 3.</li> <li>Robustness under extreme degeneration. In “HIT Graffiti Wall” where LiDAR sees only a wall for about 800m, “CBD Building 03” where LiDAR and camera degenerate simultaneously, and the dark “Mining Tunnel”, it returned to the start point with a start-to-end error under 0.01m. R3LIVE and FAST-LIVO drifted by more than 1m or failed completely.</li> </ol> <table> <thead> <tr> <th>Comparison item</th> <th>FAST-LIVO2</th> <th>FAST-LIVO</th> <th>R3LIVE</th> <th>FAST-LIO2</th> <th>LVI-SAM</th> </tr> </thead> <tbody> <tr> <td>Average APE RMSE (m, 25 public sequences)</td> <td>0.044</td> <td>0.137</td> <td>0.278</td> <td>0.151</td> <td>1.928 (9 failures)</td> </tr> <tr> <td>Processing time per frame (ms, i7)</td> <td>30.03</td> <td>41.43</td> <td>108.36</td> <td>-</td> <td>108.45</td> </tr> </tbody> </table> <p>In the ablation, removing the reference-patch update worsens accuracy by 44mm, making it the largest contributing module; removing exposure estimation worsens it by 6mm; and normal refine gives only a 1mm improvement and is unstable. Aerial mapping APE is 0.64m on HKairport01 and 0.27m on HKisland01 (R3LIVE 2.76, 0.52m), with processing times of about 25ms and 22ms (R3LIVE about 110, 100ms).</p> <p>Three applications were also shown: fully onboard autonomous UAV flight (localization at 10Hz + Bubble planner + on-manifold MPC running simultaneously on one NUC, 80.4ms total), aerial mapping (MARS-LVIG), and 3D rendering (mesh/texture via VDBFusion+OpenMVS, 3D Gaussian Splatting). Used as 3DGS input, it cut COLMAP’s 9 hours of point-cloud and pose generation to 21 seconds (training time increased from 11 to 15.5 minutes due to the dense point cloud, and PSNR was slightly higher).</p> <p>There are five claimed contributions, each verified by ablation, so the claims match the measurements well: the sequential-update ESIKF, use of LiDAR plane priors, the reference-patch update strategy (largest contribution), real-time exposure-time estimation, and on-demand voxel raycasting. Honestly reporting the marginal effect of normal refine and leaving it OFF by default signals the absence of exaggeration. It should be borne in mind, however, that part of the accuracy advantage comes from the authors themselves adapting the baseline R3LIVE to fisheye cameras and an external IMU.</p> <h2 id="conclusion-and-significance">Conclusion and Significance</h2> <p>FAST-LIVO2 is the de facto reference LIVO that raises accuracy, robustness, and efficiency simultaneously through direct methods, a unified voxel map, and a sequential ESIKF. The core idea is “reuse LiDAR points as visual map points and use their plane normals directly in affine warping”, and by eliminating the separate visual backend (triangulation, sliding window, depth filter) entirely it achieves onboard real-time performance. Because the colored point cloud is of high quality, it also serves well as input for mesh/texture/3DGS, acting as a bridge between SLAM and 3D reconstruction.</p> <p>From a robotics practice perspective, the takeaways are as follows.</p> <ul> <li>Where it can be used: about 30ms/frame on an Intel i7 class CPU and about 78ms on ARM (Kryo585 class), i.e. real time and embedded-friendly. On a UAV, it fits within 80ms even when the planner and MPC run on the same NUC. Since robustness was demonstrated in extreme environments such as tunnels, single walls, and abrupt light/dark changes, it is a strong odometry candidate for autonomous mobile-robot navigation in multi-floor indoor buildings or on unstructured outdoor terrain. The clean colored point cloud makes it a good input for 3DGS or mesh reconstruction pipelines.</li> <li>Reproduction conditions: the code, datasets, and parameters are public, so benchmark reproduction is easy. Collecting one’s own data, however, requires hardware synchronization (STM32 trigger) and precise extrinsic calibration, and aligning the ROS1 and Sophus/Vikit build dependencies is an entry barrier. Reproduction difficulty is moderate, and the 3DGS/mesh applications require separate pipelines.</li> <li>Limitation 1, long-range drift: with no loop closure or sliding window, it is pure odometry. The authors list this explicitly as future work.</li> <li>Limitation 2, hardware dependence: accuracy and robustness depend heavily on hardware synchronization, precise extrinsics, and the exposure model. If synchronization or calibration is sloppy, the pixel-level advantage collapses.</li> <li>Limitation 3, model assumptions: normal refine causes negative optimization in dark and blurry images and needs adaptive on/off; the sequential update relies on the assumption of independent measurement noise, so optimality in correlated-noise settings needs separate examination. Generalization to semantics and dynamic environments also remains unresolved. The license is GPLv2, so commercial use requires contacting the authors.</li> </ul> <h2 id="references">References</h2> <ul> <li>Paper: <a href="https://arxiv.org/abs/2408.14035" rel="external nofollow noopener" target="_blank">arXiv:2408.14035</a>, <a href="https://ieeexplore.ieee.org/document/10757429/" rel="external nofollow noopener" target="_blank">IEEE Xplore (DOI 10.1109/TRO.2024.3502198)</a> </li> <li>Code: <a href="https://github.com/hku-mars/FAST-LIVO2" rel="external nofollow noopener" target="_blank">hku-mars/FAST-LIVO2</a> (GPLv2)</li> <li>FAST-LIO2: Fast Direct LiDAR-Inertial Odometry (T-RO 2022) — root of the LIO subsystem</li> <li>VoxelMap (RA-L 2022) — hash+octree adaptive voxels and probabilistic plane model, the foundation of the map structure</li> <li>FAST-LIVO (IROS 2022) — the immediate predecessor</li> <li>R3LIVE (ICRA 2022) — dense direct LIVO, the main baseline</li> <li>SVO (ICRA 2014, T-RO 2016) — source of patch photometric registration and the inverse compositional formulation</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -48,28 +48,28 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          description: "Robotics projects I led or contributed to at KETI, and earlier undergraduate and internship projects. Open a card for background, role, approach and results.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          description: "Conference papers and a patent in reverse chronological order. First-author papers carry a 1st-author badge.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          description: "Education, experience, publications and skills at a glance. See the Projects and Publications pages for details.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "GitHub 프로필과 공개 저장소.",
+          description: "GitHub profile and public repositories.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -78,7 +78,7 @@ ninja.data = [{
         
           title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
         
-        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        description: "Perceptive quadruped locomotion RL that puts the gait phase prior only in the reward, not the action space, and learns in joint space without IK",
         section: "Posts",
         handler: () => {
           
@@ -89,7 +89,7 @@ ninja.data = [{
         
           title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
         
-        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        description: "A geometry-only LIO that survives geometry-poor environments such as tunnels and flat fields by storing a high-resolution bump height image in every voxel",
         section: "Posts",
         handler: () => {
           
@@ -100,7 +100,7 @@ ninja.data = [{
         
           title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
         
-        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        description: "A consensus-style evaluation standard paper in which 31 collaborators propose a definition of social robot navigation, eight principles, guidelines for metrics, scenarios, benchmarks, datasets, and simulators, and a common metrics API",
         section: "Posts",
         handler: () => {
           
@@ -111,7 +111,7 @@ ninja.data = [{
         
           title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
         
-        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        description: "HKU-MARS&#39;s LIVO that attaches image patches to LiDAR map points for reuse in a sparse-direct VIO, coupled with a direct LIO inside a single ESIKF",
         section: "Posts",
         handler: () => {
           
@@ -122,7 +122,7 @@ ninja.data = [{
         
           title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
         
-        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        description: "The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors",
         section: "Posts",
         handler: () => {
           
@@ -133,7 +133,7 @@ ninja.data = [{
         
           title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
         
-        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        description: "An end-to-end framework that feeds only first-person RGB video into Qwen2-VL to predict low-level actions directly, post-trained with GRPO reinforcement fine-tuning and a time-decayed reward to reach SOTA on VLN-CE",
         section: "Posts",
         handler: () => {
           
@@ -144,7 +144,7 @@ ninja.data = [{
         
           title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
         
-        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        description: "A real-time semantic mapping framework that recursively estimates the probability distributions of terrain elevation and friction coefficient from a single RGB-D camera via Bayesian inference",
         section: "Posts",
         handler: () => {
           
@@ -155,7 +155,7 @@ ninja.data = [{
         
           title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
         
-        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        description: "An uneven-terrain navigation framework that fits local planes to point clouds to evaluate traversability and chains PF-RRT*, GPR, and NMPC",
         section: "Posts",
         handler: () => {
           
@@ -166,7 +166,7 @@ ninja.data = [{
         
           title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
         
-        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        description: "Review of π0, a robot foundation model that attaches a flow matching action expert to a pretrained VLM and trains on 10,000 hours of cross-embodiment data",
         section: "Posts",
         handler: () => {
           
@@ -177,7 +177,7 @@ ninja.data = [{
         
           title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
         
-        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        description: "Review of π0.5, which combines heterogeneous-data co-training with hierarchical subtask reasoning to perform long-horizon mobile manipulation in homes never seen during training",
         section: "Posts",
         handler: () => {
           
@@ -188,7 +188,7 @@ ninja.data = [{
         
           title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
         
-        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        description: "Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning",
         section: "Posts",
         handler: () => {
           
@@ -199,7 +199,7 @@ ninja.data = [{
         
           title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
         
-        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        description: "A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera",
         section: "Posts",
         handler: () => {
           
@@ -210,7 +210,7 @@ ninja.data = [{
         
           title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
         
-        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        description: "A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories",
         section: "Posts",
         handler: () => {
           
@@ -221,7 +221,7 @@ ninja.data = [{
         
           title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
         
-        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        description: "A system that adds a view layer to a hierarchical multimodal scene graph and calls slow VLM reasoning only when fast CLIP matching fails, reaching 92% SR in 5.5 s on long-horizon indoor object search with a humanoid",
         section: "Posts",
         handler: () => {
           
@@ -232,7 +232,7 @@ ninja.data = [{
         
           title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
         
-        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        description: "A multi-floor LIO that separates the robot&#39;s relative motion from the cabin&#39;s transport motion in the state inside a moving elevator and suppresses vertical drift with a ZUPT at the stop instant",
         section: "Posts",
         handler: () => {
           
@@ -243,73 +243,73 @@ ninja.data = [{
         
           title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
         
-        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        description: "Continual traversability learning that recalls past experience with a CVAE instead of storing data, filtering recalled samples by uncertainty to reduce catastrophic forgetting",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/continual-traversability-learning/";
           
         },
-      },{id: "post-tf-transform-와-frame-개념-정리",
+      },{id: "post-tf-transform-and-frame-concepts",
         
-          title: "TF(Transform)와 Frame 개념 정리",
+          title: "TF (Transform) and Frame Concepts",
         
-        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        description: "The concept of frames in ROS2 tf2, relationships between coordinate frames, and the tf_tree structure, with examples",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2023/tf-transform/";
           
         },
-      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+      },{id: "post-fixing-nvidia-graphics-card-detection-on-ubuntu-22-04",
         
-          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+          title: "Fixing NVIDIA Graphics Card Detection on Ubuntu 22.04",
         
-        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        description: "Procedure for resolving NVIDIA driver detection errors after installing Ubuntu 22.04",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
           
         },
-      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+      },{id: "post-matlab-simulation-of-a-6-dof-collaborative-robot-d-h-parameters",
         
-          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+          title: "MATLAB Simulation of a 6-DOF Collaborative Robot (D-H Parameters)",
         
-        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        description: "Forward and inverse kinematics based on D-H parameters and cubic-spline path planning implemented in MATLAB",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/manipulator-dh-simulation/";
           
         },
-      },{id: "post-git과-github-기초-설치부터-push까지",
+      },{id: "post-git-and-github-basics-from-installation-to-push",
         
-          title: "Git과 GitHub 기초: 설치부터 push까지",
+          title: "Git and GitHub Basics: From Installation to push",
         
-        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        description: "Practical commands for the distributed version control system Git, from basic concepts to installing on Ubuntu, cloning, and pushing",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/git-github-basics/";
           
         },
-      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+      },{id: "post-vision-based-autonomous-driving-vanishing-point-and-perspective-transform",
         
-          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+          title: "Vision-based Autonomous Driving: Vanishing Point and Perspective Transform",
         
-        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        description: "An image-processing project that combines vanishing point detection with perspective transform to classify the driving state (straight/turning x centered/biased)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/vanishing-point-lane-detection/";
           
         },
-      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+      },{id: "post-docker-basics-images-containers-and-key-commands",
         
-          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+          title: "Docker Basics: Images, Containers, and Key Commands",
         
-        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        description: "The concepts of Docker, a container-based virtualization platform, and its commonly used commands",
         section: "Posts",
         handler: () => {
           
@@ -320,185 +320,185 @@ ninja.data = [{
         
           title: "ROS1 vs ROS2",
         
-        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        description: "The concept of the Robot Operating System (ROS) and the architectural differences between ROS1 and ROS2",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/ros1-vs-ros2/";
           
         },
-      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+      },{id: "post-building-a-custom-gazebo-battery-plugin",
         
-          title: "Gazebo 커스텀 Battery Plugin 만들기",
+          title: "Building a Custom Gazebo Battery Plugin",
         
-        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        description: "An example of implementing a custom battery system as a Gazebo plugin that accounts for standby and active power consumption",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-battery-plugin/";
           
         },
-      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+      },{id: "post-gazebo-hands-on-turtlebot3-3d-lidar",
         
-          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+          title: "Gazebo Hands-on: TurtleBot3 + 3D LiDAR",
         
-        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        description: "Loading turtlebot3_burger with a Velodyne 3D LiDAR in Gazebo, checking the data, teleoperating, and inspecting the tf_tree",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-training/";
           
         },
-      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+      },{id: "post-gazebo-plugins-sensor-and-actuator-plugin-analysis",
         
-          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+          title: "Gazebo Plugins: Sensor and Actuator Plugin Analysis",
         
-        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        description: "XML structure and usage of sensor and actuator plugins in Gazebo (ROS2 Humble)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-plugin/";
           
         },
-      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+      },{id: "post-robot-coordinate-systems-and-euler-angles",
         
-          title: "로봇 좌표계(Coordinates)와 Euler 각",
+          title: "Robot Coordinate Systems and Euler Angles",
         
-        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        description: "Cartesian, cylindrical, and spherical coordinate systems and Euler angles, with their differences and characteristics from a robotics perspective",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/coordinates/";
           
         },
-      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+      },{id: "post-gazebo-simulator-architecture-and-ros-integration",
         
-          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+          title: "Gazebo Simulator Architecture and ROS Integration",
         
-        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        description: "Notes on the Gazebo block diagram, the ROS-Gazebo interaction architecture, and the main components",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo/";
           
         },
-      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
-          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+      },{id: "news-started-an-internship-at-the-robot-vocational-innovation-center-korea-institute-of-robotics-and-technology-convergence-kiro-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-until-mar-2023",
+          title: 'Started an internship at the Robot Vocational Innovation Center, Korea Institute of Robotics...',
           description: "",
-          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
-          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          section: "News",},{id: "news-graduated-from-keimyung-university-with-a-b-s-in-robotics-engineering-gpa-4-2-4-5",
+          title: 'Graduated from Keimyung University with a B.S. in Robotics Engineering (GPA 4.2/4.5).',
           description: "",
-          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
-          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          section: "News",},{id: "news-joined-the-intelligent-robotics-research-center-at-the-korea-electronics-technology-institute-keti-as-a-researcher-started-open-rmf-based-multi-robot-fleet-management-research",
+          title: 'Joined the Intelligent Robotics Research Center at the Korea Electronics Technology Institute (KETI)...',
           description: "",
-          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
-          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          section: "News",},{id: "news-patent-application-filed-quot-mobile-robot-service-system-and-method-quot-published-jul-2025-under-examination",
+          title: 'Patent application filed: &amp;quot;Mobile Robot Service System and Method&amp;quot; (published Jul. 2025, under...',
           description: "",
-          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
-          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          section: "News",},{id: "news-presented-quot-cooperative-autonomous-driving-system-for-multi-mobile-robots-using-open-rmf-quot-at-kroc-2024-first-author",
+          title: 'Presented &amp;quot;Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF&amp;quot; at KROC 2024...',
           description: "",
-          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
-          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          section: "News",},{id: "news-oral-presentation-of-quot-cross-utilization-of-obstacle-recognition-information-for-collaborative-path-planning-quot-at-icros-2024-first-author",
+          title: 'Oral presentation of &amp;quot;Cross-Utilization of Obstacle Recognition Information for Collaborative Path Planning&amp;quot; at...',
           description: "",
-          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
-          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          section: "News",},{id: "news-presented-quot-traversability-assessment-and-path-planning-for-multi-robot-system-quot-at-iccas-2024-jeju-first-author",
+          title: 'Presented &amp;quot;Traversability Assessment and Path Planning for Multi-Robot System&amp;quot; at ICCAS 2024, Jeju...',
           description: "",
-          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
-          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          section: "News",},{id: "news-real-robot-demonstration-completed-tetra-s-calls-boards-and-exits-a-real-elevator-for-multi-floor-autonomous-navigation-via-an-mqtt-ros-2-bridge",
+          title: 'Real-robot demonstration completed: TETRA_S calls, boards and exits a real elevator for multi-floor...',
           description: "",
-          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
-          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          section: "News",},{id: "news-two-papers-presented-at-iccas-2025-incheon-multi-robot-anomaly-detection-and-visualization-framework-first-author-and-sdr-ota-update-framework-second-author-both-on-ieee-xplore",
+          title: 'Two papers presented at ICCAS 2025, Incheon — multi-robot anomaly detection and visualization...',
           description: "",
-          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
-          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          section: "News",},{id: "news-precision-docking-with-3-5-cm-accuracy-demonstrated-on-a-real-robot-using-lidar-trapezoid-marker-icp-registration",
+          title: 'Precision docking with ±3–5 cm accuracy demonstrated on a real robot using LiDAR...',
           description: "",
-          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
-          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          section: "News",},{id: "news-presented-quot-a-learning-based-anomaly-detection-framework-for-multi-robot-systems-quot-at-icros-2026-daegu-first-author-restad-aff-f1-0-94",
+          title: 'Presented &amp;quot;A Learning-based Anomaly Detection Framework for Multi-Robot Systems&amp;quot; at ICROS 2026, Daegu...',
           description: "",
-          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
-          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          section: "News",},{id: "news-a-vlm-orchestrated-autonomous-mission-agent-on-the-go2-multi-floor-mujoco-testbed-found-boarded-and-rode-the-elevator-to-the-second-floor-from-a-natural-language-mission-alone",
+          title: 'A VLM-orchestrated autonomous mission agent on the Go2 multi-floor MuJoCo testbed found, boarded...',
           description: "",
-          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
-          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          section: "News",},{id: "news-rebuilt-this-website-on-al-folio-as-a-cv-and-portfolio-site-with-project-publication-and-paper-review-pages",
+          title: 'Rebuilt this website on al-folio as a CV and portfolio site with project,...',
           description: "",
-          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
-          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
-          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "News",},{id: "projects-stability-assessment-and-pid-design-for-a-3-axis-7-dof-spring-damper-system",
+          title: 'Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System',
+          description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3axis-7dof-stability/";
-            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
-          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
-          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+            },},{id: "projects-6-axis-articulated-robot-kinematics-simulation-d-h-inverse-kinematics-cubic-spline",
+          title: '6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)',
+          description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6axis-manipulator-simulation/";
-            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
-          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
-          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+            },},{id: "projects-agv-manipulator-integrated-tcp-ip-communication-protocol-manufacturing-logistics",
+          title: 'AGV–Manipulator Integrated TCP/IP Communication Protocol (Manufacturing Logistics)',
+          description: "Design of a custom TCP/IP protocol linking the supervisory controller (MasterPC), the ACS server, and stacker robots — STX/CR/LF framing, command ID matching, ACK/NACK with Reason codes, and HeartBeat",
           section: "Projects",handler: () => {
               window.location.href = "/projects/agv-manipulator-tcpip/";
-            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
-          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
-          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+            },},{id: "projects-shared-work-wiki-for-ai-agents-obsidian-claude-code",
+          title: 'Shared Work Wiki for AI Agents (Obsidian + Claude Code)',
+          description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ai-agent-wiki/";
-            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
-          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
-          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+            },},{id: "projects-go2-multi-floor-building-simulation-testbed-and-vlm-autonomous-mission-agent",
+          title: 'Go2 Multi-Floor Building Simulation Testbed and VLM Autonomous Mission Agent',
+          description: "A testbed that ported a three-story building world with stairs, ramps, and a working elevator across Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo to verify quadruped locomotion control, real-spec sensors, and a VLM orchestration agent",
           section: "Projects",handler: () => {
               window.location.href = "/projects/go2-multifloor-sim/";
-            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
-          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
-          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+            },},{id: "projects-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-kiro-internship",
+          title: 'Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)',
+          description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kiro-heterogeneous-robots/";
-            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
-          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
-          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+            },},{id: "projects-precision-charging-docking-based-on-lidar-marker-icp-registration",
+          title: 'Precision Charging Docking Based on LiDAR Marker ICP Registration',
+          description: "A two-stage docking system (Nav2 approach + fine alignment) that evolved through three phases — ArUco vision → 2D LiDAR trapezoidal geometric marker → ICP registration — to achieve ±3–5 cm precision docking in a real environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lidar-marker-docking/";
-            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
-          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
-          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+            },},{id: "projects-open-rmf-integration-of-heterogeneous-logistics-robots-cooperative-intelligence",
+          title: 'Open-RMF Integration of Heterogeneous Logistics Robots (Cooperative Intelligence)',
+          description: "Unified heterogeneous mobile robots (TETRA carts, stacker AMRs, MiR 600) under the Open-RMF multi-robot operating system, building up free_fleet modifications, docking control handover, sensor-based perception, and a PySide6 GUI in stages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/logistics-fleet-integration/";
-            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
-          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
-          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+            },},{id: "projects-mfc-based-three-mode-control-of-dynamixel-actuators",
+          title: 'MFC-Based Three-Mode Control of Dynamixel Actuators',
+          description: "A C++ MFC GUI that operates the position, velocity, and current control modes of the ROBOTIS Dynamixel XM430-W350 in one application and monitors state and torque in real time over TTL communication",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mfc-dynamixel-control/";
-            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
-          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
-          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+            },},{id: "projects-multi-robot-anomaly-detection-from-fault-injection-to-learning-based-detection",
+          title: 'Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection',
+          description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-anomaly-detection/";
-            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
-          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
-          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+            },},{id: "projects-open-rmf-based-centralized-fleet-management-for-heterogeneous-multi-robot-systems",
+          title: 'Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems',
+          description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-openrmf/";
-            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
-          title: '실외 비정형 지형 자율주행 파이프라인',
-          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+            },},{id: "projects-autonomous-navigation-pipeline-for-unstructured-outdoor-terrain",
+          title: 'Autonomous Navigation Pipeline for Unstructured Outdoor Terrain',
+          description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/outdoor-traversability/";
-            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
-          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
-          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+            },},{id: "projects-multi-floor-autonomous-navigation-with-mobile-robot-elevator-integration",
+          title: 'Multi-Floor Autonomous Navigation with Mobile Robot ↔ Elevator Integration',
+          description: "A system in which the robot calls, boards, and exits an elevator on its own via an MQTT–ROS 2 bridge and a custom NavigateMultiFloor Action. LiDAR scattering off metallic elevator surfaces was resolved with an SOR filter",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robot-elevator-interface/";
-            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
-          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
-          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+            },},{id: "projects-sdr-docker-and-git-based-ota-deployment-framework",
+          title: 'SDR — Docker and Git-Based OTA Deployment Framework',
+          description: "An OTA system for Software-Defined Robots that modularizes robot functions into containers and separates shared code from Robot Profiles to deploy and verify across multiple robots without downtime",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sdr-ota-framework/";
-            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
-          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
-          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+            },},{id: "projects-image-processing-based-autonomous-driving-vanishing-point-perspective-transform",
+          title: 'Image-Processing-Based Autonomous Driving — Vanishing Point × Perspective Transform',
+          description: "A low-cost image-processing ADAS project that combines the vanishing point (straight vs. turning) with a perspective transform (centered vs. biased) to classify four driving states",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vanishing-point-lane-detection/";
-            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
-          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
-          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+            },},{id: "projects-quadruped-wheel-leg-hybrid-robot-mechathon-capstone",
+          title: 'Quadruped Wheel-Leg Hybrid Robot (Mechathon · Capstone)',
+          description: "A hybrid robot that normally drives on wheels and, at obstacles the wheels cannot clear, controls its leg joints to switch into walking mode and step over them. Responsible for mechanical design, 3D modeling, and ROS-based integrated control",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wheel-leg-robot/";
             },},{

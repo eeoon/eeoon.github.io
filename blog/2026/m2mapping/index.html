@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/m2mapping/"> <meta property="og:description" content="LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)"> <meta name="twitter:description" content="LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/m2mapping/"> <meta property="og:description" content="A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)"> <meta name="twitter:description" content="A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
     {
         "author":
         {
@@ -7,7 +7,7 @@
         },
         "url": "https://eeoon.github.io/blog/2026/m2mapping/",
         "@type": "BlogPosting",
-        "description": "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        "description": "A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories",
         "headline": "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
         
         "sameAs": ["https://github.com/eeoon"],
@@ -21,7 +21,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/m2mapping/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/mapping"> <i class="fa-solid fa-hashtag fa-sm"></i> mapping</a>   <a href="/blog/tag/neural-rendering"> <i class="fa-solid fa-hashtag fa-sm"></i> neural-rendering</a>   <a href="/blog/tag/lidar-visual"> <i class="fa-solid fa-hashtag fa-sm"></i> lidar-visual</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>Jianheng Liu, Chunran Zheng, Yunfei Wan, Bowen Wang, Yixi Cai, Fu Zhang (HKU MaRS Lab, 홍콩대학교)</td> </tr> <tr> <td>발표</td> <td>ICRA 2025 (arXiv:2409.05310, 2024-09-09)</td> </tr> <tr> <td>링크</td> <td> <a href="https://arxiv.org/abs/2409.05310" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://github.com/hku-mars/M2Mapping" rel="external nofollow noopener" target="_blank">Code</a> </td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>M2Mapping은 LiDAR로 만든 거리장(NDF, 구조)과 카메라로 만든 광장(NeRF, 외형)을 하나의 SDF→밀도(density) 변환으로 묶는 매핑 프레임워크다. LiDAR 점군이 구조를 잡아주고, NeRF의 광도(photometric) 오차가 거꾸로 흘러 LiDAR가 놓친 흐릿한 구조를 메우는 양방향 보완이 핵심이다. 그 결과 관심 영역 주변에 멀티뷰가 부족한 자유시점(free-view) 궤적에서도 고정밀 watertight 표면 복원과 외삽(extrapolation) 렌더링을 동시에 달성한다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <ul> <li>출발점은 NeRF(Mildenhall 2020)다. 볼륨렌더링으로 신경 광장을 학습해 novel view synthesis를 혁신했지만, 밀도장이 모호해 표면을 명확히 정의하지 못한다.</li> <li>표면화 계보: VolSDF(Yariv 2021), NeuS(Wang 2021), UniSurf(Oechsle 2021)는 SDF를 구조장으로 써서 볼륨렌더링으로 멀티뷰 표면을 복원한다. 본 논문은 이 “SDF의 볼륨렌더링” 파이프라인을 그대로 계승한다.</li> <li>가속·표현 계보: Instant-NGP(Müller 2022, 멀티해상도 해시 인코딩 + tiny MLP)가 본 방법의 백본이다. Neuralangelo(Li 2023, 수치미분 곡률과 점진적 디테일), Mip-NeRF 360(Barron 2022, 무한 배경 contraction)도 차용한다.</li> <li>점군 SDF 매핑 계보(로보틱스): Voxblox, VDBFusion(TSDF), iSDF, SHINE-Mapping, H2Mapping은 LiDAR/RGBD 점군에서 SDF/NDF를 학습한다. 본 논문은 이들을 구조 베이스라인으로 비교한다.</li> <li>경쟁 표현: 3D Gaussian Splatting(Kerbl 2023)은 명시적이고 빠르며 고품질이지만, manifold 표면 표현이 어렵고 구조를 역으로 정제하는 파이프라인이 없다. 본 논문은 이를 약점으로 지적하고 SDF 볼륨렌더링 쪽을 택했다.</li> </ul> <p>위치를 정리하면, “이미지 only NeRF-표면화(VolSDF/NeuS)”와 “점군 only SDF 매핑(SHINE/H2)” 사이를 메우는 LiDAR-비주얼 융합 작업이다. 차별점은 LiDAR 깊이를 2D 이미지 공간의 depth supervision으로 쓰지 않고, 3D 공간에서 직접 NDF로 감독한다는 것이다.</p> <h2 id="문제와-동기">문제와 동기</h2> <p>로봇은 카메라와 저가 LiDAR로 멀티모달 데이터를 쉽게 얻지만, LVI-SLAM(LVI-SAM, R3LIVE, FAST-LIVO)은 색칠된 raw 점군만 산출하므로 해상도, 밀도, 정확도가 LiDAR에 종속된다. 디지털 트윈에는 watertight 표면과 사실적 렌더링이 필요하다.</p> <p>명시적 메싱은 노이즈와 정합 오차에 약하고, 이미지 only NeRF-표면화는 위치마다 풍부한 멀티뷰가 필요해 자유시점 궤적에 부적합하다. LiDAR는 표면 위 직접 샘플을 주므로 멀티뷰 의존을 줄여줄 수 있다. 그래서 “posed 이미지 + 저가 LiDAR + 임의의 캐주얼 궤적”에서 외형과 구조를 동시에 복원하는 통합 프레임워크가 목표다.</p> <p>핵심 난제는 NeRF와 NDF 사이의 구조적 가시성 격차(visible gap)다. LiDAR FOV와 카메라 FOV가 다르고 LiDAR가 희소해, 카메라에는 보이지만 LiDAR에는 잡히지 않은 공간이 많다.</p> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <h3 id="visible-aware-occupancy-map">Visible-aware Occupancy Map</h3> <p>LiDAR 레이캐스팅으로 표준 점유격자(free / occupied / unknown)를 만든 뒤, 이미지 픽셀 레이를 추가로 쏴서 unknown을 둘로 쪼갠다. 카메라에는 보이지만 그 앞에 occupied가 없는 칸을 “visible unknown”으로 표시한다. 신경장은 occupied와 visible unknown 칸 안에서만 학습하므로 free space를 건너뛰어 효율이 오르고, 카메라에는 보이는데 LiDAR에는 없던 영역까지 채워 완전한 렌더링이 가능하다. 비유하자면 LiDAR가 그린 지도에 “카메라가 봤다”는 형광펜을 덧칠해, 둘 중 하나라도 본 곳만 공부하는 것이다.</p> <h3 id="ndf-기하-감독--점군으로-직접">NDF 기하 감독 — 점군으로 직접</h3> <p>기하 신경망 \(f_S(\mathbf{x}) = (\hat{s}, \hat{\beta})\)는 해시 인코딩과 tiny MLP로 SDF 값 \(\hat{s}\)와 공간 가변 스케일 \(\hat{\beta}\)를 동시에 출력한다. LiDAR 레이 위를 균일 샘플링한 각 점에 대해 “끝점까지 남은 거리”를 ray distance \(s\)로 삼고, 정답 점유를 시그모이드 \(\Phi\)로 변환한다.</p> \[o = \Phi(-s, \hat{\beta})\] <p>이를 이진 교차엔트로피 손실로 학습해 SDF를 만든다. 점군 자체가 거리장의 지도교사인 셈이다. VolSDF/NeuS는 이미지만으로 SDF를 학습하지만, 여기서는 LiDAR 점을 3D에서 직접 감독하므로 멀티뷰 희소성 문제를 회피한다.</p> <h3 id="nerf-외형-감독과-sdf밀도-변환">NeRF 외형 감독과 SDF→밀도 변환</h3> <p>색 신경망 \(f_C(\mathbf{x}, \mathbf{d})\)는 해시 인코딩(위치)과 구면조화(spherical harmonics) 인코딩(방향)을 concat해 MLP로 view-dependent 색을 낸다. 표준 볼륨렌더링 식(투과율 × opacity × 색)으로 픽셀 색을 합성하고 L2 광도 손실로 학습한다.</p> <p>핵심 연결고리는 SDF의 레이 방향 기울기(slope)가 밀도를 만든다는 VolSDF류 변환이다.</p> \[\hat{\sigma} = \max\left(-\frac{\Phi'(-\hat{s}, \hat{\beta})}{\hat{\beta}}\left(\frac{\partial \hat{s}}{\partial \mathbf{x}}\cdot\mathbf{d}\right),\ 0\right)\] <p>광도 오차는 이 변환과 볼륨렌더링을 거쳐 역전파로 NDF까지 거꾸로 흐른다. 그래서 NeRF가 흐릿하거나 결손된 구조를 메운다.</p> <h3 id="spatial-varying-scale--핵심-신규성">Spatial-varying Scale — 핵심 신규성</h3> <p>기존에는 스케일 \(\beta\)를 전역 상수, 단일 학습값, 또는 계산값으로 두었다. 여기서는 위치마다 \(\hat{\beta}\)를 예측해 SDF가 확률적(stochastic) 거리장이 되고, \(\beta\)는 신경망 예측의 “신뢰도” 역할을 한다. 작은 \(\beta\)는 날카로운 전이, 즉 표면 근처 고밀도(거의 surface rendering)로 또렷한 디테일을 낸다. 큰 \(\beta\)는 부드러운 전이로 더 많은 점을 고려하므로 잎사귀처럼 불확실하고 흐릿한 구조에 적합하다. 또렷한 벽은 칼날처럼, 흩날리는 잎은 안개처럼, 장면 곳곳의 granularity에 자동 적응한다.</p> <h3 id="structure-aware-sampling--sphere-tracing-기반">Structure-aware Sampling — Sphere Tracing 기반</h3> <p>NeRF의 광도 위주 샘플링은 공중에 아티팩트를 만들어 이미지에 과적합한다. 대신 sphere tracing(SDF 값을 반지름 삼아 표면까지 점프)을 샘플링에 차용해, 각 sphere-tracing 스텝을 그대로 샘플로 쓴다. 표면 근처에는 촘촘하고 멀면 성기다. 적응 스텝은 필터된 slope \(m\)(완화계수 \(\gamma = 0.7\))으로 안정화한다.</p> \[\delta_i = \lvert s_i\rvert\cdot\frac{2}{1-m}\] <p>투과율 \(T &lt; 0.001\)까지 진행하고, visible-aware 맵으로 free space를 건너뛴다. slope를 sphere tracing이 자연히 검증하므로, 비싼 해석적/수치적 gradient 계산 없이 SDF→밀도 변환에 쓸 slope를 얻는다.</p> <h3 id="학습-정규화와-실전-트릭">학습 정규화와 실전 트릭</h3> <ul> <li>Eikonal 손실(\(\lVert\nabla f\rVert = 1\), 거리장 성질 강제)과 곡률(curvature) 손실(과적합과 zero-everywhere 방지, 수치미분 점진 축소).</li> <li>Outlier removal: 주기적으로 LiDAR 점의 추론 SDF를 보고 0에서 \(\epsilon\) 이상 떨어진 점을 제거한다. 동적 객체(사람, 차)를 정적 배경장에서 지우고 렌더링에서도 제거한다.</li> <li>Directional embedding scheduler: 구면조화 차수를 0(view 무관 diffuse)에서 4로 점진 증가시켜 외삽 뷰의 색 퇴화를 완화한다.</li> <li>Scene contraction(Mip-NeRF 360식): 무한 배경을 경계 밖으로 contract해 false surface로 색칠한다.</li> </ul> <p>통합 손실은 다음과 같다. \(\lambda_{rgb}\)는 \(10^{-4}\)에서 10으로 선형 증가하고, \(\lambda_{eik} = 0.1\), \(\lambda_{curv} = 5\times10^{-4}\)다.</p> \[L = L_{sdf} + \lambda_{rgb}L_{rgb} + \lambda_{eik}L_{eik} + \lambda_{curv}L_{curv}\] <h2 id="실험과-결과">실험과 결과</h2> <p>파이프라인은 posed 이미지 + LiDAR 점군에서 visible-aware occupancy map(레이캐스팅)을 만들고, 점군으로 NDF를 학습하고, NDF가 structure-aware 샘플링과 밀도를 제공해 NeRF 볼륨렌더링을 하고, 광도 오차 역전파로 NDF를 정제하는 순서다. 구현은 Instant-NGP식 멀티해상도 해시 인코딩(16레벨, \(2^5\)~\(2^{21}\)), 기하/외형 MLP 각각 64폭 3층, LibTorch + CUDA다. 레이 8192, 점 배치 256000 고정, 20000 iteration(2000마다 outlier 제거)이며, 하드웨어는 Intel i7-13700K + NVIDIA RTX 4090 단일 GPU다.</p> <p>베이스라인은 구조계 VDBFusion, iSDF, SHINE-Mapping, 외형계 InstantNGP, 깊이 보조 외형계 3DGS†(밀집 점군 초기화), H2Mapping, MonoGS다. 데이터셋은 Replica(실내 RGBD 시뮬레이션, 외삽 평가셋 별도 생성)와 FAST-LIVO2(실세계 카메라 + LiDAR, FF/OC/Free 3종 궤적: Campus/Sculpture/Culture/Drive)다. 지표는 기하 쪽 Chamfer-L1(cm)과 F-Score(2cm 미만), 렌더 쪽 SSIM, PSNR, LPIPS(보간 I와 외삽 E 분리)다.</p> <p>핵심 결과 세 가지는 다음과 같다.</p> <ol> <li>외삽 렌더링에서 압도적 우위. Replica PSNR(E) 평균 38.23으로 2위 MonoGS(32.59), InstantNGP(34.34) 대비 4~6dB 높다. LPIPS(E) 0.078로 최저(MonoGS 0.120)다. 학습에서 보지 않은 시점(천장 등)에서도 구조와 텍스처를 유지한다.</li> <li>표면 복원 SOTA. Replica Chamfer-L1 평균 0.499cm로 전 베이스라인 최저(H2Mapping 0.580, VDBFusion 0.626)이고 F-Score 98.673%로 최고다. 슬림한 물체 디테일을 잡으면서 매끄러움을 유지한다.</li> <li>자유시점 실세계에서 3DGS 능가. FAST-LIVO2 데이터셋 평균 PSNR 26.19로 3DGS†(25.76), InstantNGP(24.24)를 상회한다. 특히 공시야가 부족한 free-view(Culture PSNR 24.70 vs 3DGS 21.76)에서 차이가 크다. 보간 렌더는 3DGS와 경쟁력이 있다(평균 SSIM 0.764 vs 0.780).</li> </ol> <table> <thead> <tr> <th>지표 (Replica)</th> <th>M2Mapping</th> <th>비교</th> </tr> </thead> <tbody> <tr> <td>PSNR (외삽 E)</td> <td>38.23</td> <td>InstantNGP 34.34, MonoGS 32.59</td> </tr> <tr> <td>LPIPS (외삽 E)</td> <td>0.078</td> <td>MonoGS 0.120</td> </tr> <tr> <td>PSNR (보간 I)</td> <td>41.15</td> <td>3DGS† 41.01, MonoGS 40.03</td> </tr> <tr> <td>Chamfer-L1 (cm)</td> <td>0.499</td> <td>H2Mapping 0.580, VDBFusion 0.626</td> </tr> <tr> <td>F-Score (%)</td> <td>98.673</td> <td>최고</td> </tr> </tbody> </table> <p>보간(I) 렌더는 Replica PSNR(I) 41.15로 3DGS†, MonoGS 수준이고 LPIPS(I) 0.050으로 최저권이다. 즉 보간은 동급, 외삽은 우위라는 일관된 그림이다.</p> <p>ablation은 다음을 보였다. 공간 가변 \(\beta\)는 큰 \(\beta\)의 과스무딩과 작은 \(\beta\)의 노이즈 과적합을 절충한다(2cm 깊이 노이즈 room-2). 구조 인지 샘플링은 occupancy/PDF 샘플링과 surface rendering 대비 표면에 집중하면서 흐릿한 구조를 놓치지 않는다. outlier removal은 동적 객체 제거를 검증했다. directional scheduler는 외삽 색 일관성을 높이고 보간에는 거의 영향이 없다(wo dir. PSNR 26.24 ≈ 26.19). visual-aided structure는 희소 점군에서 NeRF가 구조를 완성함을 보였다.</p> <p>효율은 Replica 1장면 학습 약 20분, 1200×680 렌더 약 0.07초(13Hz)다. 병목은 sphere tracing 스텝 불균형으로, 미수렴 레이가 배치를 지연시킨다. ray-oriented 렌더링이 미래 개선책으로 제시되었다.</p> <p>기여 주장을 대조하면, 오픈소스 프레임워크 주장은 GPL-2.0 공개와 실험으로 타당하다. visible-aware 점유 prior의 효율·완전성 주장은 동기는 명확하나 visible-aware map 단독의 가속 ablation은 본문에서 약하고 보충자료에 의존한다. 공간 가변 스케일 NDF와 sphere tracing 구조 인지 샘플링은 정성·정량 ablation으로 가장 견고하게 입증된 핵심 신규성이다. sphere tracing 병목을 솔직히 보고한 점은 신뢰도를 높이지만, 본문 상당 부분이 보충자료로 밀려 단독 재현에는 보충 자료가 필요하다.</p> <h2 id="결론과-의의">결론과 의의</h2> <p>M2Mapping은 이미지 only 표면화(VolSDF/NeuS)와 점군 only SDF 매핑(SHINE/H2)의 장점을 SDF→밀도 단일 변환 위에서 통합해, LiDAR-비주얼 SLAM 출력(색칠 점군)을 watertight 메시와 사실적 NVS로 끌어올리는 실용 경로를 제시한다. 핵심 통찰은 “구조(LiDAR)와 외형(카메라)은 같은 SDF 스케일장을 공유시키면 서로를 정제한다”는 것이다. 자유시점·캐주얼 궤적이라는 실로봇 데이터 수집의 현실 조건에서 외삽 렌더링 강건성을 크게 끌어올렸다.</p> <p>로봇 실무 관점에서 정리하면 다음과 같다.</p> <ul> <li>어디에 쓸 수 있는가: FAST-LIVO2 같은 LIVO가 출력하는 posed 이미지 + 색 점군을 입력으로 받아 디지털 트윈용 watertight 메시와 자유시점 렌더링을 만드는 후처리 단계에 적합하다. 실내 다층 건물이나 실외 비정형 지형을 캐주얼하게 한 번 훑고 지나간 데이터에서도 외삽 뷰가 무너지지 않는다는 점이 실무적 강점이다. 소비자급 단일 GPU(RTX 4090)로 장면당 약 20분 학습, 약 13Hz 렌더가 가능하다.</li> <li>시뮬레이션 자산 생성: watertight 표면과 사실적 외형을 함께 얻으므로, 실제 현장을 스캔해 사족보행 시뮬레이션 테스트베드 같은 환경 자산으로 옮기는 용도로 검토할 수 있다. 다만 실시간 매핑이 아니라 오프라인 학습 방식이다.</li> <li>도입 조건: 코드는 C++/CUDA/LibTorch에 Open3D, ROS Noetic(시각화 선택) 의존이라 빌드 난이도가 있다. 사전학습 체크포인트 제공 여부는 확인되지 않았으며 장면별 from-scratch 학습이 기본이다. LiDAR-카메라 외부 캘리브레이션과 정확한 pose(논문은 FAST-LIVO2 결과를 GT pose로 사용)에 품질이 좌우되고, pose 노이즈에 대한 강건성은 미검증이다. 재현 난이도는 중상이다.</li> <li>한계: sphere tracing 스텝 불균형이라는 효율 병목, 정적 장면 가정(동적 객체를 지우기만 하고 모델링하지 않음), 고주파 텍스처 보간에서 3DGS에 약간 열세라는 트레이드오프가 있다. 라이선스가 GPL-2.0이라 상용 통합 시 카피레프트 검토가 필요하다. 3DGS의 명시적 외형과 본 방법의 SDF 구조를 결합하는 방향, 도시 규모 확장성과 메모리는 열린 질문이다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2409.05310" rel="external nofollow noopener" target="_blank">arXiv:2409.05310</a> </li> <li>코드: <a href="https://github.com/hku-mars/M2Mapping" rel="external nofollow noopener" target="_blank">hku-mars/M2Mapping</a> (GPL-2.0)</li> <li>VolSDF: Volume Rendering of Neural Implicit Surfaces (NeurIPS 2021) — SDF→밀도 변환의 직접 모태</li> <li>NeuS (NeurIPS 2021) — 단일 학습 스케일 선행, 공간 가변 스케일과 대비</li> <li>Instant-NGP (2022) — 백본 아키텍처</li> <li>SHINE-Mapping (2022) — BCE 기반 기하 감독의 직접 선행</li> <li>3D Gaussian Splatting (SIGGRAPH 2023) — 주 경쟁 표현</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/mapping"> <i class="fa-solid fa-hashtag fa-sm"></i> mapping</a>   <a href="/blog/tag/neural-rendering"> <i class="fa-solid fa-hashtag fa-sm"></i> neural-rendering</a>   <a href="/blog/tag/lidar-visual"> <i class="fa-solid fa-hashtag fa-sm"></i> lidar-visual</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>Item</th> <th>Details</th> </tr> </thead> <tbody> <tr> <td>Authors</td> <td>Jianheng Liu, Chunran Zheng, Yunfei Wan, Bowen Wang, Yixi Cai, Fu Zhang (HKU MaRS Lab, The University of Hong Kong)</td> </tr> <tr> <td>Venue</td> <td>ICRA 2025 (arXiv:2409.05310, 2024-09-09)</td> </tr> <tr> <td>Links</td> <td> <a href="https://arxiv.org/abs/2409.05310" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://github.com/hku-mars/M2Mapping" rel="external nofollow noopener" target="_blank">Code</a> </td> </tr> </tbody> </table> <h2 id="one-line-summary">One-line Summary</h2> <p>M2Mapping is a mapping framework that couples the distance field built from LiDAR (NDF, structure) and the radiance field built from the camera (NeRF, appearance) through a single SDF-to-density transform. The core is a bidirectional complementarity: the LiDAR point cloud pins down the structure, and the photometric error of NeRF flows back to fill in blurry structure that LiDAR missed. As a result, it achieves high-precision watertight surface reconstruction and extrapolated rendering simultaneously, even on free-view trajectories where multi-view coverage around the region of interest is scarce.</p> <h2 id="lineage-and-trends">Lineage and Trends</h2> <ul> <li>The starting point is NeRF (Mildenhall 2020). It revolutionized novel view synthesis by learning a neural radiance field through volume rendering, but its density field is ambiguous and cannot define surfaces clearly.</li> <li>Surface lineage: VolSDF (Yariv 2021), NeuS (Wang 2021), and UniSurf (Oechsle 2021) use an SDF as the structure field and reconstruct multi-view surfaces through volume rendering. This paper inherits this “volume rendering of SDF” pipeline as is.</li> <li>Acceleration and representation lineage: Instant-NGP (Müller 2022, multi-resolution hash encoding + tiny MLP) is the backbone of this method. Neuralangelo (Li 2023, numerical-gradient curvature and progressive detail) and Mip-NeRF 360 (Barron 2022, unbounded background contraction) are also borrowed.</li> <li>Point-cloud SDF mapping lineage (robotics): Voxblox, VDBFusion (TSDF), iSDF, SHINE-Mapping, and H2Mapping learn an SDF/NDF from LiDAR/RGBD point clouds. This paper compares against these as structure baselines.</li> <li>Competing representation: 3D Gaussian Splatting (Kerbl 2023) is explicit, fast, and high-quality, but manifold surface representation is difficult and there is no pipeline for refining structure in reverse. This paper points to this as a weakness and chooses the SDF volume-rendering side.</li> </ul> <p>To summarize its position, it is a LiDAR-visual fusion work that fills the gap between “image-only NeRF surfacing (VolSDF/NeuS)” and “point-cloud-only SDF mapping (SHINE/H2)”. The differentiator is that LiDAR depth is not used as depth supervision in 2D image space, but supervises the NDF directly in 3D space.</p> <h2 id="problem-and-motivation">Problem and Motivation</h2> <p>Robots easily obtain multi-modal data with cameras and low-cost LiDAR, but LVI-SLAM (LVI-SAM, R3LIVE, FAST-LIVO) only outputs colored raw point clouds, so resolution, density, and accuracy are bound to the LiDAR. Digital twins require watertight surfaces and photorealistic rendering.</p> <p>Explicit meshing is vulnerable to noise and registration error, and image-only NeRF surfacing requires rich multi-view coverage at every location, making it unsuitable for free-view trajectories. LiDAR provides direct samples on the surface and can thus reduce the multi-view dependence. Hence the goal is a unified framework that reconstructs appearance and structure simultaneously from “posed images + low-cost LiDAR + an arbitrary casual trajectory”.</p> <p>The key difficulty is the structural visibility gap between NeRF and NDF. The LiDAR FOV and camera FOV differ and LiDAR is sparse, so there is much space visible to the camera but not captured by LiDAR.</p> <h2 id="key-ideas-and-method">Key Ideas and Method</h2> <h3 id="visible-aware-occupancy-map">Visible-aware Occupancy Map</h3> <p>A standard occupancy grid (free / occupied / unknown) is built by LiDAR raycasting, and image pixel rays are additionally cast to split unknown in two. Cells visible to the camera with no occupied cell in front are marked “visible unknown”. The neural field is trained only inside occupied and visible-unknown cells, so free space is skipped for efficiency, and regions visible to the camera but absent from LiDAR are filled in, enabling complete rendering. As an analogy, a highlighter marking “the camera saw this” is layered over the map drawn by LiDAR, and only places seen by at least one of the two are studied.</p> <h3 id="ndf-geometry-supervision-directly-from-the-point-cloud">NDF geometry supervision: directly from the point cloud</h3> <p>The geometry network \(f_S(\mathbf{x}) = (\hat{s}, \hat{\beta})\) outputs both the SDF value \(\hat{s}\) and a spatially varying scale \(\hat{\beta}\) via hash encoding and a tiny MLP. For each point uniformly sampled along a LiDAR ray, the “remaining distance to the endpoint” is taken as the ray distance \(s\), and the ground-truth occupancy is obtained through the sigmoid \(\Phi\).</p> \[o = \Phi(-s, \hat{\beta})\] <p>This is trained with a binary cross-entropy loss to build the SDF. The point cloud itself is the supervising teacher of the distance field. VolSDF/NeuS learn the SDF from images only, whereas here LiDAR points supervise directly in 3D, avoiding the multi-view sparsity problem.</p> <h3 id="nerf-appearance-supervision-and-the-sdf-to-density-transform">NeRF appearance supervision and the SDF-to-density transform</h3> <p>The color network \(f_C(\mathbf{x}, \mathbf{d})\) concatenates hash encoding (position) and spherical-harmonics encoding (direction) and outputs view-dependent color through an MLP. The pixel color is composed with the standard volume-rendering equation (transmittance × opacity × color) and trained with an L2 photometric loss.</p> <p>The key link is the VolSDF-style transform in which the slope of the SDF along the ray direction produces the density.</p> \[\hat{\sigma} = \max\left(-\frac{\Phi'(-\hat{s}, \hat{\beta})}{\hat{\beta}}\left(\frac{\partial \hat{s}}{\partial \mathbf{x}}\cdot\mathbf{d}\right),\ 0\right)\] <p>The photometric error flows backward through this transform and volume rendering all the way to the NDF via backpropagation. That is how NeRF fills in blurry or missing structure.</p> <h3 id="spatially-varying-scale-the-core-novelty">Spatially varying scale: the core novelty</h3> <p>Previously the scale \(\beta\) was a global constant, a single learned value, or a computed value. Here \(\hat{\beta}\) is predicted per location, so the SDF becomes a stochastic distance field and \(\beta\) plays the role of the network’s “confidence”. A small \(\beta\) gives a sharp transition, i.e. high density near the surface (almost surface rendering), producing crisp detail. A large \(\beta\) gives a smooth transition that considers more points, which suits uncertain and blurry structures such as leaves. Crisp walls are rendered like a blade, fluttering leaves like fog, adapting automatically to the granularity across the scene.</p> <h3 id="structure-aware-sampling-based-on-sphere-tracing">Structure-aware Sampling: based on sphere tracing</h3> <p>NeRF’s photometry-driven sampling creates artifacts in mid-air and overfits to images. Instead, sphere tracing (jumping toward the surface using the SDF value as the radius) is borrowed for sampling, and each sphere-tracing step is used directly as a sample. Samples are dense near the surface and sparse far from it. The adaptive step is stabilized with a filtered slope \(m\) (relaxation factor \(\gamma = 0.7\)).</p> \[\delta_i = \lvert s_i\rvert\cdot\frac{2}{1-m}\] <p>Tracing proceeds until transmittance \(T &lt; 0.001\), and free space is skipped using the visible-aware map. Since sphere tracing naturally validates the slope, the slope needed for the SDF-to-density transform is obtained without expensive analytic/numerical gradient computation.</p> <h3 id="training-regularization-and-practical-tricks">Training regularization and practical tricks</h3> <ul> <li>Eikonal loss (\(\lVert\nabla f\rVert = 1\), enforcing the distance-field property) and curvature loss (preventing overfitting and zero-everywhere solutions, with progressively shrinking numerical differentiation).</li> <li>Outlier removal: periodically, the inferred SDF of LiDAR points is checked and points more than \(\epsilon\) away from 0 are removed. Dynamic objects (people, cars) are erased from the static background field and also removed from rendering.</li> <li>Directional embedding scheduler: the spherical-harmonics degree is increased progressively from 0 (view-independent diffuse) to 4 to mitigate color degradation in extrapolated views.</li> <li>Scene contraction (Mip-NeRF 360 style): the unbounded background is contracted outside the boundary and painted as a false surface.</li> </ul> <p>The combined loss is as follows. \(\lambda_{rgb}\) increases linearly from \(10^{-4}\) to 10, with \(\lambda_{eik} = 0.1\) and \(\lambda_{curv} = 5\times10^{-4}\).</p> \[L = L_{sdf} + \lambda_{rgb}L_{rgb} + \lambda_{eik}L_{eik} + \lambda_{curv}L_{curv}\] <h2 id="experiments-and-results">Experiments and Results</h2> <p>The pipeline builds a visible-aware occupancy map (raycasting) from posed images + LiDAR point cloud, trains the NDF from the point cloud, lets the NDF provide structure-aware sampling and density for NeRF volume rendering, and refines the NDF by backpropagating the photometric error. The implementation uses Instant-NGP-style multi-resolution hash encoding (16 levels, \(2^5\) to \(2^{21}\)), geometry/appearance MLPs each 3 layers of width 64, and LibTorch + CUDA. Rays 8192, point batch fixed at 256000, 20000 iterations (outlier removal every 2000), on an Intel i7-13700K + a single NVIDIA RTX 4090 GPU.</p> <p>The baselines are the structure methods VDBFusion, iSDF, SHINE-Mapping; the appearance methods InstantNGP; and the depth-assisted appearance methods 3DGS† (dense point-cloud initialization), H2Mapping, and MonoGS. The datasets are Replica (indoor RGBD simulation, with a separately generated extrapolation evaluation set) and FAST-LIVO2 (real-world camera + LiDAR, three trajectory types FF/OC/Free: Campus/Sculpture/Culture/Drive). The metrics are Chamfer-L1 (cm) and F-Score (under 2cm) for geometry, and SSIM, PSNR, LPIPS for rendering (interpolation I and extrapolation E reported separately).</p> <p>The three key results are as follows.</p> <ol> <li>Overwhelming advantage in extrapolated rendering. The average Replica PSNR(E) of 38.23 is 4 to 6dB higher than the runners-up MonoGS (32.59) and InstantNGP (34.34). LPIPS(E) of 0.078 is the lowest (MonoGS 0.120). Structure and texture are preserved even from viewpoints not seen in training (ceilings, etc.).</li> <li>Surface reconstruction SOTA. The average Replica Chamfer-L1 of 0.499cm is the lowest among all baselines (H2Mapping 0.580, VDBFusion 0.626), and the F-Score of 98.673% is the highest. It captures thin-object detail while maintaining smoothness.</li> <li>Surpasses 3DGS on free-view real-world data. The average PSNR on the FAST-LIVO2 dataset is 26.19, above 3DGS† (25.76) and InstantNGP (24.24). The gap is especially large on free-view sequences with insufficient co-visibility (Culture PSNR 24.70 vs 3DGS 21.76). Interpolated rendering is competitive with 3DGS (average SSIM 0.764 vs 0.780).</li> </ol> <table> <thead> <tr> <th>Metric (Replica)</th> <th>M2Mapping</th> <th>Comparison</th> </tr> </thead> <tbody> <tr> <td>PSNR (extrapolation E)</td> <td>38.23</td> <td>InstantNGP 34.34, MonoGS 32.59</td> </tr> <tr> <td>LPIPS (extrapolation E)</td> <td>0.078</td> <td>MonoGS 0.120</td> </tr> <tr> <td>PSNR (interpolation I)</td> <td>41.15</td> <td>3DGS† 41.01, MonoGS 40.03</td> </tr> <tr> <td>Chamfer-L1 (cm)</td> <td>0.499</td> <td>H2Mapping 0.580, VDBFusion 0.626</td> </tr> <tr> <td>F-Score (%)</td> <td>98.673</td> <td>Highest</td> </tr> </tbody> </table> <p>For interpolated (I) rendering, the Replica PSNR(I) of 41.15 is on par with 3DGS† and MonoGS, and LPIPS(I) of 0.050 is among the lowest. The consistent picture is: on par for interpolation, superior for extrapolation.</p> <p>The ablation showed the following. The spatially varying \(\beta\) balances the over-smoothing of a large \(\beta\) and the noise overfitting of a small \(\beta\) (room-2 with 2cm depth noise). Structure-aware sampling concentrates on the surface without missing blurry structure, compared to occupancy/PDF sampling and surface rendering. Outlier removal was verified to remove dynamic objects. The directional scheduler improves extrapolated color consistency with almost no effect on interpolation (wo dir. PSNR 26.24 ≈ 26.19). Visual-aided structure showed that NeRF completes the structure from sparse point clouds.</p> <p>Efficiency is about 20 minutes of training per Replica scene and about 0.07 seconds (13Hz) per 1200×680 render. The bottleneck is the imbalance of sphere-tracing steps, where unconverged rays delay the batch. Ray-oriented rendering is proposed as a future improvement.</p> <p>Checking the claimed contributions: the open-source framework claim is valid given the GPL-2.0 release and the experiments. The efficiency and completeness claims of the visible-aware occupancy prior are clearly motivated, but the acceleration ablation of the visible-aware map alone is weak in the main text and relies on supplementary material. The spatially varying scale NDF and the sphere-tracing structure-aware sampling are the core novelties, most robustly proven by qualitative and quantitative ablation. Honestly reporting the sphere-tracing bottleneck raises credibility, but a considerable part of the content is pushed into supplementary material, so the supplement is needed for standalone reproduction.</p> <h2 id="conclusion-and-significance">Conclusion and Significance</h2> <p>M2Mapping unifies the strengths of image-only surfacing (VolSDF/NeuS) and point-cloud-only SDF mapping (SHINE/H2) on a single SDF-to-density transform, presenting a practical path to elevate LiDAR-visual SLAM output (colored point clouds) into watertight meshes and photorealistic NVS. The core insight is that “structure (LiDAR) and appearance (camera) refine each other when they share the same SDF scale field”. It greatly improved extrapolated-rendering robustness under the realistic data-collection conditions of real robots, namely free-view, casual trajectories.</p> <p>From a robotics practice perspective, the takeaways are as follows.</p> <ul> <li>Where it can be used: it suits a post-processing stage that takes the posed images + colored point cloud output by a LIVO such as FAST-LIVO2 and produces a watertight mesh and free-view rendering for digital twins. The practical strength is that extrapolated views do not collapse even for data from a single casual pass through a multi-floor indoor building or unstructured outdoor terrain. On a consumer-grade single GPU (RTX 4090), training takes about 20 minutes per scene and rendering runs at about 13Hz.</li> <li>Simulation asset generation: since a watertight surface and photorealistic appearance are obtained together, it can be considered for scanning real sites and transferring them into environment assets such as a quadruped simulation testbed. Note that it is an offline training approach, not real-time mapping.</li> <li>Adoption conditions: the code depends on C++/CUDA/LibTorch plus Open3D and ROS Noetic (optional for visualization), so the build is non-trivial. Whether pretrained checkpoints are provided has not been confirmed; per-scene from-scratch training is the default. Quality depends on LiDAR-camera extrinsic calibration and accurate poses (the paper uses FAST-LIVO2 results as ground-truth poses), and robustness to pose noise is unverified. Reproduction difficulty is moderately high.</li> <li>Limitations: the efficiency bottleneck of sphere-tracing step imbalance, the static-scene assumption (dynamic objects are only erased, not modeled), and the trade-off of being slightly behind 3DGS on high-frequency texture interpolation. The GPL-2.0 license requires a copyleft review for commercial integration. Combining the explicit appearance of 3DGS with this method’s SDF structure, as well as city-scale scalability and memory, remain open questions.</li> </ul> <h2 id="references">References</h2> <ul> <li>Paper: <a href="https://arxiv.org/abs/2409.05310" rel="external nofollow noopener" target="_blank">arXiv:2409.05310</a> </li> <li>Code: <a href="https://github.com/hku-mars/M2Mapping" rel="external nofollow noopener" target="_blank">hku-mars/M2Mapping</a> (GPL-2.0)</li> <li>VolSDF: Volume Rendering of Neural Implicit Surfaces (NeurIPS 2021) — direct parent of the SDF-to-density transform</li> <li>NeuS (NeurIPS 2021) — single learned scale predecessor, contrasted with the spatially varying scale</li> <li>Instant-NGP (2022) — backbone architecture</li> <li>SHINE-Mapping (2022) — direct predecessor of BCE-based geometry supervision</li> <li>3D Gaussian Splatting (SIGGRAPH 2023) — the main competing representation</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -48,28 +48,28 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          description: "Robotics projects I led or contributed to at KETI, and earlier undergraduate and internship projects. Open a card for background, role, approach and results.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          description: "Conference papers and a patent in reverse chronological order. First-author papers carry a 1st-author badge.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          description: "Education, experience, publications and skills at a glance. See the Projects and Publications pages for details.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "GitHub 프로필과 공개 저장소.",
+          description: "GitHub profile and public repositories.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -78,7 +78,7 @@ ninja.data = [{
         
           title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
         
-        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        description: "Perceptive quadruped locomotion RL that puts the gait phase prior only in the reward, not the action space, and learns in joint space without IK",
         section: "Posts",
         handler: () => {
           
@@ -89,7 +89,7 @@ ninja.data = [{
         
           title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
         
-        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        description: "A geometry-only LIO that survives geometry-poor environments such as tunnels and flat fields by storing a high-resolution bump height image in every voxel",
         section: "Posts",
         handler: () => {
           
@@ -100,7 +100,7 @@ ninja.data = [{
         
           title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
         
-        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        description: "A consensus-style evaluation standard paper in which 31 collaborators propose a definition of social robot navigation, eight principles, guidelines for metrics, scenarios, benchmarks, datasets, and simulators, and a common metrics API",
         section: "Posts",
         handler: () => {
           
@@ -111,7 +111,7 @@ ninja.data = [{
         
           title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
         
-        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        description: "HKU-MARS&#39;s LIVO that attaches image patches to LiDAR map points for reuse in a sparse-direct VIO, coupled with a direct LIO inside a single ESIKF",
         section: "Posts",
         handler: () => {
           
@@ -122,7 +122,7 @@ ninja.data = [{
         
           title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
         
-        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        description: "The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors",
         section: "Posts",
         handler: () => {
           
@@ -133,7 +133,7 @@ ninja.data = [{
         
           title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
         
-        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        description: "An end-to-end framework that feeds only first-person RGB video into Qwen2-VL to predict low-level actions directly, post-trained with GRPO reinforcement fine-tuning and a time-decayed reward to reach SOTA on VLN-CE",
         section: "Posts",
         handler: () => {
           
@@ -144,7 +144,7 @@ ninja.data = [{
         
           title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
         
-        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        description: "A real-time semantic mapping framework that recursively estimates the probability distributions of terrain elevation and friction coefficient from a single RGB-D camera via Bayesian inference",
         section: "Posts",
         handler: () => {
           
@@ -155,7 +155,7 @@ ninja.data = [{
         
           title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
         
-        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        description: "An uneven-terrain navigation framework that fits local planes to point clouds to evaluate traversability and chains PF-RRT*, GPR, and NMPC",
         section: "Posts",
         handler: () => {
           
@@ -166,7 +166,7 @@ ninja.data = [{
         
           title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
         
-        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        description: "Review of π0, a robot foundation model that attaches a flow matching action expert to a pretrained VLM and trains on 10,000 hours of cross-embodiment data",
         section: "Posts",
         handler: () => {
           
@@ -177,7 +177,7 @@ ninja.data = [{
         
           title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
         
-        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        description: "Review of π0.5, which combines heterogeneous-data co-training with hierarchical subtask reasoning to perform long-horizon mobile manipulation in homes never seen during training",
         section: "Posts",
         handler: () => {
           
@@ -188,7 +188,7 @@ ninja.data = [{
         
           title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
         
-        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        description: "Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning",
         section: "Posts",
         handler: () => {
           
@@ -199,7 +199,7 @@ ninja.data = [{
         
           title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
         
-        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        description: "A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera",
         section: "Posts",
         handler: () => {
           
@@ -210,7 +210,7 @@ ninja.data = [{
         
           title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
         
-        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        description: "A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories",
         section: "Posts",
         handler: () => {
           
@@ -221,7 +221,7 @@ ninja.data = [{
         
           title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
         
-        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        description: "A system that adds a view layer to a hierarchical multimodal scene graph and calls slow VLM reasoning only when fast CLIP matching fails, reaching 92% SR in 5.5 s on long-horizon indoor object search with a humanoid",
         section: "Posts",
         handler: () => {
           
@@ -232,7 +232,7 @@ ninja.data = [{
         
           title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
         
-        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        description: "A multi-floor LIO that separates the robot&#39;s relative motion from the cabin&#39;s transport motion in the state inside a moving elevator and suppresses vertical drift with a ZUPT at the stop instant",
         section: "Posts",
         handler: () => {
           
@@ -243,73 +243,73 @@ ninja.data = [{
         
           title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
         
-        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        description: "Continual traversability learning that recalls past experience with a CVAE instead of storing data, filtering recalled samples by uncertainty to reduce catastrophic forgetting",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/continual-traversability-learning/";
           
         },
-      },{id: "post-tf-transform-와-frame-개념-정리",
+      },{id: "post-tf-transform-and-frame-concepts",
         
-          title: "TF(Transform)와 Frame 개념 정리",
+          title: "TF (Transform) and Frame Concepts",
         
-        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        description: "The concept of frames in ROS2 tf2, relationships between coordinate frames, and the tf_tree structure, with examples",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2023/tf-transform/";
           
         },
-      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+      },{id: "post-fixing-nvidia-graphics-card-detection-on-ubuntu-22-04",
         
-          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+          title: "Fixing NVIDIA Graphics Card Detection on Ubuntu 22.04",
         
-        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        description: "Procedure for resolving NVIDIA driver detection errors after installing Ubuntu 22.04",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
           
         },
-      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+      },{id: "post-matlab-simulation-of-a-6-dof-collaborative-robot-d-h-parameters",
         
-          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+          title: "MATLAB Simulation of a 6-DOF Collaborative Robot (D-H Parameters)",
         
-        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        description: "Forward and inverse kinematics based on D-H parameters and cubic-spline path planning implemented in MATLAB",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/manipulator-dh-simulation/";
           
         },
-      },{id: "post-git과-github-기초-설치부터-push까지",
+      },{id: "post-git-and-github-basics-from-installation-to-push",
         
-          title: "Git과 GitHub 기초: 설치부터 push까지",
+          title: "Git and GitHub Basics: From Installation to push",
         
-        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        description: "Practical commands for the distributed version control system Git, from basic concepts to installing on Ubuntu, cloning, and pushing",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/git-github-basics/";
           
         },
-      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+      },{id: "post-vision-based-autonomous-driving-vanishing-point-and-perspective-transform",
         
-          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+          title: "Vision-based Autonomous Driving: Vanishing Point and Perspective Transform",
         
-        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        description: "An image-processing project that combines vanishing point detection with perspective transform to classify the driving state (straight/turning x centered/biased)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/vanishing-point-lane-detection/";
           
         },
-      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+      },{id: "post-docker-basics-images-containers-and-key-commands",
         
-          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+          title: "Docker Basics: Images, Containers, and Key Commands",
         
-        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        description: "The concepts of Docker, a container-based virtualization platform, and its commonly used commands",
         section: "Posts",
         handler: () => {
           
@@ -320,185 +320,185 @@ ninja.data = [{
         
           title: "ROS1 vs ROS2",
         
-        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        description: "The concept of the Robot Operating System (ROS) and the architectural differences between ROS1 and ROS2",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/ros1-vs-ros2/";
           
         },
-      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+      },{id: "post-building-a-custom-gazebo-battery-plugin",
         
-          title: "Gazebo 커스텀 Battery Plugin 만들기",
+          title: "Building a Custom Gazebo Battery Plugin",
         
-        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        description: "An example of implementing a custom battery system as a Gazebo plugin that accounts for standby and active power consumption",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-battery-plugin/";
           
         },
-      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+      },{id: "post-gazebo-hands-on-turtlebot3-3d-lidar",
         
-          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+          title: "Gazebo Hands-on: TurtleBot3 + 3D LiDAR",
         
-        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        description: "Loading turtlebot3_burger with a Velodyne 3D LiDAR in Gazebo, checking the data, teleoperating, and inspecting the tf_tree",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-training/";
           
         },
-      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+      },{id: "post-gazebo-plugins-sensor-and-actuator-plugin-analysis",
         
-          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+          title: "Gazebo Plugins: Sensor and Actuator Plugin Analysis",
         
-        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        description: "XML structure and usage of sensor and actuator plugins in Gazebo (ROS2 Humble)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-plugin/";
           
         },
-      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+      },{id: "post-robot-coordinate-systems-and-euler-angles",
         
-          title: "로봇 좌표계(Coordinates)와 Euler 각",
+          title: "Robot Coordinate Systems and Euler Angles",
         
-        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        description: "Cartesian, cylindrical, and spherical coordinate systems and Euler angles, with their differences and characteristics from a robotics perspective",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/coordinates/";
           
         },
-      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+      },{id: "post-gazebo-simulator-architecture-and-ros-integration",
         
-          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+          title: "Gazebo Simulator Architecture and ROS Integration",
         
-        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        description: "Notes on the Gazebo block diagram, the ROS-Gazebo interaction architecture, and the main components",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo/";
           
         },
-      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
-          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+      },{id: "news-started-an-internship-at-the-robot-vocational-innovation-center-korea-institute-of-robotics-and-technology-convergence-kiro-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-until-mar-2023",
+          title: 'Started an internship at the Robot Vocational Innovation Center, Korea Institute of Robotics...',
           description: "",
-          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
-          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          section: "News",},{id: "news-graduated-from-keimyung-university-with-a-b-s-in-robotics-engineering-gpa-4-2-4-5",
+          title: 'Graduated from Keimyung University with a B.S. in Robotics Engineering (GPA 4.2/4.5).',
           description: "",
-          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
-          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          section: "News",},{id: "news-joined-the-intelligent-robotics-research-center-at-the-korea-electronics-technology-institute-keti-as-a-researcher-started-open-rmf-based-multi-robot-fleet-management-research",
+          title: 'Joined the Intelligent Robotics Research Center at the Korea Electronics Technology Institute (KETI)...',
           description: "",
-          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
-          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          section: "News",},{id: "news-patent-application-filed-quot-mobile-robot-service-system-and-method-quot-published-jul-2025-under-examination",
+          title: 'Patent application filed: &amp;quot;Mobile Robot Service System and Method&amp;quot; (published Jul. 2025, under...',
           description: "",
-          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
-          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          section: "News",},{id: "news-presented-quot-cooperative-autonomous-driving-system-for-multi-mobile-robots-using-open-rmf-quot-at-kroc-2024-first-author",
+          title: 'Presented &amp;quot;Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF&amp;quot; at KROC 2024...',
           description: "",
-          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
-          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          section: "News",},{id: "news-oral-presentation-of-quot-cross-utilization-of-obstacle-recognition-information-for-collaborative-path-planning-quot-at-icros-2024-first-author",
+          title: 'Oral presentation of &amp;quot;Cross-Utilization of Obstacle Recognition Information for Collaborative Path Planning&amp;quot; at...',
           description: "",
-          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
-          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          section: "News",},{id: "news-presented-quot-traversability-assessment-and-path-planning-for-multi-robot-system-quot-at-iccas-2024-jeju-first-author",
+          title: 'Presented &amp;quot;Traversability Assessment and Path Planning for Multi-Robot System&amp;quot; at ICCAS 2024, Jeju...',
           description: "",
-          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
-          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          section: "News",},{id: "news-real-robot-demonstration-completed-tetra-s-calls-boards-and-exits-a-real-elevator-for-multi-floor-autonomous-navigation-via-an-mqtt-ros-2-bridge",
+          title: 'Real-robot demonstration completed: TETRA_S calls, boards and exits a real elevator for multi-floor...',
           description: "",
-          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
-          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          section: "News",},{id: "news-two-papers-presented-at-iccas-2025-incheon-multi-robot-anomaly-detection-and-visualization-framework-first-author-and-sdr-ota-update-framework-second-author-both-on-ieee-xplore",
+          title: 'Two papers presented at ICCAS 2025, Incheon — multi-robot anomaly detection and visualization...',
           description: "",
-          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
-          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          section: "News",},{id: "news-precision-docking-with-3-5-cm-accuracy-demonstrated-on-a-real-robot-using-lidar-trapezoid-marker-icp-registration",
+          title: 'Precision docking with ±3–5 cm accuracy demonstrated on a real robot using LiDAR...',
           description: "",
-          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
-          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          section: "News",},{id: "news-presented-quot-a-learning-based-anomaly-detection-framework-for-multi-robot-systems-quot-at-icros-2026-daegu-first-author-restad-aff-f1-0-94",
+          title: 'Presented &amp;quot;A Learning-based Anomaly Detection Framework for Multi-Robot Systems&amp;quot; at ICROS 2026, Daegu...',
           description: "",
-          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
-          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          section: "News",},{id: "news-a-vlm-orchestrated-autonomous-mission-agent-on-the-go2-multi-floor-mujoco-testbed-found-boarded-and-rode-the-elevator-to-the-second-floor-from-a-natural-language-mission-alone",
+          title: 'A VLM-orchestrated autonomous mission agent on the Go2 multi-floor MuJoCo testbed found, boarded...',
           description: "",
-          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
-          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          section: "News",},{id: "news-rebuilt-this-website-on-al-folio-as-a-cv-and-portfolio-site-with-project-publication-and-paper-review-pages",
+          title: 'Rebuilt this website on al-folio as a CV and portfolio site with project,...',
           description: "",
-          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
-          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
-          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "News",},{id: "projects-stability-assessment-and-pid-design-for-a-3-axis-7-dof-spring-damper-system",
+          title: 'Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System',
+          description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3axis-7dof-stability/";
-            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
-          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
-          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+            },},{id: "projects-6-axis-articulated-robot-kinematics-simulation-d-h-inverse-kinematics-cubic-spline",
+          title: '6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)',
+          description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6axis-manipulator-simulation/";
-            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
-          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
-          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+            },},{id: "projects-agv-manipulator-integrated-tcp-ip-communication-protocol-manufacturing-logistics",
+          title: 'AGV–Manipulator Integrated TCP/IP Communication Protocol (Manufacturing Logistics)',
+          description: "Design of a custom TCP/IP protocol linking the supervisory controller (MasterPC), the ACS server, and stacker robots — STX/CR/LF framing, command ID matching, ACK/NACK with Reason codes, and HeartBeat",
           section: "Projects",handler: () => {
               window.location.href = "/projects/agv-manipulator-tcpip/";
-            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
-          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
-          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+            },},{id: "projects-shared-work-wiki-for-ai-agents-obsidian-claude-code",
+          title: 'Shared Work Wiki for AI Agents (Obsidian + Claude Code)',
+          description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ai-agent-wiki/";
-            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
-          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
-          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+            },},{id: "projects-go2-multi-floor-building-simulation-testbed-and-vlm-autonomous-mission-agent",
+          title: 'Go2 Multi-Floor Building Simulation Testbed and VLM Autonomous Mission Agent',
+          description: "A testbed that ported a three-story building world with stairs, ramps, and a working elevator across Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo to verify quadruped locomotion control, real-spec sensors, and a VLM orchestration agent",
           section: "Projects",handler: () => {
               window.location.href = "/projects/go2-multifloor-sim/";
-            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
-          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
-          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+            },},{id: "projects-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-kiro-internship",
+          title: 'Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)',
+          description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kiro-heterogeneous-robots/";
-            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
-          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
-          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+            },},{id: "projects-precision-charging-docking-based-on-lidar-marker-icp-registration",
+          title: 'Precision Charging Docking Based on LiDAR Marker ICP Registration',
+          description: "A two-stage docking system (Nav2 approach + fine alignment) that evolved through three phases — ArUco vision → 2D LiDAR trapezoidal geometric marker → ICP registration — to achieve ±3–5 cm precision docking in a real environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lidar-marker-docking/";
-            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
-          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
-          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+            },},{id: "projects-open-rmf-integration-of-heterogeneous-logistics-robots-cooperative-intelligence",
+          title: 'Open-RMF Integration of Heterogeneous Logistics Robots (Cooperative Intelligence)',
+          description: "Unified heterogeneous mobile robots (TETRA carts, stacker AMRs, MiR 600) under the Open-RMF multi-robot operating system, building up free_fleet modifications, docking control handover, sensor-based perception, and a PySide6 GUI in stages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/logistics-fleet-integration/";
-            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
-          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
-          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+            },},{id: "projects-mfc-based-three-mode-control-of-dynamixel-actuators",
+          title: 'MFC-Based Three-Mode Control of Dynamixel Actuators',
+          description: "A C++ MFC GUI that operates the position, velocity, and current control modes of the ROBOTIS Dynamixel XM430-W350 in one application and monitors state and torque in real time over TTL communication",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mfc-dynamixel-control/";
-            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
-          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
-          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+            },},{id: "projects-multi-robot-anomaly-detection-from-fault-injection-to-learning-based-detection",
+          title: 'Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection',
+          description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-anomaly-detection/";
-            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
-          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
-          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+            },},{id: "projects-open-rmf-based-centralized-fleet-management-for-heterogeneous-multi-robot-systems",
+          title: 'Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems',
+          description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-openrmf/";
-            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
-          title: '실외 비정형 지형 자율주행 파이프라인',
-          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+            },},{id: "projects-autonomous-navigation-pipeline-for-unstructured-outdoor-terrain",
+          title: 'Autonomous Navigation Pipeline for Unstructured Outdoor Terrain',
+          description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/outdoor-traversability/";
-            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
-          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
-          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+            },},{id: "projects-multi-floor-autonomous-navigation-with-mobile-robot-elevator-integration",
+          title: 'Multi-Floor Autonomous Navigation with Mobile Robot ↔ Elevator Integration',
+          description: "A system in which the robot calls, boards, and exits an elevator on its own via an MQTT–ROS 2 bridge and a custom NavigateMultiFloor Action. LiDAR scattering off metallic elevator surfaces was resolved with an SOR filter",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robot-elevator-interface/";
-            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
-          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
-          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+            },},{id: "projects-sdr-docker-and-git-based-ota-deployment-framework",
+          title: 'SDR — Docker and Git-Based OTA Deployment Framework',
+          description: "An OTA system for Software-Defined Robots that modularizes robot functions into containers and separates shared code from Robot Profiles to deploy and verify across multiple robots without downtime",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sdr-ota-framework/";
-            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
-          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
-          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+            },},{id: "projects-image-processing-based-autonomous-driving-vanishing-point-perspective-transform",
+          title: 'Image-Processing-Based Autonomous Driving — Vanishing Point × Perspective Transform',
+          description: "A low-cost image-processing ADAS project that combines the vanishing point (straight vs. turning) with a perspective transform (centered vs. biased) to classify four driving states",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vanishing-point-lane-detection/";
-            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
-          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
-          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+            },},{id: "projects-quadruped-wheel-leg-hybrid-robot-mechathon-capstone",
+          title: 'Quadruped Wheel-Leg Hybrid Robot (Mechathon · Capstone)',
+          description: "A hybrid robot that normally drives on wheels and, at obstacles the wheels cannot clear, controls its leg joints to switch into walking mode and step over them. Responsible for mechanical design, 3D modeling, and ROS-based integrated control",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wheel-leg-robot/";
             },},{

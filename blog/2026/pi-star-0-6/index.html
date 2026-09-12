@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> π*0.6: a VLA That Learns From Experience (arXiv 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | π*0.6: a VLA That Learns From Experience (arXiv 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/pi-star-0-6/"> <meta property="og:description" content="자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="ko"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="π*0.6: a VLA That Learns From Experience (arXiv 2025)"> <meta name="twitter:description" content="자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> π*0.6: a VLA That Learns From Experience (arXiv 2025) | Youngeon Kim </title> <meta name="author" content="Youngeon Kim"> <meta name="description" content="Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning"> <meta name="keywords" content="robotics, mobile robot, multi-robot, Open-RMF, ROS2, Nav2, SLAM, simulation, Youngeon Kim, 김영언"> <meta property="og:site_name" content="Youngeon Kim"> <meta property="og:type" content="article"> <meta property="og:title" content="Youngeon Kim | π*0.6: a VLA That Learns From Experience (arXiv 2025)"> <meta property="og:url" content="https://eeoon.github.io/blog/2026/pi-star-0-6/"> <meta property="og:description" content="Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning"> <meta property="og:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="π*0.6: a VLA That Learns From Experience (arXiv 2025)"> <meta name="twitter:description" content="Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning"> <meta name="twitter:image" content="https://eeoon.github.io/assets/img/prof_pic.jpg"> <script type="application/ld+json">
     {
         "author":
         {
@@ -7,7 +7,7 @@
         },
         "url": "https://eeoon.github.io/blog/2026/pi-star-0-6/",
         "@type": "BlogPosting",
-        "description": "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        "description": "Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning",
         "headline": "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
         
         "sameAs": ["https://github.com/eeoon"],
@@ -21,7 +21,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://eeoon.github.io/blog/2026/pi-star-0-6/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">π*0.6: a VLA That Learns From Experience (arXiv 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/vla"> <i class="fa-solid fa-hashtag fa-sm"></i> vla</a>   <a href="/blog/tag/rl"> <i class="fa-solid fa-hashtag fa-sm"></i> rl</a>   <a href="/blog/tag/foundation-model"> <i class="fa-solid fa-hashtag fa-sm"></i> foundation-model</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>항목</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>저자</td> <td>Ali Amin, Ashwin Balakrishna, Kevin Black, Danny Driess, Chelsea Finn, Karol Hausman, Brian Ichter, Liyiming Ke, Sergey Levine, Suraj Nair, Karl Pertsch, Allen Z. Ren, Lucy Xiaoyang Shi, Jost Tobias Springenberg, Kyle Stachowicz, Quan Vuong, Zhiyuan Zhou 외 (Physical Intelligence, 총 약 56인)</td> </tr> <tr> <td>발표</td> <td>arXiv 2511.14759 (v2, 2025-11-19, cs.LG 프리프린트). 별도 학회 게재는 확인되지 않음, 회사 블로그와 동시 공개</td> </tr> <tr> <td>링크</td> <td> <a href="https://arxiv.org/abs/2511.14759" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://www.pi.website/blog/pistar06" rel="external nofollow noopener" target="_blank">Blog</a> · 코드 미공개 (2026-06 기준 openpi에는 π0·π0-FAST·π0.5만 존재, RECAP·π*0.6 체크포인트는 확인되지 않음)</td> </tr> </tbody> </table> <h2 id="한-줄-요약">한 줄 요약</h2> <p>π*0.6은 데모만으로 학습한 VLA(π0.6)를 자기 경험(자율 롤아웃), 사람의 개입 교정(intervention), 희소 보상으로 강화학습해, 빨래 개기·에스프레소 제조·상자 조립 같은 5~15분짜리 초장기 정교 조작에서 성공률 90% 이상, 처리량(throughput) 2배 이상을 달성한 연구다. 핵심은 RECAP(RL with Experience and Corrections via Advantage-conditioned Policies)이라는 반복적 오프라인 RL 레시피다. 정책경사(PPO) 대신 “이 행동이 평균보다 나은가”를 나타내는 advantage 지표를 프롬프트에 텍스트(“Advantage: positive/negative”)로 끼워 넣어 조건화하는 방식으로, flow-matching VLA 전체를 end-to-end로 학습한다.</p> <h2 id="연구-계보와-동향">연구 계보와 동향</h2> <p>π0 → π0.5 → π0.6 → π*0.6으로 이어지는 흐름을 정리하면 다음과 같다.</p> <ol> <li> <strong>π0 (2024).</strong> VLM(PaliGemma 3B) + flow-matching action expert로 크로스 임바디먼트 데모를 모방학습한 첫 대표 VLA. 50Hz 정교 조작을 보였지만 모방학습의 한계(compounding error, 데모 품질 상한)에 갇혀 있다.</li> <li> <strong>π0.5 (CoRL 2025).</strong> 오픈월드 일반화를 위한 후속. 웹 co-training, 서브태스크 텍스트 추론(high-level), Knowledge Insulation(KI) 학습 레시피. 여전히 supervised(모방) 기반이다.</li> <li> <strong>π0.6 (2025, model card).</strong> π0.5의 점진 개선판. 더 많은 로봇 플랫폼 데이터, 백본을 Gemma 3 4B로, action expert를 860M으로 키웠다. 이 논문의 베이스 VLA다.</li> <li> <strong>π*0.6 (이 논문, 2025).</strong> π0.6에 advantage 조건화 능력(이진화된 advantage indicator 입력)을 추가해 RL이 가능하도록 개조한 버전이다. 즉 π0.6 + RECAP이다.</li> </ol> <p>비유하자면 π0~π0.6은 “교과서(데모)로 공부한 학생”, π*0.6은 “시험을 직접 치고(자율 롤아웃) 코치의 첨삭(intervention)을 받아 복습하며 실력을 키우는 학생”이다. 논문 첫 문장도 “Practice makes perfect”다.</p> <p>방법론적으로는 reward-conditioned policy(Kumar, Peng, Levine 2019)와 Decision Transformer 계열이 advantage 조건화의 직계 선조이고, CFGRL(Frans et al. 2025)이 “diffusion guidance가 controllable policy improvement operator”라는 이론 기반을 준다. 전문가 개입은 human-gated DAgger(Kelly et al. 2019)를 따르며, critic은 distributional RL(Bellemare et al. 2017)을 쓴다. 최근 다수 연구가 PPO 및 변형을 VLA 파인튜닝에 적용했지만 실세계 RL로의 확장이 어려웠고, 잔차 정책·action head 파인튜닝·확산 노이즈 공간 최적화 등은 대개 이산 행동이나 단순 가우시안 분포를 썼다. 이 논문의 차별점은 표현력 있는 flow-matching VLA 전체를 반복 오프라인 RL로 end-to-end 학습한다는 것이다.</p> <h2 id="문제와-동기">문제와 동기</h2> <p>모방학습 정책에는 세 가지 근본 한계가 있다. (a) 데모보다 잘할 수 없고, (b) 배포 중 자기가 실제로 만드는 실수를 고치지 못하며, (c) 사람 텔레오퍼레이션의 속도·강건성을 넘지 못한다(compounding error).</p> <p>“연습으로 숙달”을 형식화한 것이 RL이지만, 대형 VLA에 실세계 RL을 거는 것은 미해결 문제였다. 큰 모델용 안정적·스케일러블 RL이 필요하고, 데모·자율 롤아웃·사람 개입처럼 여러 정책에서 온 이질적 off-policy 데이터를 통합해야 하며, 실세계의 모호하고 확률적인 보상을 처리해야 한다. 결정적으로 flow-matching/diffusion VLA는 로그우도가 tractable하지 않아 PPO/REINFORCE 같은 정책경사를 그대로 붙일 수 없다. 정책경사를 우회하는 학습법이 필요했다.</p> <h2 id="핵심-아이디어와-방법">핵심 아이디어와 방법</h2> <p>RECAP은 세 서브루틴의 반복이다. ① 데이터 수집 → ② 가치함수 학습 → ③ advantage 조건화 정책 학습. 단계 간 바뀌는 것은 데이터뿐이다.</p> <h3 id="모듈-1-분포형-다중태스크-가치함수-critic">모듈 1: 분포형 다중태스크 가치함수 (critic)</h3> <p>VLA와 같은 아키텍처지만 더 작은 VLM 백본(670M, Gemma 3 초기화)을 쓴다. 입력은 VLA와 동일하게 카메라 영상 3대 + 관절 + 언어다.</p> <p>보상은 희소하고 범용적이다. 에피소드 끝에 성공/실패 라벨만 달고, 보상은 다음과 같이 정의한다.</p> \[r_t = \begin{cases} 0 &amp; \text{성공 종료} \\ -C_{\text{fail}} &amp; \text{실패 종료} \\ -1 &amp; \text{그 외} \end{cases}\] <p>따라서 가치함수는 “성공까지 남은 스텝 수의 음수”를 예측하게 되고, 태스크별 최대 길이로 \((-1, 0)\)에 정규화한다. 가치는 \(B = 201\)개 bin의 분포 \(p_\phi(V \mid o_t, \ell)\)로 표현하고, 경험 리턴 \(R_t(\tau)\)를 이산화한 뒤 크로스엔트로피로 Monte-Carlo 학습한다. 연속 가치는 \(V(o_t, \ell) = \sum_b p_\phi(V = b \mid o_t) \, v(b)\)로 추출한다. 웹 멀티모달 데이터로 co-train해 과적합을 막는다.</p> <p>직관적으로 이 critic은 “지금 이 장면이 성공에 얼마나 가까운가, 그리고 방금 실수했는가”를 읽는 심판이다. 논문의 시각화는 빨래를 구겼다가 회복할 때 value가 떨어졌다 오르는 것을 보여준다.</p> <h3 id="모듈-2-advantage-조건화-정책-추출-핵심-트릭">모듈 2: advantage 조건화 정책 추출 (핵심 트릭)</h3> <p>advantage는 “이 행동이 그 상태의 평균보다 얼마나 나은가”이며 n-step 추정으로 계산한다.</p> \[A(o_t, a_t) = \mathbb{E}\left[\sum_{t'=t}^{t+N-1} r_{t'} + V(o_{t+N})\right] - V(o_t)\] <p>post-training에서는 \(N = 50\), pre-training에서는 \(N = T\)(전체 에피소드)를 쓴다. 이를 태스크별 임계값 \(\epsilon_\ell\)로 이진화해 improvement indicator \(I_t\)(positive/negative)를 만든다. \(\epsilon_\ell\)은 보통 데이터의 상위 30~40%가 positive가 되도록 설정한다(사전학습은 데모의 약 30%, 파인튜닝은 롤아웃의 약 40%, t셔츠 빨래는 데모가 느려 약 10%만 positive).</p> <p>정책에는 이 지표를 그냥 텍스트로 주입한다. 시퀀스에서 서브태스크 \(\hat{\ell}\) 뒤, 행동 앞에 “Advantage: positive” 또는 “Advantage: negative”를 끼워 넣고, 좋은 데이터든 나쁜 데이터든 전부 supervised로 학습한다. 추론 시에는 positive로 조건화해 좋은 행동만 뽑는다. 학습 목표는 다음과 같다.</p> \[\mathcal{L}(\theta) = -\log \pi_\theta(a_t \mid o_t, \ell) - \alpha \log \pi_\theta(a_t \mid I_t, o_t, \ell), \quad I_t = \mathbb{1}[A &gt; \epsilon_\ell]\] <p>실제 구현에서는 \(\alpha\) 대신 advantage 조건화 dropout 30%를 써서 조건부와 무조건부를 함께 학습한다.</p> <p>이론적 근거는 CFGRL 계열이다. 개선 정책을 \(\hat{\pi}(a \mid o) \propto \pi_{\text{ref}}(a \mid o) \cdot p(I \mid A)^\beta\)로 정의하면 \(J(\hat{\pi}) \geq J(\pi_{\text{ref}})\)가 보장된다. Bayes 규칙으로 \(p(I \mid A) = \pi_{\text{ref}}(a \mid I, o) / \pi_{\text{ref}}(a \mid o)\)이므로, \(\beta = 1\)이면 \(\hat{\pi}(a \mid o) = \pi_{\text{ref}}(a \mid I = \text{True}, o)\)가 된다. 즉 개선확률 항을 따로 표현할 필요 없이 모델이 조건부·무조건부 둘 다를 배우게 하면 되며, 이는 classifier-free guidance와 동형이다. 학습 후 \(\beta &gt; 1\)로 정책을 sharpen할 수도 있다.</p> \[\nabla \log \pi(\cdot \mid o) + \beta \left( \nabla \log \pi(\cdot \mid I, o) - \nabla \log \pi(\cdot \mid o) \right)\] <p>다만 \(\beta\)를 과도하게 키우면 행동 분포가 support 경계로 밀려 과격해지므로 주로 \(\epsilon_\ell\)로 제어하고 \(\beta\)는 1.5~2.5 정도만 쓴다.</p> <p><strong>왜 PPO/AWR 대신인가.</strong> PPO는 flow-matching에 로그우도가 없어 적용이 난해하고 off-policy에서 불안정하다. AWR은 데이터를 버리거나(filtered imitation) downweight해 손해를 본다. advantage conditioning은 모든 데이터를 supervised로 쓰면서 정책경사의 복잡성을 제거하므로 대형 VLA에 스케일러블하다.</p> <p>연속 행동 부분은 정확한 우도 평가가 불가능하므로, flow matching과 확산의 평행(확산은 로그우도 하한)을 이용해 이산 행동 로그우도 + 연속 flow-matching 손실을 전체 행동 우도의 하한으로 동기화한다.</p> <h3 id="모듈-3-데이터-수집-경험--교정">모듈 3: 데이터 수집 (경험 + 교정)</h3> <ul> <li> <strong>자율 롤아웃.</strong> 정책을 실제 로봇에 돌려 에피소드를 수집하고 성공/실패 라벨을 단다.</li> <li> <strong>전문가 개입(human-gated DAgger).</strong> 텔레오퍼레이터가 실패 직전 끼어들어 교정한다. 교정 행동은 무조건 \(I_t = \text{True}\)로 강제한다(전문가는 항상 옳다는 가정).</li> <li>자율 부분이든 교정 부분이든 에피소드 전체를 데이터셋에 누적한다.</li> </ul> <p>핵심 통찰은 개입만으로는 부족하다는 것이다. 개입은 큰 실수와 탐험만 해결하고, 속도 같은 미세 개선은 자율 RL이 담당한다. 개입(coaching)과 자율 RL(practice)의 결합이 본질이다.</p> <h3 id="전체-루프">전체 루프</h3> <table> <thead> <tr> <th>단계</th> <th>내용</th> </tr> </thead> <tbody> <tr> <td>사전학습</td> <td>전체 데모(수만 시간, 다양 로봇)로 가치함수 + advantage 조건화 정책 학습 → π*0.6 generalist</td> </tr> <tr> <td>포스트학습 초기화</td> <td>데모로 SFT(\(I_t = \text{True}\) 고정 파인튜닝) → 초기 정책</td> </tr> <tr> <td>반복</td> <td>데이터 수집(자율 + 개입) → 가치함수 재학습 → 정책 재학습</td> </tr> </tbody> </table> <p>매 반복마다 직전 모델이 아니라 사전학습 체크포인트에서 파인튜닝해 drift를 방지한다. 1회 반복만으로도 큰 개선이 나오고, 어려운 태스크는 2회를 돌린다. 한 줄로 요약하면 “critic이 매긴 advantage를 프롬프트 텍스트로 바꿔 VLA에 먹인다”이며, RL을 supervised next-token/flow-matching 학습으로 환원한 것이 RECAP의 핵심이다.</p> <h2 id="실험과-결과">실험과 결과</h2> <p><strong>하드웨어.</strong> 정적 양손 시스템, 6-DoF 팔 2개 + 평행 그리퍼, 50Hz 관절 제어, 카메라 3대(베이스 1 + 손목 2). 사전학습은 다종 로봇, 반복 개선 실험은 이 고정 셋업이다.</p> <p><strong>모델.</strong> π0.6 = Gemma 3 4B 백본 + 860M flow-matching action expert. KI 레시피로 학습하며 FAST 토크나이저로 이산 행동도 예측한다(KI용). 서브태스크 텍스트 \(\hat{\ell}\)을 저빈도로 예측해 행동을 조건화한다.</p> <p><strong>태스크(3종, 각 5~15분).</strong></p> <table> <thead> <tr> <th>태스크</th> <th>내용</th> <th>제한 시간</th> </tr> </thead> <tbody> <tr> <td>빨래</td> <td>t셔츠·반바지 / 11종 다양 의류(버튼셔츠로 측정) / 엄격 기준 실패 제거 ablation</td> <td>200~500초</td> </tr> <tr> <td>카페</td> <td>상업용 에스프레소 머신 더블샷(포터필터·분쇄·탬핑·체결·추출·서빙)</td> <td>200초</td> </tr> <tr> <td>상자 조립</td> <td>평판 골판지 → 조립 → 라벨 → 크레이트 적재, 실제 공장 배포</td> <td>600초</td> </tr> </tbody> </table> <p><strong>베이스라인.</strong> π0.5 / π0.6(supervised) / RL pre-trained π<em>0.6 / π</em>0.6 offline-RL+SFT / π*0.6(full RECAP, 기본 \(\beta = 1\)). 정책 추출 비교군으로 AWR과 PPO(DPPO/FPO 변형 + SPO trust-region)를 같은 데이터로 비교했다.</p> <p><strong>지표.</strong> throughput(시간당 성공 완료 수, 속도와 성공률의 통합)과 success rate(사람 주석 기반).</p> <p><strong>데이터 규모.</strong> 빨래(t셔츠) 4로봇 × 300 자율, 다양 빨래 평가 450 + 교정 287, 실패 제거 자율 약 1000 + 교정 280 + 378(3로봇), 카페 자율 414 + 교정 429(1회), 상자 데모 600 + 교정 360/회(3로봇).</p> <p>핵심 결과 세 가지는 다음과 같다.</p> <p><strong>1. 가장 어려운 태스크에서 throughput 2배 이상, 실패율 약 절반.</strong> 다양 빨래와 에스프레소에서 full RECAP의 on-robot 데이터 추가(offline-RL+SFT → 최종 π<em>0.6)가 핵심 기여분이었다. 최종 π</em>0.6이 모든 베이스라인을 능가했다.</p> <p><strong>2. 실용 수준 강건성.</strong> 에스프레소 13시간 연속(05:30~23:30) 운영, 새 집에서 새 빨래 2시간 이상 무중단, 실제 공장에서 포장용 상자 조립(초콜릿 포장 59박스)을 달성했다. 다양 빨래를 제외한 모든 태스크에서 성공률 90% 이상이다.</p> <p><strong>3. advantage conditioning이 AWR·PPO를 압도.</strong> 같은 데이터로 비교 시 RECAP가 throughput에서 두 방법을 크게 능가했다. PPO는 off-policy에서 trust-region(\(\eta = 0.01\)) 없이 불안정했고, AWR은 성공률은 나오지만 정책이 느려 throughput이 낮았다.</p> <p><strong>상세.</strong></p> <ul> <li> <strong>반복 효과.</strong> 빨래는 1회 만에 성공률 90% 이상에 도달한 뒤 이후에는 throughput 위주로 개선됐다(누적 +50%). 상자 조립은 장기 태스크라 더디게 개선돼 2회차 후 throughput 2배를 달성했다. 일부는 1회차에 떨어졌다 회복했다.</li> <li> <strong>실패 모드 제거.</strong> “옷깃이 위로 가게 접기”라는 엄격 기준과 적대적 초기 조건에서, RECAP 2회(각 600 궤적)만으로 97% 성공에 도달했다. 데모·개입 없이 순수 RL로 특정 실수만 콕 집어 제거할 수 있음을 보였다.</li> <li> <strong>상자 조립 단계별.</strong> 집기/조립/라벨/적재 4단계 모두에서 π*0.6이 최고였다. 실패 대다수는 시간 초과였고, 조립·라벨은 600초 내 약 90%였다.</li> </ul> <p><strong>주장 대 실제.</strong> 저자들은 “사람의 보상 피드백 + 개입을 쓴 범용 RL 레시피가 배포 경험만으로 VLA의 강건성·throughput을 유의미하게 개선함을 처음으로 보였다”고 주장한다. 동시에 RECAP의 개별 알고리즘 요소(advantage conditioning, CFGRL, distributional VF, HG-DAgger, AWR/IQL 계열)는 기존 연구임을 솔직하게 인정한다. 새로운 것은 이 조합, 대형 flow-matching VLA로의 스케일링, 실세계 장기 정교 태스크에서의 실증이다. 알고리즘 혁신보다 “되는 레시피”의 통합·시스템·증명이 핵심 기여다.</p> <h2 id="결론과-의의">결론과 의의</h2> <p>π*0.6은 “VLA + 실세계 RL”을 실제 상업 환경(공장 상자 조립, 오피스 카페)에서 수 시간 무중단 수준까지 끌어올린 첫 실증이다. 모방학습의 천장(데모 품질·속도)을 RL로 넘는 구체적 레시피를 제공했고, flow-matching VLA에 RL을 거는 실용 해법으로 “advantage를 프롬프트 텍스트 조건으로” 패턴을 정립했다. 정책경사 없이 off-policy 데이터를 전부 활용하므로 LLM RLHF 인프라 자산을 로봇으로 옮기는 가교 역할을 한다. 저자들의 결론은 “VLA를 RL로 학습하는 것이 실사용 수준 성능에 이르는 가장 직접적 경로”라는 것이다.</p> <p>로봇 실무 관점에서의 활용 가능성과 한계는 다음과 같다.</p> <ul> <li> <strong>코드·체크포인트가 없다.</strong> RECAP·π*0.6·π0.6의 코드와 체크포인트는 2026-06 기준 공개되지 않은 것으로 확인된다. openpi에는 π0·π0-FAST·π0.5만 있다. 알고리즘 자체(advantage conditioning + distributional VF)는 openpi의 π0.5 위에 재구현할 여지가 있지만, 논문 수준 결과 재현은 데이터·실로봇·사람 운영 측면에서 비공개 자원에 의존하므로 재현 난이도는 상이다. 사족보행 시뮬레이션 테스트베드처럼 시뮬레이션이나 소규모 환경에서 RECAP 아이디어를 검증하는 것은 가능하다.</li> <li> <strong>완전 자율이 아니다.</strong> 보상 라벨링·개입·환경 리셋 모두 사람 노동에 의존한다. 저자들도 VLM 기반 리셋/리워드 자동화를 future work로 지목했다. 4B VLM + 860M action expert의 end-to-end 학습, 670M critic 동시 학습, on-the-fly value inference, 3~4대의 다중 로봇 스테이션 운영이 전제된다.</li> <li> <strong>탐험이 순진(greedy)하다.</strong> 정책의 stochasticity와 사람 개입에만 의존하므로 초기 모방 정책이 그럭저럭일 때만 통한다. 정교한 탐험은 없다.</li> <li> <strong>온라인이 아닌 반복 오프라인이다.</strong> “수집 → 재학습 → 반복” 구조라 실시간 동시 온라인 RL이 아니며, 가치함수도 on-policy Monte-Carlo 추정이라 Q-learning류 off-policy보다 덜 최적이다. 단순·안정을 우선한 선택이며 off-policy 확장은 열린 과제다.</li> <li> <strong>보상 모호성.</strong> 희소 이진 성공 라벨이라 부분 성공이나 미묘한 품질 차이를 포착하기 어렵고, 사람 주석 품질에 의존한다.</li> </ul> <h2 id="참고">참고</h2> <ul> <li>논문: <a href="https://arxiv.org/abs/2511.14759" rel="external nofollow noopener" target="_blank">arXiv 2511.14759</a> · <a href="https://www.pi.website/blog/pistar06" rel="external nofollow noopener" target="_blank">Physical Intelligence 블로그</a> </li> <li>코드: 미공개 (확인되지 않음). 관련 repo: <a href="https://github.com/Physical-Intelligence/openpi" rel="external nofollow noopener" target="_blank">openpi</a> (π0·π0-FAST·π0.5만)</li> <li>π0.5: a Vision-Language-Action Model with Open-World Generalization (Black et al., CoRL 2025) — 직전 베이스</li> <li>Diffusion Guidance Is a Controllable Policy Improvement Operator / CFGRL (Frans et al., 2025) — advantage conditioning의 이론적 모태</li> <li>Advantage-Weighted Regression / AWR (Peng et al., 2019) — 정책 추출 비교군</li> <li>Knowledge Insulation for Training Vision-Language-Action Models (Driess et al., NeurIPS 2025) — π0.6 학습 레시피의 뼈대</li> <li>HG-DAgger: Interactive Imitation Learning with Human Experts (Kelly et al., ICRA 2019) — 전문가 개입 메커니즘의 출처</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Youngeon</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">π*0.6: a VLA That Learns From Experience (arXiv 2025)</h1> <p class="post-meta"> Created on June 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/vla"> <i class="fa-solid fa-hashtag fa-sm"></i> vla</a>   <a href="/blog/tag/rl"> <i class="fa-solid fa-hashtag fa-sm"></i> rl</a>   <a href="/blog/tag/foundation-model"> <i class="fa-solid fa-hashtag fa-sm"></i> foundation-model</a>   ·   <a href="/blog/category/paper-review"> <i class="fa-solid fa-tag fa-sm"></i> paper-review</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <table> <thead> <tr> <th>Item</th> <th>Details</th> </tr> </thead> <tbody> <tr> <td>Authors</td> <td>Ali Amin, Ashwin Balakrishna, Kevin Black, Danny Driess, Chelsea Finn, Karol Hausman, Brian Ichter, Liyiming Ke, Sergey Levine, Suraj Nair, Karl Pertsch, Allen Z. Ren, Lucy Xiaoyang Shi, Jost Tobias Springenberg, Kyle Stachowicz, Quan Vuong, Zhiyuan Zhou, et al. (Physical Intelligence, about 56 authors in total)</td> </tr> <tr> <td>Venue</td> <td>arXiv 2511.14759 (v2, 2025-11-19, cs.LG preprint). No separate conference publication confirmed; released together with the company blog</td> </tr> <tr> <td>Links</td> <td> <a href="https://arxiv.org/abs/2511.14759" rel="external nofollow noopener" target="_blank">arXiv</a> · <a href="https://www.pi.website/blog/pistar06" rel="external nofollow noopener" target="_blank">Blog</a> · Code not released (as of 2026-06, openpi contains only π0, π0-FAST, and π0.5; no RECAP or π*0.6 checkpoints confirmed)</td> </tr> </tbody> </table> <h2 id="one-line-summary">One-line Summary</h2> <p>π*0.6 takes a VLA trained only on demonstrations (π0.6) and applies reinforcement learning from its own experience (autonomous rollouts), human intervention corrections, and sparse rewards, achieving over 90% success and more than 2x throughput on 5-15 minute very long-horizon dexterous manipulation such as laundry folding, espresso making, and box assembly. The core is an iterative offline RL recipe called RECAP (RL with Experience and Corrections via Advantage-conditioned Policies). Instead of policy gradients (PPO), it conditions the policy by inserting an advantage indicator, “is this action better than average,” into the prompt as text (“Advantage: positive/negative”), and trains the entire flow-matching VLA end-to-end.</p> <h2 id="lineage-and-trends">Lineage and Trends</h2> <p>The line from π0 → π0.5 → π0.6 → π*0.6 can be summarized as follows.</p> <ol> <li> <strong>π0 (2024).</strong> The first flagship VLA, imitation-learned from cross-embodiment demonstrations with a VLM (PaliGemma 3B) + flow-matching action expert. It showed 50 Hz dexterous manipulation but was confined by the limits of imitation learning (compounding error, demonstration quality ceiling).</li> <li> <strong>π0.5 (CoRL 2025).</strong> The successor for open-world generalization. Web co-training, subtask text reasoning (high level), and the Knowledge Insulation (KI) training recipe. Still supervised (imitation) based.</li> <li> <strong>π0.6 (2025, model card).</strong> An incremental improvement of π0.5. More robot platform data, backbone upgraded to Gemma 3 4B, action expert enlarged to 860M. This is the base VLA of this paper.</li> <li> <strong>π*0.6 (this paper, 2025).</strong> A version of π0.6 modified to enable RL by adding advantage conditioning capability (a binarized advantage indicator input). In other words, π0.6 + RECAP.</li> </ol> <p>By analogy, π0 through π0.6 are “a student who studied from the textbook (demonstrations),” and π*0.6 is “a student who takes the exam themselves (autonomous rollouts), receives a coach’s corrections (intervention), and reviews to improve.” The paper’s first sentence is also “Practice makes perfect.”</p> <p>Methodologically, reward-conditioned policies (Kumar, Peng, Levine 2019) and the Decision Transformer family are the direct ancestors of advantage conditioning, and CFGRL (Frans et al. 2025) provides the theoretical basis that “diffusion guidance is a controllable policy improvement operator.” Expert intervention follows human-gated DAgger (Kelly et al. 2019), and the critic uses distributional RL (Bellemare et al. 2017). Many recent studies have applied PPO and its variants to VLA fine-tuning, but scaling to real-world RL has been difficult, and residual policies, action-head fine-tuning, and optimization in diffusion noise space mostly used discrete actions or simple Gaussian distributions. This paper’s differentiator is training the entire expressive flow-matching VLA end-to-end with iterative offline RL.</p> <h2 id="problem-and-motivation">Problem and Motivation</h2> <p>Imitation learning policies have three fundamental limits. (a) They cannot do better than the demonstrations, (b) they cannot fix the mistakes they actually make during deployment, and (c) they cannot exceed the speed and robustness of human teleoperation (compounding error).</p> <p>RL formalizes “mastery through practice,” but applying real-world RL to large VLAs was an unsolved problem. It requires stable, scalable RL for large models, integration of heterogeneous off-policy data from multiple policies (demonstrations, autonomous rollouts, human interventions), and handling the ambiguous, stochastic rewards of the real world. Critically, flow-matching/diffusion VLAs have no tractable log-likelihood, so policy gradients such as PPO/REINFORCE cannot be attached directly. A training method that bypasses policy gradients was needed.</p> <h2 id="key-ideas-and-method">Key Ideas and Method</h2> <p>RECAP is an iteration of three subroutines: (1) data collection → (2) value function learning → (3) advantage-conditioned policy learning. Only the data changes between stages.</p> <h3 id="module-1-distributional-multi-task-value-function-critic">Module 1: Distributional Multi-task Value Function (Critic)</h3> <p>Same architecture as the VLA but with a smaller VLM backbone (670M, Gemma 3 initialized). The inputs are identical to the VLA: 3 camera streams + joints + language.</p> <p>Rewards are sparse and generic. Only a success/failure label is attached at the end of an episode, and the reward is defined as follows.</p> \[r_t = \begin{cases} 0 &amp; \text{success termination} \\ -C_{\text{fail}} &amp; \text{failure termination} \\ -1 &amp; \text{otherwise} \end{cases}\] <p>The value function therefore predicts “the negative of the number of steps remaining until success,” normalized to \((-1, 0)\) by the per-task maximum length. The value is represented as a distribution \(p_\phi(V \mid o_t, \ell)\) over \(B = 201\) bins, and the empirical return \(R_t(\tau)\) is discretized and learned by Monte-Carlo with cross-entropy. The continuous value is extracted as \(V(o_t, \ell) = \sum_b p_\phi(V = b \mid o_t) \, v(b)\). It is co-trained with web multimodal data to prevent overfitting.</p> <p>Intuitively, this critic is a referee that reads “how close this scene is to success right now, and whether a mistake was just made.” The paper’s visualization shows the value dropping and then rising as laundry is crumpled and then recovered.</p> <h3 id="module-2-advantage-conditioned-policy-extraction-the-key-trick">Module 2: Advantage-conditioned Policy Extraction (The Key Trick)</h3> <p>The advantage is “how much better this action is than the average for that state,” computed with an n-step estimate.</p> \[A(o_t, a_t) = \mathbb{E}\left[\sum_{t'=t}^{t+N-1} r_{t'} + V(o_{t+N})\right] - V(o_t)\] <p>Post-training uses \(N = 50\), pretraining uses \(N = T\) (the whole episode). This is binarized with a per-task threshold \(\epsilon_\ell\) to form the improvement indicator \(I_t\) (positive/negative). \(\epsilon_\ell\) is usually set so that the top 30-40% of the data is positive (about 30% of demonstrations in pretraining, about 40% of rollouts in fine-tuning; for t-shirt laundry only about 10% is positive because the demonstrations are slow).</p> <p>The indicator is simply injected into the policy as text. In the sequence, “Advantage: positive” or “Advantage: negative” is inserted after the subtask \(\hat{\ell}\) and before the actions, and all data, good or bad, is trained in a supervised manner. At inference, conditioning on positive draws only good actions. The training objective is as follows.</p> \[\mathcal{L}(\theta) = -\log \pi_\theta(a_t \mid o_t, \ell) - \alpha \log \pi_\theta(a_t \mid I_t, o_t, \ell), \quad I_t = \mathbb{1}[A &gt; \epsilon_\ell]\] <p>In the actual implementation, instead of \(\alpha\), an advantage-conditioning dropout of 30% is used to learn the conditional and unconditional together.</p> <p>The theoretical basis is the CFGRL family. If the improved policy is defined as \(\hat{\pi}(a \mid o) \propto \pi_{\text{ref}}(a \mid o) \cdot p(I \mid A)^\beta\), then \(J(\hat{\pi}) \geq J(\pi_{\text{ref}})\) is guaranteed. By Bayes’ rule, \(p(I \mid A) = \pi_{\text{ref}}(a \mid I, o) / \pi_{\text{ref}}(a \mid o)\), so with \(\beta = 1\) we get \(\hat{\pi}(a \mid o) = \pi_{\text{ref}}(a \mid I = \text{True}, o)\). That is, there is no need to represent the improvement-probability term separately; it suffices to have the model learn both the conditional and the unconditional, which is isomorphic to classifier-free guidance. After training, the policy can also be sharpened with \(\beta &gt; 1\).</p> \[\nabla \log \pi(\cdot \mid o) + \beta \left( \nabla \log \pi(\cdot \mid I, o) - \nabla \log \pi(\cdot \mid o) \right)\] <p>However, increasing \(\beta\) too much pushes the action distribution to the boundary of the support and makes it aggressive, so control is mainly via \(\epsilon_\ell\) and \(\beta\) is kept around 1.5-2.5.</p> <p><strong>Why not PPO/AWR.</strong> PPO is hard to apply to flow matching because there is no log-likelihood, and it is unstable off-policy. AWR loses by discarding data (filtered imitation) or down-weighting it. Advantage conditioning uses all data in a supervised manner while removing the complexity of policy gradients, so it scales to large VLAs.</p> <p>Since exact likelihood evaluation is impossible for the continuous action part, the parallel between flow matching and diffusion (diffusion gives a log-likelihood lower bound) is used to motivate the discrete action log-likelihood + continuous flow-matching loss as a lower bound on the full action likelihood.</p> <h3 id="module-3-data-collection-experience--corrections">Module 3: Data Collection (Experience + Corrections)</h3> <ul> <li> <strong>Autonomous rollouts.</strong> The policy is run on real robots to collect episodes, which are labeled success/failure.</li> <li> <strong>Expert intervention (human-gated DAgger).</strong> A teleoperator steps in just before failure and corrects. Corrective actions are forced to \(I_t = \text{True}\) unconditionally (assuming the expert is always right).</li> <li>Whole episodes, both autonomous and corrected portions, are accumulated into the dataset.</li> </ul> <p>The key insight is that intervention alone is insufficient. Intervention only addresses large mistakes and exploration; fine improvements such as speed are handled by autonomous RL. The combination of intervention (coaching) and autonomous RL (practice) is essential.</p> <h3 id="the-full-loop">The Full Loop</h3> <table> <thead> <tr> <th>Stage</th> <th>Content</th> </tr> </thead> <tbody> <tr> <td>Pretraining</td> <td>Train the value function + advantage-conditioned policy on all demonstrations (tens of thousands of hours, diverse robots) → π*0.6 generalist</td> </tr> <tr> <td>Post-training initialization</td> <td>SFT on demonstrations (fine-tuning with \(I_t = \text{True}\) fixed) → initial policy</td> </tr> <tr> <td>Iteration</td> <td>Data collection (autonomous + intervention) → retrain value function → retrain policy</td> </tr> </tbody> </table> <p>Each iteration fine-tunes from the pretrained checkpoint rather than the previous model to prevent drift. A single iteration already yields large improvements, and difficult tasks run two. In one line, “convert the critic’s advantage into prompt text and feed it to the VLA”; reducing RL to supervised next-token/flow-matching training is the essence of RECAP.</p> <h2 id="experiments-and-results">Experiments and Results</h2> <p><strong>Hardware.</strong> A static bimanual system, two 6-DoF arms + parallel grippers, 50 Hz joint control, 3 cameras (1 base + 2 wrist). Pretraining uses diverse robots; the iterative improvement experiments use this fixed setup.</p> <p><strong>Model.</strong> π0.6 = Gemma 3 4B backbone + 860M flow-matching action expert. Trained with the KI recipe and also predicts discrete actions with the FAST tokenizer (for KI). Subtask text \(\hat{\ell}\) is predicted at low frequency to condition the actions.</p> <p><strong>Tasks (3, each 5-15 minutes).</strong></p> <table> <thead> <tr> <th>Task</th> <th>Content</th> <th>Time limit</th> </tr> </thead> <tbody> <tr> <td>Laundry</td> <td>T-shirts and shorts / 11 diverse garments (measured on button-up shirts) / strict-criterion failure-removal ablation</td> <td>200-500 s</td> </tr> <tr> <td>Cafe</td> <td>Double shot on a commercial espresso machine (portafilter, grinding, tamping, locking, extraction, serving)</td> <td>200 s</td> </tr> <tr> <td>Box assembly</td> <td>Flat cardboard → assembly → labeling → crate loading, deployed in a real factory</td> <td>600 s</td> </tr> </tbody> </table> <p><strong>Baselines.</strong> π0.5 / π0.6 (supervised) / RL pre-trained π<em>0.6 / π</em>0.6 offline-RL+SFT / π*0.6 (full RECAP, default \(\beta = 1\)). For policy extraction comparisons, AWR and PPO (DPPO/FPO variants + SPO trust region) were compared on the same data.</p> <p><strong>Metrics.</strong> Throughput (successful completions per hour, combining speed and success rate) and success rate (based on human annotation).</p> <p><strong>Data scale.</strong> Laundry (t-shirt): 4 robots × 300 autonomous; diverse laundry: 450 evaluation + 287 corrections; failure removal: about 1000 autonomous + 280 + 378 corrections (3 robots); cafe: 414 autonomous + 429 corrections (1 iteration); box: 600 demonstrations + 360 corrections per iteration (3 robots).</p> <p>The three key results are as follows.</p> <p><strong>1. More than 2x throughput and roughly half the failure rate on the hardest tasks.</strong> On diverse laundry and espresso, the addition of on-robot data in full RECAP (offline-RL+SFT → final π<em>0.6) was the key contribution. The final π</em>0.6 outperformed all baselines.</p> <p><strong>2. Practical-level robustness.</strong> It achieved 13 hours of continuous espresso operation (05:30-23:30), over 2 hours of uninterrupted novel laundry in a new home, and assembly of packaging boxes in a real factory (59 boxes of chocolate packaging). Success rate is over 90% on all tasks except diverse laundry.</p> <p><strong>3. Advantage conditioning dominates AWR and PPO.</strong> Compared on the same data, RECAP far exceeded both methods in throughput. PPO was unstable off-policy without a trust region (\(\eta = 0.01\)), and AWR achieved success rates but produced slow policies with low throughput.</p> <p><strong>Details.</strong></p> <ul> <li> <strong>Effect of iteration.</strong> Laundry reached over 90% success after one iteration, after which improvement was mainly in throughput (cumulative +50%). Box assembly, being a long-horizon task, improved more slowly and reached 2x throughput after the second iteration. Some dropped in the first iteration and then recovered.</li> <li> <strong>Failure mode removal.</strong> Under the strict criterion of “fold with the collar facing up” and adversarial initial conditions, two RECAP iterations (600 trajectories each) alone reached 97% success. This showed that specific mistakes can be targeted and removed by pure RL without demonstrations or interventions.</li> <li> <strong>Box assembly by stage.</strong> π*0.6 was the best in all four stages: picking, assembly, labeling, and loading. Most failures were timeouts, and assembly and labeling reached about 90% within 600 s.</li> </ul> <p><strong>Claims vs reality.</strong> The authors claim to be “the first to show that a general RL recipe using human reward feedback + interventions meaningfully improves VLA robustness and throughput from deployment experience alone.” At the same time they candidly acknowledge that the individual algorithmic elements of RECAP (advantage conditioning, CFGRL, distributional VF, HG-DAgger, the AWR/IQL family) are existing work. What is new is the combination, the scaling to a large flow-matching VLA, and the demonstration on real-world long-horizon dexterous tasks. The core contribution is the integration, system, and proof of a “recipe that works” rather than algorithmic innovation.</p> <h2 id="conclusion-and-significance">Conclusion and Significance</h2> <p>π*0.6 is the first demonstration that brings “VLA + real-world RL” to the level of hours of uninterrupted operation in actual commercial settings (factory box assembly, office cafe). It provided a concrete recipe for exceeding the ceiling of imitation learning (demonstration quality and speed) with RL, and established the “advantage as prompt text condition” pattern as a practical solution for applying RL to flow-matching VLAs. Since it uses all off-policy data without policy gradients, it serves as a bridge for transferring LLM RLHF infrastructure assets to robots. The authors’ conclusion is that “training VLAs with RL is the most direct path to production-level performance.”</p> <p>Its applicability and limitations from a robotics practice viewpoint are as follows.</p> <ul> <li> <strong>No code or checkpoints.</strong> Code and checkpoints for RECAP, π*0.6, and π0.6 are confirmed unreleased as of 2026-06. openpi contains only π0, π0-FAST, and π0.5. The algorithm itself (advantage conditioning + distributional VF) could be re-implemented on top of openpi’s π0.5, but reproducing paper-level results depends on private resources in data, real robots, and human operation, so reproduction difficulty is high. Validating the RECAP idea in simulation or small-scale environments, such as a quadruped simulation testbed, is feasible.</li> <li> <strong>It is not fully autonomous.</strong> Reward labeling, intervention, and environment resets all depend on human labor. The authors themselves identify VLM-based reset/reward automation as future work. It presupposes end-to-end training of a 4B VLM + 860M action expert, simultaneous training of a 670M critic, on-the-fly value inference, and operation of 3-4 multi-robot stations.</li> <li> <strong>Exploration is naive (greedy).</strong> It relies only on policy stochasticity and human intervention, so it works only when the initial imitation policy is passable. There is no sophisticated exploration.</li> <li> <strong>Iterative offline, not online.</strong> The “collect → retrain → repeat” structure is not real-time concurrent online RL, and the value function is an on-policy Monte-Carlo estimate, less optimal than Q-learning-style off-policy methods. This is a choice prioritizing simplicity and stability, and off-policy extension is an open problem.</li> <li> <strong>Reward ambiguity.</strong> With sparse binary success labels, partial success and subtle quality differences are hard to capture, and it depends on human annotation quality.</li> </ul> <h2 id="references">References</h2> <ul> <li>Paper: <a href="https://arxiv.org/abs/2511.14759" rel="external nofollow noopener" target="_blank">arXiv 2511.14759</a> · <a href="https://www.pi.website/blog/pistar06" rel="external nofollow noopener" target="_blank">Physical Intelligence blog</a> </li> <li>Code: not released (not confirmed). Related repo: <a href="https://github.com/Physical-Intelligence/openpi" rel="external nofollow noopener" target="_blank">openpi</a> (π0, π0-FAST, π0.5 only)</li> <li>π0.5: a Vision-Language-Action Model with Open-World Generalization (Black et al., CoRL 2025) — immediate base</li> <li>Diffusion Guidance Is a Controllable Policy Improvement Operator / CFGRL (Frans et al., 2025) — theoretical origin of advantage conditioning</li> <li>Advantage-Weighted Regression / AWR (Peng et al., 2019) — policy extraction comparison</li> <li>Knowledge Insulation for Training Vision-Language-Action Models (Driess et al., NeurIPS 2025) — backbone of the π0.6 training recipe</li> <li>HG-DAgger: Interactive Imitation Learning with Human Experts (Kelly et al., ICRA 2019) — source of the expert intervention mechanism</li> </ul> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Youngeon Kim. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 12, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -48,28 +48,28 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "KETI에서 담당한 로보틱스 프로젝트와 입사 전 학부·인턴 프로젝트. 카드를 누르면 배경·역할·접근·결과를 볼 수 있습니다.",
+          description: "Robotics projects I led or contributed to at KETI, and earlier undergraduate and internship projects. Open a card for background, role, approach and results.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "국제·국내 학회 발표 논문과 특허. 제1저자 논문은 ★ 표시. 연도 역순.",
+          description: "Conference papers and a patent in reverse chronological order. First-author papers carry a 1st-author badge.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "학력 · 경력 · 연구 실적 · 기술 스택 요약. 상세 내용은 Projects와 Publications 페이지를 참고.",
+          description: "Education, experience, publications and skills at a glance. See the Projects and Publications pages for details.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "GitHub 프로필과 공개 저장소.",
+          description: "GitHub profile and public repositories.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -78,7 +78,7 @@ ninja.data = [{
         
           title: "PGTT: Phase-Guided Terrain Traversal for Perceptive Legged Locomotion (IROS 2026)",
         
-        description: "보행 위상 prior를 행동 공간이 아닌 보상에만 넣어 IK 없이 관절 공간에서 학습하는 인지형 사족보행 RL",
+        description: "Perceptive quadruped locomotion RL that puts the gait phase prior only in the reward, not the action space, and learns in joint space without IK",
         section: "Posts",
         handler: () => {
           
@@ -89,7 +89,7 @@ ninja.data = [{
         
           title: "BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps (arXiv 2026)",
         
-        description: "복셀마다 고해상도 요철 높이 이미지를 저장해 터널·평지 같은 기하 빈약 환경에서도 geometry-only로 살아남는 LIO",
+        description: "A geometry-only LIO that survives geometry-poor environments such as tunnels and flat fields by storing a high-resolution bump height image in every voxel",
         section: "Posts",
         handler: () => {
           
@@ -100,7 +100,7 @@ ninja.data = [{
         
           title: "Principles and Guidelines for Evaluating Social Robot Navigation Algorithms (ACM THRI 2025)",
         
-        description: "31인 협업이 소셜 로봇 내비게이션의 정의와 8대 원칙, 지표·시나리오·벤치마크·데이터셋·시뮬레이터 가이드라인, 공통 지표 API를 제안한 합의 성격의 평가 표준 논문",
+        description: "A consensus-style evaluation standard paper in which 31 collaborators propose a definition of social robot navigation, eight principles, guidelines for metrics, scenarios, benchmarks, datasets, and simulators, and a common metrics API",
         section: "Posts",
         handler: () => {
           
@@ -111,7 +111,7 @@ ninja.data = [{
         
           title: "FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry (IROS 2022)",
         
-        description: "LiDAR 지도 점에 이미지 패치를 붙여 재활용하는 sparse-direct VIO를 direct LIO와 단일 ESIKF로 묶은 HKU-MARS의 LIVO",
+        description: "HKU-MARS&#39;s LIVO that attaches image patches to LiDAR map points for reuse in a sparse-direct VIO, coupled with a direct LIO inside a single ESIKF",
         section: "Posts",
         handler: () => {
           
@@ -122,7 +122,7 @@ ninja.data = [{
         
           title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry (T-RO 2025)",
         
-        description: "순차 갱신 ESIKF와 단일 통합 voxel map, LiDAR 평면 prior로 정확도·강건성·효율을 동시에 끌어올린 direct LIVO의 레퍼런스",
+        description: "The reference direct LIVO that raises accuracy, robustness, and efficiency at once with a sequential-update ESIKF, a single unified voxel map, and LiDAR plane priors",
         section: "Posts",
         handler: () => {
           
@@ -133,7 +133,7 @@ ninja.data = [{
         
           title: "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning (arXiv 2025)",
         
-        description: "1인칭 RGB 비디오만을 Qwen2-VL에 넣어 저수준 행동을 직접 예측하고, GRPO 강화 미세조정과 시간감쇠보상으로 후학습해 VLN-CE에서 SOTA를 낸 end-to-end 프레임워크",
+        description: "An end-to-end framework that feeds only first-person RGB video into Qwen2-VL to predict low-level actions directly, post-trained with GRPO reinforcement fine-tuning and a time-decayed reward to reach SOTA on VLN-CE",
         section: "Posts",
         handler: () => {
           
@@ -144,7 +144,7 @@ ninja.data = [{
         
           title: "These Maps Are Made For Walking: Real-Time Terrain Property Estimation for Mobile Robots...",
         
-        description: "단일 RGB-D로 지형 높이와 마찰계수 확률분포를 베이지안 재귀 추정하는 실시간 시맨틱 맵핑 프레임워크",
+        description: "A real-time semantic mapping framework that recursively estimates the probability distributions of terrain elevation and friction coefficient from a single RGB-D camera via Bayesian inference",
         section: "Posts",
         handler: () => {
           
@@ -155,7 +155,7 @@ ninja.data = [{
         
           title: "PUTN: A Plane-fitting based Uneven Terrain Navigation Framework (IROS 2022)",
         
-        description: "점군에 국소 평면을 피팅해 주행성을 평가하고 PF-RRT*·GPR·NMPC를 잇는 비정형 지형 내비게이션 프레임워크",
+        description: "An uneven-terrain navigation framework that fits local planes to point clouds to evaluate traversability and chains PF-RRT*, GPR, and NMPC",
         section: "Posts",
         handler: () => {
           
@@ -166,7 +166,7 @@ ninja.data = [{
         
           title: "π0: A Vision-Language-Action Flow Model for General Robot Control (arXiv 2024)",
         
-        description: "사전학습 VLM에 flow matching action expert를 붙여 1만 시간 크로스 임바디먼트 데이터로 학습한 로봇 파운데이션 모델 π0 리뷰",
+        description: "Review of π0, a robot foundation model that attaches a flow matching action expert to a pretrained VLM and trains on 10,000 hours of cross-embodiment data",
         section: "Posts",
         handler: () => {
           
@@ -177,7 +177,7 @@ ninja.data = [{
         
           title: "π0.5: a Vision-Language-Action Model with Open-World Generalization (CoRL 2025)",
         
-        description: "이질적 데이터 co-training과 계층적 서브태스크 추론으로 학습에 없던 새 집에서 장기 모바일 조작을 수행한 π0.5 리뷰",
+        description: "Review of π0.5, which combines heterogeneous-data co-training with hierarchical subtask reasoning to perform long-horizon mobile manipulation in homes never seen during training",
         section: "Posts",
         handler: () => {
           
@@ -188,7 +188,7 @@ ninja.data = [{
         
           title: "π*0.6: a VLA That Learns From Experience (arXiv 2025)",
         
-        description: "자율 롤아웃과 사람 개입 교정을 advantage 조건화로 학습하는 RECAP 레시피로 flow-matching VLA에 실세계 RL을 건 π*0.6 리뷰",
+        description: "Review of π*0.6, which applies real-world RL to a flow-matching VLA with the RECAP recipe, learning from autonomous rollouts and human intervention corrections via advantage conditioning",
         section: "Posts",
         handler: () => {
           
@@ -199,7 +199,7 @@ ninja.data = [{
         
           title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation (RSS 2025)",
         
-        description: "VLA가 자연어 중간 행동만 출력하고 별도 시각 locomotion RL 정책이 관절 제어를 맡는 2단 프레임워크로, 단일 RGB만으로 다리 로봇 VLN을 실증한 연구",
+        description: "A two-level framework in which the VLA outputs only natural-language mid-level actions and a separate visual locomotion RL policy handles joint control, demonstrating legged-robot VLN from a single RGB camera",
         section: "Posts",
         handler: () => {
           
@@ -210,7 +210,7 @@ ninja.data = [{
         
           title: "M2Mapping: Neural Surface Reconstruction and Rendering for LiDAR-Visual Systems (ICRA 2025)",
         
-        description: "LiDAR 거리장과 카메라 광장을 하나의 SDF→밀도 변환으로 묶어 자유시점 궤적에서도 watertight 표면과 외삽 렌더링을 함께 얻는 매핑 프레임워크",
+        description: "A mapping framework that couples the LiDAR distance field and the camera radiance field through a single SDF-to-density transform, yielding watertight surfaces and extrapolated rendering together even on free-view trajectories",
         section: "Posts",
         handler: () => {
           
@@ -221,7 +221,7 @@ ninja.data = [{
         
           title: "FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation (arXiv 2025)",
         
-        description: "계층적 멀티모달 씬그래프에 view 층을 추가하고, CLIP 빠른 매칭이 실패할 때만 VLM 느린 추론을 호출해 휴머노이드 실내 장거리 객체 탐색에서 SR 92%를 5.5초에 달성한 시스템",
+        description: "A system that adds a view layer to a hierarchical multimodal scene graph and calls slow VLM reasoning only when fast CLIP matching fails, reaching 92% SR in 5.5 s on long-horizon indoor object search with a humanoid",
         section: "Posts",
         handler: () => {
           
@@ -232,7 +232,7 @@ ninja.data = [{
         
           title: "Elevator-LIO: Robust LiDAR-Inertial Odometry for Multi-Floor Navigation under Elevator-Induced Non-Inertial Motion (arXiv 2026)...",
         
-        description: "움직이는 엘리베이터 안에서 로봇 상대운동과 캐빈 수송운동을 상태에서 분리하고 정지 시점 ZUPT로 수직 드리프트를 잡는 멀티플로어 LIO",
+        description: "A multi-floor LIO that separates the robot&#39;s relative motion from the cabin&#39;s transport motion in the state inside a moving elevator and suppresses vertical drift with a ZUPT at the stop instant",
         section: "Posts",
         handler: () => {
           
@@ -243,73 +243,73 @@ ninja.data = [{
         
           title: "Continual Learning for Traversability Prediction with Uncertainty-Aware Adaptation (RA-L 2025)",
         
-        description: "과거 데이터를 저장하지 않고 CVAE로 경험을 회상하되 불확실성으로 걸러 파국적 망각을 줄이는 traversability 연속학습",
+        description: "Continual traversability learning that recalls past experience with a CVAE instead of storing data, filtering recalled samples by uncertainty to reduce catastrophic forgetting",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/continual-traversability-learning/";
           
         },
-      },{id: "post-tf-transform-와-frame-개념-정리",
+      },{id: "post-tf-transform-and-frame-concepts",
         
-          title: "TF(Transform)와 Frame 개념 정리",
+          title: "TF (Transform) and Frame Concepts",
         
-        description: "ROS2 tf2의 Frame 개념, 좌표계 간 관계, tf_tree 구조를 예시와 함께 정리",
+        description: "The concept of frames in ROS2 tf2, relationships between coordinate frames, and the tf_tree structure, with examples",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2023/tf-transform/";
           
         },
-      },{id: "post-ubuntu-22-04-nvidia-그래픽카드-인식-문제-해결",
+      },{id: "post-fixing-nvidia-graphics-card-detection-on-ubuntu-22-04",
         
-          title: "Ubuntu 22.04 NVIDIA 그래픽카드 인식 문제 해결",
+          title: "Fixing NVIDIA Graphics Card Detection on Ubuntu 22.04",
         
-        description: "Ubuntu 22.04 설치 후 NVIDIA 드라이버 인식 오류를 해결하는 절차",
+        description: "Procedure for resolving NVIDIA driver detection errors after installing Ubuntu 22.04",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/nvidia-driver-ubuntu/";
           
         },
-      },{id: "post-6자유도-협동로봇-matlab-시뮬레이션-d-h-파라미터",
+      },{id: "post-matlab-simulation-of-a-6-dof-collaborative-robot-d-h-parameters",
         
-          title: "6자유도 협동로봇 MATLAB 시뮬레이션 (D-H 파라미터)",
+          title: "MATLAB Simulation of a 6-DOF Collaborative Robot (D-H Parameters)",
         
-        description: "D-H 파라미터 기반 순기구학·역기구학과 Cubic Spline 경로계획을 MATLAB으로 구현한 기록",
+        description: "Forward and inverse kinematics based on D-H parameters and cubic-spline path planning implemented in MATLAB",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/manipulator-dh-simulation/";
           
         },
-      },{id: "post-git과-github-기초-설치부터-push까지",
+      },{id: "post-git-and-github-basics-from-installation-to-push",
         
-          title: "Git과 GitHub 기초: 설치부터 push까지",
+          title: "Git and GitHub Basics: From Installation to push",
         
-        description: "분산 버전 관리 Git의 기본 개념부터 Ubuntu 설치, clone, push까지 실전 명령 정리",
+        description: "Practical commands for the distributed version control system Git, from basic concepts to installing on Ubuntu, cloning, and pushing",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2022/git-github-basics/";
           
         },
-      },{id: "post-영상처리-기반-자율주행-vanishing-point와-perspective-transform",
+      },{id: "post-vision-based-autonomous-driving-vanishing-point-and-perspective-transform",
         
-          title: "영상처리 기반 자율주행: Vanishing Point와 Perspective Transform",
+          title: "Vision-based Autonomous Driving: Vanishing Point and Perspective Transform",
         
-        description: "소실점(Vanishing Point)과 원근 변환을 결합해 주행 상태(직진/회전 × 중앙/치우침)를 판단하는 영상처리 프로젝트",
+        description: "An image-processing project that combines vanishing point detection with perspective transform to classify the driving state (straight/turning x centered/biased)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/vanishing-point-lane-detection/";
           
         },
-      },{id: "post-docker-기초-이미지-컨테이너-주요-명령",
+      },{id: "post-docker-basics-images-containers-and-key-commands",
         
-          title: "Docker 기초: 이미지·컨테이너·주요 명령",
+          title: "Docker Basics: Images, Containers, and Key Commands",
         
-        description: "컨테이너 기반 가상화 플랫폼 Docker의 개념과 자주 쓰는 명령어 정리",
+        description: "The concepts of Docker, a container-based virtualization platform, and its commonly used commands",
         section: "Posts",
         handler: () => {
           
@@ -320,185 +320,185 @@ ninja.data = [{
         
           title: "ROS1 vs ROS2",
         
-        description: "로봇 운영체제 ROS의 개념과 ROS1·ROS2의 구조적 차이 정리",
+        description: "The concept of the Robot Operating System (ROS) and the architectural differences between ROS1 and ROS2",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/ros1-vs-ros2/";
           
         },
-      },{id: "post-gazebo-커스텀-battery-plugin-만들기",
+      },{id: "post-building-a-custom-gazebo-battery-plugin",
         
-          title: "Gazebo 커스텀 Battery Plugin 만들기",
+          title: "Building a Custom Gazebo Battery Plugin",
         
-        description: "대기전력·소비전력을 고려한 배터리 시스템을 Gazebo Plugin으로 커스텀 구현하는 예제",
+        description: "An example of implementing a custom battery system as a Gazebo plugin that accounts for standby and active power consumption",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-battery-plugin/";
           
         },
-      },{id: "post-gazebo-실습-turtlebot3-3d-lidar",
+      },{id: "post-gazebo-hands-on-turtlebot3-3d-lidar",
         
-          title: "Gazebo 실습: TurtleBot3 + 3D LiDAR",
+          title: "Gazebo Hands-on: TurtleBot3 + 3D LiDAR",
         
-        description: "turtlebot3_burger와 Velodyne 3D LiDAR를 Gazebo에서 불러와 데이터 확인·조작·tf_tree 실습",
+        description: "Loading turtlebot3_burger with a Velodyne 3D LiDAR in Gazebo, checking the data, teleoperating, and inspecting the tf_tree",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-training/";
           
         },
-      },{id: "post-gazebo-plugin-sensor와-actuator-플러그인-분석",
+      },{id: "post-gazebo-plugins-sensor-and-actuator-plugin-analysis",
         
-          title: "Gazebo Plugin: Sensor와 Actuator 플러그인 분석",
+          title: "Gazebo Plugins: Sensor and Actuator Plugin Analysis",
         
-        description: "Gazebo(ROS2 Humble) 환경의 Sensor·Actuator 플러그인 XML 구조와 사용법 정리",
+        description: "XML structure and usage of sensor and actuator plugins in Gazebo (ROS2 Humble)",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo-plugin/";
           
         },
-      },{id: "post-로봇-좌표계-coordinates-와-euler-각",
+      },{id: "post-robot-coordinate-systems-and-euler-angles",
         
-          title: "로봇 좌표계(Coordinates)와 Euler 각",
+          title: "Robot Coordinate Systems and Euler Angles",
         
-        description: "직교·원통·구면 좌표계와 Euler 각도의 차이·특성을 로봇 관점에서 정리",
+        description: "Cartesian, cylindrical, and spherical coordinate systems and Euler angles, with their differences and characteristics from a robotics perspective",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/coordinates/";
           
         },
-      },{id: "post-gazebo-시뮬레이터-구조와-ros-연동",
+      },{id: "post-gazebo-simulator-architecture-and-ros-integration",
         
-          title: "Gazebo 시뮬레이터 구조와 ROS 연동",
+          title: "Gazebo Simulator Architecture and ROS Integration",
         
-        description: "Gazebo의 블록 다이어그램, ROS-Gazebo 상호작용 구조, 주요 구성 요소를 정리한 노트",
+        description: "Notes on the Gazebo block diagram, the ROS-Gazebo interaction architecture, and the main components",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2021/gazebo/";
           
         },
-      },{id: "news-한국로봇융합연구원-kiro-로봇직업혁신센터-인턴-시작-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-2023-03",
-          title: '한국로봇융합연구원(KIRO) 로봇직업혁신센터 인턴 시작 — 이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (~2023.03)....',
+      },{id: "news-started-an-internship-at-the-robot-vocational-innovation-center-korea-institute-of-robotics-and-technology-convergence-kiro-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-until-mar-2023",
+          title: 'Started an internship at the Robot Vocational Innovation Center, Korea Institute of Robotics...',
           description: "",
-          section: "News",},{id: "news-계명대학교-로봇공학-학사-졸업-gpa-4-2-4-5",
-          title: '계명대학교 로봇공학 학사 졸업 (GPA 4.2/4.5).',
+          section: "News",},{id: "news-graduated-from-keimyung-university-with-a-b-s-in-robotics-engineering-gpa-4-2-4-5",
+          title: 'Graduated from Keimyung University with a B.S. in Robotics Engineering (GPA 4.2/4.5).',
           description: "",
-          section: "News",},{id: "news-한국전자기술연구원-keti-지능로보틱스연구센터-연구원으로-입사-open-rmf-기반-다중로봇-관제-연구-시작",
-          title: '한국전자기술연구원(KETI) 지능로보틱스연구센터 연구원으로 입사. Open-RMF 기반 다중로봇 관제 연구 시작.',
+          section: "News",},{id: "news-joined-the-intelligent-robotics-research-center-at-the-korea-electronics-technology-institute-keti-as-a-researcher-started-open-rmf-based-multi-robot-fleet-management-research",
+          title: 'Joined the Intelligent Robotics Research Center at the Korea Electronics Technology Institute (KETI)...',
           description: "",
-          section: "News",},{id: "news-특허-모바일-로봇-서비스-시스템-및-방법-출원-2025-07-공개-심사-중",
-          title: '특허 「모바일 로봇 서비스 시스템 및 방법」 출원 (2025.07 공개, 심사 중).',
+          section: "News",},{id: "news-patent-application-filed-quot-mobile-robot-service-system-and-method-quot-published-jul-2025-under-examination",
+          title: 'Patent application filed: &amp;quot;Mobile Robot Service System and Method&amp;quot; (published Jul. 2025, under...',
           description: "",
-          section: "News",},{id: "news-kroc-2024에서-open-rmf를-활용한-다중-이동로봇의-협력적-자율주행-시스템-발표-제1저자",
-          title: 'KROC 2024에서 「Open-RMF를 활용한 다중 이동로봇의 협력적 자율주행 시스템」 발표 (제1저자).',
+          section: "News",},{id: "news-presented-quot-cooperative-autonomous-driving-system-for-multi-mobile-robots-using-open-rmf-quot-at-kroc-2024-first-author",
+          title: 'Presented &amp;quot;Cooperative Autonomous Driving System for Multi-Mobile Robots Using Open-RMF&amp;quot; at KROC 2024...',
           description: "",
-          section: "News",},{id: "news-icros-2024에서-장애물-인식-정보-교차-활용-협력-경로-계획-구두-발표-제1저자",
-          title: 'ICROS 2024에서 「장애물 인식 정보 교차 활용 협력 경로 계획」 구두 발표 (제1저자)....',
+          section: "News",},{id: "news-oral-presentation-of-quot-cross-utilization-of-obstacle-recognition-information-for-collaborative-path-planning-quot-at-icros-2024-first-author",
+          title: 'Oral presentation of &amp;quot;Cross-Utilization of Obstacle Recognition Information for Collaborative Path Planning&amp;quot; at...',
           description: "",
-          section: "News",},{id: "news-iccas-2024-jeju-에서-traversability-assessment-and-path-planning-for-multi-robot-system-발표-제1저자",
-          title: 'ICCAS 2024 (Jeju)에서 「Traversability Assessment and Path Planning for Multi-Robot System」 발표 (제1저자)....',
+          section: "News",},{id: "news-presented-quot-traversability-assessment-and-path-planning-for-multi-robot-system-quot-at-iccas-2024-jeju-first-author",
+          title: 'Presented &amp;quot;Traversability Assessment and Path Planning for Multi-Robot System&amp;quot; at ICCAS 2024, Jeju...',
           description: "",
-          section: "News",},{id: "news-실로봇-tetra-s가-실제-엘리베이터를-호출-탑승-하차하는-다층-자율주행-실증-완료-mqtt-ros-2-브리지",
-          title: '실로봇 TETRA_S가 실제 엘리베이터를 호출·탑승·하차하는 다층 자율주행 실증 완료 (MQTT–ROS 2 브리지).',
+          section: "News",},{id: "news-real-robot-demonstration-completed-tetra-s-calls-boards-and-exits-a-real-elevator-for-multi-floor-autonomous-navigation-via-an-mqtt-ros-2-bridge",
+          title: 'Real-robot demonstration completed: TETRA_S calls, boards and exits a real elevator for multi-floor...',
           description: "",
-          section: "News",},{id: "news-iccas-2025-incheon-에서-논문-2편-발표-다중로봇-이상탐지-시각화-프레임워크-제1저자-sdr-ota-업데이트-프레임워크-제2저자-ieee-xplore-등재",
-          title: 'ICCAS 2025 (Incheon)에서 논문 2편 발표 — 다중로봇 이상탐지·시각화 프레임워크(제1저자), SDR OTA 업데이트...',
+          section: "News",},{id: "news-two-papers-presented-at-iccas-2025-incheon-multi-robot-anomaly-detection-and-visualization-framework-first-author-and-sdr-ota-update-framework-second-author-both-on-ieee-xplore",
+          title: 'Two papers presented at ICCAS 2025, Incheon — multi-robot anomaly detection and visualization...',
           description: "",
-          section: "News",},{id: "news-lidar-사다리꼴-마커-icp-정합-기반-정밀-도킹-3-5-cm-실환경-실증",
-          title: 'LiDAR 사다리꼴 마커 ICP 정합 기반 정밀 도킹 ±3~5 cm 실환경 실증.',
+          section: "News",},{id: "news-precision-docking-with-3-5-cm-accuracy-demonstrated-on-a-real-robot-using-lidar-trapezoid-marker-icp-registration",
+          title: 'Precision docking with ±3–5 cm accuracy demonstrated on a real robot using LiDAR...',
           description: "",
-          section: "News",},{id: "news-icros-2026-daegu-에서-다중-로봇-시스템의-학습-기반-이상-탐지-프레임워크-발표-제1저자-restad-aff-f1-0-94",
-          title: 'ICROS 2026 (Daegu)에서 「다중 로봇 시스템의 학습 기반 이상 탐지 프레임워크」 발표 (제1저자,...',
+          section: "News",},{id: "news-presented-quot-a-learning-based-anomaly-detection-framework-for-multi-robot-systems-quot-at-icros-2026-daegu-first-author-restad-aff-f1-0-94",
+          title: 'Presented &amp;quot;A Learning-based Anomaly Detection Framework for Multi-Robot Systems&amp;quot; at ICROS 2026, Daegu...',
           description: "",
-          section: "News",},{id: "news-go2-다층-건물-mujoco-테스트베드-위에서-vlm-오케스트레이션-자율-미션-에이전트가-자연어-미션만으로-엘리베이터-탑승-2층-도달",
-          title: 'Go2 다층 건물 MuJoCo 테스트베드 위에서 VLM 오케스트레이션 자율 미션 에이전트가 자연어 미션만으로...',
+          section: "News",},{id: "news-a-vlm-orchestrated-autonomous-mission-agent-on-the-go2-multi-floor-mujoco-testbed-found-boarded-and-rode-the-elevator-to-the-second-floor-from-a-natural-language-mission-alone",
+          title: 'A VLM-orchestrated autonomous mission agent on the Go2 multi-floor MuJoCo testbed found, boarded...',
           description: "",
-          section: "News",},{id: "news-홈페이지를-al-folio-기반-cv-포트폴리오-사이트로-개편-프로젝트-논문-논문-리뷰-페이지-추가",
-          title: '홈페이지를 al-folio 기반 CV·포트폴리오 사이트로 개편. 프로젝트·논문·논문 리뷰 페이지 추가.',
+          section: "News",},{id: "news-rebuilt-this-website-on-al-folio-as-a-cv-and-portfolio-site-with-project-publication-and-paper-review-pages",
+          title: 'Rebuilt this website on al-folio as a CV and portfolio site with project,...',
           description: "",
-          section: "News",},{id: "projects-3축-7자유도-spring-damper-시스템-안정성-평가와-pid-설계",
-          title: '3축 7자유도 Spring-Damper 시스템 안정성 평가와 PID 설계',
-          description: "1축 3자유도 진동계에서 3축 7자유도로 확장하며 28×28 통합 상태공간을 구성하고, 무제어 시 불안정한 시스템을 PID로 안정화한 MATLAB 제어 프로젝트",
+          section: "News",},{id: "projects-stability-assessment-and-pid-design-for-a-3-axis-7-dof-spring-damper-system",
+          title: 'Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System',
+          description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3axis-7dof-stability/";
-            },},{id: "projects-6축-다관절-로봇-기구학-시뮬레이션-d-h-역기구학-cubic-spline",
-          title: '6축 다관절 로봇 기구학 시뮬레이션 (D-H · 역기구학 · Cubic Spline)',
-          description: "6자유도 협동로봇의 D-H 파라미터를 도출해 순기구학·역기구학·경로계획을 MATLAB으로 구현하고 수계산 결과와 시뮬레이션의 일치를 검증한 개인 프로젝트",
+            },},{id: "projects-6-axis-articulated-robot-kinematics-simulation-d-h-inverse-kinematics-cubic-spline",
+          title: '6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)',
+          description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6axis-manipulator-simulation/";
-            },},{id: "projects-agv-매니퓰레이터-tcp-ip-통합-통신-프로토콜-제조물류",
-          title: 'AGV–매니퓰레이터 TCP/IP 통합 통신 프로토콜 (제조물류)',
-          description: "상위 제어(MasterPC) ↔ ACS 서버 ↔ 스태커 로봇을 잇는 TCP/IP 커스텀 프로토콜 설계 — STX/CR/LF 프레이밍, 명령 ID 매칭, ACK/NACK + Reason 코드, HeartBeat",
+            },},{id: "projects-agv-manipulator-integrated-tcp-ip-communication-protocol-manufacturing-logistics",
+          title: 'AGV–Manipulator Integrated TCP/IP Communication Protocol (Manufacturing Logistics)',
+          description: "Design of a custom TCP/IP protocol linking the supervisory controller (MasterPC), the ACS server, and stacker robots — STX/CR/LF framing, command ID matching, ACK/NACK with Reason codes, and HeartBeat",
           section: "Projects",handler: () => {
               window.location.href = "/projects/agv-manipulator-tcpip/";
-            },},{id: "projects-ai-에이전트-공유-업무-위키-obsidian-claude-code",
-          title: 'AI 에이전트 공유 업무 위키 (Obsidian + Claude Code)',
-          description: "논문·코드 분석·보고서·연구노트·이직 준비를 raw / wiki / conversations 3계층으로 나누고, 여러 AI 에이전트가 세션마다 같은 규약(save · reference · ingest · lint)으로 일하게 만든 개인 지식 시스템",
+            },},{id: "projects-shared-work-wiki-for-ai-agents-obsidian-claude-code",
+          title: 'Shared Work Wiki for AI Agents (Obsidian + Claude Code)',
+          description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ai-agent-wiki/";
-            },},{id: "projects-go2-다층-건물-시뮬레이션-테스트베드와-vlm-자율-미션-에이전트",
-          title: 'Go2 다층 건물 시뮬레이션 테스트베드와 VLM 자율 미션 에이전트',
-          description: "계단·경사·동작 엘리베이터가 있는 3층 건물 월드를 Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo로 이식하며 사족보행 제어·실사양 센서·VLM 오케스트레이션 에이전트를 검증한 테스트베드",
+            },},{id: "projects-go2-multi-floor-building-simulation-testbed-and-vlm-autonomous-mission-agent",
+          title: 'Go2 Multi-Floor Building Simulation Testbed and VLM Autonomous Mission Agent',
+          description: "A testbed that ported a three-story building world with stairs, ramps, and a working elevator across Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo to verify quadruped locomotion control, real-spec sensors, and a VLM orchestration agent",
           section: "Projects",handler: () => {
               window.location.href = "/projects/go2-multifloor-sim/";
-            },},{id: "projects-이기종-산업용-협동로봇-8종-통합-실습-환경-구축-kiro-인턴",
-          title: '이기종 산업용·협동로봇 8종 통합 실습 환경 구축 (KIRO 인턴)',
-          description: "현대·FANUC·ABB·KUKA 산업용 로봇과 UR·두산·뉴로메카 협동로봇의 제어 체계를 분석해 단계별 교육 커리큘럼·실습 매뉴얼을 설계하고, 개소식 데모 시연을 운영",
+            },},{id: "projects-integrated-training-environment-for-8-heterogeneous-industrial-and-collaborative-robots-kiro-internship",
+          title: 'Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)',
+          description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kiro-heterogeneous-robots/";
-            },},{id: "projects-lidar-마커-icp-정합-기반-정밀-충전-도킹",
-          title: 'LiDAR 마커 ICP 정합 기반 정밀 충전 도킹',
-          description: "ArUco 비전 → 2D LiDAR 사다리꼴 기하 마커 → ICP 정합의 3단계로 발전시켜 실환경 ±3~5 cm 정밀 도킹을 달성한 2단계(Nav2 접근 + 미세 정렬) 도킹 시스템",
+            },},{id: "projects-precision-charging-docking-based-on-lidar-marker-icp-registration",
+          title: 'Precision Charging Docking Based on LiDAR Marker ICP Registration',
+          description: "A two-stage docking system (Nav2 approach + fine alignment) that evolved through three phases — ArUco vision → 2D LiDAR trapezoidal geometric marker → ICP registration — to achieve ±3–5 cm precision docking in a real environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lidar-marker-docking/";
-            },},{id: "projects-이종-물류로봇-open-rmf-통합-협업지능",
-          title: '이종 물류로봇 Open-RMF 통합 (협업지능)',
-          description: "TETRA 대차·스태커 AMR·MiR 600 등 이종 모바일로봇을 Open-RMF 멀티로봇 운영체계로 묶고, free_fleet 개조·도킹 제어권 핸드오버·센서 인식·PySide6 GUI를 단계적으로 구축",
+            },},{id: "projects-open-rmf-integration-of-heterogeneous-logistics-robots-cooperative-intelligence",
+          title: 'Open-RMF Integration of Heterogeneous Logistics Robots (Cooperative Intelligence)',
+          description: "Unified heterogeneous mobile robots (TETRA carts, stacker AMRs, MiR 600) under the Open-RMF multi-robot operating system, building up free_fleet modifications, docking control handover, sensor-based perception, and a PySide6 GUI in stages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/logistics-fleet-integration/";
-            },},{id: "projects-mfc-기반-dynamixel-액츄에이터-3모드-제어",
-          title: 'MFC 기반 Dynamixel 액츄에이터 3모드 제어',
-          description: "C++ MFC GUI로 ROBOTIS Dynamixel XM430-W350의 위치·속도·전류 제어 모드를 통합 운용하고 TTL 통신으로 상태·토크를 실시간 모니터링",
+            },},{id: "projects-mfc-based-three-mode-control-of-dynamixel-actuators",
+          title: 'MFC-Based Three-Mode Control of Dynamixel Actuators',
+          description: "A C++ MFC GUI that operates the position, velocity, and current control modes of the ROBOTIS Dynamixel XM430-W350 in one application and monitors state and torque in real time over TTL communication",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mfc-dynamixel-control/";
-            },},{id: "projects-다중로봇-이상탐지-fault-injection에서-학습-기반-탐지까지",
-          title: '다중로봇 이상탐지 — Fault Injection에서 학습 기반 탐지까지',
-          description: "30대 시뮬레이션 fleet에 결함을 주입해 데이터를 모으고, 룰 기반 4분류 이상탐지·웹 대시보드에서 Transformer 자기지도(RESTAD) 학습 기반 탐지로 발전시킨 연구",
+            },},{id: "projects-multi-robot-anomaly-detection-from-fault-injection-to-learning-based-detection",
+          title: 'Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection',
+          description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-anomaly-detection/";
-            },},{id: "projects-open-rmf-기반-이기종-다중로봇-중앙-관제",
-          title: 'Open-RMF 기반 이기종 다중로봇 중앙 관제',
-          description: "대규모 실내 공간에서 수십 대 이동로봇을 하나의 관제 아래 묶는 협력 자율주행 시스템 — 30대 시뮬레이션에서 실물 4대 Sim-to-Real까지",
+            },},{id: "projects-open-rmf-based-centralized-fleet-management-for-heterogeneous-multi-robot-systems",
+          title: 'Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems',
+          description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multi-robot-openrmf/";
-            },},{id: "projects-실외-비정형-지형-자율주행-파이프라인",
-          title: '실외 비정형 지형 자율주행 파이프라인',
-          description: "3D Mesh Navigation 분석·검증에서 출발해 FAST-LIVO2 매핑·측위 → grid_map 지형 평가 → 전역 계획 → Pure Pursuit-LOS 추종의 자체 4단 파이프라인으로 발전시킨 실외 주행 스택",
+            },},{id: "projects-autonomous-navigation-pipeline-for-unstructured-outdoor-terrain",
+          title: 'Autonomous Navigation Pipeline for Unstructured Outdoor Terrain',
+          description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/outdoor-traversability/";
-            },},{id: "projects-모바일-로봇-엘리베이터-연동-다층-자율주행",
-          title: '모바일 로봇 ↔ 엘리베이터 연동 다층 자율주행',
-          description: "MQTT–ROS 2 브리지와 커스텀 NavigateMultiFloor Action으로 로봇이 스스로 엘리베이터를 호출·탑승·하차하는 시스템. 승강기 금속면 LiDAR 난반사는 SOR 필터로 해결",
+            },},{id: "projects-multi-floor-autonomous-navigation-with-mobile-robot-elevator-integration",
+          title: 'Multi-Floor Autonomous Navigation with Mobile Robot ↔ Elevator Integration',
+          description: "A system in which the robot calls, boards, and exits an elevator on its own via an MQTT–ROS 2 bridge and a custom NavigateMultiFloor Action. LiDAR scattering off metallic elevator surfaces was resolved with an SOR filter",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robot-elevator-interface/";
-            },},{id: "projects-sdr-docker-git-기반-ota-배포-프레임워크",
-          title: 'SDR — Docker·Git 기반 OTA 배포 프레임워크',
-          description: "Software-Defined Robot을 위해 로봇 기능을 컨테이너로 모듈화하고, 공통 코드 + Robot Profile 분리로 여러 로봇에 무중단 배포·검증하는 OTA 체계",
+            },},{id: "projects-sdr-docker-and-git-based-ota-deployment-framework",
+          title: 'SDR — Docker and Git-Based OTA Deployment Framework',
+          description: "An OTA system for Software-Defined Robots that modularizes robot functions into containers and separates shared code from Robot Profiles to deploy and verify across multiple robots without downtime",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sdr-ota-framework/";
-            },},{id: "projects-영상처리-기반-자율주행-vanishing-point-perspective-transform",
-          title: '영상처리 기반 자율주행 — Vanishing Point × Perspective Transform',
-          description: "소실점(직진/회전 판별)과 원근 변환(중앙/치우침 판별)을 결합해 4가지 주행 상태를 판단하는 저비용 영상처리 ADAS 프로젝트",
+            },},{id: "projects-image-processing-based-autonomous-driving-vanishing-point-perspective-transform",
+          title: 'Image-Processing-Based Autonomous Driving — Vanishing Point × Perspective Transform',
+          description: "A low-cost image-processing ADAS project that combines the vanishing point (straight vs. turning) with a perspective transform (centered vs. biased) to classify four driving states",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vanishing-point-lane-detection/";
-            },},{id: "projects-4족-wheel-leg-하이브리드-로봇-제작-메카톤-캡스톤",
-          title: '4족 Wheel-Leg 하이브리드 로봇 제작 (메카톤 · 캡스톤)',
-          description: "평소에는 바퀴로 주행하다 바퀴로 넘지 못하는 장애물에서 다리 관절을 제어해 보행 모드로 전환·극복하는 하이브리드 로봇. 기구 설계·3D 모델링·ROS 통합 제어 담당",
+            },},{id: "projects-quadruped-wheel-leg-hybrid-robot-mechathon-capstone",
+          title: 'Quadruped Wheel-Leg Hybrid Robot (Mechathon · Capstone)',
+          description: "A hybrid robot that normally drives on wheels and, at obstacles the wheels cannot clear, controls its leg joints to switch into walking mode and step over them. Responsible for mechanical design, 3D modeling, and ROS-based integrated control",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wheel-leg-robot/";
             },},{
