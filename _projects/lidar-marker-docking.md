@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Precision Charging Docking Based on LiDAR Marker ICP Registration"
-description: "A two-stage docking system (Nav2 approach + fine alignment) that evolved through three phases — ArUco vision → 2D LiDAR trapezoidal geometric marker → ICP registration — to achieve ±3–5 cm precision docking in a real environment"
+title: "LiDAR-Marker ICP Precision Docking"
+description: "ArUco → LiDAR trapezoid marker → ICP registration; ±3–5 cm docking on a real robot after a Nav2 approach."
 img: assets/img/projects/lidar-marker-charging/img-6.png
 importance: 5
 category: company

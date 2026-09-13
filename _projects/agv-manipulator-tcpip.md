@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "AGV–Manipulator Integrated TCP/IP Communication Protocol (Manufacturing Logistics)"
-description: "Design of a custom TCP/IP protocol linking the supervisory controller (MasterPC), the ACS server, and stacker robots — STX/CR/LF framing, command ID matching, ACK/NACK with Reason codes, and HeartBeat"
+title: "AGV–Manipulator TCP/IP Protocol"
+description: "Custom protocol between the supervisory PC, ACS server and stacker AGVs: framing, command IDs, ACK/NACK reasons, heartbeat."
 img: assets/img/projects/agv-robotarm-tcpip/img-1.png
 importance: 6
 category: company

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "SDR — Docker and Git-Based OTA Deployment Framework"
-description: "An OTA system for Software-Defined Robots that modularizes robot functions into containers and separates shared code from Robot Profiles to deploy and verify across multiple robots without downtime"
+title: "SDR OTA Deployment Framework"
+description: "Docker/Git container deployment with robot profiles, so navigation, elevator and docking modules update without code changes."
 img: assets/img/publication_preview/ota-update-framework-ros2-docker.png
 importance: 3
 category: company

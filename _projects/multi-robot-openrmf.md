@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Open-RMF-Based Centralized Fleet Management for Heterogeneous Multi-Robot Systems"
-description: "A cooperative autonomous navigation system that brings dozens of mobile robots in large indoor spaces under a single fleet manager — from a 30-robot simulation to Sim-to-Real validation with 4 physical robots"
+title: "Open-RMF Multi-Robot Fleet Management"
+description: "Heterogeneous fleet under one supervisor: 30-robot simulation to 4 real robots, cooperative obstacle sharing and re-planning."
 img: assets/img/publication_preview/openrmf-cooperative-autonomous.png
 importance: 1
 category: company

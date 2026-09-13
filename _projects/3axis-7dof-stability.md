@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Stability Assessment and PID Design for a 3-Axis 7-DOF Spring-Damper System"
-description: "A MATLAB control project that extended a 1-axis 3-DOF vibration system to 3 axes and 7 DOF, assembled a 28×28 combined state space, and stabilized the uncontrolled, unstable system with PID"
+title: "3-Axis 7-DOF Stability and PID Design"
+description: "Spring-damper system extended to 28-state space in MATLAB; instability found without control and fixed with PID."
 img: assets/img/projects/3axis-7dof-stability/img-4.png
 importance: 3
 category: personal

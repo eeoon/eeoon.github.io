@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Go2 Multi-Floor Building Simulation Testbed and VLM Autonomous Mission Agent"
-description: "A testbed that ported a three-story building world with stairs, ramps, and a working elevator across Gazebo Harmonic → Isaac Sim 5.0 → MuJoCo to verify quadruped locomotion control, real-spec sensors, and a VLM orchestration agent"
+title: "Go2 Multi-Floor Simulation Testbed"
+description: "One building world ported across Gazebo, Isaac Sim and MuJoCo; quadruped policies and a VLM mission agent that rides the elevator."
 importance: 8
 category: company
 ---

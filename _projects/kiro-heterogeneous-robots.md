@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Integrated Training Environment for 8 Heterogeneous Industrial and Collaborative Robots (KIRO Internship)"
-description: "Analyzed the control systems of Hyundai, FANUC, ABB, and KUKA industrial robots and UR, Doosan, and Neuromeka collaborative robots to design a staged training curriculum and hands-on manuals, and ran the opening-ceremony demonstrations"
+title: "Heterogeneous Robot Training Lab (KIRO)"
+description: "Curricula and hands-on manuals for 8+ industrial and collaborative robot brands; ran the center's opening demonstration."
 importance: 1
 category: personal
 ---

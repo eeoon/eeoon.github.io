@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "MFC-Based Three-Mode Control of Dynamixel Actuators"
-description: "A C++ MFC GUI that operates the position, velocity, and current control modes of the ROBOTIS Dynamixel XM430-W350 in one application and monitors state and torque in real time over TTL communication"
+title: "MFC Dynamixel Actuator Control"
+description: "C++ MFC GUI driving position, velocity and current modes of an XM430 over TTL with real-time state monitoring."
 img: assets/img/projects/mfc-actuator-control/img-1.png
 importance: 5
 category: personal

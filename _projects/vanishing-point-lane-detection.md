@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Image-Processing-Based Autonomous Driving — Vanishing Point × Perspective Transform"
-description: "A low-cost image-processing ADAS project that combines the vanishing point (straight vs. turning) with a perspective transform (centered vs. biased) to classify four driving states"
+title: "Vanishing-Point Lane Detection"
+description: "Vanishing point plus perspective transform classify four driving states without machine learning."
 img: assets/img/projects/autonomous-driving-image-processing/img-3.png
 importance: 6
 category: personal

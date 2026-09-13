@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Autonomous Navigation Pipeline for Unstructured Outdoor Terrain"
-description: "An outdoor navigation stack that started from analysis and verification of 3D Mesh Navigation and evolved into an in-house four-stage pipeline: FAST-LIVO2 mapping and localization → grid_map terrain assessment → global planning → Pure Pursuit-LOS tracking"
+title: "Outdoor Traversability Navigation"
+description: "From 3D mesh navigation to an in-house stack: FAST-LIVO2 mapping, grid_map traversability, Pure Pursuit–LOS tracking."
 img: assets/img/projects/outdoor-traversability-autonomous/img-3.jpg
 importance: 7
 category: company

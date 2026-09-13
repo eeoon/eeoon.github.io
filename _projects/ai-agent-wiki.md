@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Shared Work Wiki for AI Agents (Obsidian + Claude Code)"
-description: "A personal knowledge system that separates papers, code analysis, reports, lab notebooks, and job-search preparation into three tiers (raw / wiki / conversations) and makes multiple AI agents work under the same conventions (save · reference · ingest · lint) in every session"
+title: "AI-Agent Work Wiki"
+description: "Obsidian knowledge base with raw/wiki/conversations tiers and fixed commands so multiple AI agents work consistently."
 importance: 7
 category: personal
 ---

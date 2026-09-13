@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Multi-Floor Autonomous Navigation with Mobile Robot ↔ Elevator Integration"
-description: "A system in which the robot calls, boards, and exits an elevator on its own via an MQTT–ROS 2 bridge and a custom NavigateMultiFloor Action. LiDAR scattering off metallic elevator surfaces was resolved with an SOR filter"
+title: "Robot–Elevator Multi-Floor Navigation"
+description: "MQTT–ROS 2 bridge and a custom multi-floor action let a real robot call, board and exit an elevator; SOR filtering fixes LiDAR glare."
 img: assets/img/projects/mobile-robot-elevator-interface/img-1.png
 importance: 2
 category: company

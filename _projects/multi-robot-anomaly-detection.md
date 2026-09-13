@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Multi-Robot Anomaly Detection — From Fault Injection to Learning-Based Detection"
-description: "Research that injected faults into a 30-robot simulated fleet to collect data, then advanced from rule-based four-class anomaly detection with a web dashboard to learning-based detection using a self-supervised Transformer (RESTAD)"
+title: "Multi-Robot Anomaly Detection"
+description: "Fault injection on a 30-robot fleet, rule-based detection with a web dashboard, then Transformer self-supervised detection (Aff-F1 0.94)."
 img: assets/img/publication_preview/anomaly-detection-visualization-rmf.png
 importance: 4
 category: company

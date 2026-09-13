@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "6-Axis Articulated Robot Kinematics Simulation (D-H · Inverse Kinematics · Cubic Spline)"
-description: "A personal project that derived the D-H parameters of a 6-DOF collaborative robot, implemented forward kinematics, inverse kinematics, and path planning in MATLAB, and verified that hand calculations matched the simulation results"
+title: "6-Axis Manipulator Kinematics"
+description: "D-H parameters, forward/inverse kinematics and cubic-spline paths in MATLAB, verified against hand calculation."
 img: assets/img/projects/6axis-robot-simulation/img-5.png
 importance: 4
 category: personal

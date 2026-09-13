@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Open-RMF Integration of Heterogeneous Logistics Robots (Cooperative Intelligence)"
-description: "Unified heterogeneous mobile robots (TETRA carts, stacker AMRs, MiR 600) under the Open-RMF multi-robot operating system, building up free_fleet modifications, docking control handover, sensor-based perception, and a PySide6 GUI in stages"
+title: "Heterogeneous Logistics Fleet Integration"
+description: "TETRA carts, stacker AMRs and MiR under Open-RMF: free_fleet changes, docking hand-over, perception and a PySide6 GUI."
 img: assets/img/publication_preview/openrmf-cooperative-autonomous.png
 importance: 9
 category: company

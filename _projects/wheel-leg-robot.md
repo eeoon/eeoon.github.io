@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Quadruped Wheel-Leg Hybrid Robot (Mechathon · Capstone)"
-description: "A hybrid robot that normally drives on wheels and, at obstacles the wheels cannot clear, controls its leg joints to switch into walking mode and step over them. Responsible for mechanical design, 3D modeling, and ROS-based integrated control"
+title: "Wheel-Leg Hybrid Robot"
+description: "Capstone quadruped that drives on wheels and switches to walking over obstacles; mechanical design, 3D modeling and ROS control."
 img: assets/img/projects/wheel-leg-robot/img-3.png
 importance: 2
 category: personal
